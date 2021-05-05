@@ -19,11 +19,10 @@ app.use(express.json());
 //Rutas de Accesos
 //Crear usuario 
 app.use('/api/usuarios', require('./routes/usuario'));  // esta  sentencia aun no se crear hasta que puedas generar los controladores 
-
+ 
+//Crear Categoria - Proximo Desarrollo 
  
 //Iniciamos nuestro  servidor
 app.listen(port, '0.0.0.0', () => {
- 
    console.log(`El servidor esta funcionando en el puerto -> ${port}`);
-   
 });

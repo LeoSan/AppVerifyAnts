@@ -1,7 +1,7 @@
 {
   "name": "servidor",
   "version": "1.0.0",
-  "description": "Inicio de practicas para seguir aprendiendo node.js express mongoose usando modelos de datos proyecto gastos hormigas poder iniciarlo y culminarlo antes finalizar el 2021",
+  "description": "Inicio de practicas para seguir aprendiendo node.js express mongoose usando modelos de datos proyecto gastos hormigas poder iniciarlo y culminarlo antes finalizar el 2021 MERN",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./index.js",

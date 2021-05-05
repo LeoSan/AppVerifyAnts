@@ -47,7 +47,6 @@ const ingresoSchema = new Schema({
 		type:Date, 
 		default:Date.now()
 	}
-	
 });
 //Esta  sentencia nos  permite exportar nuestro modelo  como vemos se pasa como parametros (NombreModelo, EstructuraModelo ) -> definidos previamente.
 module.exports = mongoose.model('Ingreso', gastoSchema);

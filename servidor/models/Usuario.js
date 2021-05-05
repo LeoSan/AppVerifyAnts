@@ -32,7 +32,6 @@ const usuariosSchema = new Schema({
 		type:Date, 
 		default:Date.now()
 	}
-
 });
 //Esta  sentencia nos  permite eportar nuestro modelo  como vemos se pasa como parametros (NombreModelo, EstructuraModelo ) -> definidos previamente.
 module.exports = mongoose.model('Usuario', usuariosSchema);

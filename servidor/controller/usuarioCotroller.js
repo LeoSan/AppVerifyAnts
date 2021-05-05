@@ -10,7 +10,6 @@ exports.nuevoUsuario = async(req, res)=>{
     if (!errores.isEmpty()){
         return res.status(400).json({errores: errores.array()});
     }
-    
     //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
    // console.log(req.body);
     const {email, password} = req.body; 
