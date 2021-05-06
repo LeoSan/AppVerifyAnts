@@ -22,8 +22,8 @@ const categoriaSchema = new Schema({
     autor:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Usuario',
-        required:true
-    },	
+        required:true,
+    },
 	activo:{
 	   type: Number,
 	   default:	1
@@ -32,6 +32,7 @@ const categoriaSchema = new Schema({
 		type:Date, 
 		default:Date.now()
 	}
+	
 });
 //Esta  sentencia nos  permite eportar nuestro modelo  como vemos se pasa como parametros (NombreModelo, EstructuraModelo ) -> definidos previamente.
 module.exports = mongoose.model('Categoria', categoriaSchema);

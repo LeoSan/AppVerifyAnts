@@ -10,18 +10,19 @@ exports.nuevoUsuario = async(req, res)=>{
     if (!errores.isEmpty()){
         return res.status(400).json({errores: errores.array()});
     }
+    
     //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
    // console.log(req.body);
-    const {email, password} = req.body; 
+    const {emailUsu, password} = req.body; 
 
         try {
 
             // Anexo  Vaidación 
-            let  usuario = await Usuario.findOne({email}); 
+            let  usuario = await Usuario.findOne({emailUsu}); 
 
             if ( usuario ){
 
-                return  res.status(400).json({msg: `El usuario con este email, ${email} ya esta registrado`});
+                return  res.status(400).json({msg: `El usuario con este email, ${emailUsu} ya esta registrado`});
 
             }
 
