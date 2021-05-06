@@ -27,7 +27,7 @@ const patrimonioSchema = new Schema({
 	fechaCompra:{
 		type:Date, 
 		required:false,
-	}	
+	},	
     usuario:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Usuario',

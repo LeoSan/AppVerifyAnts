@@ -18,11 +18,32 @@ app.use(express.json());
  
 //Rutas de Accesos
 //Crear usuario 
-app.use('/api/usuarios', require('./routes/usuario'));  // esta  sentencia aun no se crear hasta que puedas generar los controladores 
- 
-//Crear Categoria - Proximo Desarrollo 
- 
+app.use('/api/usuarios', require('./routes/usuario')); 
+
+//Crear Categoria  
+app.use('/api/categoria', require('./routes/categoria'));
+
+//Crear Recurrente  
+app.use('/api/recurrente', require('./routes/recurrente'));
+
+//Crear Actividad  
+app.use('/api/actividad', require('./routes/actividad'));
+
+//Crear Acción
+app.use('/api/accion', require('./routes/accion'));
+
+//Crear Gasto
+app.use('/api/gasto', require('./routes/gasto'));
+
+//Crear Ingreso
+app.use('/api/ingreso', require('./routes/ingreso'));
+
+//Crear Patrimonio
+app.use('/api/patrimonio', require('./routes/patrimonio'));
+
 //Iniciamos nuestro  servidor
 app.listen(port, '0.0.0.0', () => {
+ 
    console.log(`El servidor esta funcionando en el puerto -> ${port}`);
+   
 });

@@ -24,6 +24,11 @@ const categoriaSchema = new Schema({
         ref:'Usuario',
         required:true,
     },
+    actividad:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Actividad',
+        required:true,
+    },	
 	activo:{
 	   type: Number,
 	   default:	1

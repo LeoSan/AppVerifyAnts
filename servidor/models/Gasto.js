@@ -37,7 +37,7 @@ const gastoSchema = new Schema({
 	recurrente:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Recurrente',
-        required:true
+        required:false
     },	
 	activo:{
 	   type: Number,

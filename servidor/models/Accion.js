@@ -5,43 +5,39 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema
  
 // Creamos nuestra estructura que tedra nuestra tabla en la base de datos.
-const ingresoSchema = new Schema({
-	nomIngreso : {
+const accionSchema = new Schema({
+	nomAccion : {
 	   type:String,
 	   required:true,
 	   unique:true,
 	   lowercase:true,
 	   trim:true,
 	},
-	desIngreso:{
+	desAccion:{
 	   type: String,
-	   required:false,
+	   required:true,
 	   lowercase:true,
 	   trim:true,
 	},
-    montoIngreso:{
-        type:Number,
-		required:true,
-        default:0
-    },	
-    usuario:{
+    autor:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Usuario',
-        required:true
+        required:true,
     },
     categoria:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Categoria',
-        required:true
-    },    
-	recurrente:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Recurrente',
-        required:false
+        required:true,
     },	
 	activo:{
 	   type: Number,
 	   default:	1
+	},
+	inicio:{
+		type:Date, 
+	},
+	fin:{
+		type:Date, 
 	},
 	registro:{
 		type:Date, 
@@ -49,5 +45,5 @@ const ingresoSchema = new Schema({
 	}
 	
 });
-//Esta  sentencia nos  permite exportar nuestro modelo  como vemos se pasa como parametros (NombreModelo, EstructuraModelo ) -> definidos previamente.
-module.exports = mongoose.model('Ingreso', ingresoSchema);
+//Esta  sentencia nos  permite eportar nuestro modelo  como vemos se pasa como parametros (NombreModelo, EstructuraModelo ) -> definidos previamente.
+module.exports = mongoose.model('Accion', accionSchema);

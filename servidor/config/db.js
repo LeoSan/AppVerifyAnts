@@ -18,6 +18,7 @@ const conectarBD = async()=>{
        console.log(error);
        process.exit(1);//en caso de error detener la app 
    }
+ 
 }
  
 //Por ultimo exportamos para poder usarlo en el index.js del servidor.
