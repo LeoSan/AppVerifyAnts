@@ -22,6 +22,9 @@ app.use(cors());
 app.use(express.json());
  
 //Rutas de Accesos
+//Crear Acción
+app.use('/api/accion', require('./routes/accion'));
+
 //Crear usuario 
 app.use('/api/usuarios', require('./routes/usuario')); 
 
@@ -34,8 +37,6 @@ app.use('/api/recurrente', require('./routes/recurrente'));
 //Crear Actividad  
 app.use('/api/actividad', require('./routes/actividad'));
 
-//Crear Acción
-app.use('/api/accion', require('./routes/accion'));
 
 //Crear Gasto
 app.use('/api/gasto', require('./routes/gasto'));

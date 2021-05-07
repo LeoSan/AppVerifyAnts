@@ -25,4 +25,17 @@ router.post('/',
         accionCotroller.newAccion 
 );
 
+//End-Point - Aliminar Acccion
+router.put('/', 
+      auth,
+      accionCotroller.updateAccion
+);
+
+//End-Point - Aliminar Acccion
+router.delete('/', 
+      auth,
+      accionCotroller.deleteAccion
+);
+
+
 module.exports = router;
