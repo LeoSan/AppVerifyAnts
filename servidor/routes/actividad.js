@@ -12,8 +12,7 @@ const router  = express.Router();
 //Importamos el validador de Token para ejecutar esta tarea 
 const auth  = require('../middleware/auth');
 
-
-//End-Point - Crear Categoria Recurrente
+//End-Point - Crear Actividad
 router.post('/',
         //Paso 2         
         auth, 
@@ -22,6 +21,19 @@ router.post('/',
             check('nomActi',  'El nombre de la actividad debe ser de al menos 6 caracteres.').isLength({min:6}), //Valida minimo 6 caracteres
         ] , 
         actividadCotroller.newActividad
+);
+
+
+//End-Point - Editar Actividad
+router.put('/', 
+      auth,
+      actividadCotroller.updateActividad
+);
+
+//End-Point - Aliminar Actividad
+router.delete('/', 
+      auth,
+      actividadCotroller.deleteActividad
 );
 
 module.exports = router;

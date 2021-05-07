@@ -25,7 +25,7 @@ router.post('/',
         accionCotroller.newAccion 
 );
 
-//End-Point - Aliminar Acccion
+//End-Point - Editar Acccion
 router.put('/', 
       auth,
       accionCotroller.updateAccion
@@ -36,6 +36,5 @@ router.delete('/',
       auth,
       accionCotroller.deleteAccion
 );
-
 
 module.exports = router;

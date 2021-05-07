@@ -23,32 +23,31 @@ app.use(express.json());
  
 //Rutas de Accesos
 //Crear Acción
-app.use('/api/accion', require('./routes/accion'));
-
-//Crear usuario 
-app.use('/api/usuarios', require('./routes/usuario')); 
-
-//Crear Categoria  
-app.use('/api/categoria', require('./routes/categoria'));
-
-//Crear Recurrente  
-app.use('/api/recurrente', require('./routes/recurrente'));
+app.use('/api/accion',    require('./routes/accion'));
 
 //Crear Actividad  
 app.use('/api/actividad', require('./routes/actividad'));
 
+//Validar Autenticación 
+app.use('/api/auth',      require('./routes/auth'));
+
+//Crear Categoria  
+app.use('/api/categoria', require('./routes/categoria'));
 
 //Crear Gasto
-app.use('/api/gasto', require('./routes/gasto'));
+app.use('/api/gasto',     require('./routes/gasto'));
 
 //Crear Ingreso
-app.use('/api/ingreso', require('./routes/ingreso'));
+app.use('/api/ingreso',   require('./routes/ingreso'));
 
 //Crear Patrimonio
 app.use('/api/patrimonio', require('./routes/patrimonio'));
 
-//Validar Autenticación 
-app.use('/api/auth', require('./routes/auth'));
+//Crear Recurrente  
+app.use('/api/recurrente', require('./routes/recurrente'));
+
+//Crear usuario 
+app.use('/api/usuarios',   require('./routes/usuario')); 
 
 //Iniciamos nuestro  servidor
 app.listen(port, '0.0.0.0', () => {
