@@ -9,13 +9,18 @@ const categoriaCotroller = require('../controller/categoriaCotroller');  // Nuev
 //Importamos la Librerias  de Router 
 const router  = express.Router();
 
+//Importamos el validador de Token para ejecutar esta tarea 
+const auth  = require('../middleware/auth');
+
 //End-Point - Crear Categorias
-router.post('/',[
-    check('nomCate',  'El nombre de la categoria es obligatorio.').not().isEmpty(), //Valida vacio
-    check('autor',    'El Autor es obligatorio.').not().isEmpty(), //Valida vacio
-    check('nomCate',  'El nombre de la categoria debe ser de al menos 6 caracteres.').isLength({min:6}), //Valida minimo 6 caracteres
-] , 
-categoriaCotroller.newCategoria 
+router.post('/',
+        auth, 
+        [
+            check('nomCate',  'El nombre de la categoria es obligatorio.').not().isEmpty(), //Valida vacio
+            check('autor',    'El Autor es obligatorio.').not().isEmpty(), //Valida vacio
+            check('nomCate',  'El nombre de la categoria debe ser de al menos 6 caracteres.').isLength({min:6}), //Valida minimo 6 caracteres
+        ] , 
+        categoriaCotroller.newCategoria 
 );
 
 module.exports = router;

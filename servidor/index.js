@@ -1,5 +1,6 @@
 const express = require('express');
 const connectarDB = require('./config/db'); // Importamos nuestro conector de BD // Debes crear la conexion antes
+const cors = require('cors');
 require('dotenv').config({ path :'config/variables.env'});
 
 //Crear el servidor
@@ -10,6 +11,10 @@ console.log(`Iniciando nuestro servidor en node.js - express`);
 // ejecutamos la función para conectar a la base de datos
  connectarDB(); // Debes crear la conexion antes
  
+//Habilitar cors 
+app.use(cors());
+
+
 //Creamos el puerto para la app
  const port = process.env.DB_PORT || 5000;  // Debes instalar  y crear el env que son las variables de entorno
  
@@ -40,6 +45,9 @@ app.use('/api/ingreso', require('./routes/ingreso'));
 
 //Crear Patrimonio
 app.use('/api/patrimonio', require('./routes/patrimonio'));
+
+//Validar Autenticación 
+app.use('/api/auth', require('./routes/auth'));
 
 //Iniciamos nuestro  servidor
 app.listen(port, '0.0.0.0', () => {

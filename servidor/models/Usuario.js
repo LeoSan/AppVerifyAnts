@@ -6,7 +6,7 @@ const Schema = mongoose.Schema
  
 // Creamos nuestra estructura que tedra nuestra tabla en la base de datos.
 const usuariosSchema = new Schema({
-	emailUsu : {
+	emailUsu: {
 	   type:String,
 	   required:true,
 	   unique:true,

@@ -9,12 +9,19 @@ const actividadCotroller = require('../controller/actividadCotroller');  // Nuev
 //Importamos la Librerias  de Router 
 const router  = express.Router();
 
+//Importamos el validador de Token para ejecutar esta tarea 
+const auth  = require('../middleware/auth');
+
+
 //End-Point - Crear Categoria Recurrente
-router.post('/',[
-    check('nomActi',  'El nombre de la actividad es obligatorio.').not().isEmpty(), //Valida vacio
-    check('nomActi',  'El nombre de la actividad debe ser de al menos 6 caracteres.').isLength({min:6}), //Valida minimo 6 caracteres
-] , 
-actividadCotroller.newActividad
+router.post('/',
+        //Paso 2         
+        auth, 
+        [
+            check('nomActi',  'El nombre de la actividad es obligatorio.').not().isEmpty(), //Valida vacio
+            check('nomActi',  'El nombre de la actividad debe ser de al menos 6 caracteres.').isLength({min:6}), //Valida minimo 6 caracteres
+        ] , 
+        actividadCotroller.newActividad
 );
 
 module.exports = router;

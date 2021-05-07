@@ -20,6 +20,5 @@ const conectarBD = async()=>{
    }
  
 }
- 
 //Por ultimo exportamos para poder usarlo en el index.js del servidor.
 module.exports = conectarBD;
