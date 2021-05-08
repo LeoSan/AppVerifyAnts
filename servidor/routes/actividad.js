@@ -23,6 +23,11 @@ router.post('/',
         actividadCotroller.newActividad
 );
 
+//End-Point - Consultar Actividad
+router.get('/',
+      auth,  
+      actividadCotroller.getActividad
+);
 
 //End-Point - Editar Actividad
 router.put('/', 

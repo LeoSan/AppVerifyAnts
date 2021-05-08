@@ -38,6 +38,38 @@ exports.newActividad = async(req, res)=>{
         }
 }
 
+//Obtener Actividd  
+exports.getActividad = async (req, res) =>{
+    //Extraer proyecto 
+    try {
+        //Distroccion 
+        const { nomActi, activo, tipo } = req.body; //->Asi se usa cuando es un objeto 
+        
+        let existeVAl = await Actividad.findOne({ nomActi }); 
+
+        if(!existeVAl){
+            return res.status(404).json({msg:`Tu acción con nombre ${ nomActi }, No existe en la base de datos.`});
+        }
+
+        if ( tipo === "1-M" ){
+            //Obtener 1-M
+            const actividad = await Actividad.find({ activo }).sort({nomActi:-1});
+            res.json({ actividad });
+       }else{
+            //Obtener 1.1
+            const actividad = await Actividad.find({ nomActi });
+            res.json({ actividad });
+        }   
+
+       
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Hubo un error');
+    }
+}
+
+
 //Udadate Actividad 
 exports.updateActividad = async (req, res)=>{
     
