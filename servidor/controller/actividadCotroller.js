@@ -75,6 +75,7 @@ exports.updateActividad = async (req, res)=>{
   }
 }
 
+//Delete Actividad
 exports.deleteActividad = async (req, res)=>{
     //Extraer informacion del proyecto 
     try {

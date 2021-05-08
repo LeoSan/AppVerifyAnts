@@ -23,4 +23,16 @@ router.post('/',
         categoriaCotroller.newCategoria 
 );
 
+//End-Point - Editar Actividad
+router.put('/', 
+      auth,
+      categoriaCotroller.updateCategoria
+);
+
+//End-Point - Aliminar Actividad
+router.delete('/', 
+      auth,
+      categoriaCotroller.deleteCategoria
+);
+
 module.exports = router;
