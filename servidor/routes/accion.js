@@ -25,6 +25,12 @@ router.post('/',
         accionCotroller.newAccion 
 );
 
+//End-Point - Consultar Acccion
+router.get('/',
+      auth,  
+      accionCotroller.getAccion
+);
+
 //End-Point - Editar Acccion
 router.put('/', 
       auth,
