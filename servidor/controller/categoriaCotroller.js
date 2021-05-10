@@ -2,6 +2,7 @@ const Categoria = require('../models/Categoria');
 
 const {validationResult} = require('express-validator');
 
+//Crear Categoria  
 exports.newCategoria = async(req, res)=>{
     //Mostrar mensaje de error de express-validator 
     const errores  = validationResult(req); 
@@ -33,6 +34,42 @@ exports.newCategoria = async(req, res)=>{
         } catch (error) {
             res.json({msj: `Hubo un error en la comunicación !! -> ${error} `});
         }
+}
+
+//Obtener Categoria  
+exports.getCategoria = async (req, res) =>{
+    //Extraer proyecto 
+    try {
+        //Distroccion 
+        const { nomCate, autor, activo, tipo } = req.body; //->Asi se usa cuando es un objeto 
+
+        if ( tipo === "1-M" ){
+            //Obtener 1-M
+            let existeVAl = await Categoria.findOne({ autor }); 
+
+            if(!existeVAl){
+                return res.status(404).json({msg:`No Existe categorias para este usuario.`});
+            }
+
+            const categoria = await Categoria.find( { $and: [{autor:autor}, {activo: activo }] } ).sort({nomCate:-1});
+            res.json({ categoria });
+
+        }else{
+            //Obtener 1.1
+            let existeVAl = await Categoria.findOne({ nomCate }); 
+
+            if(!existeVAl){
+                return res.status(404).json({msg:`Tu categoria con nombre ${ nomCate }, No existe en la base de datos.`});
+            }            
+
+            const categoria = await Categoria.find({ nomCate });
+            res.json({ categoria });
+        }   
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Hubo un error');
+    }
 }
 
 //Udadate Categoria 
@@ -93,4 +130,4 @@ exports.deleteCategoria = async (req, res)=>{
         console.log(error);
         res.status(500).send("Error en el servidor.");
     }
-  }
+}

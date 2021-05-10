@@ -23,13 +23,19 @@ router.post('/',
         categoriaCotroller.newCategoria 
 );
 
-//End-Point - Editar Actividad
+//End-Point - Consultar Categoria
+router.get('/',
+      auth,  
+      categoriaCotroller.getCategoria
+);
+
+//End-Point - Editar Categoria
 router.put('/', 
       auth,
       categoriaCotroller.updateCategoria
 );
 
-//End-Point - Aliminar Actividad
+//End-Point - Aliminar Categoria
 router.delete('/', 
       auth,
       categoriaCotroller.deleteCategoria
