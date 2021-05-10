@@ -12,7 +12,7 @@ exports.newCategoria = async(req, res)=>{
     }
     
     //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
-    console.log(req.body);
+   // console.log(req.body);
     const {nomCate} = req.body; 
 
         try {
@@ -29,10 +29,10 @@ exports.newCategoria = async(req, res)=>{
         //Creamos Categoria si no esta duplicado 
             categoria = new Categoria(req.body);
             await categoria.save();
-            res.json({msj: 'Categoria Creada Exitosamente!!'});
+            res.status(200).json({msj: 'Categoria Creada Exitosamente!!'});
 
         } catch (error) {
-            res.json({msj: `Hubo un error en la comunicación !! -> ${error} `});
+            res.status(200).json({msj: `Hubo un error en la comunicación !! -> ${error} `});
         }
 }
 
@@ -52,7 +52,7 @@ exports.getCategoria = async (req, res) =>{
             }
 
             const categoria = await Categoria.find( { $and: [{autor:autor}, {activo: activo }] } ).sort({nomCate:-1});
-            res.json({ categoria });
+            res.status(200).json({ categoria });
 
         }else{
             //Obtener 1.1
@@ -63,7 +63,7 @@ exports.getCategoria = async (req, res) =>{
             }            
 
             const categoria = await Categoria.find({ nomCate });
-            res.json({ categoria });
+            res.status(200).json({ categoria });
         }   
 
     } catch (error) {
@@ -101,7 +101,7 @@ exports.updateCategoria = async (req, res)=>{
         
         //Guadar Edicción 
         valExiste = await Categoria.findByIdAndUpdate({ _id: id }, newObj, {new:true});
-        res.json({msg:`Tu Categoria con nombre ${nomOld}, fue editado.`});
+        res.status(200).json({msg:`Tu Categoria con nombre ${nomOld}, fue editado.`});
      
   } catch (error) {
       console.log(error);
@@ -124,7 +124,7 @@ exports.deleteCategoria = async (req, res)=>{
 
         //Eliminar Categoria 
         await Categoria.findByIdAndRemove( { _id:id } )
-        res.json({msg:`Tu Categoria con nombre ${nomCate}, fue eliminado.`});
+        res.status(200).json({msg:`Tu Categoria con nombre ${nomCate}, fue eliminado.`});
        
     } catch (error) {
         console.log(error);

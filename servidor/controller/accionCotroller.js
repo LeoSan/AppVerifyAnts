@@ -95,7 +95,7 @@ exports.updateAccion = async (req, res)=>{
         
         //Guadar la Accion Editada 
         accionExiste = await Accion.findByIdAndUpdate({ _id: id }, nuevaAccion, {new:true});
-        res.json({msg:`Tu acción con nombre ${nomAccionOld}, fue editado.`});
+        res.status(404).json({msg:`Tu acción con nombre ${nomAccionOld}, fue editado.`});
      
   } catch (error) {
       console.log(error);
@@ -118,7 +118,7 @@ exports.deleteAccion = async (req, res)=>{
           }
           //Eliminar Accion 
           await Accion.findByIdAndRemove({ _id:id })
-          res.json({msg:`Tu acción con nombre ${nomAccion}, fue eliminado.`});
+          res.status(404).json({msg:`Tu acción con nombre ${nomAccion}, fue eliminado.`});
        
     } catch (error) {
         console.log(error);

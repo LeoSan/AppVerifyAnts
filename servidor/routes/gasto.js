@@ -13,7 +13,7 @@ const router  = express.Router();
 const auth  = require('../middleware/auth');
 
 
-//End-Point - Crear Categorias
+//End-Point - Crear Gasto
 router.post('/',
         auth,
         [
@@ -24,6 +24,25 @@ router.post('/',
             check('nomGasto',      'El nombre de la categoria debe ser de al menos 6 caracteres.').isLength({min:6}), //Valida minimo 6 caracteres
         ] , 
         gastoCotroller.newGasto 
+);
+
+
+//End-Point - Consultar Gastos 
+router.get('/',
+      auth,  
+      gastoCotroller.getGastos
+);
+
+//End-Point - Editar Gasto
+router.put('/', 
+      auth,
+      gastoCotroller.updateGasto
+);
+
+//End-Point - Aliminar Categoria
+router.delete('/', 
+      auth,
+      gastoCotroller.deleteGasto
 );
 
 module.exports = router;
