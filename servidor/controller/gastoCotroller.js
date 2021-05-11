@@ -71,8 +71,6 @@ exports.getGastos = async (req, res) =>{
     }
 }
 
-
-
 //Udadate Gasto 
 exports.updateGasto = async (req, res)=>{
     

@@ -2,6 +2,7 @@ const Patrimonio = require('../models/Patrimonio');
 
 const {validationResult} = require('express-validator');
 
+//Crea Patrimonio 
 exports.newPatrimonio = async(req, res)=>{
     //Mostrar mensaje de error de express-validator 
     const errores  = validationResult(req); 
@@ -33,4 +34,94 @@ exports.newPatrimonio = async(req, res)=>{
         } catch (error) {
             res.json({msj: `Hubo un error en la comunicación !! -> ${error} `});
         }
+}
+
+//Obtener Patrimonio   
+exports.getPatrimonio = async (req, res) =>{
+    try {
+        //Distroccion 
+        const { nomPatrimonio, usuario, categoria, activo, tipo } = req.body; //->Asi se usa cuando es un objeto 
+
+        if ( tipo === "1-M" ){
+            //Obtener 1-M
+            let existeVAl = await Patrimonio.findOne({ usuario }); 
+
+            if(!existeVAl)return res.status(404).json({msg:`No Existe algun tipo de Patrimonio para este usuario.`});
+            
+             //Ejemplo Multiple de modelos 
+            //const patrimonio = await Patrimonio.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).populate({ path: 'usuario', model: 'Usuario', select: 'nomUsu'}).exec();
+            const patrimonio = await Patrimonio.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
+            res.status(200).json({ patrimonio });
+           
+        }else{
+            //Obtener 1.1
+            let existeVAl = await Patrimonio.findOne({ nomPatrimonio }); 
+
+            if(!existeVAl)return res.status(404).json({msg:`Tu Patrimonio con nombre ${ nomPatrimonio }, No existe en la base de datos.`});
+            
+            const patrimonio = await Patrimonio.find( { nomPatrimonio } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
+            res.status(200).json({ patrimonio });
+        }   
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Hubo un error');
+    }
+}
+
+//Udadate Patrimonio 
+exports.updatePatrimonio = async (req, res)=>{
+    
+    //Revisar que que cumple con las reglas de validaciòn del routes 
+    const errors = validationResult(req);
+    if ( !errors.isEmpty() ){
+        return res.status(400).json({errores: errors.array()})
+    }
+
+  //Extraer informacion para validacion 
+  try {
+        //Distroccion de Json que se envia 
+        const { id, nomPatrimonio, desPatrimonio, montoPatrimonio,  idCategoria, activo } = req.body; //->Asi se usa cuando es un objeto 
+        //Valido Categoria 
+          let valExiste = await Patrimonio.findById( id ); 
+  
+        if (!valExiste)return res.status(404).json({msg:`Tu Patrimonio con nombre ${nomPatrimonio}, No existe en la base de datos.`});
+        
+        //crear un objeto con la nueva informaciòn 
+        const newObj        = {}
+        newObj.nomPatrimonio   = nomPatrimonio; 
+        newObj.desPatrimonio   = desPatrimonio; 
+        newObj.montoPatrimonio = montoPatrimonio; 
+        newObj.categoria       = idCategoria; 
+        newObj.activo          = activo; 
+
+        let nomOld = valExiste.nomPatrimonio; 
+        
+        //Guadar Edicción 
+        valExiste = await Patrimonio.findByIdAndUpdate({ _id: id }, newObj, {new:true});
+        res.status(200).json({msg:`Tu Patrimonio con nombre ${nomOld}, fue editado.`});
+     
+  } catch (error) {
+      console.log(error);
+      res.status(500).send("Error en el servidor");
+  }
+}
+
+//Delete Patrimonio
+exports.deletePatrimonio = async (req, res)=>{
+    try {
+        const {id, nomPatrimonio} = req.body;// Asi es cuando se pasa un objeto  es decir un json tienes param, query, body
+        //Valido Patrimonio 
+        let valExiste = await Patrimonio.findById(id); 
+  
+        if (!valExiste)return res.status(404).json({msg:`Tu Patrimonio con nombre ${nomPatrimonio}, No existe en la base de datos.`});
+
+        //Eliminar Patrimonio 
+        await Patrimonio.findByIdAndRemove( { _id:id } )
+        res.status(200).json({msg:`Tu Patrimonio con nombre ${nomPatrimonio}, fue eliminado.`});
+       
+    } catch (error) {
+        console.log(error);
+        res.status(500).send("Error en el servidor.");
+    }
 }

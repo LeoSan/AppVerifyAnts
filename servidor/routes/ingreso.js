@@ -26,4 +26,28 @@ router.post('/',
         ingresoCotroller.newIngreso
 );
 
+//End-Point - Consultar Ingreso 
+router.get('/',
+      auth,  
+      ingresoCotroller.getIngreso
+);
+
+//End-Point - Editar Ingreso
+router.put('/', 
+      auth,
+      [
+            check('nomIngreso',   'El nombre de la categoria es obligatorio.').not().isEmpty(), //Valida vacio
+            check('montoIngreso', 'El Monto es obligatorio.').not().isEmpty(), //Valida vacio
+            check('idCategoria',    'El Categoria es obligatorio.').not().isEmpty(), //Valida vacio
+            check('nomIngreso',   'El nombre de la categoria debe ser de al menos 6 caracteres.').isLength({min:6}), //Valida minimo 6 caracteres
+      ],       
+      ingresoCotroller.updateIngreso
+);
+
+//End-Point - Eliminar Ingreso
+router.delete('/', 
+      auth,
+      ingresoCotroller.deleteIngreso
+);
+
 module.exports = router;

@@ -39,7 +39,7 @@ router.put('/',
       gastoCotroller.updateGasto
 );
 
-//End-Point - Aliminar Categoria
+//End-Point - Eliminar Gasto
 router.delete('/', 
       auth,
       gastoCotroller.deleteGasto

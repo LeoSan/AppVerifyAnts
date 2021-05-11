@@ -29,16 +29,8 @@ const ingresoSchema = new Schema({
         ref:'Usuario',
         required:true
     },
-    categoria:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Categoria',
-        required:true
-    },    
-	recurrente:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Recurrente',
-        required:false
-    },	
+    categoria: [{ type: Schema.Types.ObjectId, ref: 'Categoria', required:true }],    
+	recurrente:[{ type: Schema.Types.ObjectId, ref: 'Recurrente' }],   	
 	activo:{
 	   type: Number,
 	   default:	1
