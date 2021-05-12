@@ -1,5 +1,6 @@
 const Ingreso = require('../models/Ingreso');
 
+
 const {validationResult} = require('express-validator');
 
 //Crear Ingreso

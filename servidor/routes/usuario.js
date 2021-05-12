@@ -22,4 +22,37 @@ router.post('/',
         usuarioController.nuevoUsuario 
 );
 
+//End-Point - Editar Usuario
+router.put('/', 
+    auth,
+    [
+        check('id',        'El identificador es obligatorio.').not().isEmpty(), //Valida vacio    
+        check('emailUsu',  'El correo es obligatorio.').not().isEmpty(), //Valida vacio    
+        check('nomUsu',    'El nombre es obligatorio.').not().isEmpty(), //Valida vacio    
+    ],       
+    usuarioController.updateUsuario
+);
+
+//End-Point - Editar Usuario
+router.put('/pass', 
+      auth,
+    [
+        check('id',        'El identificador es obligatorio.').not().isEmpty(), //Valida vacio    
+        check('emailUsu',  'El correo es obligatorio.').not().isEmpty(), //Valida vacio    
+        check('password',  'El password es obligatorio.').not().isEmpty(), //Valida vacio    
+    ],       
+    usuarioController.cambioClaveUsuario
+);
+
+//End-Point - Eliminar Usuario
+router.delete('/', 
+      auth,
+      [
+        check('id',       'El identificador es obligatorio.').not().isEmpty(), //Valida vacio    
+        check('emailUsu',  'El correo es  obligatorio.').not().isEmpty(), //Valida vacio    
+      ],      
+      usuarioController.deleteUsuario
+);
+
+
 module.exports = router;

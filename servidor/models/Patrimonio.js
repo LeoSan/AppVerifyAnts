@@ -27,12 +27,8 @@ const patrimonioSchema = new Schema({
 	fechaCompra:{
 		type:Date, 
 		required:false,
-	},	
-    usuario:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Usuario',
-        required:true
-    },
+	},
+	usuario: [{ type: Schema.Types.ObjectId, ref: 'Usuario', required:true }],    	
 	categoria: [{ type: Schema.Types.ObjectId, ref: 'Categoria', required:true }],     
 	activo:{
 	   type: Number,

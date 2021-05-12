@@ -23,4 +23,31 @@ router.post('/',
         recurrenteCotroller.newRecurrente 
 );
 
+//End-Point - Consultar Recurrente 
+router.get('/',
+      auth,  
+      recurrenteCotroller.getRecurrente
+);
+
+//End-Point - Editar Recurrente
+router.put('/', 
+      auth,
+    [
+        check('id',       'El identificador es obligatorio.').not().isEmpty(), //Valida vacio    
+        check('nomRecu',  'El nombre de la categoria recurrente es obligatorio.').not().isEmpty(), //Valida vacio    
+    ],       
+    recurrenteCotroller.updateRecurrente
+);
+
+//End-Point - Eliminar Recurrente
+router.delete('/', 
+      auth,
+      [
+        check('id',       'El identificador es obligatorio.').not().isEmpty(), //Valida vacio    
+        check('nomRecu',  'El nombre de la categoria recurrente es obligatorio.').not().isEmpty(), //Valida vacio    
+      ],      
+      recurrenteCotroller.deleteRecurrente
+);
+
+
 module.exports = router;
