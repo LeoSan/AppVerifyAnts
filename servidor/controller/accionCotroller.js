@@ -17,14 +17,11 @@ exports.newAccion = async(req, res)=>{
         try {
             //Vaidación 
             let  accion = await Accion.findOne({nomAccion}); 
-            if ( accion ){
-                return  res.status(400).json({msg: `La accion No la puedes repetir, ${nomAccion}`});
-            }
+            if ( accion )return  res.status(400).json({msg: `La accion No la puedes repetir, ${nomAccion}`});            
         //Creamos Accion si no esta duplicado 
             accion = new Accion(req.body);
             await accion.save();
             res.json({msj: 'Accion Creada Exitosamente!!'});
-
         } catch (error) {
             res.json({msj: `Hubo un error en la comunicación !! -> ${error} `});
         }
@@ -39,9 +36,7 @@ exports.getAccion = async (req, res) =>{
         
         let existeVAl = await Accion.findOne({ nomAccion }); 
 
-        if(!existeVAl){
-            return res.status(404).json({msg:`Tu acción con nombre ${ nomAccion }, No existe en la base de datos.`});
-        }
+        if(!existeVAl)return res.status(404).json({msg:`Tu acción con nombre ${ nomAccion }, No existe en la base de datos.`});
 
         //Verificar el autor  
         if (existeVAl.autor.toString() !== autor ){
@@ -82,9 +77,8 @@ exports.updateAccion = async (req, res)=>{
         //Valido Acción 
           let accionExiste = await Accion.findById(id); // Leo : Mucho ojo es la forma de obtener los parametros por post 
   
-          if (!accionExiste){
-              return res.status(404).json({msg:`Tu acción con nombre ${nomAccion}, No existe en la base de datos.`});
-          }
+          if (!accionExiste)return res.status(404).json({msg:`Tu acción con nombre ${nomAccion}, No existe en la base de datos.`});
+          
         //crear un objeto con la nueva informaciòn 
         const nuevaAccion = {}
         nuevaAccion.nomAccion = nomAccion; 
@@ -113,9 +107,8 @@ exports.deleteAccion = async (req, res)=>{
           //Si la tarea existe o no
           let accionExiste = await Accion.findById(id); // Leo : Mucho ojo es la forma de obtener los parametros por post 
   
-          if (!accionExiste){
-              return res.status(404).json({msg:`Tu acción con nombre ${nomAccion}, No existe en la base de datos.`});
-          }
+          if (!accionExiste) return res.status(404).json({msg:`Tu acción con nombre ${nomAccion}, No existe en la base de datos.`});
+          
           //Eliminar Accion 
           await Accion.findByIdAndRemove({ _id:id })
           res.status(404).json({msg:`Tu acción con nombre ${nomAccion}, fue eliminado.`});

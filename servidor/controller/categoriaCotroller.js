@@ -20,11 +20,7 @@ exports.newCategoria = async(req, res)=>{
             // Anexo  Vaidación 
             let  categoria = await Categoria.findOne({nomCate}); 
 
-            if ( categoria ){
-
-                return  res.status(400).json({msg: `La categoria No la puedes repetir, ${nomCate}`});
-
-            }
+            if ( categoria )return  res.status(400).json({msg: `La categoria No la puedes repetir, ${nomCate}`});
 
         //Creamos Categoria si no esta duplicado 
             categoria = new Categoria(req.body);
@@ -47,9 +43,7 @@ exports.getCategoria = async (req, res) =>{
             //Obtener 1-M
             let existeVAl = await Categoria.findOne({ autor }); 
 
-            if(!existeVAl){
-                return res.status(404).json({msg:`No Existe categorias para este usuario.`});
-            }
+            if(!existeVAl) return res.status(404).json({msg:`No Existe categorias para este usuario.`});
 
             const categoria = await Categoria.find( { $and: [{autor:autor}, {activo: activo }] } ).sort({nomCate:-1});
             res.status(200).json({ categoria });
@@ -58,9 +52,7 @@ exports.getCategoria = async (req, res) =>{
             //Obtener 1.1
             let existeVAl = await Categoria.findOne({ nomCate }); 
 
-            if(!existeVAl){
-                return res.status(404).json({msg:`Tu categoria con nombre ${ nomCate }, No existe en la base de datos.`});
-            }            
+            if(!existeVAl) return res.status(404).json({msg:`Tu categoria con nombre ${ nomCate }, No existe en la base de datos.`});
 
             const categoria = await Categoria.find({ nomCate });
             res.status(200).json({ categoria });
@@ -88,9 +80,8 @@ exports.updateCategoria = async (req, res)=>{
         //Valido Categoria 
           let valExiste = await Categoria.findById(id); // Leo : Mucho ojo es la forma de obtener los parametros por post 
   
-          if (!valExiste){
-              return res.status(404).json({msg:`Tu Categoria con nombre ${nomCate}, No existe en la base de datos.`});
-          }
+          if (!valExiste) return res.status(404).json({msg:`Tu Categoria con nombre ${nomCate}, No existe en la base de datos.`});
+          
         //crear un objeto con la nueva informaciòn 
         const newObj     = {}
         newObj.nomCate   = nomCate; 
@@ -113,15 +104,12 @@ exports.updateCategoria = async (req, res)=>{
 exports.deleteCategoria = async (req, res)=>{
     //Extraer informacion del proyecto 
     try {
-   
         const {id, nomCate} = req.body;// Asi es cuando se pasa un objeto  es decir un json 
         //Valido Categoria 
         let valExiste = await Categoria.findById(id); // Leo : Mucho ojo es la forma de obtener los parametros por post 
   
-        if (!valExiste){
-            return res.status(404).json({msg:`Tu Categoria con nombre ${nomCate}, No existe en la base de datos.`});
-        }
-
+        if (!valExiste)  return res.status(404).json({msg:`Tu Categoria con nombre ${nomCate}, No existe en la base de datos.`});
+        
         //Eliminar Categoria 
         await Categoria.findByIdAndRemove( { _id:id } )
         res.status(200).json({msg:`Tu Categoria con nombre ${nomCate}, fue eliminado.`});

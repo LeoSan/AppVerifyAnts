@@ -16,15 +16,10 @@ exports.nuevoUsuario = async(req, res)=>{
     const {emailUsu, password} = req.body; 
 
         try {
-
             // Anexo  Vaidación 
             let  usuario = await Usuario.findOne({emailUsu}); 
 
-            if ( usuario ){
-
-                return  res.status(400).json({msg: `El usuario con este email, ${emailUsu} ya esta registrado`});
-
-            }
+            if ( usuario ) return  res.status(400).json({msg: `El usuario con este email, ${emailUsu} ya esta registrado`});
 
         //Creamos usuario si no esta duplicado 
             usuario = new Usuario(req.body);

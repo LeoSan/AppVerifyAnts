@@ -20,11 +20,7 @@ exports.newActividad = async(req, res)=>{
             // Anexo  Vaidación 
             let  actividad = await Actividad.findOne({nomActi}); 
 
-            if ( actividad ){
-
-                return  res.status(400).json({msg: `La actividad  ${nomActi} ya esta registrado`});
-
-            }
+            if ( actividad )return  res.status(400).json({msg: `La actividad  ${nomActi} ya esta registrado`});
 
         //Creamos usuario si no esta duplicado 
         actividad = new Actividad(req.body);
@@ -47,9 +43,7 @@ exports.getActividad = async (req, res) =>{
         
         let existeVAl = await Actividad.findOne({ nomActi }); 
 
-        if(!existeVAl){
-            return res.status(404).json({msg:`Tu acción con nombre ${ nomActi }, No existe en la base de datos.`});
-        }
+        if(!existeVAl)return res.status(404).json({msg:`Tu acción con nombre ${ nomActi }, No existe en la base de datos.`});
 
         if ( tipo === "1-M" ){
             //Obtener 1-M
@@ -60,8 +54,6 @@ exports.getActividad = async (req, res) =>{
             const actividad = await Actividad.find({ nomActi });
             res.json({ actividad });
         }   
-
-       
 
     } catch (error) {
         console.log(error);
@@ -87,9 +79,8 @@ exports.updateActividad = async (req, res)=>{
         //Valido Actividad 
           let valExiste = await Actividad.findById(id); // Leo : Mucho ojo es la forma de obtener los parametros por post 
   
-          if (!valExiste){
-              return res.status(404).json({msg:`Tu actividad con nombre ${nomActi}, No existe en la base de datos.`});
-          }
+          if (!valExiste) return res.status(404).json({msg:`Tu actividad con nombre ${nomActi}, No existe en la base de datos.`});
+          
         //crear un objeto con la nueva informaciòn 
         const newObj = {}
         newObj.nomActi = nomActi; 
@@ -111,18 +102,15 @@ exports.updateActividad = async (req, res)=>{
 exports.deleteActividad = async (req, res)=>{
     //Extraer informacion del proyecto 
     try {
-   
         const {id, nomActi} = req.body;// Asi es cuando se pasa un objeto  es decir un json 
         //Valido Actividad 
         let valExiste = await Actividad.findById(id); // Leo : Mucho ojo es la forma de obtener los parametros por post 
   
-        if (!valExiste){
-            return res.status(404).json({msg:`Tu actividad con nombre ${nomActi}, No existe en la base de datos.`});
-        }
+        if (!valExiste)return res.status(404).json({msg:`Tu actividad con nombre ${nomActi}, No existe en la base de datos.`});
 
-          //Eliminar Actividad 
-          await Actividad.findByIdAndRemove( { _id:id } )
-          res.json({msg:`Tu actividad con nombre ${nomActi}, fue eliminado.`});
+        //Eliminar Actividad 
+        await Actividad.findByIdAndRemove( { _id:id } )
+        res.json({msg:`Tu actividad con nombre ${nomActi}, fue eliminado.`});
        
     } catch (error) {
         console.log(error);

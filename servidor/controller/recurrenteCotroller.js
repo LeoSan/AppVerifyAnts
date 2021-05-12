@@ -6,9 +6,7 @@ exports.newRecurrente = async(req, res)=>{
     //Mostrar mensaje de error de express-validator 
     const errores  = validationResult(req); 
 
-    if (!errores.isEmpty()){
-        return res.status(400).json({errores: errores.array()});
-    }
+    if (!errores.isEmpty())  return res.status(400).json({errores: errores.array()});
     
     //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
     console.log(req.body);
@@ -19,13 +17,9 @@ exports.newRecurrente = async(req, res)=>{
             // Anexo  Vaidación 
             let  recurrente = await Recurrente.findOne({nomRecu}); 
 
-            if ( recurrente ){
+            if ( recurrente ) return  res.status(400).json({msg: `La categoria recurrente No la puedes repetir, ${nomRecu}`});
 
-                return  res.status(400).json({msg: `La categoria recurrente No la puedes repetir, ${nomRecu}`});
-
-            }
-
-        //Creamos Categoria si no esta duplicado 
+            //Creamos Categoria si no esta duplicado 
         recurrente = new Recurrente(req.body);
             await recurrente.save();
             res.json({msj: 'Categoria Recurrente Creada Exitosamente!!'});

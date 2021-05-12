@@ -20,11 +20,7 @@ exports.newGasto = async(req, res)=>{
             // Anexo  Vaidación 
             let  gasto = await Gasto.findOne({nomGasto}); 
 
-            if ( gasto ){
-
-                return  res.status(400).json({msg: `el gasto No la puedes repetir, ${nomGasto}`});
-
-            }
+            if ( gasto ) return  res.status(400).json({msg: `el gasto No la puedes repetir, ${nomGasto}`});
 
         //Creamos Gasto si no esta duplicado 
         gasto = new Gasto(req.body);
@@ -46,9 +42,8 @@ exports.getGastos = async (req, res) =>{
             //Obtener 1-M
             let existeVAl = await Gasto.findOne({ usuario }); 
 
-            if(!existeVAl){
-                return res.status(404).json({msg:`No Existe algun tipo de gasto para este usuario.`});
-            }
+            if(!existeVAl) return res.status(404).json({msg:`No Existe algun tipo de gasto para este usuario.`});
+            
              //Ejemplo Multiple de modelos 
             //const gasto = await Gasto.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).populate({ path: 'usuario', model: 'Usuario', select: 'nomUsu'}).exec();
             const gasto = await Gasto.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
@@ -58,9 +53,8 @@ exports.getGastos = async (req, res) =>{
             //Obtener 1.1
             let existeVAl = await Gasto.findOne({ nomGasto }); 
 
-            if(!existeVAl){
-                return res.status(404).json({msg:`Tu Gasto con nombre ${ nomGasto }, No existe en la base de datos.`});
-            }            
+            if(!existeVAl)  return res.status(404).json({msg:`Tu Gasto con nombre ${ nomGasto }, No existe en la base de datos.`});
+            
             const gasto = await Gasto.find( { nomGasto } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
             res.status(200).json({ gasto });
         }   
@@ -87,9 +81,8 @@ exports.updateGasto = async (req, res)=>{
         //Valido Categoria 
           let valExiste = await Gasto.findById( id ); 
   
-          if (!valExiste){
-              return res.status(404).json({msg:`Tu Gasto con nombre ${nomGasto}, No existe en la base de datos.`});
-          }
+          if (!valExiste) return res.status(404).json({msg:`Tu Gasto con nombre ${nomGasto}, No existe en la base de datos.`});
+          
         //crear un objeto con la nueva informaciòn 
         const newObj     = {}
         newObj.nomGasto  = nomGasto; 
@@ -118,9 +111,7 @@ exports.deleteGasto = async (req, res)=>{
         //Valido Gasto 
         let valExiste = await Gasto.findById(id); 
   
-        if (!valExiste){
-            return res.status(404).json({msg:`Tu Gasto con nombre ${nomGasto}, No existe en la base de datos.`});
-        }
+        if (!valExiste)  return res.status(404).json({msg:`Tu Gasto con nombre ${nomGasto}, No existe en la base de datos.`});
 
         //Eliminar Gasto 
         await Gasto.findByIdAndRemove( { _id:id } )

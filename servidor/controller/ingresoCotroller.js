@@ -39,7 +39,7 @@ exports.getIngreso = async (req, res) =>{
             //Obtener 1-M
             let existeVAl = await Ingreso.findOne({ usuario }); 
 
-            if(!existeVAl)return res.status(404).json({msg:`No Existe algun tipo de Ingreso para este usuario.`});
+            if(!existeVAl) return res.status(404).json({msg:`No Existe algun tipo de Ingreso para este usuario.`});
             
              //Ejemplo Multiple de modelos 
             //const ingreso = await Ingreso.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).populate({ path: 'usuario', model: 'Usuario', select: 'nomUsu'}).exec();
@@ -50,7 +50,7 @@ exports.getIngreso = async (req, res) =>{
             //Obtener 1.1
             let existeVAl = await Ingreso.findOne({ nomIngreso }); 
 
-            if(!existeVAl)return res.status(404).json({msg:`Tu Ingreso con nombre ${ nomIngreso }, No existe en la base de datos.`});
+            if(!existeVAl) return res.status(404).json({msg:`Tu Ingreso con nombre ${ nomIngreso }, No existe en la base de datos.`});
             
             const ingreso = await Ingreso.find( { nomIngreso } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
             res.status(200).json({ ingreso });
@@ -78,7 +78,7 @@ exports.updateIngreso = async (req, res)=>{
         //Valido Categoria 
           let valExiste = await Ingreso.findById( id ); 
   
-        if (!valExiste)return res.status(404).json({msg:`Tu Ingreso con nombre ${nomIngreso}, No existe en la base de datos.`});
+        if (!valExiste) return res.status(404).json({msg:`Tu Ingreso con nombre ${nomIngreso}, No existe en la base de datos.`});
         
         //crear un objeto con la nueva informaciòn 
         const newObj        = {}
@@ -108,7 +108,7 @@ exports.deleteIngreso = async (req, res)=>{
         //Valido Ingreso 
         let valExiste = await Ingreso.findById(id); 
   
-        if (!valExiste)return res.status(404).json({msg:`Tu Ingreso con nombre ${nomIngreso}, No existe en la base de datos.`});
+        if (!valExiste) return res.status(404).json({msg:`Tu Ingreso con nombre ${nomIngreso}, No existe en la base de datos.`});
 
         //Eliminar Ingreso 
         await Ingreso.findByIdAndRemove( { _id:id } )

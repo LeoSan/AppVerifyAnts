@@ -15,7 +15,7 @@ exports.autenticarUsuario = async (req, res) => {
             return res.status(400).json({errores: errors.array()})
         }
 
-    //Extrair en  email  y password 
+    //Extraer en  email  y password 
     const { emailUsu, password } = req.body; 
 
     try {

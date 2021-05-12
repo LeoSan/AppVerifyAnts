@@ -16,15 +16,10 @@ exports.newPatrimonio = async(req, res)=>{
     const { nomPatrimonio } = req.body; 
 
         try {
-
             // Anexo  Vaidación 
             let  patrimonio = await Patrimonio.findOne({nomPatrimonio}); 
 
-            if ( patrimonio ){
-
-                return  res.status(400).json({msg: `El patrimonio No la puedes repetir, ${nomPatrimonio}`});
-
-            }
+            if ( patrimonio ) return  res.status(400).json({msg: `El patrimonio No la puedes repetir, ${nomPatrimonio}`});
 
         //Creamos patrimonio si no esta duplicado 
         patrimonio = new Patrimonio(req.body);
@@ -46,7 +41,7 @@ exports.getPatrimonio = async (req, res) =>{
             //Obtener 1-M
             let existeVAl = await Patrimonio.findOne({ usuario }); 
 
-            if(!existeVAl)return res.status(404).json({msg:`No Existe algun tipo de Patrimonio para este usuario.`});
+            if(!existeVAl) return res.status(404).json({msg:`No Existe algun tipo de Patrimonio para este usuario.`});
             
              //Ejemplo Multiple de modelos 
             //const patrimonio = await Patrimonio.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).populate({ path: 'usuario', model: 'Usuario', select: 'nomUsu'}).exec();
@@ -57,7 +52,7 @@ exports.getPatrimonio = async (req, res) =>{
             //Obtener 1.1
             let existeVAl = await Patrimonio.findOne({ nomPatrimonio }); 
 
-            if(!existeVAl)return res.status(404).json({msg:`Tu Patrimonio con nombre ${ nomPatrimonio }, No existe en la base de datos.`});
+            if(!existeVAl) return res.status(404).json({msg:`Tu Patrimonio con nombre ${ nomPatrimonio }, No existe en la base de datos.`});
             
             const patrimonio = await Patrimonio.find( { nomPatrimonio } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
             res.status(200).json({ patrimonio });
@@ -85,7 +80,7 @@ exports.updatePatrimonio = async (req, res)=>{
         //Valido Categoria 
           let valExiste = await Patrimonio.findById( id ); 
   
-        if (!valExiste)return res.status(404).json({msg:`Tu Patrimonio con nombre ${nomPatrimonio}, No existe en la base de datos.`});
+        if (!valExiste) return res.status(404).json({msg:`Tu Patrimonio con nombre ${nomPatrimonio}, No existe en la base de datos.`});
         
         //crear un objeto con la nueva informaciòn 
         const newObj        = {}
@@ -114,7 +109,7 @@ exports.deletePatrimonio = async (req, res)=>{
         //Valido Patrimonio 
         let valExiste = await Patrimonio.findById(id); 
   
-        if (!valExiste)return res.status(404).json({msg:`Tu Patrimonio con nombre ${nomPatrimonio}, No existe en la base de datos.`});
+        if (!valExiste) return res.status(404).json({msg:`Tu Patrimonio con nombre ${nomPatrimonio}, No existe en la base de datos.`});
 
         //Eliminar Patrimonio 
         await Patrimonio.findByIdAndRemove( { _id:id } )
