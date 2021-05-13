@@ -1,7 +1,11 @@
-const Accion = require('../models/Accion');
-
+//Librerias 
 const {validationResult} = require('express-validator');
+//Modelos 
+const Accion = require('../models/Accion');
+//Controladores 
+const logsCotroller = require('../controller/logsController'); 
 
+//Crear  Accion 
 exports.newAccion = async(req, res)=>{
     //Mostrar mensaje de error de express-validator 
     const errores  = validationResult(req); 
@@ -59,7 +63,6 @@ exports.getAccion = async (req, res) =>{
     }
 }
 
-
 //Udadate Accion 
 exports.updateAccion = async (req, res)=>{
     
@@ -97,6 +100,7 @@ exports.updateAccion = async (req, res)=>{
   }
 }
 
+//Eliminar Accion
 exports.deleteAccion = async (req, res)=>{
     //Extraer informacion del proyecto 
     try {
@@ -117,4 +121,4 @@ exports.deleteAccion = async (req, res)=>{
         console.log(error);
         res.status(500).send("Error en el servidor.");
     }
-  }
+}

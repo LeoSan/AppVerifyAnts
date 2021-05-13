@@ -1,6 +1,9 @@
-const Patrimonio = require('../models/Patrimonio');
-
+//Libreria
 const {validationResult} = require('express-validator');
+//Modelo
+const Patrimonio = require('../models/Patrimonio');
+//Controlador 
+const logsCotroller = require('../controller/logsController'); 
 
 //Crea Patrimonio 
 exports.newPatrimonio = async(req, res)=>{

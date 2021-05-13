@@ -1,5 +1,10 @@
+//Librerias
 const jwt = require('jsonwebtoken');
 require('dotenv').config({path: './config/variables.env'});  //LINEA IMPORTANTE
+
+//Controlador 
+const logsCotroller = require('../controller/logsController'); 
+
 
 module.exports = (req, res, next) => {
     // Leer el token del header

@@ -1,14 +1,15 @@
-const Usuario              = require('../models/Usuario');
+//Librerias 
 const bcryptjs             = require('bcrypt');
 const { validationResult } = require('express-validator'); 
 const jwt                  = require('jsonwebtoken');
+//Modelos 
+const Usuario              = require('../models/Usuario');
+//Controladores 
+const logsCotroller = require('../controller/logsController'); 
 
 
 //Permite autenticar el usuario 
 exports.autenticarUsuario = async (req, res) => {
-    
-    //header = '{"alg":"HS256","typ":"JWT"}'
-    
     //Revisar si hay errores (Nuevo)
         const errors = validationResult(req);
         if ( !errors.isEmpty() ){
@@ -58,7 +59,6 @@ exports.autenticarUsuario = async (req, res) => {
         console.log("error");
     }
 }
-
 
 //Permite obtener que usuario esta autenticado 
 exports.autenticarAutenticado = async (req, res)=>{

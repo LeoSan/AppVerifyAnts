@@ -1,7 +1,9 @@
-const Ingreso = require('../models/Ingreso');
-
-
+//Libreria
 const {validationResult} = require('express-validator');
+//Modelo 
+const Ingreso = require('../models/Ingreso');
+//Controlador 
+const logsCotroller = require('../controller/logsController'); 
 
 //Crear Ingreso
 exports.newIngreso = async(req, res)=>{

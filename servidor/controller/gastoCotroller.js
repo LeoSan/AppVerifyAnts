@@ -1,6 +1,10 @@
-const Gasto = require('../models/Gasto');
-
+//Librerias 
 const {validationResult} = require('express-validator');
+//Modelos 
+const Gasto = require('../models/Gasto');
+//Controlador 
+const logsCotroller = require('../controller/logsController'); 
+
 
 // Crear gasto 
 exports.newGasto = async(req, res)=>{

@@ -1,6 +1,9 @@
-const Categoria = require('../models/Categoria');
-
+//Librerias
 const {validationResult} = require('express-validator');
+//Modelos 
+const Categoria = require('../models/Categoria');
+//Controladores 
+const logsCotroller = require('../controller/logsController'); 
 
 //Crear Categoria  
 exports.newCategoria = async(req, res)=>{

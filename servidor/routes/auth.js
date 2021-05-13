@@ -26,4 +26,5 @@ router.post('/',
     ], 
     authController.autenticarUsuario
 );
+
 module.exports = router;

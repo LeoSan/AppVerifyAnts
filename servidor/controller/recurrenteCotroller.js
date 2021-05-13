@@ -1,6 +1,9 @@
-const Recurrente = require('../models/Recurrente');
-
+//Libreria
 const {validationResult} = require('express-validator');
+//Modelo 
+const Recurrente = require('../models/Recurrente');
+//Controlador 
+const logsCotroller = require('../controller/logsController'); 
 
 //Crear recurrente
 exports.newRecurrente = async(req, res)=>{

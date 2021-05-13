@@ -1,8 +1,11 @@
-const Actividad = require('../models/Actividad');
-const bcrypt = require('bcrypt');
-
+//Librerias 
 const {validationResult} = require('express-validator');
+//Modelos 
+const Actividad = require('../models/Actividad');
+//Controladores 
+const logsCotroller = require('../controller/logsController'); 
 
+//Crear Actividad
 exports.newActividad = async(req, res)=>{
     //Mostrar mensaje de error de express-validator 
     const errores  = validationResult(req); 
@@ -116,4 +119,4 @@ exports.deleteActividad = async (req, res)=>{
         console.log(error);
         res.status(500).send("Error en el servidor.");
     }
-  }
+}

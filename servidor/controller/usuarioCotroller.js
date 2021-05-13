@@ -1,12 +1,16 @@
-const Usuario  = require('../models/Usuario');
-const Ingreso  = require('../models/Ingreso');
-const Gasto    = require('../models/Gasto');
+//Libreria
+const { validationResult } = require('express-validator');
+const bcrypt     = require('bcrypt');
+//Modelos
+const Usuario    = require('../models/Usuario');
+const Ingreso    = require('../models/Ingreso');
+const Gasto      = require('../models/Gasto');
 const Patrimonio = require('../models/Patrimonio');
 const Categoria  = require('../models/Categoria');
-const bcrypt     = require('bcrypt');
 
-const {validationResult} = require('express-validator');
-
+//Controlador
+const mailCotroller = require('../controller/mailCotroller'); 
+const logsCotroller = require('../controller/logsController'); 
 
 //Crear usuario 
 exports.nuevoUsuario = async(req, res)=>{
@@ -14,6 +18,7 @@ exports.nuevoUsuario = async(req, res)=>{
     const errores  = validationResult(req); 
 
     if (!errores.isEmpty()){
+        logsCotroller.logsCRUD('[Validacion] - Crear usuario');
         return res.status(400).json({errores: errores.array()});
     }
     
@@ -38,12 +43,15 @@ exports.nuevoUsuario = async(req, res)=>{
             await usuario.save();
 
             res.json({msj: 'Usuario Creado Exitosamente!!'});
+            
+            let mensaje = " Primera prueba de envio de correos";
+            mailCotroller.sendMailto( mensaje );
 
         } catch (error) {
+            logsCotroller.logsCRUD(`Hubo un  error  en  la comunicación !! -> ${error} `);
             res.json({msj: `Hubo un  error  en  la comunicación !! -> ${error} `});
         }
 }
-
 
 //Udadate Usuario  
 exports.updateUsuario = async (req, res)=>{
@@ -76,7 +84,7 @@ exports.updateUsuario = async (req, res)=>{
         res.status(200).json({msg:`Tu Usuario con nombre ${nomOld}, fue editado.`});
      
   } catch (error) {
-      console.log(error);
+      logsCotroller.logsCRUD(`Hubo un  error  en  la comunicación !! -> ${error} `);
       res.status(500).send("Error en el servidor");
   }
 }
@@ -106,7 +114,7 @@ exports.deleteUsuario = async (req, res)=>{
         res.status(200).json({msg:`Tu Usuario con nombre ${emailUsu}, fue eliminado.`});
        
     } catch (error) {
-        console.log(error);
+        logsCotroller.logsCRUD(`Hubo un  error  en  la comunicación !! -> ${error} `);
         res.status(500).send("Error en el servidor.");
     }
 }
@@ -147,7 +155,7 @@ exports.cambioClaveUsuario = async (req, res)=>{
         res.status(200).json({msg:`Tu Usuario con nombre ${nomOld}, cambio del password exitoso.`});
      
   } catch (error) {
-      console.log(error);
+      logsCotroller.logsCRUD(`Hubo un  error  en  la comunicación !! -> ${error} `);
       res.status(500).send("Error en el servidor");
   }
 }

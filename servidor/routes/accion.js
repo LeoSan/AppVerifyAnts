@@ -1,17 +1,11 @@
 //Importamos la librerias de express
 const express = require('express');
-
 const {check} = require('express-validator');
-
-//llamamos al controlador 
+const router  = express.Router();
+//Controlador 
 const accionCotroller = require('../controller/accionCotroller'); 
-
 //Importamos el validador de Token para ejecutar esta tarea 
 const auth  = require('../middleware/auth');
-
-
-//Importamos la Librerias  de Router 
-const router  = express.Router();
 
 //End-Point - Crear Acccion
 router.post('/',

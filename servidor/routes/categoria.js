@@ -1,14 +1,10 @@
 //Importamos la librerias de express
 const express = require('express');
-
 const {check} = require('express-validator');
-
-//llamamos al controlador 
-const categoriaCotroller = require('../controller/categoriaCotroller');  // Nueva Parte
-
 //Importamos la Librerias  de Router 
 const router  = express.Router();
-
+//Controlador 
+const categoriaCotroller = require('../controller/categoriaCotroller');  // Nueva Parte
 //Importamos el validador de Token para ejecutar esta tarea 
 const auth  = require('../middleware/auth');
 
