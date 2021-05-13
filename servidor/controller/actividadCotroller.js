@@ -33,6 +33,7 @@ exports.newActividad = async(req, res)=>{
             res.json({msj: 'Actividad Creada Exitosamente!!'});
 
         } catch (error) {
+            logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
             res.json({msj: `Hubo un  error  en  la comunicación !! -> ${error} `});
         }
 }
@@ -59,7 +60,7 @@ exports.getActividad = async (req, res) =>{
         }   
 
     } catch (error) {
-        console.log(error);
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(500).send('Hubo un error');
     }
 }
@@ -96,7 +97,7 @@ exports.updateActividad = async (req, res)=>{
         res.json({msg:`Tu actividad con nombre ${nomOld}, fue editado.`});
      
   } catch (error) {
-      console.log(error);
+      logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
       res.status(500).send("Error en el servidor");
   }
 }
@@ -116,7 +117,7 @@ exports.deleteActividad = async (req, res)=>{
         res.json({msg:`Tu actividad con nombre ${nomActi}, fue eliminado.`});
        
     } catch (error) {
-        console.log(error);
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(500).send("Error en el servidor.");
     }
 }

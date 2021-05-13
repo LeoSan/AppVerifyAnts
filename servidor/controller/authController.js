@@ -56,7 +56,7 @@ exports.autenticarUsuario = async (req, res) => {
         }//fin del usuario activo 
         
     } catch (error) {
-        console.log("error");
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
     }
 }
 
@@ -67,7 +67,7 @@ exports.autenticarAutenticado = async (req, res)=>{
         res.json({usuario});
         
     } catch (error) {
-        console.log(error); 
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(500).json({msg: "Hubo un error  - autenticacion"}) 
     }
 

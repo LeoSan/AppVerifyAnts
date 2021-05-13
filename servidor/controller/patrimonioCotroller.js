@@ -30,6 +30,7 @@ exports.newPatrimonio = async(req, res)=>{
             res.json({msj: 'Creado Exitosamente!!'});
 
         } catch (error) {
+            logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
             res.json({msj: `Hubo un error en la comunicación !! -> ${error} `});
         }
 }
@@ -62,7 +63,7 @@ exports.getPatrimonio = async (req, res) =>{
         }   
 
     } catch (error) {
-        console.log(error);
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(500).send('Hubo un error');
     }
 }
@@ -100,7 +101,7 @@ exports.updatePatrimonio = async (req, res)=>{
         res.status(200).json({msg:`Tu Patrimonio con nombre ${nomOld}, fue editado.`});
      
   } catch (error) {
-      console.log(error);
+      logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
       res.status(500).send("Error en el servidor");
   }
 }
@@ -119,7 +120,7 @@ exports.deletePatrimonio = async (req, res)=>{
         res.status(200).json({msg:`Tu Patrimonio con nombre ${nomPatrimonio}, fue eliminado.`});
        
     } catch (error) {
-        console.log(error);
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(500).send("Error en el servidor.");
     }
 }

@@ -45,7 +45,7 @@ exports.nuevoUsuario = async(req, res)=>{
             res.json({msj: 'Usuario Creado Exitosamente!!'});
             
             let mensaje = " Primera prueba de envio de correos";
-            mailCotroller.sendMailto( mensaje );
+            mailCotroller.sendMailto( mensaje , emailUsu );
 
         } catch (error) {
             logsCotroller.logsCRUD(`Hubo un  error  en  la comunicación !! -> ${error} `);

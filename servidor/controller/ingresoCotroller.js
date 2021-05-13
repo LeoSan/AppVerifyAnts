@@ -28,6 +28,7 @@ exports.newIngreso = async(req, res)=>{
             await ingreso.save();
             res.json({msj: 'Creado Exitosamente!!'});
         } catch (error) {
+            logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
             res.json({msj: `Hubo un error en la comunicación !! -> ${error} `});
         }
 }
@@ -60,7 +61,7 @@ exports.getIngreso = async (req, res) =>{
         }   
 
     } catch (error) {
-        console.log(error);
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(500).send('Hubo un error');
     }
 }
@@ -99,7 +100,7 @@ exports.updateIngreso = async (req, res)=>{
         res.status(200).json({msg:`Tu Ingreso con nombre ${nomOld}, fue editado.`});
      
   } catch (error) {
-      console.log(error);
+      logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
       res.status(500).send("Error en el servidor");
   }
 }
@@ -118,7 +119,7 @@ exports.deleteIngreso = async (req, res)=>{
         res.status(200).json({msg:`Tu Ingreso con nombre ${nomIngreso}, fue eliminado.`});
        
     } catch (error) {
-        console.log(error);
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(500).send("Error en el servidor.");
     }
 }

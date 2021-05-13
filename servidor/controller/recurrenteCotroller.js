@@ -12,7 +12,7 @@ exports.newRecurrente = async(req, res)=>{
     if (!errores.isEmpty())  return res.status(400).json({errores: errores.array()});
     
     //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
-    console.log(req.body);
+    //console.log(req.body);
     const {nomRecu} = req.body; 
 
         try {
@@ -27,6 +27,7 @@ exports.newRecurrente = async(req, res)=>{
             res.json({msj: 'Categoria Recurrente Creada Exitosamente!!'});
 
         } catch (error) {
+            logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
             res.json({msj: `Hubo un error en la comunicación !! -> ${error} `});
         }
 }
@@ -59,7 +60,8 @@ exports.getRecurrente = async (req, res) =>{
         }   
 
     } catch (error) {
-        console.log(error);
+        
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(500).send('Hubo un error');
     }
 }
@@ -95,7 +97,7 @@ exports.updateRecurrente = async (req, res)=>{
         res.status(200).json({msg:`Tu Recurrencia con nombre ${nomOld}, fue editado.`});
      
   } catch (error) {
-      console.log(error);
+      logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
       res.status(500).send("Error en el servidor");
   }
 }
@@ -120,7 +122,7 @@ exports.deleteRecurrente = async (req, res)=>{
         res.status(200).json({msg:`Tu Recurrencia con nombre ${nomRecu}, fue eliminado.`});
        
     } catch (error) {
-        console.log(error);
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(500).send("Error en el servidor.");
     }
 }

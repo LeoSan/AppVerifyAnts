@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 //Controlador Logs
 const logsCotroller = require('../controller/logsController'); 
 
-exports.sendMailto = (mensaje ) => {
+exports.sendMailto = (mensaje, emailFrom ) => {
     console.log("Enviando correo...->");
     //Creamos el objeto de transporte
     const transporter = nodemailer.createTransport({
@@ -19,7 +19,7 @@ exports.sendMailto = (mensaje ) => {
 
    //Creaos objeto del cuerpo del correo 
     const  mailOptions = {
-        from: 'cuenca623@gmail.com',
+        from: emailFrom,
         to: 'cuenca623@hotmail.com',
         subject: 'Asunto Del Correo',
         text: mensaje

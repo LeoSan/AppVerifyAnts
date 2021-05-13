@@ -31,6 +31,7 @@ exports.newCategoria = async(req, res)=>{
             res.status(200).json({msj: 'Categoria Creada Exitosamente!!'});
 
         } catch (error) {
+            logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
             res.status(200).json({msj: `Hubo un error en la comunicación !! -> ${error} `});
         }
 }
@@ -62,7 +63,7 @@ exports.getCategoria = async (req, res) =>{
         }   
 
     } catch (error) {
-        console.log(error);
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(500).send('Hubo un error');
     }
 }
@@ -98,7 +99,7 @@ exports.updateCategoria = async (req, res)=>{
         res.status(200).json({msg:`Tu Categoria con nombre ${nomOld}, fue editado.`});
      
   } catch (error) {
-      console.log(error);
+      logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
       res.status(500).send("Error en el servidor");
   }
 }
@@ -118,7 +119,7 @@ exports.deleteCategoria = async (req, res)=>{
         res.status(200).json({msg:`Tu Categoria con nombre ${nomCate}, fue eliminado.`});
        
     } catch (error) {
-        console.log(error);
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(500).send("Error en el servidor.");
     }
 }

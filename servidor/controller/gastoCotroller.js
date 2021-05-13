@@ -16,7 +16,7 @@ exports.newGasto = async(req, res)=>{
     }
     
     //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
-    console.log(req.body);
+   // console.log(req.body);
     const {nomGasto} = req.body; 
 
         try {
@@ -32,6 +32,7 @@ exports.newGasto = async(req, res)=>{
             res.json({msj: 'Gasto Creado Exitosamente!!'});
 
         } catch (error) {
+            logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
             res.json({msj: `Hubo un error en la comunicación !! -> ${error} `});
         }
 }
@@ -64,7 +65,7 @@ exports.getGastos = async (req, res) =>{
         }   
 
     } catch (error) {
-        console.log(error);
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(500).send('Hubo un error');
     }
 }
@@ -103,7 +104,7 @@ exports.updateGasto = async (req, res)=>{
         res.status(200).json({msg:`Tu Gasto con nombre ${nomOld}, fue editado.`});
      
   } catch (error) {
-      console.log(error);
+      logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
       res.status(500).send("Error en el servidor");
   }
 }
@@ -122,7 +123,7 @@ exports.deleteGasto = async (req, res)=>{
         res.status(200).json({msg:`Tu Gasto con nombre ${nomGasto}, fue eliminado.`});
        
     } catch (error) {
-        console.log(error);
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(500).send("Error en el servidor.");
     }
 }
