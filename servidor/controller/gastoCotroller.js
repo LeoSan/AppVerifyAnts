@@ -1,5 +1,6 @@
 //Librerias 
 const {validationResult} = require('express-validator');
+
 //Modelos 
 const Gasto = require('../models/Gasto');
 //Controlador 
@@ -67,6 +68,57 @@ exports.getGastos = async (req, res) =>{
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(500).send('Hubo un error');
+    }
+}
+
+
+//Obtener Gastos   
+exports.getGastosByFecha = async (req, res) =>{
+    
+    const errores  = validationResult(req); 
+
+    if (!errores.isEmpty()){
+        return res.status(400).json({errores: errores.array()});
+    }
+    
+    try {
+        //Distroccion 
+        const { fechaConsultar, usuario, categoria, activo} = req.body; //->Asi se usa cuando es un objeto 
+
+            //Obtener 1-M
+            let existeVAl = await Gasto.findOne({ usuario }); 
+
+            if(!existeVAl) return res.status(404).json({msg:`No Existe algun tipo de gasto para este usuario.`});
+            
+             //Ejemplo Multiple de modelos 
+            //const gasto = await Gasto.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).populate({ path: 'usuario', model: 'Usuario', select: 'nomUsu'}).exec();
+            
+            //const gasto = await Gasto.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
+            
+            //Consulta entre fechas 
+            //import endOfDay from 'date-fns/endOfDay';
+            //import startOfDay from 'date-fns/startOfDay';
+            //const gasto = await Gasto.find(  {"registro": {"$gte": startOfDay(new Date('2021-01-01')), "$lt": endOfDay(new Date('2021-05-01')) }}) ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
+            
+            //let today = new Date('2020-05-01');
+            let today = new Date(fechaConsultar);
+            let query = {
+              $expr: { // la siguiente es una expresión de agregación
+                $and: [ // indica que cada comparación entre elementos del array se debe satisfacer
+                  { $eq: [ { $year:       '$registro' }, { $year: today } ] },  // devuelve true si se cumple la igualdad de los elementos
+                  { $eq: [ { $month:      '$registro' }, { $month: today } ] },
+                  {usuario:usuario}, 
+                  {activo: activo }
+                  //{ $eq: [ { $dayOfMonth: '$fecha' }, { $dayOfMonth: today } ] } 
+                ] 
+              }
+            }            
+            
+            const gasto = await Gasto.find( query ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
+            res.status(200).json({ gasto });
+    } catch (error) {
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
+        res.status(500).send(`Hubo un error en la comunicación !! -> ${error} `);
     }
 }
 
