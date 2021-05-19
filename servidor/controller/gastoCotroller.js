@@ -103,12 +103,12 @@ exports.getGastosByFecha = async (req, res) =>{
             //let today = new Date('2020-05-01');
             let today = new Date(fechaConsultar);
             let query = {
+                'activo': activo,
+                'usuario': usuario,
               $expr: { // la siguiente es una expresión de agregación
                 $and: [ // indica que cada comparación entre elementos del array se debe satisfacer
                   { $eq: [ { $year:       '$registro' }, { $year: today } ] },  // devuelve true si se cumple la igualdad de los elementos
                   { $eq: [ { $month:      '$registro' }, { $month: today } ] },
-                  {usuario:usuario}, 
-                  {activo: activo }
                   //{ $eq: [ { $dayOfMonth: '$fecha' }, { $dayOfMonth: today } ] } 
                 ] 
               }

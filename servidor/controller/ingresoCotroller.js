@@ -66,6 +66,48 @@ exports.getIngreso = async (req, res) =>{
     }
 }
 
+
+//Obtener Ingreso   
+exports.getIngresoByFecha = async (req, res) =>{
+    
+    const errores  = validationResult(req); 
+
+    if (!errores.isEmpty()){
+        return res.status(400).json({errores: errores.array()});
+    }
+    
+    try {
+        //Distroccion 
+        const { fechaConsultar, usuario, categoria, activo} = req.body; //->Asi se usa cuando es un objeto 
+
+            //Obtener 1-M
+            let existeVAl = await Ingreso.findOne({ usuario }); 
+
+            if(!existeVAl) return res.status(404).json({msg:`No Existe algun tipo de ingreso para este usuario.`});
+            
+            let today = new Date(fechaConsultar);
+            let query = {
+             'activo': activo,
+             'usuario': usuario,
+              $expr: { // la siguiente es una expresión de agregación
+                $and: [ // indica que cada comparación entre elementos del array se debe satisfacer
+                  { $eq: [ { $year:       '$registro' }, { $year: today } ] },  // devuelve true si se cumple la igualdad de los elementos
+                  { $eq: [ { $month:      '$registro' }, { $month: today } ] }
+                  //{ $eq: [ { $dayOfMonth: '$fecha' }, { $dayOfMonth: today } ] } 
+                ] 
+              }
+            }     
+            
+            const ingreso = await Ingreso.find( query  ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
+            res.status(200).json({ ingreso });
+    } catch (error) {
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
+        res.status(500).send(`Hubo un error en la comunicación !! -> ${error} `);
+    }
+}
+
+
+
 //Udadate Ingreso 
 exports.updateIngreso = async (req, res)=>{
     

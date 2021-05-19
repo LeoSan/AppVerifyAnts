@@ -31,6 +31,18 @@ router.get('/',
       patrimonioCotroller.getPatrimonio
 );
 
+//End-Point - Consultar Patrimonio  por fecha 
+router.get('/patrimoniobyfecha',
+      auth,  
+      [
+      check('fechaConsultar', 'El campo fecha es obligatorio.').not().isEmpty(), //Valida vacio
+      check('usuario',        'El campo usuario es obligatorio.').not().isEmpty(), //Valida vacio
+      check('categoria',      'El campo categoria es obligatorio.').not().isEmpty(), //Valida vacio
+      check('activo',         'El campo activo es obligatorio.').not().isEmpty(), //Valida vacio
+      ] ,      
+      patrimonioCotroller.getPatrimonioByFecha
+);
+
 //End-Point - Editar Patrimonio
 router.put('/', 
       auth,

@@ -32,6 +32,19 @@ router.get('/',
       ingresoCotroller.getIngreso
 );
 
+//End-Point - Consultar Ingreso por fecha
+router.get('/ingresobyfecha',
+      auth,  
+      [
+            check('fechaConsultar', 'El campo fecha es obligatorio.').not().isEmpty(), //Valida vacio
+            check('usuario',        'El campo usuario es obligatorio.').not().isEmpty(), //Valida vacio
+            check('categoria',      'El campo categoria es obligatorio.').not().isEmpty(), //Valida vacio
+            check('activo',         'El campo activo es obligatorio.').not().isEmpty(), //Valida vacio
+        ] ,      
+        ingresoCotroller.getIngresoByFecha
+);
+
+
 //End-Point - Editar Ingreso
 router.put('/', 
       auth,

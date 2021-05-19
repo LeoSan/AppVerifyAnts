@@ -1,3 +1,9 @@
 [2021-05-17T12:39:14.020] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: registro is not defined 
 [2021-05-17T12:41:39.819] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: registro is not defined 
 [2021-05-17T12:57:33.902] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: Unrecognized expression '$usuario' 
+[2021-05-18T11:06:46.211] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: gasto is not defined 
+[2021-05-18T11:17:42.307] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: $expr is not allowed in this context 
+[2021-05-18T11:20:41.745] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: $expr is not allowed in this context 
+[2021-05-18T11:20:50.138] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: $expr is not allowed in this context 
+[2021-05-18T11:23:24.145] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: mongoose is not defined 
+[2021-05-18T11:25:40.969] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: $expr is not allowed in this context 
