@@ -7,3 +7,19 @@
 [2021-05-18T11:20:50.138] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: $expr is not allowed in this context 
 [2021-05-18T11:23:24.145] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: mongoose is not defined 
 [2021-05-18T11:25:40.969] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: $expr is not allowed in this context 
+[2021-05-20T15:59:02.318] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Patrimonio.find(...).aggregate is not a function 
+[2021-05-20T16:02:24.087] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Patrimonio.find(...).aggregate is not a function 
+[2021-05-20T16:03:47.400] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: The field 'usuario' must be an accumulator object 
+[2021-05-20T16:06:57.077] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Patrimonio.find(...).aggregate is not a function 
+[2021-05-20T16:25:22.920] [ERROR] crud - Hubo un error en la comunicación !! -> MongooseError: Mongoose 5.x disallows passing a spread of operators to `Model.aggregate()`. Instead of `Model.aggregate({ $match }, { $skip })`, do `Model.aggregate([{ $match }, { $skip }])` 
+[2021-05-20T16:48:41.193] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Patrimonio.where(...).aggregate is not a function 
+[2021-05-20T16:49:53.853] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Patrimonio.aggregate(...).where is not a function 
+[2021-05-20T16:59:31.933] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: unknown top level operator: $usuario 
+[2021-05-20T16:59:39.152] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: unknown top level operator: $usuario 
+[2021-05-20T17:09:06.693] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: a group specification must include an _id 
+[2021-05-20T17:15:58.527] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: unknown top level operator: $activo 
+[2021-05-20T17:16:38.463] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Patrimonio.explain is not a function 
+[2021-05-20T17:17:48.402] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: paserInt is not defined 
+[2021-05-20T17:36:57.079] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: $_internalSearchMongotRemote is only valid as the first stage in a pipeline. 
+[2021-05-20T17:40:07.671] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: unknown top level operator: $year 
+[2021-05-20T17:44:17.862] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "60931369a379ab3cc4a7e65" at path "usuario" for model "Patrimonio" 
