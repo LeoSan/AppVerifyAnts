@@ -1,0 +1,134 @@
+[33mcommit 401b571ac997e587b93c57041ff55ee3f18929af[m[33m ([m[1;36mHEAD -> [m[1;32mDEV/Fase-2-Back[m[33m, [m[1;31morigin/DEV/Fase-2-Back[m[33m)[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Thu May 20 17:49:32 2021 -0500
+
+    Autor: Leonard, Descripción, Se aprendio a realizar una consulta de la suma de todos los patimonios de un usuario filtrado por fecha, se uso el metodo aggregate en conjunto con el group match order
+
+[33mcommit dffdac8aad52ff9a1cb38c4ecf61360ea2f2ec8a[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Wed May 19 12:51:02 2021 -0500
+
+    Autor:  Leonard: Descripción: Desarrollo de metodo para filtrar por fecha el Modelo de Patrimonio, Gasto e Ingreso
+
+[33mcommit f745ee3f0887d18606359256721401ea6cf39c6e[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Mon May 17 14:47:32 2021 -0500
+
+    Autor: Leonard, Descripción: Corregir error de los log del CRUD y se incorporo un obetener gastos por fechas, pero hay conflictos en filtrado de información no filtra por usuario y activo
+
+[33mcommit c2e13ce3e994da69e93e3da20819e0c4d2bbebbf[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Thu May 13 15:57:03 2021 -0500
+
+    Autor: Leonard, Descripción: Se mejoro el envio de correo se integro logs de trace para validar errores y envios de correos
+
+[33mcommit 4c7923626cc75092a672f6d167421d3363f59727[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Wed May 12 19:25:42 2021 -0500
+
+    Autor: Leonard, Descripción: Se idento y acomodo código, se implemento logs y envio de correos en esta fase 2: La fase conrrespondera en el mejoramiento del código
+
+[33mcommit 62246549a235deb15cc7f2f4e1e9961938abc2bc[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 48a892b 49a80db
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Wed May 12 16:58:50 2021 -0500
+
+    Merge pull request #1 from LeoSan/DEV/Fase1-Back
+    
+    main <----Dev/fase1 back
+
+[33mcommit 49a80db9cee76b4aafc8262015ae77365c865e29[m[33m ([m[1;31morigin/DEV/Fase1-Back[m[33m, [m[1;32mDEV/Fase1-Back[m[33m)[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Wed May 12 16:51:43 2021 -0500
+
+    Autor: Leonard, Descripción: Se considera CRUD completo en esta primera Fase Desarrollo, Aqui desarollo de CRUD usuario
+
+[33mcommit dcd7d10b455c0c6268b9ddc60eb16638f157b3c0[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Wed May 12 10:44:33 2021 -0500
+
+    Autor: Leonard, Descripcion: Se realizó buena identación en los controladores del proyecto
+
+[33mcommit 8ee12385b3d566e3d56536fcad12fdbc1f275f8a[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Tue May 11 17:01:04 2021 -0500
+
+    Autor: Leonard, Descripcion: Se desarrollo CRUD de patrimonio y Ingreso
+
+[33mcommit fd65f39faa2a9c63b2d03cb2b3998fd05a9bd800[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Mon May 10 18:32:17 2021 -0500
+
+    Autor: Leonard, Descripción: Desarrollo CRUD para el modulo de GASTO -> controlador Get, Update,Delete.
+
+[33mcommit 316c09a15a6c0959af1f4ba5ce2d4c91834148a3[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Mon May 10 15:29:17 2021 -0500
+
+    Autor: Leonard Cuenca, Descripción: Consultar CRUD Categoria
+
+[33mcommit dd42fdff0cfddee543dad7cfe5dba65dd357f70d[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Fri May 7 20:27:19 2021 -0500
+
+    Autor: Leonard, Descripción: Desarrollo CRUD para el modulo de Actividad -> controlador Get.
+
+[33mcommit 480a3dea8c20f1105548f1316dd42c50a157a45d[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Fri May 7 19:52:35 2021 -0500
+
+    Autor: Leonard, Descripción: Desarrollo CRUD para el modulo de Accion -> controlador Get.
+
+[33mcommit 459dce3567ed39cb1c94dfa323a39dcde81afea6[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Fri May 7 19:02:40 2021 -0500
+
+    Autor: Leonard, Descripción: Desarrollo CRUD para el modulo de Categoria.
+
+[33mcommit 18f0d1147507a20e37b149e41d88e45123874747[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Fri May 7 18:34:05 2021 -0500
+
+    Autor: Leonard, Descripción: Desarrollo CRUD para el modulo de Actividad.
+
+[33mcommit 25a62ef7aa72f86f6f153a6cc1e52a6c476734e6[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Fri May 7 17:53:22 2021 -0500
+
+    Autor: Leonard, Descripción: Desarrollo CRUD para el modulo de Accion-> son las tareas que deseas cumplir y medir
+
+[33mcommit c0ed5606b0a8277aea4069e02842a458af7787fe[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Fri May 7 16:45:23 2021 -0500
+
+    Autor: Leonard, Descripción: Desarrollo del JWT token funcional
+
+[33mcommit 2d705afb6dade98209c9814546f6c2cffbaaa66f[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Thu May 6 18:18:30 2021 -0500
+
+    Autor: Leonard, Descripción: Desarrollo de los modelos y sus relaciones y sus inserciones validadas en el postman
+
+[33mcommit 325cb8d4950c4969e105385f8ecad7baad55a82b[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Wed May 5 23:11:35 2021 -0500
+
+    Autor: Leonard, Descripción: Creación de tres modulos Usuario, Recurrente y categoria, controlador, router y end point funcionales se establecio conexion con la base de datos mongo DB
+
+[33mcommit 44bae9d17f0f303f2ebab044013bd2b626a8e99d[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Wed May 5 17:23:49 2021 -0500
+
+    Autor: Leonard, Descripcion: Fase inicial iniciando rama de Desarrollo
+
+[33mcommit 972bf91e59dcb347a64be956ea0f3c2bd8b7e4da[m[33m ([m[1;33mtag: v0.1[m[33m, [m[1;31morigin/Feature/Proyecto-Zero[m[33m, [m[1;32mFeature/Proyecto-Zero[m[33m)[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Wed May 5 17:17:17 2021 -0500
+
+    Autor:Leonard, Descripcion: Desarollo  fase inicial de app personal para medir gastos, practica para pulir metodologia MERN
+
+[33mcommit 48a892b29c06da9f9052aefa793bb17f7d01c401[m
+Author: LeoSan <cuenca623@gmail.com>
+Date:   Wed May 5 17:00:21 2021 -0500
+
+    Initial commit
