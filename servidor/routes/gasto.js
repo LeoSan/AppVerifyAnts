@@ -40,6 +40,18 @@ router.get('/gastobyfecha',
       gastoCotroller.getGastosByFecha
 );
 
+//End-Point - Consultar Gastos por fecha
+router.get('/gastoSumabyfecha',
+      auth,  
+      [
+            check('fechaConsultar', 'El campo fecha es obligatorio.').not().isEmpty(), //Valida vacio
+            check('usuario',        'El campo usuario es obligatorio.').not().isEmpty(), //Valida vacio
+            check('categoria',      'El campo categoria es obligatorio.').not().isEmpty(), //Valida vacio
+            check('activo',         'El campo activo es obligatorio.').not().isEmpty(), //Valida vacio
+        ] ,      
+      gastoCotroller.getGastoSumaByFecha
+);
+
 //End-Point - Editar Gasto
 router.put('/', 
       auth,

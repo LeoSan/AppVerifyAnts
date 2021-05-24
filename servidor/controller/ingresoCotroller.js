@@ -66,7 +66,6 @@ exports.getIngreso = async (req, res) =>{
     }
 }
 
-
 //Obtener Ingreso   
 exports.getIngresoByFecha = async (req, res) =>{
     
@@ -106,6 +105,49 @@ exports.getIngresoByFecha = async (req, res) =>{
     }
 }
 
+//Obtener Ingreso Suma por Fecha    
+exports.getIngresoSumaByFecha = async (req, res) =>{
+    
+    const errores  = validationResult(req); 
+
+    if (!errores.isEmpty()){
+        return res.status(400).json({errores: errores.array()});
+    }
+    
+    try {
+        //Distroccion 
+        const { fechaConsultar, usuario, categoria, activo} = req.body; //->Asi se usa cuando es un objeto 
+
+            //Valido si existe el usuario
+            let existeVAl = await Ingreso.findOne({ usuario }); 
+            if(!existeVAl) return res.status(404).json({msg:`No Existe algun tipo de Ingreso para este usuario.`});
+            
+           //Realizo mi query para filtrr fecha y por Usuario y Activo 
+            let today = new Date(fechaConsultar);
+
+                const ingreso = await Ingreso.aggregate([
+                    { $match:   {   "activo": parseInt(activo),
+                                    $expr: { // la siguiente es una expresión de agregación
+                                             $and: [ // indica que cada comparación entre elementos del array se debe satisfacer
+                                                        { $eq: [ { $year:       '$registro' }, { $year: today } ] },  // devuelve true si se cumple la igualdad de los elementos
+                                                        { $eq: [ { $month:      '$registro' }, { $month: today } ] }
+                                                    ] //Fin del and 
+                                            }     
+                                } 
+                    },//Validacion Match 
+                    
+                    { $group: { _id: "$usuario", total: { $sum: "$montoIngreso" } } },
+                    
+                    { $sort: { total: -1 } }
+                 
+                ]).exec();                
+
+            res.status(200).json({ ingreso });
+    } catch (error) {
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
+        res.status(500).send(`Hubo un error en la comunicación !! -> ${error} `);
+    }
+}
 
 
 //Udadate Ingreso 

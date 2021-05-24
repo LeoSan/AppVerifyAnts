@@ -3,9 +3,9 @@ const {validationResult} = require('express-validator');
 
 //Modelos 
 const Gasto = require('../models/Gasto');
+
 //Controlador 
 const logsCotroller = require('../controller/logsController'); 
-
 
 // Crear gasto 
 exports.newGasto = async(req, res)=>{
@@ -52,7 +52,7 @@ exports.getGastos = async (req, res) =>{
             
              //Ejemplo Multiple de modelos 
             //const gasto = await Gasto.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).populate({ path: 'usuario', model: 'Usuario', select: 'nomUsu'}).exec();
-            const gasto = await Gasto.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
+            const gasto = await Gasto.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'usuario', model: 'Usuario', select: 'nomUsu'}).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
             res.status(200).json({ gasto });
            
         }else{
@@ -71,8 +71,7 @@ exports.getGastos = async (req, res) =>{
     }
 }
 
-
-//Obtener Gastos   
+//Obtener Gastos Por fecha  
 exports.getGastosByFecha = async (req, res) =>{
     
     const errores  = validationResult(req); 
@@ -115,6 +114,50 @@ exports.getGastosByFecha = async (req, res) =>{
             }            
             
             const gasto = await Gasto.find( query ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
+            res.status(200).json({ gasto });
+    } catch (error) {
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
+        res.status(500).send(`Hubo un error en la comunicación !! -> ${error} `);
+    }
+}
+
+//Obtener Gasto Suma por Fecha    
+exports.getGastoSumaByFecha = async (req, res) =>{
+    
+    const errores  = validationResult(req); 
+
+    if (!errores.isEmpty()){
+        return res.status(400).json({errores: errores.array()});
+    }
+    
+    try {
+        //Distroccion 
+        const { fechaConsultar, usuario, categoria, activo} = req.body; //->Asi se usa cuando es un objeto 
+
+            //Valido si existe el usuario
+            let existeVAl = await Gasto.findOne({ usuario }); 
+            if(!existeVAl) return res.status(404).json({msg:`No Existe algun tipo de Gasto para este usuario.`});
+            
+           //Realizo mi query para filtrr fecha y por Usuario y Activo 
+            let today = new Date(fechaConsultar);
+
+                const gasto = await Gasto.aggregate([
+                    { $match:   {   "activo": parseInt(activo),
+                                    $expr: { // la siguiente es una expresión de agregación
+                                             $and: [ // indica que cada comparación entre elementos del array se debe satisfacer
+                                                        { $eq: [ { $year:       '$registro' }, { $year: today } ] },  // devuelve true si se cumple la igualdad de los elementos
+                                                        { $eq: [ { $month:      '$registro' }, { $month: today } ] }
+                                                    ] //Fin del and 
+                                            }     
+                                } 
+                    },//Validacion Match 
+                    
+                    { $group: { _id: "$usuario", total: { $sum: "$montoGasto" } } },
+                    
+                    { $sort: { total: -1 } }
+                 
+                ]).exec();                
+
             res.status(200).json({ gasto });
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);

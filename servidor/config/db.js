@@ -11,8 +11,10 @@ const conectarBD = async()=>{
            useNewUrlParser:true,
            useUnifiedTopology:true,
            useFindAndModify:false,
+           useCreateIndex : true , // Para quitar el error DeprecationWarning: collection.ensureInd 
        } );
-       console.log(`!!!BD Lista y en Linea!!! Estamos en ->  ${process.env.DB_NOMBRE}`);
+       
+       console.log(`!!!BD Lista y en Linea!!! Estamos en ->  ${ process.env.DB_NOMBRE }`);
       
    } catch (error) {
        console.log(error);

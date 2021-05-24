@@ -23,3 +23,6 @@
 [2021-05-20T17:36:57.079] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: $_internalSearchMongotRemote is only valid as the first stage in a pipeline. 
 [2021-05-20T17:40:07.671] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: unknown top level operator: $year 
 [2021-05-20T17:44:17.862] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "60931369a379ab3cc4a7e65" at path "usuario" for model "Patrimonio" 
+[2021-05-24T12:01:24.628] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: Schema is not defined 
+[2021-05-24T12:03:33.246] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read property 'Types' of undefined 
+[2021-05-24T12:03:55.531] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Usuario.ObjectId is not a function 

@@ -28,7 +28,7 @@ const ingresoSchema = new Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:'Usuario',
         required:true
-    },
+    },//Lo dejo asi ya que solo traere la info del usuario logueado 
     categoria: [{ type: Schema.Types.ObjectId, ref: 'Categoria', required:true }],    
 	recurrente:[{ type: Schema.Types.ObjectId, ref: 'Recurrente' }],   	
 	activo:{

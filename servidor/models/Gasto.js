@@ -24,12 +24,8 @@ const gastoSchema = new Schema({
 		required:true,
         default:0
     },	
-    usuario:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Usuario',
-        required:true
-    },
-    categoria: [{ type: Schema.Types.ObjectId, ref: 'Categoria', required:true }],    
+    usuario: [{ type: Schema.Types.ObjectId, ref: 'Usuario', required:true }],    
+	categoria: [{ type: Schema.Types.ObjectId, ref: 'Categoria', required:true }],    
 	recurrente:[{ type: Schema.Types.ObjectId, ref: 'Recurrente' }],    	
 	activo:{
 	   type: Number,
