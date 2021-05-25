@@ -26,3 +26,11 @@
 [2021-05-24T12:01:24.628] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: Schema is not defined 
 [2021-05-24T12:03:33.246] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read property 'Types' of undefined 
 [2021-05-24T12:03:55.531] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Usuario.ObjectId is not a function 
+[2021-05-25T11:37:50.479] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: startOfDay is not a function 
+[2021-05-25T11:44:16.111] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read property 'startOf' of undefined 
+[2021-05-25T11:46:54.507] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: moment is not a function 
+[2021-05-25T11:47:34.517] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: FieldPath field names may not start with '$'. 
+[2021-05-25T11:50:48.806] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: FieldPath field names may not start with '$'. 
+[2021-05-25T12:13:06.469] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: gasto is not defined 
+[2021-05-25T12:13:18.123] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: gasto is not defined 
+[2021-05-25T12:13:57.775] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: gasto is not defined 
