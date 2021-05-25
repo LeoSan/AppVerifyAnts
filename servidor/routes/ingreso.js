@@ -44,6 +44,18 @@ router.get('/ingresobyfecha',
         ingresoCotroller.getIngresoByFecha
 );
 
+//End-Point - Consultar Ingreso entre fechas 
+router.get('/i-between-fecha',
+      auth,  
+      [
+            check('fechaInicio',     'El campo fecha Inicio es obligatorio.').not().isEmpty(), //Valida vacio
+            check('fechaFin',        'El campo fecha Fin es obligatorio.').not().isEmpty(), //Valida vacio
+            check('activo',          'El campo activo es obligatorio.').not().isEmpty(), //Valida vacio
+            check('tipo',            'El campo tipo es obligatorio.').not().isEmpty(), //Valida vacio
+        ] ,      
+        ingresoCotroller.getIngresoBetweenFecha
+);
+
 //End-Point - Consultar Ingreso por fecha
 router.get('/ingresoSumabyfecha',
       auth,  

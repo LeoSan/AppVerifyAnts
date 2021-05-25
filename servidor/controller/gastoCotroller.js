@@ -1,14 +1,9 @@
 //Librerias 
 const {validationResult} = require('express-validator');
-
 const moment = require('moment');  
-
-
-
 //Modelos 
 const Gasto = require('../models/Gasto');
-
-//Controlador 
+//Logs - Controlador  
 const logsCotroller = require('../controller/logsController'); 
 
 // Crear gasto 
@@ -169,7 +164,7 @@ exports.getGastoSumaByFecha = async (req, res) =>{
     }
 }
 
-//Obtener Gastos Por fecha  
+//Obtener Gastos entre fechas de inicio y fin 
 exports.getGastosBetweenFecha = async (req, res) =>{
     
     const errores  = validationResult(req); 
@@ -200,9 +195,6 @@ exports.getGastosBetweenFecha = async (req, res) =>{
                 const gasto = await Gasto.find( {"registro": {"$gte": start, "$lt": end }, 'activo': activo,  'usuario': usuario }).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
                 res.status(200).json({ gasto });
              }
-            //Respuesta 
-            
-
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(500).send(`Hubo un error en la comunicación !! `);

@@ -1,8 +1,9 @@
 //Libreria
 const {validationResult} = require('express-validator');
+const moment = require('moment');  
 //Modelo 
 const Ingreso = require('../models/Ingreso');
-//Controlador 
+//Logs - Controlador 
 const logsCotroller = require('../controller/logsController'); 
 
 //Crear Ingreso
@@ -29,7 +30,7 @@ exports.newIngreso = async(req, res)=>{
             res.json({msj: 'Creado Exitosamente!!'});
         } catch (error) {
             logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-            res.json({msj: `Hubo un error en la comunicación !! -> ${error} `});
+            res.json({msj: `Hubo un error en la comunicación !! `});
         }
 }
 
@@ -101,7 +102,7 @@ exports.getIngresoByFecha = async (req, res) =>{
             res.status(200).json({ ingreso });
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).send(`Hubo un error en la comunicación !! -> ${error} `);
+        res.status(500).send(`Hubo un error en la comunicación !!  `);
     }
 }
 
@@ -145,7 +146,45 @@ exports.getIngresoSumaByFecha = async (req, res) =>{
             res.status(200).json({ ingreso });
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).send(`Hubo un error en la comunicación !! -> ${error} `);
+        res.status(500).send(`Hubo un error en la comunicación !!  `);
+    }
+}
+
+//Obtener Ingreso entre fechas Inicio y fin  
+exports.getIngresoBetweenFecha = async (req, res) =>{
+    
+    const errores  = validationResult(req); 
+
+    if (!errores.isEmpty()){
+        return res.status(400).json({errores: errores.array()});
+    }
+    
+    try {
+        //Distroccion 
+        const { fechaInicio, fechaFin,  usuario, categoria, activo, tipo} = req.body; //->Asi se usa cuando es un objeto 
+
+        let start = moment().format(fechaInicio);
+        let end = moment().format(fechaFin);
+
+            let existeVAl = await Ingreso.findOne({ usuario }); 
+
+            if(!existeVAl) return res.status(404).json({msg:`No Existe algun tipo de Ingreso para este usuario.`});
+            
+        //Consulta entre fechas 
+            //Consulta solo por categoria 
+            if ( tipo === "categoria" ){
+                const ingreso = await Ingreso.find( {"registro": {"$gte": start, "$lt": end }, 'activo': activo,  'usuario': usuario,  'categoria': categoria }).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
+                res.status(200).json({ ingreso });
+            }
+            //Consulta solo por Usuario
+            if ( tipo === "usuario" ){ 
+                const ingreso = await Ingreso.find( {"registro": {"$gte": start, "$lt": end }, 'activo': activo,  'usuario': usuario }).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
+                res.status(200).json({ ingreso });
+             }
+            
+    } catch (error) {
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
+        res.status(500).send(`Hubo un error en la comunicación !! `);
     }
 }
 

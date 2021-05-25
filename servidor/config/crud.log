@@ -34,3 +34,4 @@
 [2021-05-25T12:13:06.469] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: gasto is not defined 
 [2021-05-25T12:13:18.123] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: gasto is not defined 
 [2021-05-25T12:13:57.775] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: gasto is not defined 
+[2021-05-25T12:38:29.512] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: moment is not defined 
