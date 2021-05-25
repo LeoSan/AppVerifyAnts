@@ -11,7 +11,7 @@ exports.newAccion = async(req, res)=>{
     const errores  = validationResult(req); 
 
     if (!errores.isEmpty()){
-        return res.status(400).json({errores: errores.array()});
+        return res.status(406).json({errores: errores.array()});
     }
     
     //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
@@ -21,14 +21,14 @@ exports.newAccion = async(req, res)=>{
         try {
             //Vaidación 
             let  accion = await Accion.findOne({nomAccion}); 
-            if ( accion )return  res.status(400).json({msg: `La accion No la puedes repetir, ${nomAccion}`});            
+            if ( accion )return  res.status(406).json({msg: `La accion No la puedes repetir, ${nomAccion}`});            
         //Creamos Accion si no esta duplicado 
             accion = new Accion(req.body);
             await accion.save();
-            res.json({msj: 'Accion Creada Exitosamente!!'});
+            res.status(201).json({msg: 'Tu Acción fue creada Exitosamente!!'});
         } catch (error) {
             logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-            res.json({msj: `Hubo un error en la comunicación !! -> ${error} `});
+            res.status(500).json({msg: `Hubo un error en la comunicación !! `});
         }
 }
 
@@ -41,7 +41,7 @@ exports.getAccion = async (req, res) =>{
         
         let existeVAl = await Accion.findOne({ nomAccion }); 
 
-        if(!existeVAl)return res.status(404).json({msg:`Tu acción con nombre ${ nomAccion }, No existe en la base de datos.`});
+        if(!existeVAl)return res.status(406).json({msg:`Tu acción con nombre ${ nomAccion }, No existe en la base de datos.`});
 
         //Verificar el autor  
         if (existeVAl.autor.toString() !== autor ){
@@ -52,15 +52,15 @@ exports.getAccion = async (req, res) =>{
             //Obtener 1-M
             //const accion = await Accion.find({ autor }).sort({autor:-1});
             const accion = await Accion.find({ autor });
-            res.json({ accion });
+            res.status(200).json({ accion });
        }else{
             //Obtener 1.1
             const accion = await Accion.find({ nomAccion }).sort({autor:-1});
-            res.json({ accion });
+            res.status(200).json({ accion });
         }     
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).send('Hubo un error');
+        res.status(500).json({msg: `Hubo un error en la comunicación !! `});
     }
 }
 
@@ -70,7 +70,7 @@ exports.updateAccion = async (req, res)=>{
     //Revisar que que cumple con las reglas de validaciòn del routes 
     const errors = validationResult(req);
     if ( !errors.isEmpty() ){
-        return res.status(400).json({errores: errors.array()})
+        return res.status(406).json({errores: errors.array()})
     }
 
   //Extraer informacion para validacion 
@@ -81,7 +81,7 @@ exports.updateAccion = async (req, res)=>{
         //Valido Acción 
           let accionExiste = await Accion.findById(id); // Leo : Mucho ojo es la forma de obtener los parametros por post 
   
-          if (!accionExiste)return res.status(404).json({msg:`Tu acción con nombre ${nomAccion}, No existe en la base de datos.`});
+          if (!accionExiste)return res.status(406).json({msg:`Tu acción con nombre ${nomAccion}, No existe en la base de datos.`});
           
         //crear un objeto con la nueva informaciòn 
         const nuevaAccion = {}
@@ -93,11 +93,11 @@ exports.updateAccion = async (req, res)=>{
         
         //Guadar la Accion Editada 
         accionExiste = await Accion.findByIdAndUpdate({ _id: id }, nuevaAccion, {new:true});
-        res.status(404).json({msg:`Tu acción con nombre ${nomAccionOld}, fue editado.`});
+        res.status(205).json({msg:`Tu acción con nombre ${nomAccionOld}, fue editado.`});
      
   } catch (error) {
       logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-      res.status(500).send("Error en el servidor");
+      res.status(500).json({msg: `Hubo un error en la comunicación !! `});
   }
 }
 
@@ -112,14 +112,15 @@ exports.deleteAccion = async (req, res)=>{
           //Si la tarea existe o no
           let accionExiste = await Accion.findById(id); // Leo : Mucho ojo es la forma de obtener los parametros por post 
   
-          if (!accionExiste) return res.status(404).json({msg:`Tu acción con nombre ${nomAccion}, No existe en la base de datos.`});
+          if (!accionExiste) return res.status(406).json({msg:`Tu acción con nombre ${nomAccion}, No existe en la base de datos.`});
           
           //Eliminar Accion 
           await Accion.findByIdAndRemove({ _id:id })
-          res.status(404).json({msg:`Tu acción con nombre ${nomAccion}, fue eliminado.`});
+          res.status(205).json({msg:`Tu acción con nombre ${nomAccion}, fue eliminado.`});
        
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).send("Error en el servidor.");
+        res.status(500).json({msg: `Hubo un error en la comunicación !! `});
+        //res.status(500).send("Hubo un error en la comunicación");
     }
 }

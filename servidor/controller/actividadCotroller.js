@@ -11,11 +11,11 @@ exports.newActividad = async(req, res)=>{
     const errores  = validationResult(req); 
 
     if (!errores.isEmpty()){
-        return res.status(400).json({errores: errores.array()});
+        return res.status(406).json({errores: errores.array()});
     }
     
     //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
-    console.log(req.body);
+    //console.log(req.body);
     const {nomActi} = req.body; 
 
         try {
@@ -23,18 +23,19 @@ exports.newActividad = async(req, res)=>{
             // Anexo  Vaidación 
             let  actividad = await Actividad.findOne({nomActi}); 
 
-            if ( actividad )return  res.status(400).json({msg: `La actividad  ${nomActi} ya esta registrado`});
+            if ( actividad ) return  res.status(406).json({msg: `La actividad  ${nomActi},  no se puede repetir.`});
 
         //Creamos usuario si no esta duplicado 
         actividad = new Actividad(req.body);
 
             await actividad.save();
 
-            res.json({msj: 'Actividad Creada Exitosamente!!'});
+            res.status(201).json({msg: 'Actividad creada Exitosamente!!'});
 
         } catch (error) {
             logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-            res.json({msj: `Hubo un  error  en  la comunicación !! -> ${error} `});
+            res.status(500).json({msg: `Hubo un  error  en  la comunicación !!  `});
+            
         }
 }
 
@@ -47,21 +48,21 @@ exports.getActividad = async (req, res) =>{
         
         let existeVAl = await Actividad.findOne({ nomActi }); 
 
-        if(!existeVAl)return res.status(404).json({msg:`Tu acción con nombre ${ nomActi }, No existe en la base de datos.`});
+        if(!existeVAl)return res.status(406).json({msg:`Tu acción con nombre ${ nomActi }, No existe en la base de datos.`});
 
         if ( tipo === "1-M" ){
             //Obtener 1-M
             const actividad = await Actividad.find({ activo }).sort({nomActi:-1});
-            res.json({ actividad });
+            res.status(200).json({ actividad });
        }else{
             //Obtener 1.1
             const actividad = await Actividad.find({ nomActi });
-            res.json({ actividad });
+            res.status(200).json({ actividad });
         }   
 
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).send('Hubo un error');
+        res.status(500).json({msg: `Hubo un  error  en  la comunicación !!  `});
     }
 }
 
@@ -72,7 +73,7 @@ exports.updateActividad = async (req, res)=>{
     //Revisar que que cumple con las reglas de validaciòn del routes 
     const errors = validationResult(req);
     if ( !errors.isEmpty() ){
-        return res.status(400).json({errores: errors.array()})
+        return res.status(406).json({errores: errors.array()})
     }
 
   //Extraer informacion para validacion 
@@ -83,7 +84,7 @@ exports.updateActividad = async (req, res)=>{
         //Valido Actividad 
           let valExiste = await Actividad.findById(id); // Leo : Mucho ojo es la forma de obtener los parametros por post 
   
-          if (!valExiste) return res.status(404).json({msg:`Tu actividad con nombre ${nomActi}, No existe en la base de datos.`});
+          if (!valExiste) return res.status(406).json({msg:`Tu actividad con nombre ${nomActi}, No existe en la base de datos.`});
           
         //crear un objeto con la nueva informaciòn 
         const newObj = {}
@@ -94,11 +95,12 @@ exports.updateActividad = async (req, res)=>{
         
         //Guadar Edicción 
         valExiste = await Actividad.findByIdAndUpdate({ _id: id }, newObj, {new:true});
-        res.json({msg:`Tu actividad con nombre ${nomOld}, fue editado.`});
+        res.status(205).json({msg:`Tu actividad con nombre ${nomOld}, fue editado.`});
      
   } catch (error) {
       logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-      res.status(500).send("Error en el servidor");
+      //res.status(500).send("Error en el servidor");
+      res.status(500).json({msg: `Hubo un  error  en  la comunicación !!  `});
   }
 }
 
@@ -110,14 +112,15 @@ exports.deleteActividad = async (req, res)=>{
         //Valido Actividad 
         let valExiste = await Actividad.findById(id); // Leo : Mucho ojo es la forma de obtener los parametros por post 
   
-        if (!valExiste)return res.status(404).json({msg:`Tu actividad con nombre ${nomActi}, No existe en la base de datos.`});
+        if (!valExiste) return res.status(406).json({msg:`Tu actividad con nombre ${nomActi}, No existe en la base de datos.`});
 
         //Eliminar Actividad 
         await Actividad.findByIdAndRemove( { _id:id } )
-        res.json({msg:`Tu actividad con nombre ${nomActi}, fue eliminado.`});
+        res.status(205).json({msg:`Tu actividad con nombre ${nomActi}, fue eliminado.`});
        
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).send("Error en el servidor.");
+        //res.status(500).send("Error en el servidor.");
+        res.status(500).json({msg: `Hubo un  error  en  la comunicación !!  `});
     }
 }

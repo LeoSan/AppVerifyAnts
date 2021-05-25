@@ -19,7 +19,7 @@ exports.nuevoUsuario = async(req, res)=>{
 
     if (!errores.isEmpty()){
         logsCotroller.logsCRUD('[Validacion] - Crear usuario');
-        return res.status(400).json({errores: errores.array()});
+        return res.status(406).json({errores: errores.array()});
     }
     
     //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
@@ -30,7 +30,7 @@ exports.nuevoUsuario = async(req, res)=>{
             // Anexo  Vaidación 
             let  usuario = await Usuario.findOne({emailUsu}); 
 
-            if ( usuario ) return  res.status(400).json({msg: `El usuario con este email, ${emailUsu} ya esta registrado`});
+            if ( usuario ) return  res.status(406).json({msg: `El usuario con este email, ${emailUsu} ya esta registrado`});
 
         //Creamos usuario si no esta duplicado 
             usuario = new Usuario(req.body);
@@ -42,14 +42,14 @@ exports.nuevoUsuario = async(req, res)=>{
 
             await usuario.save();
 
-            res.json({msj: 'Usuario Creado Exitosamente!!'});
+            res.status(201).json({msj: 'Usuario Creado Exitosamente!!'});
             
             let mensaje = " Primera prueba de envio de correos";
             mailCotroller.sendMailto( mensaje , emailUsu );
 
         } catch (error) {
             logsCotroller.logsCRUD(`Hubo un  error  en  la comunicación !! -> ${error} `);
-            res.json({msj: `Hubo un  error  en  la comunicación !! -> ${error} `});
+            res.status(500).json({msg: `Hubo un  error  en  la comunicación !!  `});
         }
 }
 
@@ -59,7 +59,7 @@ exports.updateUsuario = async (req, res)=>{
     //Revisar que que cumple con las reglas de validaciòn del routes 
     const errors = validationResult(req);
     if ( !errors.isEmpty() ){
-        return res.status(400).json({errores: errors.array()})
+        return res.status(406).json({errores: errors.array()})
     }
 
   //Extraer informacion para validacion 
@@ -69,7 +69,7 @@ exports.updateUsuario = async (req, res)=>{
         //Valido Categoria 
           let valExiste = await Usuario.findById( id ); 
   
-        if (!valExiste) return res.status(404).json({msg:`Tu Usuario con nombre ${nomUsu}, No existe en la base de datos.`});
+        if (!valExiste) return res.status(406).json({msg:`Tu Usuario con nombre ${nomUsu}, No existe en la base de datos.`});
         
         //crear un objeto con la nueva informaciòn 
         const newObj     = {}
@@ -81,11 +81,11 @@ exports.updateUsuario = async (req, res)=>{
         
         //Guadar Edicción 
         valExiste = await Usuario.findByIdAndUpdate({ _id: id }, newObj, {new:true});
-        res.status(200).json({msg:`Tu Usuario con nombre ${nomOld}, fue editado.`});
+        res.status(205).json({msg:`Tu Usuario con nombre ${nomOld}, fue editado.`});
      
   } catch (error) {
       logsCotroller.logsCRUD(`Hubo un  error  en  la comunicación !! -> ${error} `);
-      res.status(500).send("Error en el servidor");
+      res.status(500).json({msg: `Hubo un  error  en  la comunicación !!  `});
   }
 }
 
@@ -94,7 +94,7 @@ exports.deleteUsuario = async (req, res)=>{
         //Revisar que que cumple con las reglas de validaciòn del routes 
         const errors = validationResult(req);
         if ( !errors.isEmpty() ){
-            return res.status(400).json({errores: errors.array()})
+            return res.status(406).json({errores: errors.array()})
         }
     
     try {
@@ -102,7 +102,7 @@ exports.deleteUsuario = async (req, res)=>{
         //Valido Usuario  
         let valExiste = await Usuario.findById(id); 
   
-        if (!valExiste) return res.status(404).json({msg:`Tu Usuario con nombre ${emailUsu}, No existe en la base de datos.`});
+        if (!valExiste) return res.status(406).json({msg:`Tu Usuario con nombre ${emailUsu}, No existe en la base de datos.`});
 
         //Eliminar Usuario 
         await Usuario.findByIdAndRemove( { _id:id } ).exec(function (err, story) {
@@ -115,7 +115,7 @@ exports.deleteUsuario = async (req, res)=>{
        
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un  error  en  la comunicación !! -> ${error} `);
-        res.status(500).send("Error en el servidor.");
+        res.status(500).json({msg: `Hubo un  error  en  la comunicación !!  `});
     }
 }
 
@@ -125,7 +125,7 @@ exports.cambioClaveUsuario = async (req, res)=>{
     //Revisar que que cumple con las reglas de validaciòn del routes 
     const errors = validationResult(req);
     if ( !errors.isEmpty() ){
-        return res.status(400).json({errores: errors.array()})
+        return res.status(406).json({errores: errors.array()})
     }
 
   //Extraer informacion para validacion 
@@ -135,7 +135,7 @@ exports.cambioClaveUsuario = async (req, res)=>{
         //Valido Categoria 
           let valExiste = await Usuario.findById( id ); 
   
-        if (!valExiste) return res.status(404).json({msg:`Tu Usuario con nombre ${nomUsu}, No existe en la base de datos.`});
+        if (!valExiste) return res.status(406).json({msg:`Tu Usuario con nombre ${nomUsu}, No existe en la base de datos.`});
         
             //Hashear  la clave con el salt
             //Creamos la instancias de bcrypt para el Hasheo de la  clave, con esto lo mandamos como parametro  
@@ -152,10 +152,10 @@ exports.cambioClaveUsuario = async (req, res)=>{
 
         //Guadar Edicción 
         valExiste = await Usuario.findByIdAndUpdate({ _id: id }, newObj, {new:true});
-        res.status(200).json({msg:`Tu Usuario con nombre ${nomOld}, cambio del password exitoso.`});
+        res.status(205).json({msg:`Tu Usuario con nombre ${nomOld}, cambio del password exitoso.`});
      
   } catch (error) {
       logsCotroller.logsCRUD(`Hubo un  error  en  la comunicación !! -> ${error} `);
-      res.status(500).send("Error en el servidor");
+      res.status(500).json({msg: `Hubo un  error  en  la comunicación !!  `});
   }
 }

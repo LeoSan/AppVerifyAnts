@@ -12,7 +12,7 @@ exports.newGasto = async(req, res)=>{
     const errores  = validationResult(req); 
 
     if (!errores.isEmpty()){
-        return res.status(400).json({errores: errores.array()});
+        return res.status(406).json({errores: errores.array()});
     }
     
     //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
@@ -24,16 +24,16 @@ exports.newGasto = async(req, res)=>{
             // Anexo  Vaidación 
             let  gasto = await Gasto.findOne({nomGasto}); 
 
-            if ( gasto ) return  res.status(400).json({msg: `el gasto No la puedes repetir, ${nomGasto}`});
+            if ( gasto ) return  res.status(406).json({msg: `el gasto No la puedes repetir, ${nomGasto}`});
 
         //Creamos Gasto si no esta duplicado 
         gasto = new Gasto(req.body);
             await gasto.save();
-            res.json({msj: 'Gasto Creado Exitosamente!!'});
+            res.status(201).json({msg: 'Gasto Creado Exitosamente!!'});
 
         } catch (error) {
             logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-            res.json({msj: `Hubo un error en la comunicación !! `});
+            res.status(500).json({msg: `Hubo un error en la comunicación !! `});
         }
 }
 
@@ -47,7 +47,7 @@ exports.getGastos = async (req, res) =>{
             //Obtener 1-M
             let existeVAl = await Gasto.findOne({ usuario }); 
 
-            if(!existeVAl) return res.status(404).json({msg:`No Existe algun tipo de gasto para este usuario.`});
+            if(!existeVAl) return res.status(406).json({msg:`No Existe algun tipo de gasto para este usuario.`});
             
              //Ejemplo Multiple de modelos 
             //const gasto = await Gasto.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).populate({ path: 'usuario', model: 'Usuario', select: 'nomUsu'}).exec();
@@ -58,7 +58,7 @@ exports.getGastos = async (req, res) =>{
             //Obtener 1.1
             let existeVAl = await Gasto.findOne({ nomGasto }); 
 
-            if(!existeVAl)  return res.status(404).json({msg:`Tu Gasto con nombre ${ nomGasto }, No existe en la base de datos.`});
+            if(!existeVAl)  return res.status(406).json({msg:`Tu Gasto con nombre ${ nomGasto }, No existe en la base de datos.`});
             
             const gasto = await Gasto.find( { nomGasto } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
             res.status(200).json({ gasto });
@@ -66,7 +66,7 @@ exports.getGastos = async (req, res) =>{
 
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).send('Hubo un error en la comunicación');
+        res.status(500).json({msg: `Hubo un error en la comunicación !! `});
     }
 }
 
@@ -76,7 +76,7 @@ exports.getGastosByFecha = async (req, res) =>{
     const errores  = validationResult(req); 
 
     if (!errores.isEmpty()){
-        return res.status(400).json({errores: errores.array()});
+        return res.status(406).json({errores: errores.array()});
     }
     
     try {
@@ -86,18 +86,8 @@ exports.getGastosByFecha = async (req, res) =>{
             //Obtener 1-M
             let existeVAl = await Gasto.findOne({ usuario }); 
 
-            if(!existeVAl) return res.status(404).json({msg:`No Existe algun tipo de gasto para este usuario.`});
-            
-             //Ejemplo Multiple de modelos 
-            //const gasto = await Gasto.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).populate({ path: 'usuario', model: 'Usuario', select: 'nomUsu'}).exec();
-            
-            //const gasto = await Gasto.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
-            
-            //Consulta entre fechas 
-            //import endOfDay from 'date-fns/endOfDay';
-            //import startOfDay from 'date-fns/startOfDay';
-            //const gasto = await Gasto.find(  {"registro": {"$gte": startOfDay(new Date('2021-01-01')), "$lt": endOfDay(new Date('2021-05-01')) }}) ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
-            
+            if(!existeVAl) return res.status(406).json({msg:`No Existe algun tipo de gasto para este usuario.`});
+
             //let today = new Date('2020-05-01');
             let today = new Date(fechaConsultar);
             let query = {
@@ -116,7 +106,7 @@ exports.getGastosByFecha = async (req, res) =>{
             res.status(200).json({ gasto });
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).send(`Hubo un error en la comunicación !! ->  `);
+        res.status(500).json({msg: `Hubo un error en la comunicación !! `});
     }
 }
 
@@ -126,7 +116,7 @@ exports.getGastoSumaByFecha = async (req, res) =>{
     const errores  = validationResult(req); 
 
     if (!errores.isEmpty()){
-        return res.status(400).json({errores: errores.array()});
+        return res.status(406).json({errores: errores.array()});
     }
     
     try {
@@ -135,7 +125,7 @@ exports.getGastoSumaByFecha = async (req, res) =>{
 
             //Valido si existe el usuario
             let existeVAl = await Gasto.findOne({ usuario }); 
-            if(!existeVAl) return res.status(404).json({msg:`No Existe algun tipo de Gasto para este usuario.`});
+            if(!existeVAl) return res.status(406).json({msg:`No Existe algun tipo de Gasto para este usuario.`});
             
            //Realizo mi query para filtrr fecha y por Usuario y Activo 
             let today = new Date(fechaConsultar);
@@ -160,7 +150,7 @@ exports.getGastoSumaByFecha = async (req, res) =>{
             res.status(200).json({ gasto });
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).send(`Hubo un error en la comunicación !! -> `);
+        res.status(500).json({msg: `Hubo un error en la comunicación !! `});
     }
 }
 
@@ -170,7 +160,7 @@ exports.getGastosBetweenFecha = async (req, res) =>{
     const errores  = validationResult(req); 
 
     if (!errores.isEmpty()){
-        return res.status(400).json({errores: errores.array()});
+        return res.status(406).json({errores: errores.array()});
     }
     
     try {
@@ -182,7 +172,7 @@ exports.getGastosBetweenFecha = async (req, res) =>{
 
             let existeVAl = await Gasto.findOne({ usuario }); 
 
-            if(!existeVAl) return res.status(404).json({msg:`No Existe algun tipo de gasto para este usuario.`});
+            if(!existeVAl) return res.status(406).json({msg:`No Existe algun tipo de gasto para este usuario.`});
             
         //Consulta entre fechas 
             //Consulta solo por categoria 
@@ -197,7 +187,7 @@ exports.getGastosBetweenFecha = async (req, res) =>{
              }
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).send(`Hubo un error en la comunicación !! `);
+        res.status(500).json({msg: `Hubo un error en la comunicación !! `});
     }
 }
 
@@ -209,7 +199,7 @@ exports.updateGasto = async (req, res)=>{
     //Revisar que que cumple con las reglas de validaciòn del routes 
     const errors = validationResult(req);
     if ( !errors.isEmpty() ){
-        return res.status(400).json({errores: errors.array()})
+        return res.status(406).json({errores: errors.array()})
     }
 
   //Extraer informacion para validacion 
@@ -219,7 +209,7 @@ exports.updateGasto = async (req, res)=>{
         //Valido Categoria 
           let valExiste = await Gasto.findById( id ); 
   
-          if (!valExiste) return res.status(404).json({msg:`Tu Gasto con nombre ${nomGasto}, No existe en la base de datos.`});
+          if (!valExiste) return res.status(406).json({msg:`Tu Gasto con nombre ${nomGasto}, No existe en la base de datos.`});
           
         //crear un objeto con la nueva informaciòn 
         const newObj     = {}
@@ -234,11 +224,11 @@ exports.updateGasto = async (req, res)=>{
         
         //Guadar Edicción 
         valExiste = await Gasto.findByIdAndUpdate({ _id: id }, newObj, {new:true});
-        res.status(200).json({msg:`Tu Gasto con nombre ${nomOld}, fue editado.`});
+        res.status(205).json({msg:`Tu Gasto con nombre ${nomOld}, fue editado.`});
      
   } catch (error) {
       logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-      res.status(500).send("Error en el servidor");
+      res.status(500).json({msg: `Hubo un error en la comunicación !! `});
   }
 }
 
@@ -249,14 +239,14 @@ exports.deleteGasto = async (req, res)=>{
         //Valido Gasto 
         let valExiste = await Gasto.findById(id); 
   
-        if (!valExiste)  return res.status(404).json({msg:`Tu Gasto con nombre ${nomGasto}, No existe en la base de datos.`});
+        if (!valExiste)  return res.status(406).json({msg:`Tu Gasto con nombre ${nomGasto}, No existe en la base de datos.`});
 
         //Eliminar Gasto 
         await Gasto.findByIdAndRemove( { _id:id } )
-        res.status(200).json({msg:`Tu Gasto con nombre ${nomGasto}, fue eliminado.`});
+        res.status(205).json({msg:`Tu Gasto con nombre ${nomGasto}, fue eliminado.`});
        
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).send("Error en el servidor.");
+        res.status(500).json({msg: `Hubo un error en la comunicación !! `});
     }
 }

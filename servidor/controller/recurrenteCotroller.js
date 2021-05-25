@@ -9,7 +9,7 @@ const logsCotroller = require('../controller/logsController');
 exports.newRecurrente = async(req, res)=>{
     //Mostrar mensaje de error de express-validator 
     const errores  = validationResult(req); 
-    if (!errores.isEmpty())  return res.status(400).json({errores: errores.array()});
+    if (!errores.isEmpty())  return res.status(406).json({errores: errores.array()});
     
     //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
     //console.log(req.body);
@@ -19,16 +19,16 @@ exports.newRecurrente = async(req, res)=>{
             // Anexo  Vaidación 
             let  recurrente = await Recurrente.findOne({nomRecu}); 
 
-            if ( recurrente ) return  res.status(400).json({msg: `La categoria recurrente No la puedes repetir, ${nomRecu}`});
+            if ( recurrente ) return  res.status(406).json({msg: `La categoria recurrente No la puedes repetir, ${nomRecu}`});
 
             //Creamos Categoria si no esta duplicado 
         recurrente = new Recurrente(req.body);
             await recurrente.save();
-            res.json({msj: 'Categoria Recurrente Creada Exitosamente!!'});
+            res.status(201).json({msg: 'Categoria Recurrente Creada Exitosamente!!'});
 
         } catch (error) {
             logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-            res.json({msj: `Hubo un error en la comunicación !! -> ${error} `});
+            res.status(500).json({msg: `Hubo un error en la comunicación !! `});
         }
 }
 
@@ -42,7 +42,7 @@ exports.getRecurrente = async (req, res) =>{
             //Obtener 1-M
             let existeVAl = await Recurrente.findOne({ activo }); 
 
-            if(!existeVAl) return res.status(404).json({msg:`No Existe algun tipo de Recurrente activo.`});
+            if(!existeVAl) return res.status(406).json({msg:`No Existe algun tipo de Recurrente activo.`});
             
              //Ejemplo Multiple de modelos 
             //const recurrente = await Recurrente.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'usuario', model: 'Usuario', select: 'nomUsu'}).populate({ path: 'usuario', model: 'Usuario', select: 'nomUsu'}).exec();
@@ -53,7 +53,7 @@ exports.getRecurrente = async (req, res) =>{
             //Obtener 1.1
             let existeVAl = await Recurrente.findOne({ nomRecu }); 
 
-            if(!existeVAl) return res.status(404).json({msg:`Tu Recurrencia con nombre ${ nomRecu }, No existe en la base de datos.`});
+            if(!existeVAl) return res.status(406).json({msg:`Tu Recurrencia con nombre ${ nomRecu }, No existe en la base de datos.`});
             
             const recurrente = await Recurrente.find( { nomRecu } ).exec();
             res.status(200).json({ recurrente });
@@ -62,7 +62,7 @@ exports.getRecurrente = async (req, res) =>{
     } catch (error) {
         
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).send('Hubo un error');
+        res.status(500).json({msg: `Hubo un error en la comunicación !! `});
     }
 }
 
@@ -72,7 +72,7 @@ exports.updateRecurrente = async (req, res)=>{
     //Revisar que que cumple con las reglas de validaciòn del routes 
     const errors = validationResult(req);
     if ( !errors.isEmpty() ){
-        return res.status(400).json({errores: errors.array()})
+        return res.status(406).json({errores: errors.array()})
     }
 
   //Extraer informacion para validacion 
@@ -82,7 +82,7 @@ exports.updateRecurrente = async (req, res)=>{
         //Valido Categoria 
           let valExiste = await Recurrente.findById( id ); 
   
-        if (!valExiste) return res.status(404).json({msg:`Tu Recurrente con nombre ${nomRecu}, No existe en la base de datos.`});
+        if (!valExiste) return res.status(406).json({msg:`Tu Recurrente con nombre ${nomRecu}, No existe en la base de datos.`});
         
         //crear un objeto con la nueva informaciòn 
         const newObj        = {}
@@ -94,11 +94,11 @@ exports.updateRecurrente = async (req, res)=>{
         
         //Guadar Edicción 
         valExiste = await Recurrente.findByIdAndUpdate({ _id: id }, newObj, {new:true});
-        res.status(200).json({msg:`Tu Recurrencia con nombre ${nomOld}, fue editado.`});
+        res.status(205).json({msg:`Tu Recurrencia con nombre ${nomOld}, fue editado.`});
      
   } catch (error) {
       logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-      res.status(500).send("Error en el servidor");
+      res.status(500).json({msg: `Hubo un error en la comunicación !! `});
   }
 }
 
@@ -107,7 +107,7 @@ exports.deleteRecurrente = async (req, res)=>{
         //Revisar que que cumple con las reglas de validaciòn del routes 
         const errors = validationResult(req);
         if ( !errors.isEmpty() ){
-            return res.status(400).json({errores: errors.array()})
+            return res.status(406).json({errores: errors.array()})
         }
     
     try {
@@ -115,14 +115,14 @@ exports.deleteRecurrente = async (req, res)=>{
         //Valido Recurrente 
         let valExiste = await Recurrente.findById(id); 
   
-        if (!valExiste) return res.status(404).json({msg:`Tu Recurrencia con nombre ${nomRecu}, No existe en la base de datos.`});
+        if (!valExiste) return res.status(406).json({msg:`Tu Recurrencia con nombre ${nomRecu}, No existe en la base de datos.`});
 
         //Eliminar Recurrente 
         await Recurrente.findByIdAndRemove( { _id:id } )
-        res.status(200).json({msg:`Tu Recurrencia con nombre ${nomRecu}, fue eliminado.`});
+        res.status(205).json({msg:`Tu Recurrencia con nombre ${nomRecu}, fue eliminado.`});
        
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).send("Error en el servidor.");
+        res.status(500).json({msg: `Hubo un error en la comunicación !! `});
     }
 }
