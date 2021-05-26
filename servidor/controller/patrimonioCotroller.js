@@ -1,5 +1,6 @@
 //Libreria
 const {validationResult} = require('express-validator');
+const moment = require('moment');  
 //Modelo
 const Patrimonio = require('../models/Patrimonio');
 //Controlador 
@@ -151,6 +152,44 @@ exports.getPatrimonioSumaByFecha = async (req, res) =>{
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(500).json({msg: `Hubo un error en la comunicación !!  `});
+    }
+}
+
+//Obtener Patrimonio entre fechas Inicio y fin  
+exports.getPatrimonioBetweenFecha = async (req, res) =>{
+    
+    const errores  = validationResult(req); 
+
+    if (!errores.isEmpty()){
+        return res.status(400).json({errores: errores.array()});
+    }
+    
+    try {
+        //Distroccion 
+        const { fechaInicio, fechaFin,  usuario, categoria, activo, tipo} = req.body; //->Asi se usa cuando es un objeto 
+
+        let start = moment().format(fechaInicio);
+        let end = moment().format(fechaFin);
+
+            let existeVAl = await Patrimonio.findOne({ usuario }); 
+
+            if(!existeVAl) return res.status(406).json({msg:`No Existe algun tipo de Patrimonio para este usuario.`});
+            
+        //Consulta entre fechas 
+            //Consulta solo por categoria 
+            if ( tipo === "categoria" ){
+                const patrimonio = await Patrimonio.find( {"registro": {"$gte": start, "$lt": end }, 'activo': activo,  'usuario': usuario,  'categoria': categoria }).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
+                res.status(200).json({ patrimonio });
+            }
+            //Consulta solo por Usuario
+            if ( tipo === "usuario" ){ 
+                const patrimonio = await Patrimonio.find( {"registro": {"$gte": start, "$lt": end }, 'activo': activo,  'usuario': usuario }).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
+                res.status(200).json({ patrimonio });
+             }
+            
+    } catch (error) {
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
+        res.status(500).json({msg: `Hubo un error en la comunicación !! `});
     }
 }
 

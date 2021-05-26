@@ -1,9 +1,12 @@
 //Librerias 
 const {validationResult} = require('express-validator');
+const moment = require('moment');  
 //Modelos 
 const Accion = require('../models/Accion');
 //Controladores 
 const logsCotroller = require('../controller/logsController'); 
+
+require('dotenv').config({ path :'./config/variables.env'});
 
 //Crear  Accion 
 exports.newAccion = async(req, res)=>{
@@ -11,7 +14,7 @@ exports.newAccion = async(req, res)=>{
     const errores  = validationResult(req); 
 
     if (!errores.isEmpty()){
-        return res.status(406).json({errores: errores.array()});
+        return res.status(process.env.SFALLA).json({errores: errores.array()});
     }
     
     //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
@@ -28,7 +31,7 @@ exports.newAccion = async(req, res)=>{
             res.status(201).json({msg: 'Tu Acción fue creada Exitosamente!!'});
         } catch (error) {
             logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-            res.status(500).json({msg: `Hubo un error en la comunicación !! `});
+            res.status(process.env.SERROR).json({msg: `Hubo un error en la comunicación !! `});
         }
 }
 
@@ -58,6 +61,45 @@ exports.getAccion = async (req, res) =>{
             const accion = await Accion.find({ nomAccion }).sort({autor:-1});
             res.status(200).json({ accion });
         }     
+    } catch (error) {
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
+        res.status(500).json({msg: `Hubo un error en la comunicación !! `});
+    }
+}
+
+
+//Obtener Acciones entre fechas Inicio y fin  
+exports.getAccionBetweenFecha = async (req, res) =>{
+    
+    const errores  = validationResult(req); 
+
+    if (!errores.isEmpty()){
+        return res.status(400).json({errores: errores.array()});
+    }
+    
+    try {
+        //Distroccion 
+        const { fechaInicio, fechaFin,  autor, categoria, activo, tipo} = req.body; //->Asi se usa cuando es un objeto 
+
+        let start = moment().format(fechaInicio);
+        let end = moment().format(fechaFin);
+
+            let existeVAl = await Accion.findOne({autor}); 
+
+            if(!existeVAl) return res.status(406).json({msg:`No Existe algun tipo de Accion para este usuario.`});
+            
+        //Consulta entre fechas 
+            //Consulta solo por categoria 
+            if ( tipo === "categoria" ){
+                const accion = await Accion.find( {"registro": {"$gte": start, "$lt": end }, 'activo': activo,  'autor': autor,  'categoria': categoria }).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
+                res.status(200).json({ accion });
+            }
+            //Consulta solo por Usuario
+            if ( tipo === "usuario" ){ 
+                const accion = await Accion.find( {"registro": {"$gte": start, "$lt": end }, 'activo': activo,  'autor': autor }).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
+                res.status(200).json({ accion });
+             }
+            
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(500).json({msg: `Hubo un error en la comunicación !! `});

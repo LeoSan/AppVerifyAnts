@@ -19,16 +19,17 @@ const accionSchema = new Schema({
 	   lowercase:true,
 	   trim:true,
 	},
-    autor:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Usuario',
-        required:true,
-    },
-    categoria:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Categoria',
-        required:true,
+
+	autor: [{ type: Schema.Types.ObjectId, ref: 'Usuario', required:true }],    
+	categoria: [{ type: Schema.Types.ObjectId, ref: 'Categoria', required:true }],    
+	recurrente: [{ type: Schema.Types.ObjectId, ref: 'Recurrente', required:true}],    
+
+    duracion:{
+        type:Number,
+		required:true,
+        default:0
     },	
+
 	activo:{
 	   type: Number,
 	   default:	1

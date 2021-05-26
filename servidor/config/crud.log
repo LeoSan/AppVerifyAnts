@@ -35,3 +35,8 @@
 [2021-05-25T12:13:18.123] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: gasto is not defined 
 [2021-05-25T12:13:57.775] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: gasto is not defined 
 [2021-05-25T12:38:29.512] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: moment is not defined 
+[2021-05-26T13:16:15.577] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: moment is not defined 
+[2021-05-26T13:34:52.938] [ERROR] crud - Hubo un error en la comunicación !! -> ValidationError: recurrente.0: Cast to [ObjectId] failed for value "["null"]" at path "recurrente.0", duracion: Cast to Number failed for value "null" at path "duracion" 
+[2021-05-26T13:35:31.163] [ERROR] crud - Hubo un error en la comunicación !! -> ValidationError: recurrente.0: Cast to [ObjectId] failed for value "["null"]" at path "recurrente.0", duracion: Cast to Number failed for value "null" at path "duracion" 
+[2021-05-26T13:36:00.475] [ERROR] crud - Hubo un error en la comunicación !! -> ValidationError: recurrente.0: Cast to [ObjectId] failed for value "["0"]" at path "recurrente.0" 
+[2021-05-26T15:51:45.504] [ERROR] crud - Hubo un error en la comunicación !! -> ObjectParameterError: Parameter "filter" to findOne() must be an object, got 60931369a379ab3cc4a7e655 
