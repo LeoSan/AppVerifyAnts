@@ -1,6 +1,12 @@
-const express = require('express');
+/*
+   Archivo Principal de arranque. 
+*/
+//Importo librerias 
+const express     = require('express');
 const connectarDB = require('./config/db'); // Importamos nuestro conector de BD // Debes crear la conexion antes
-const cors = require('cors');
+const cors        = require('cors');
+
+//Configuro variables de entornos
 require('dotenv').config({ path :'config/variables.env'});
 
 //Crear el servidor
@@ -21,7 +27,7 @@ app.use(cors());
 //Habilitar leer los valores de un body
 app.use(express.json());
  
-//Rutas de Accesos
+//Rutas de Accesos Para las APIS 
 //Crear Acción
 app.use('/api/accion',    require('./routes/accion'));
 
@@ -48,6 +54,10 @@ app.use('/api/recurrente', require('./routes/recurrente'));
 
 //Crear usuario 
 app.use('/api/usuarios',   require('./routes/usuario')); 
+
+
+//Validando re-captcha Monta la interfaz 
+app.get('/', (_, res) => res.sendFile(__dirname + '/captcha.html'));
 
 //Iniciamos nuestro  servidor
 app.listen(port, '0.0.0.0', () => {

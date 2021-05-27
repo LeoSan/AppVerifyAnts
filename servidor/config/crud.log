@@ -40,3 +40,16 @@
 [2021-05-26T13:35:31.163] [ERROR] crud - Hubo un error en la comunicación !! -> ValidationError: recurrente.0: Cast to [ObjectId] failed for value "["null"]" at path "recurrente.0", duracion: Cast to Number failed for value "null" at path "duracion" 
 [2021-05-26T13:36:00.475] [ERROR] crud - Hubo un error en la comunicación !! -> ValidationError: recurrente.0: Cast to [ObjectId] failed for value "["0"]" at path "recurrente.0" 
 [2021-05-26T15:51:45.504] [ERROR] crud - Hubo un error en la comunicación !! -> ObjectParameterError: Parameter "filter" to findOne() must be an object, got 60931369a379ab3cc4a7e655 
+[2021-05-27T12:36:04.953] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: stringify is not defined 
+[2021-05-27T12:39:03.612] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T12:58:16.677] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T12:59:33.571] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T12:59:56.498] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T13:01:33.534] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T13:05:21.360] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T13:05:52.906] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T13:05:57.749] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T13:06:24.821] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T13:19:55.072] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T13:22:02.460] [ERROR] crud - Resultado captcha !! -> true 
+[2021-05-27T13:25:23.823] [ERROR] crud - Resultado captcha !! -> true 

@@ -33,7 +33,7 @@ router.put('/',
     usuarioController.updateUsuario
 );
 
-//End-Point - Editar Usuario
+//End-Point - Editar Usuario Cambio de clave 
 router.put('/pass', 
       auth,
     [

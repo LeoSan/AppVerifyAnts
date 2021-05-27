@@ -27,4 +27,20 @@ router.post('/',
     authController.autenticarUsuario
 );
 
+
+//Autenticar Usuario con captcha
+//api/auth // midleware 
+router.post('/captcha',
+    [
+        check('emailUsu',  'Agrega un email valido').isEmail(),
+        check('password',  'El password debe ser minimo de 6 caracteres').isLength({min:6}),
+        check('captcha',   'El sitekey debe ser minimo de 6 caracteres').not().isEmpty(),
+    ], 
+    authController.autenticarUsuarioToken
+);
+
+
+
+
+
 module.exports = router;
