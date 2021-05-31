@@ -28,35 +28,38 @@ app.use(cors());
 app.use(express.json());
  
 //Rutas de Accesos Para las APIS 
-//Crear Acción
+//Router  Acción
 app.use('/api/accion',    require('./routes/accion'));
 
-//Crear Actividad  
+//Router Actividad  
 app.use('/api/actividad', require('./routes/actividad'));
 
-//Validar Autenticación 
+//Router Autenticación 
 app.use('/api/auth',      require('./routes/auth'));
 
-//Crear Categoria  
+//Router Categoria  
 app.use('/api/categoria', require('./routes/categoria'));
 
-//Crear Gasto
+//Router Gasto
 app.use('/api/gasto',     require('./routes/gasto'));
 
-//Crear Ingreso
+//Router Ingreso
 app.use('/api/ingreso',   require('./routes/ingreso'));
 
-//Crear Patrimonio
+//Router Patrimonio
 app.use('/api/patrimonio', require('./routes/patrimonio'));
 
-//Crear Recurrente  
+//Router Recurrente  
 app.use('/api/recurrente', require('./routes/recurrente'));
 
-//Crear usuario 
+//Router usuario 
 app.use('/api/usuarios',   require('./routes/usuario')); 
 
+//Router Cumplida 
+app.use('/api/cumplida',   require('./routes/cumplida')); 
 
-//Validando re-captcha Monta la interfaz 
+
+//Validando re-captcha Monta la interfaz  http://localhost:4000/
 app.get('/', (_, res) => res.sendFile(__dirname + '/captcha.html'));
 
 //Iniciamos nuestro  servidor
