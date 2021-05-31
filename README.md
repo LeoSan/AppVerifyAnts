@@ -34,8 +34,8 @@ Perspectiva
 ### Fechas
 
 - Analisis         -> IEnero2021 - FMarzo3121 
-- Desarrollo Back  -> IMayo0121 - FACtual
-- Desarrollo Front -> Estudiando tailwind investigando maquetas
+- Desarrollo Back  -> IMayo0121 - FMayo3121
+- Desarrollo Front -> IMayo3121 - FACtual
 - Deasrollo Mobil  -> Estudiando en Udemy  
 
 ### Link de Apoyos  
