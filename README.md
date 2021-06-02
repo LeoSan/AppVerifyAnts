@@ -19,7 +19,7 @@ Mi primera app usando MERN, es un proyecto personal, donde deseo plasmar y contr
 - Next.Js Como FrameWork
 - Tailwind css 
 
-# Comandos 
+#### Comandos 
 - npx create-next-app -e with-tailwindcss my-project
 
 #### Alcance Mobil 
