@@ -29,6 +29,8 @@ Mi primera app usando MERN, es un proyecto personal, donde deseo plasmar y contr
 
 #### Comandos Front 
 - npx create-next-app -e with-tailwindcss my-project //Esto ya te genera toda la configuración para tail tambien se puede hacer [manualmente](https://tailwindcss.com/docs/guides/nextjs)
+- npm i react-google-recaptcha
+- npm list --depth=0
 
 #### Alcance Mobil 
 - React - Native 
