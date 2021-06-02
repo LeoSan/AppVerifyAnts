@@ -15,11 +15,19 @@ Mi primera app usando MERN, es un proyecto personal, donde deseo plasmar y contr
 - Mongo DB
 - Mongoose 
 
+#### Comandos Back 
+- npm init
+- npm i express
+- npm i --save-dev nodemon
+- npm install mongoose --save
+- npm install dotenv
+- npm run dev -> Claro debes configurar ciertos archivos 
+
 #### Desarrollo Front  
 - Next.Js Como FrameWork
 - Tailwind css 
 
-#### Comandos 
+#### Comandos Front 
 - npx create-next-app -e with-tailwindcss my-project
 
 #### Alcance Mobil 
@@ -43,3 +51,7 @@ Perspectiva
 
 ### Link de Apoyos  
 https://pandao.github.io/editor.md/en.html
+
+### Link de Guias 
+[Guia para Back](https://docs.google.com/document/d/1XUuNH7dnrRydDHygcJM-Mqaxtfcih-i49stPy0IMwLA/edit#)
+
