@@ -28,7 +28,7 @@ Mi primera app usando MERN, es un proyecto personal, donde deseo plasmar y contr
 - Tailwind css 
 
 #### Comandos Front 
-- npx create-next-app -e with-tailwindcss my-project //Esto ya te genera toda la configuración para tail tambien se puede hacer [manualmente]https://tailwindcss.com/docs/guides/nextjs)
+- npx create-next-app -e with-tailwindcss my-project //Esto ya te genera toda la configuración para tail tambien se puede hacer [manualmente](https://tailwindcss.com/docs/guides/nextjs)
 
 #### Alcance Mobil 
 - React - Native 
