@@ -56,4 +56,6 @@ https://pandao.github.io/editor.md/en.html
 
 ### Link de Guias 
 [Guia para Back](https://docs.google.com/document/d/1XUuNH7dnrRydDHygcJM-Mqaxtfcih-i49stPy0IMwLA/edit#)
+[Estudios - Platzi](https://platzi.com/p/LEONARDCUENCA/)
+[Estudios - Udemy](https://www.udemy.com/user/leonard-cuenca-roa/)
 
