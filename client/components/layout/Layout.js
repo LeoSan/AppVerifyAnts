@@ -28,8 +28,7 @@ const Layout = ({children}) => {
             <div className="md:flex flex min-h-screen">
                 <div className="container mx-auto">
                     <Header/>
-                   
-                    <main className="mt-20">
+                    <main className="mt-4">
                         {children}
                     </main>
                     <Footer/>

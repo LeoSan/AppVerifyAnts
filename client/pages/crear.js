@@ -29,7 +29,7 @@ const crear = () => {
                               <form className="mb-8"  >
                                     <div className="mb-4">
                                              <label 
-                                                      className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email</label>
+                                                      className="block text-white text-sm font-bold mb-2" htmlFor="email">Email</label>
                                              <input 
                                                       id="Email"
                                                       type="text"
@@ -40,7 +40,7 @@ const crear = () => {
                                     </div>
                                     <div className="mb-4">
                                              <label 
-                                                      className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Password</label>
+                                                      className="block text-white text-sm font-bold mb-2" htmlFor="password">Password</label>
                                              <input 
                                                       id="password"
                                                       type="password"
@@ -51,7 +51,7 @@ const crear = () => {
                                     </div>    
                                     <div className="mb-4">
                                              <label 
-                                                      className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password2">Confirmar </label>
+                                                      className="block text-white text-sm font-bold mb-2" htmlFor="password2">Confirmar </label>
                                              <input 
                                                       id="password2"
                                                       type="password2"
@@ -63,7 +63,7 @@ const crear = () => {
                                     
                                     <div className="mb-4 items-center">
                                            <label 
-                                              className="block text-gray-700 text-sm font-bold mb-2">¿ Eres un Robot ?</label>
+                                              className="block text-white text-sm font-bold mb-2">¿ Eres un Robot ?</label>
                                  
                                           <ReCAPTCHA
                                              sitekey='6LdxEHIUAAAAAMhzsqkP-Q6ddj3xXkQwGTd38m9D'
