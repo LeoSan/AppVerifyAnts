@@ -7,7 +7,6 @@ Mi primera app usando MERN, es un proyecto personal, donde deseo plasmar y contr
 
 <p align="center"><img src="https://www.atsistemas.com/dam/jcr:20b575da-1767-43dc-b18f-4f2a9f722877/1375-775-tailwind-css.png" width="400"> </p>
 
-
 ### Tecnologias aplicadas 
 #### Desarrollo Back 
 - Node.Js V15-14 
@@ -15,21 +14,37 @@ Mi primera app usando MERN, es un proyecto personal, donde deseo plasmar y contr
 - Mongo DB
 - Mongoose 
 
-#### Desarrollo Front  
+#### Comandos Back 
+- npm init
+- npm i express
+- npm i --save-dev nodemon
+- npm install mongoose --save
+- npm install dotenv
+- npm run dev -> Claro debes configurar ciertos archivos 
+
+#### Desarrollo Front  Desktop
 - Next.Js Como FrameWork
 - Tailwind css 
 
-#### Alcance Mobil 
-- React - Native 
-- React-Paper 
+#### Comandos Front  
+- npx create-next-app -e with-tailwindcss my-project //Esto ya te genera toda la configuración para tail tambien se puede hacer [manualmente](https://tailwindcss.com/docs/guides/nextjs)
+- npm i react-google-recaptcha
+- npm list --depth=0
+
+#### Desarrollo Front  Mobil
 
 ### Es mi forma de Practicar lo Nuevo de React 
 
-Perspectiva
-- Por definir 
+### Perspectiva
+- Aprender NEXT - (Interfaz para Desktop)     - Front 
+- Aprender Node.js - Express - (servicio web) - Back
+- Aprender React-Native - (App mobil)         - Front
 
 ### Cosas que quedan pendiente Se iran aprendiendo en el camino. 
-- Por definir 
+- Tailwind
+- react-native
+- maquetación
+- Diseño 
 
 ### Fechas
 
@@ -40,3 +55,9 @@ Perspectiva
 
 ### Link de Apoyos  
 https://pandao.github.io/editor.md/en.html
+
+### Link de Guias 
+- [Guia para Back](https://docs.google.com/document/d/1XUuNH7dnrRydDHygcJM-Mqaxtfcih-i49stPy0IMwLA/edit#)
+- [Estudios - Platzi](https://platzi.com/p/LEONARDCUENCA/)
+- [Estudios - Udemy](https://www.udemy.com/user/leonard-cuenca-roa/)
+
