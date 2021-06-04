@@ -26,12 +26,16 @@ Mi primera app usando MERN, es un proyecto personal, donde deseo plasmar y contr
 - Next.Js Como FrameWork
 - Tailwind css 
 
-#### Comandos Front  
+#### Comandos Front  Desktop
 - npx create-next-app -e with-tailwindcss my-project //Esto ya te genera toda la configuración para tail tambien se puede hacer [manualmente](https://tailwindcss.com/docs/guides/nextjs)
 - npm i react-google-recaptcha
 - npm list --depth=0
 
 #### Desarrollo Front  Mobil
+- React-Native 
+
+#### Comandos Front  Desktop
+- React-Native 
 
 ### Es mi forma de Practicar lo Nuevo de React 
 
