@@ -28,8 +28,51 @@ Mi primera app usando MERN, es un proyecto personal, donde deseo plasmar y contr
 
 #### Comandos Front  
 - `npx create-next-app -e with-tailwindcss my-project`->Esto ya te genera toda la configuración para tail tambien se puede hacer [manualmente](https://tailwindcss.com/docs/guides/nextjs)
-- `npm i react-google-recaptcha`
-- `npm install @heroicons/react` -> para usar iconos ->https://heroicons.dev/ 
+- `npm install tailwindcss postcss-cli autoprefixer -D` -> Ejecutalo dentro de tu proyecto
+- `npx tailwindcss init` -> Crea el archivo configurador deTailwind 
+- Configuramos nuestro archivo en la raiz `postcss.config.js`
+```
+<code>
+
+module.exports = {
+  plugins: [
+    // ...
+    require('tailwindcss'),
+    require('autoprefixer'),//PAra que sea compatble con todos los navegadores web 
+    // ...
+  ]
+}
+
+```
+- Creamos la carpeta `assets` y el archivo `tailwind.css` como es next improvisare colocarla en public todo `\public\assets\tailwind.css`
+```
+<code>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+//Aqui puedes crear tus componenetes 
+```
+- Editamos el package.json  -> como estamos usando public debemos configurar esa ruta 
+
+``` 
+<code>
+  "scripts": {
+    "dev": " build:css && next dev",
+    "build": "build:css && next build",
+    "start": "build:css && next start",
+    "build:css": "postcss public/assets/tailwind.css -o public/assets/main.css",
+    "watch:css": "postcss public/assets/tailwind.css -o public/assets/main.css -w"
+  },
+``` 
+- Editamos el archivo principal que en este caso es: _app.js 
+  debemos decirle que deje apuntar al tailwind que esta en el module y que ahora apunte a nuestro archivo main.css 
+  creamos en nuestro public el main.css ->vacio 
+``` 
+import './public/assets/main.css';
+``` 
+  
+- `npm i react-google-recaptcha`-> Ejecutalo dentro de tu proyecto
+- `npm install @heroicons/react` -> para usar iconos ->https://heroicons.dev/  -> Ejecutalo dentro de tu proyecto
 - `npm list --depth=0`
 
 
