@@ -6,12 +6,18 @@ import Link from 'next/link';
 const Bout = ({ valor }) => {
     return (
         <Fragment>
-            <Link href="/login">
-                <a className="bg-green-500 hover::bg-red-700 px-2 py-3 rounded-lg text-white font-bold uppercase mr-2 ">Acceder Cuenta</a>
-            </Link>
-            <Link href="/crear">
-                <a className="bg-orange-500 hover::bg-red-700  px-2 py-3 rounded-lg text-white font-bold uppercase">Generar Cuenta</a>
-            </Link>
+                <div className="flex w-full flex-wrap md:flex-row md:items-stretch md:justify-end md:w-1/2 lg:w-1/2 px-2 ">
+                    <div className=" flex-wrap mt-5">
+                        <Link href="/login"> 
+                            <button className="btn-yellow">Acceder </button>
+                            </Link>
+                    </div>
+                    <div className=" flex-wrap mt-5">
+                        <Link href="/crear">
+                            <button className="btn-green"> Registrar  </button>
+                            </Link>
+                    </div>
+                </div>              
         </Fragment>
     );
 }

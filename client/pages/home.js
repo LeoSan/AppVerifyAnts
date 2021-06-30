@@ -13,7 +13,7 @@ const Home = () => {
                 <SideBar/>
                 <div className="md:w-3/5 xl:w-4/5 p-6">
 
-                  <div >
+                  <div>
                     <img  src="/home.gif" /> 
                   </div>
                     

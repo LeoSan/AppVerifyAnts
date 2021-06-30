@@ -6,15 +6,18 @@ import Link from 'next/link';
 const Bin = ({ valor }) => {
     return (
         <Fragment>
-            
-            <p className="px-2 py-3 text-gray-500  text-xl font-bold">Buen Día, Leonard </p>
-           
-            <Link href="/login">
-                <a className="bg-green-500  hover::bg-red-700 px-2 py-3 rounded-lg text-white font-bold uppercase mr-2 ">Perfil</a>
-            </Link>
-            <Link href="/crear">
-                <a className="bg-orange-500  hover::bg-red-700  px-2 py-3 rounded-lg text-white font-bold uppercase"> Salir </a>
-            </Link>
+                <div className="flex w-full flex-wrap md:flex-row md:items-stretch md:justify-end md:w-1/2 lg:w-1/2 px-2 ">
+                    <div className=" flex-wrap mt-5">
+                        <Link href="/login"> 
+                            <button className="btn-yellow">Login</button>
+                            </Link>
+                    </div>
+                    <div className=" flex-wrap mt-5">
+                        <Link href="/crear">
+                            <button className="btn-green"> Registrarse</button>
+                            </Link>
+                    </div>
+                </div>              
         </Fragment>
     );
 }

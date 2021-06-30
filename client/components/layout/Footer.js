@@ -13,7 +13,7 @@ const Footer = () => {
 
     return ( 
         <Fragment>
-            <span className="text-1xl font-light mb-4">  Todos los derechos reservados © </span> 
+            <div className="w-full text-1xl bg-gray-300 text-center text-gray-500  font-Roboto"> <span className="text-xl font-bold text-yellow-500">Ant-Verify© </span> Todos los derechos reservados 2021 </div> 
         </Fragment>    
 
      );
