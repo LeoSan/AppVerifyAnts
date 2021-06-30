@@ -15,41 +15,64 @@ Mi primera app usando MERN, es un proyecto personal, donde deseo plasmar y contr
 - Mongoose 
 
 #### Comandos Back 
-- npm init
-- npm i express
-- npm i --save-dev nodemon
-- npm install mongoose --save
-- npm install dotenv
-- npm run dev -> Claro debes configurar ciertos archivos 
+- `npm init`
+- `npm i express`
+- `npm i --save-dev nodemon`
+- `npm install mongoose --save`
+- `npm install dotenv`
+- `npm run dev` -> Iniciador 
 
-<<<<<<< HEAD
-#### Desarrollo Front  
-- Next.Js Como FrameWork
-- Tailwind css 
-
-#### Comandos Front 
-=======
 #### Desarrollo Front  Desktop
-- Next.Js Como FrameWork
+- Next.Js 
 - Tailwind css 
 
-#### Comandos Front  Desktop
->>>>>>> DEV/Fase-3-Font
-- npx create-next-app -e with-tailwindcss my-project //Esto ya te genera toda la configuración para tail tambien se puede hacer [manualmente](https://tailwindcss.com/docs/guides/nextjs)
-- npm i react-google-recaptcha
-- npm list --depth=0
+#### Comandos Front  
+- `npx create-next-app -e with-tailwindcss my-project`->Esto ya te genera toda la configuración para tail tambien se puede hacer [manualmente](https://tailwindcss.com/docs/guides/nextjs)
+- `npm install tailwindcss postcss-cli autoprefixer -D` -> Ejecutalo dentro de tu proyecto
+- `npx tailwindcss init` -> Crea el archivo configurador deTailwind 
+- Configuramos nuestro archivo en la raiz `postcss.config.js`
+```javascript
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},//Para que sea compatible con todos los navegadores web 
+  },
+}
 
-<<<<<<< HEAD
-#### Alcance Mobil 
-- React - Native 
-- React-Paper 
-=======
+```
+- Creamos la carpeta `assets` y el archivo `tailwind.css` como es next improvisare colocarla en public todo `\public\assets\tailwind.css`
+```javascript
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+//Aqui puedes crear tus componenetes 
+```
+- Editamos el package.json  -> como estamos usando public debemos configurar esa ruta 
+
+```javascript 
+  "scripts": {
+    "dev": "npm run build:css && next dev",
+    "build": "npm run watch:css && next build",
+    "start": " npm run build:css && next start",
+    "build:css": "postcss public/assets/tailwind.css -o public/assets/main.css",
+    "watch:css": "postcss public/assets/tailwind.css -o public/assets/main.css -w"
+  },
+``` 
+- Editamos el archivo principal que en este caso es: _app.js 
+  debemos decirle que deje apuntar al tailwind que esta en el module y que ahora apunte a nuestro archivo main.css 
+  creamos en nuestro public el main.css ->vacio 
+```javascript 
+import './public/assets/main.css';
+``` 
+  
+- `npm i react-google-recaptcha`-> Ejecutalo dentro de tu proyecto
+- `npm install @heroicons/react` -> para usar iconos ->https://heroicons.dev/  -> Ejecutalo dentro de tu proyecto
+- `npm list --depth=0`
+- `npm run dev` -> inicamos el front!!  
+
+
 #### Desarrollo Front  Mobil
-- React-Native 
-
-#### Comandos Front  Desktop
-- React-Native 
->>>>>>> DEV/Fase-3-Font
 
 ### Es mi forma de Practicar lo Nuevo de React 
 
@@ -66,20 +89,16 @@ Mi primera app usando MERN, es un proyecto personal, donde deseo plasmar y contr
 
 ### Fechas
 
-- Analisis         -> IEnero2021 - FMarzo3121 
-- Desarrollo Back  -> IMayo0121 - FMayo3121
-- Desarrollo Front -> IMayo3121 - FACtual
-- Deasrollo Mobil  -> Estudiando en Udemy  
+- [x] Analisis         -> IEnero2021 - FMarzo3121 
+- [x] Desarrollo Back  -> IMayo0121 - FMayo3121
+- [ ] Desarrollo Front -> IMayo3121 - FACtual
+- [ ] Deasrollo Mobil  -> Estudiando en Udemy  
 
 ### Link de Apoyos  
 https://pandao.github.io/editor.md/en.html
 
 ### Link de Guias 
-<<<<<<< HEAD
-[Guia para Back](https://docs.google.com/document/d/1XUuNH7dnrRydDHygcJM-Mqaxtfcih-i49stPy0IMwLA/edit#)
-=======
 - [Guia para Back](https://docs.google.com/document/d/1XUuNH7dnrRydDHygcJM-Mqaxtfcih-i49stPy0IMwLA/edit#)
 - [Estudios - Platzi](https://platzi.com/p/LEONARDCUENCA/)
 - [Estudios - Udemy](https://www.udemy.com/user/leonard-cuenca-roa/)
->>>>>>> DEV/Fase-3-Font
 
