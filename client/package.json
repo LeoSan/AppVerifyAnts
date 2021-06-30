@@ -1,19 +1,27 @@
 {
-  "name": "cliente",
+  "name": "with-tailwindcss",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "npm run build:css && next dev",
+    "build": "npm run build:css && next build",
+    "start": " npm run build:css && next start",
+    "build:css": "postcss public/assets/tailwind.css -o public/assets/main.css",
+    "watch:css": "postcss public/assets/tailwind.css -o public/assets/main.css -w"
   },
   "dependencies": {
-    "@emotion/babel-preset-css-prop": "^11.2.0",
-    "@emotion/core": "^11.0.0",
-    "@emotion/styled": "^11.3.0",
-    "babel-plugin-emotion": "^11.0.0",
-    "next": "10.2.3",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "@heroicons/react": "^1.0.1",
+    "next": "latest",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-google-recaptcha": "^2.1.0",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/jit": "^0.1.18",
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.5",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.2.4"
   }
 }

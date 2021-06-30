@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+    @apply py-2 px-4 rounded;
+}
+
+.btn-blue {
+    @apply bg-blue-500 text-white;
+}
+
+.btn-blue:hover {
+    @apply bg-blue-700;
+}
+
+.card {
+    @apply rounded overflow-hidden shadow-lg;
+}
+
+.somHeader {
+    @apply rounded-b-md overflow-hidden shadow-lg;
+}
+
+.btn-green{
+    @apply bg-green-500  px-2 py-3 rounded-lg text-white font-bold uppercase m-1;
+}
+
+.btn-yellow{
+    @apply bg-yellow-500  px-2 py-3 rounded-lg text-white font-bold uppercase m-1;
+}
