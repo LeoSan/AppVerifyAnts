@@ -71,8 +71,6 @@ const Body = () => {
                 </div> 
             </div>             
             
-
-            
         </Fragment>    
 
      );

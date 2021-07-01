@@ -2,15 +2,13 @@
 import React, {useContext, useEffect, Fragment, useState} from 'react';
 import Layout from '../components/layout/Layout';
 import ReCAPTCHA from 'react-google-recaptcha';
-
+import CardH from "../components/ui/CardH";
 
 const login = () => {
 
    //Declaro mis useState 
    const [valcaptcha, setvalcaptcha] = useState(0);
 
-   
-   
    //Metodos Funcionales 
 
    //función : Para capturar el valor del captcha 
@@ -19,17 +17,18 @@ const login = () => {
       console.log("Captcha value:", value);
     }
     
-     
-
   return ( 
       <Layout>
          <Fragment>
-            <h1 className="text-3xl font-light mb-4"> Ingrese sus credenciales  </h1> 
+          
 
             <div className="flex justify-center mt-10">
-               <div className="w-full max-w-3xl bg-orange-500 pl-3 pr-3 rounded-lg pt-3">
+               <div className="w-full max-w-3xl pl-3 pr-3 rounded-lg pt-3 bg-white mb-5 overflow-hidden shadow-lg">
                               <form className="mb-8"  >
-                                    <div className="mb-4">
+                                     <label 
+                                                      className="text-2xl font-bold text-yellow-500 " >Ingrese sus credenciales</label>
+
+                                    <div className="mb-4 ">
                                              <label 
                                                       className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email</label>
                                              <input 
@@ -37,7 +36,7 @@ const login = () => {
                                                       type="text"
                                                       placeholder="Ingrese Email"
 
-                                                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
+                                                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md focus:border-yellow-500"
                                              />
                                     </div>
                                     <div className="mb-4">
@@ -48,7 +47,7 @@ const login = () => {
                                                       type="password"
                                                       placeholder="Ingrese Password"
 
-                                                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
+                                                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md focus:border-yellow-500 "
                                              />
                                     </div>     
                                     
@@ -56,16 +55,15 @@ const login = () => {
                                           <label 
                                              className="block text-gray-700 text-sm font-bold mb-2">¿ Eres un Robot ?</label>
                                           
-                                          <ReCAPTCHA
+                                          <ReCAPTCHA className="flex items-center justify-center"
                                           sitekey='6LdxEHIUAAAAAMhzsqkP-Q6ddj3xXkQwGTd38m9D'
                                           onChange={getValCapctha}
                                           />
 
-
                                     </div>                                      
                                     <input 
                                              type="submit"
-                                             className="bg-green-500 hover:bg-blue-300, cursor-pointer w-full mt-5 p-2 text-white uppercase font-bold rounded-lg"
+                                             className="bg-green-500 hover:bg-blue-300, cursor-pointer w-full mt-5 p-2 text-white uppercase font-bold rounded-lg focus:shadow-md"
                                              value="Login"
                                     />                                                                                                                      
 

@@ -10,7 +10,15 @@ module.exports = {
 
   },
   variants: {
-    extend: {},
+    cursor: ['hover', 'focus'],
+    opacity: ['responsive', 'hover', 'focus', 'disabled'],
+    scale: ['hover'],
+    rotate:['responsive'],
+    extend: {
+      padding: ['hover'],
+      maxHeight: ['focus'],
+      opacity: ['disabled'],
+    },
   },
   plugins: [],
 }

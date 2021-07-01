@@ -16,11 +16,11 @@
 }
 
 .card {
-    @apply rounded overflow-hidden shadow-lg;
+    @apply rounded overflow-hidden shadow-lg bg-white;
 }
 
 .somHeader {
-    @apply rounded-b-md overflow-hidden shadow-lg;
+    @apply rounded-b-lg overflow-hidden;
 }
 
 .btn-green{
