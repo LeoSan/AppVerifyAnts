@@ -11,11 +11,13 @@
   },
   "dependencies": {
     "@heroicons/react": "^1.0.1",
+    "formik": "^2.2.9",
     "next": "latest",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-google-recaptcha": "^2.1.0",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "@tailwindcss/jit": "^0.1.18",
