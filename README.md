@@ -68,8 +68,12 @@ import './public/assets/main.css';
   
 - `npm i react-google-recaptcha`-> Ejecutalo dentro de tu proyecto
 - `npm install @heroicons/react` -> para usar iconos ->https://heroicons.dev/  -> Ejecutalo dentro de tu proyecto
+- `npm i formik` -> Para instalar un validador de formularios
+- `npm i yup` -> Para manejar esquemas de validaciones 
+- `npm i react-router-dom` -> Para los redireccionamientos a paginas usando -> useNavigate
 - `npm list --depth=0`
 - `npm run dev` -> inicamos el front!!  
+
 
 
 #### Desarrollo Front  Mobil
