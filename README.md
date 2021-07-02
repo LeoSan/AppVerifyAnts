@@ -71,7 +71,12 @@ import './public/assets/main.css';
 - `npm i formik` -> Para instalar un validador de formularios
 - `npm i yup` -> Para manejar esquemas de validaciones 
 - `npm i react-router-dom` -> Para los redireccionamientos a paginas usando -> useNavigate
-- `npm i axios` -> esto nos permitira consumir los ends point que desarrollamos en el 
+- `npm i axios` -> esto nos permitira consumir los ends point que desarrollamos en el servidor back 
+
+>Nota: En esta Etapa creamos nuestro archivo ./config/ y definimos nuestros axios.js y auth.js 
+
+>Nota 2: Iniciamos a crear nuestra estrcutura ./context/nombreContext.js , nombreReducer.js , nombreState.js y nuestros ./type/index.js
+
 - `npm list --depth=0`
 - `npm run dev` -> inicamos el front!!  
 
