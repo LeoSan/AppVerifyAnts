@@ -71,6 +71,7 @@ import './public/assets/main.css';
 - `npm i formik` -> Para instalar un validador de formularios
 - `npm i yup` -> Para manejar esquemas de validaciones 
 - `npm i react-router-dom` -> Para los redireccionamientos a paginas usando -> useNavigate
+- `npm i axios` -> esto nos permitira consumir los ends point que desarrollamos en el 
 - `npm list --depth=0`
 - `npm run dev` -> inicamos el front!!  
 
