@@ -75,12 +75,20 @@ import './public/assets/main.css';
 
 >Nota: En esta Etapa creamos nuestro archivo ./config/ y definimos nuestros axios.js y auth.js 
 
->Nota 2: Iniciamos a crear nuestra estrcutura ./context/nombreContext.js , nombreReducer.js , nombreState.js y nuestros ./type/index.js
+>Nota 2: Iniciamos en crear nuestra estrcutura ./context/nombreContext.js , nombreReducer.js , nombreState.js y nuestros ./type/index.js en raiz
 
+>Nota 3: Recuerda que si vas ausar recudecer y context debes tambien hacer el ajuste en el archivo raiz iniciador para Next es _app.js, importas tu cantidad de state y lo incoporas como un componente en el return.  Ejemplo 
+```javascript
+import AuthState from '../context/auth/authState';
+
+ <AuthState>
+           
+                <Component { ...pageProps }  />
+           
+        </AuthState>
+```
 - `npm list --depth=0`
 - `npm run dev` -> inicamos el front!!  
-
-
 
 #### Desarrollo Front  Mobil
 
