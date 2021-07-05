@@ -17,6 +17,14 @@ console.log(`Iniciando nuestro servidor en node.js - express`);
 // ejecutamos la función para conectar a la base de datos
  connectarDB(); // Debes crear la conexion antes
  
+ //Habilitar Cors -> Linea Nueva se debe instalar cors 
+ console.log(`Habilitamos CORS`);
+
+/* const opcionesCors = {
+     origin:'http://localhost:3000/'
+ }
+ app.use(  cors( opcionesCors ) ); 
+*/
 //Habilitar cors 
 app.use(cors());
 

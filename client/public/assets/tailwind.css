@@ -24,9 +24,9 @@
 }
 
 .btn-green{
-    @apply bg-green-500  px-2 py-3 rounded-lg text-white font-bold uppercase m-1;
+    @apply bg-green-500  px-2 py-3 rounded-lg text-white font-bold uppercase m-1 focus:shadow-md;
 }
 
 .btn-yellow{
-    @apply bg-yellow-500  px-2 py-3 rounded-lg text-white font-bold uppercase m-1;
+    @apply bg-yellow-500  px-2 py-3 rounded-lg text-white font-bold uppercase m-1 focus:shadow-md;
 }

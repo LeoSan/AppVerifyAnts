@@ -14,11 +14,11 @@ const { stringify } = require('querystring');
 
 
 //Permite autenticar el usuario 
-exports.autenticarUsuario = async (req, res) => {
+exports.autenticarUsuario = async (req, res, next) => {
     //Revisar si hay errores (Nuevo)
         const errors = validationResult(req);
         if ( !errors.isEmpty() ){
-            return res.status(406).json({errores: errors.array()})
+            return res.status(200).json({errores: errors.array(),  success:false})
         }
 
     //Extraer en  email  y password 
@@ -28,13 +28,13 @@ exports.autenticarUsuario = async (req, res) => {
         //Revisar que el usuario sea unico 
         let usuario = await Usuario.findOne({emailUsu}); 
         if ( !usuario ){
-            return res.status(406).json({msg:'El usuario no existe'});
+            return res.status(200).json({msg:' ¡ El usuario no existe !', success:false});
         }
 
         //Revisar Password
         const passwordCorrecto = await bcryptjs.compare(password, usuario.password ); 
         if (!passwordCorrecto  ){
-            return res.status(401).json({msg:'Contraseña incorrecto'});
+            return res.status(200).json({msg:' ¡ Contraseña incorrecta !', success:false});
         }
         
         //Validar si el usurio esta activo 
@@ -54,15 +54,15 @@ exports.autenticarUsuario = async (req, res) => {
                     }, (error, token)=>{
                         if( error ) throw error; 
                         //Mensaje de confirmación 
-                        res.status(201).json({ token:token })
+                        res.status(200).json({ token:token , success:true})
                     });
         }else{
-            return res.status(401).json({msg:'El usuario no esta activo.'}); 
+            return res.status(200).json({msg:'El usuario no esta activo.', success:false}); 
         }//fin del usuario activo 
         
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).json({msj: `Hubo un  error  en  la comunicación !!  `});
+        res.status(200).json({msg: `Hubo un  error  en  la comunicación !!  `, success:false});
     }
 }
 
@@ -157,6 +157,6 @@ exports.autenticarUsuarioToken = async (req, res) => {
         
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).json({msj: `Hubo un  error  en  la comunicación !!  `});
+        res.status(500).json({msg: `Hubo un  error  en  la comunicación !!  `});
     }
 }

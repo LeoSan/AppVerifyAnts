@@ -2,3 +2,4 @@
 [2021-05-13T15:49:05.969] [DEBUG] sendMail - Email enviado: 250 2.0.0 Ok: queued
 [2021-05-13T15:51:39.993] [DEBUG] sendMail - Email enviado: 250 2.0.0 Ok: queued
 [2021-05-13T15:52:02.154] [DEBUG] sendMail - Email enviado: 250 2.0.0 Ok: queued
+[2021-07-04T17:14:42.643] [INFO] sendMail - Email enviado: 250 2.0.0 Ok: queued

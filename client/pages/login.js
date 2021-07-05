@@ -1,10 +1,14 @@
 //Importo Librerias 
 import React, {useContext, useEffect, Fragment, useState} from 'react';
-//import { useNavigate} from 'react-router-dom';
+import Router , {useRouter}  from 'next/router';
 
 //Librerias para validación 
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+
+//Importamos nuestros  useContext (Hooks)
+import AuthContext from '../context/auth/AuthContext';
+
 
 //Importo componentes 
 import Layout from '../components/layout/Layout';
@@ -18,18 +22,36 @@ const login = () => {
 
    //Declaro mis useState 
    const [valcaptcha, setvalcaptcha] = useState(0);
+   const [confirmaRobot, setconfirmaRobot]  = useState(true);
 
-   //Declaro Hooks 
+   //Declaro Hooks -> UseContext para usar el state 
+   //Acceder el state de auth 
+   const valorContext = useContext(AuthContext);
+   const { iniciarSesion, mensaje, autenticado} =  valorContext;
+   
+
    //Hook para redireccionar 
-   //const navigate = useNavigate(); 
+   const router = useRouter()
 
    //Metodos Funcionales 
+
+   //Declaro UseEffect
+   
+   useEffect(()=>{
+
+      if(autenticado){
+        // router.push('/tablero'); 
+        router.push('/tablero')
+        console.log("autenticado->", autenticado);
+      }
+
+   },[autenticado])
 
 
    //función : Para capturar el valor del captcha 
    function getValCapctha(value) {
       setvalcaptcha(value);
-      console.log("Captcha value:", value);
+      //console.log("Captcha value:", value);
     }
 
 
@@ -45,35 +67,37 @@ const login = () => {
                       .email('El campo email no tiene formato adecuado.')
                       .required('El Campo email es obligatorio.'),                         
                password:Yup.string()
-                      //.length(10, 'Debes agregar una clave de mas de 10 digitos.')
                       .required('El Campo password es obligatorio.'), 
       }),
       
-      onSubmit:datos=>{
-              
-              try {
-                  datos.captcha = valcaptcha;
-                  console.log(datos);
-                     //Redireccionar 
-                     //navigate('/menu');
-                      
-                      
-              } catch (error) {
-                      console.log(error);                                        
-              }
-             
-      }
+      onSubmit:formData=>{
+               if ( valcaptcha !== 0 ){
+                     formData.captcha = valcaptcha;
 
+                     //Envio valores al state 
+                     iniciarSesion(formData);
+
+                     //Dejo todo como estaba
+                     setconfirmaRobot(true);
+                     setvalcaptcha(0);
+
+
+               }else{
+                  setconfirmaRobot(false);
+                  console.log(confirmaRobot);
+               }
+      }
 });      
     
   return ( 
+     
       <Layout>
          <Fragment>
           
 
             <div className="flex justify-center mt-10">
                <div className="w-full max-w-3xl pl-3 pr-3 rounded-lg pt-3 bg-white mb-5 overflow-hidden shadow-lg">
-                              <form className="mb-8" onSubmit={formik.handleSubmit} >
+                              <form className="mb-8" onSubmit={formik.handleSubmit} action="POST" >
                                      <label 
                                                       className="text-2xl font-bold text-yellow-500 " >Ingrese sus credenciales</label>
 
@@ -123,12 +147,20 @@ const login = () => {
                                           onChange={getValCapctha}
                                           />
 
-                                    </div>                                      
+                                    </div>     
+                                    { confirmaRobot == false  ? (
+                                       <Error mensaje={ 'Debes validar que no eres un robot' } ></Error>
+                                       ): null}    
+                                                                                                                     
                                     <input 
                                              type="submit"
-                                             className="bg-green-500 hover:bg-blue-300, cursor-pointer w-full mt-5 p-2 text-white uppercase font-bold rounded-lg focus:shadow-md"
+                                             className="btn-green cursor-pointer w-full mt-5 p-2"
                                              value="Login"
-                                    />                                                                                                                      
+                                    />    
+                                    
+                                    { mensaje != null  ? (
+                                       <Error mensaje={ mensaje } ></Error>
+                                       ): null}  
 
                               </form>  
                </div>
