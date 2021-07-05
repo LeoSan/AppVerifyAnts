@@ -6,6 +6,7 @@ const jwt                  = require('jsonwebtoken');
 const Usuario              = require('../models/Usuario');
 //Controladores 
 const logsCotroller = require('../controller/logsController'); 
+const mailCotroller = require('../controller/mailCotroller'); 
 
 //Importo implementos para el captcha
 const bodyParser  = require('body-parser');
@@ -18,7 +19,7 @@ exports.autenticarUsuario = async (req, res, next) => {
     //Revisar si hay errores (Nuevo)
         const errors = validationResult(req);
         if ( !errors.isEmpty() ){
-            return res.status(200).json({errores: errors.array(),  success:false})
+            return res.status(200).json({errores: errors.array(),  success:false, msg:` ¡ Error en el servidor  !,  ${errors.array(0)}`})
         }
 
     //Extraer en  email  y password 
@@ -160,3 +161,35 @@ exports.autenticarUsuarioToken = async (req, res) => {
         res.status(500).json({msg: `Hubo un  error  en  la comunicación !!  `});
     }
 }
+
+//Permite obtener que usuario esta autenticado 
+exports.olvidoClave = async (req, res)=>{
+    try {
+
+        //Revisar si hay errores (Nuevo)
+        const errors = validationResult(req);
+        if ( !errors.isEmpty() ){
+            return res.status(200).json({errores: errors.array(),  success:false, msg:` ¡ Error en el servidor  !,  ${errors.array(0)}`})
+        }
+
+        //Extraer en  email  y password 
+        const { emailUsu } = req.body; 
+
+         //Revisar que el usuario sea unico 
+         let usuario = await Usuario.findOne({emailUsu}); 
+         if ( !usuario ){
+             return res.status(200).json({msg:' ¡ El usuario no existe !', success:false});
+         }
+
+         let mensaje = 'Debes acceder a este portal para cambiar la contraseña <br><br> <a href="http://localhost:3000/cambio"> Ingresa Aqui  </a>';
+         mailCotroller.sendMailto( mensaje , emailUsu );
+
+         return res.status(200).json({msg:' ¡ Por favor valida tu correo  !', success:true});
+      
+        
+    } catch (error) {
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
+        res.status(500).json({msg: "Hubo un error  - autenticacion"}) 
+    }
+}
+

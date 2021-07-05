@@ -19,7 +19,7 @@ exports.nuevoUsuario = async(req, res)=>{
 
     if (!errores.isEmpty()){
         logsCotroller.logsCRUD('[Validacion] - Crear usuario');
-        return res.status(406).json({errores: errores.array()});
+        return res.status(200).json({errores: errores.array(), success:false, msg: `Debes validar los campos, ${ errores.array(0) }` });
     }
     
     //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
@@ -30,7 +30,7 @@ exports.nuevoUsuario = async(req, res)=>{
             // Anexo  Vaidación 
             let  usuario = await Usuario.findOne({emailUsu}); 
 
-            if ( usuario ) return  res.status(406).json({msg: `El usuario con este email, ${emailUsu} ya esta registrado`});
+            if ( usuario ) return  res.status(200).json({msg: `El usuario con este email, ${emailUsu} ya esta registrado.`, success:false} );
 
         //Creamos usuario si no esta duplicado 
             usuario = new Usuario(req.body);
@@ -42,14 +42,14 @@ exports.nuevoUsuario = async(req, res)=>{
 
             await usuario.save();
 
-            res.status(201).json({msj: 'Usuario Creado Exitosamente!!'});
+            res.status(201).json({msg: 'Usuario Creado Exitosamente!! Puedes ingresar dando clic en el boton acceder.', success:true});
             
-            let mensaje = " Primera prueba de envio de correos";
+            let mensaje = "Cuenta fue Creada exitosamente!! ";
             mailCotroller.sendMailto( mensaje , emailUsu );
 
         } catch (error) {
             logsCotroller.logsCRUD(`Hubo un  error  en  la comunicación !! -> ${error} `);
-            res.status(500).json({msg: `Hubo un  error  en  la comunicación !!  `});
+            res.status(200).json({msg: `Hubo un  error  en  la comunicación !!  `,success:false});
         }
 }
 

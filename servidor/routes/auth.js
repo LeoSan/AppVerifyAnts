@@ -40,6 +40,22 @@ router.post('/captcha',
 );
 
 
+//Permitir enviar correo para cambio de clave 
+//api/auth // midleware 
+router.post('/olvidoClave',
+    [
+        check('emailUsu',  'Agrega un email valido').isEmail(),
+        check('captcha',   'El sitekey debe ser minimo de 6 caracteres').not().isEmpty(),
+    ], 
+    authController.olvidoClave
+);
+
+
+
+
+
+
+
 
 
 

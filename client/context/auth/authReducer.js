@@ -4,7 +4,9 @@ import {
     CERRAR_SESION,
     LOGIN_EXITOSO,
     LOGIN_ERROR,
-    LIMPIAR_REGISTRO
+    OLVIDO_CLAVE_ERROR, 
+    OLVIDO_CLAVE_EXITOSO,
+    
 } from '../../types';
 
 //Debe hacerce asi ya que se volvio obsoleto hacer por defaul 
@@ -34,6 +36,16 @@ const authReducer = (state,action) => {
             }
         
         case LOGIN_ERROR: 
+            return{
+                ...state, 
+                mensaje:action.payload
+            }         
+        case OLVIDO_CLAVE_ERROR: 
+            return{
+                ...state, 
+                mensaje:action.payload
+            }         
+        case OLVIDO_CLAVE_EXITOSO: 
             return{
                 ...state, 
                 mensaje:action.payload
