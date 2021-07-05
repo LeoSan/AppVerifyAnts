@@ -20,6 +20,7 @@ Mi primera app usando MERN, es un proyecto personal, donde deseo plasmar y contr
 - `npm i --save-dev nodemon`
 - `npm install mongoose --save`
 - `npm install dotenv`
+-  `npm i cors` -> para evitar los cross
 - `npm run dev` -> Iniciador 
 
 #### Desarrollo Front  Desktop
