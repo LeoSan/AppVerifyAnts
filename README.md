@@ -20,7 +20,13 @@ Mi primera app usando MERN, es un proyecto personal, donde deseo plasmar y contr
 - `npm i --save-dev nodemon`
 - `npm install mongoose --save`
 - `npm install dotenv`
--  `npm i cors` -> para evitar los cross
+- `npm i cors` -> para evitar los cross
+- `npm install bcrypt` -> Paquete para generar contraseña
+- `npm i jsonwebtoken` -> Paquete para generar los token
+- `npm i log4js` ->  Paquete para manejar los logs
+- `npm i express-validator` -> Para validar los router
+- `npm i nodemailer` -> Paquete para enviar correos
+- `npm i colors`-> Paquete para colocar color a los texto en el servidor
 - `npm run dev` -> Iniciador 
 
 #### Desarrollo Front  Desktop
