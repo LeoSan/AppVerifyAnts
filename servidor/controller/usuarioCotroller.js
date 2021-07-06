@@ -1,6 +1,9 @@
 //Libreria
 const { validationResult } = require('express-validator');
-const bcrypt     = require('bcrypt');
+const bcrypt               = require('bcrypt');
+const jwt                  = require('jsonwebtoken');
+
+require('dotenv').config({path: '../config/variables.env'});  //LINEA IMPORTANTE
 //Modelos
 const Usuario    = require('../models/Usuario');
 const Ingreso    = require('../models/Ingreso');
@@ -11,6 +14,9 @@ const Categoria  = require('../models/Categoria');
 //Controlador
 const mailCotroller = require('../controller/mailCotroller'); 
 const logsCotroller = require('../controller/logsController'); 
+
+//Plantillas Controlador
+const { mailCambioClave, mailRegistroUsuario } = require('../template/PlantillaMail');
 
 //Crear usuario 
 exports.nuevoUsuario = async(req, res)=>{
@@ -32,20 +38,24 @@ exports.nuevoUsuario = async(req, res)=>{
 
             if ( usuario ) return  res.status(200).json({msg: `El usuario con este email, ${emailUsu} ya esta registrado.`, success:false} );
 
-        //Creamos usuario si no esta duplicado 
+           //Creamos usuario si no esta duplicado 
             usuario = new Usuario(req.body);
 
             //Hashear  la clave con el salt
             //Creamos la instancias de bcrypt para el Hasheo de la  clave, con esto lo mandamos como parametro  
             const salt = await bcrypt.genSalt(10);
             usuario.password = await bcrypt.hash(password, salt)
-
-            await usuario.save();
-
-            res.status(201).json({msg: 'Usuario Creado Exitosamente!! Puedes ingresar dando clic en el boton acceder.', success:true});
             
-            let mensaje = "Cuenta fue Creada exitosamente!! ";
-            mailCotroller.sendMailto( mensaje , emailUsu );
+            //Genero registro en la BD
+            await usuario.save();
+            
+            //Envio de Correo 
+            let mensaje = mailRegistroUsuario(usuario.nomUsu, );
+            let subject = `Bienvenido, ${usuario.nomUsu}, Tu App para Reducir y controlar gastos - [AntVerify]`;
+            mailCotroller.sendMailto( mensaje , emailUsu, subject );
+
+            //Envio Respuesta al servidor 
+            res.status(201).json({msg: 'Usuario Creado Exitosamente!! Puedes ingresar dando clic en el boton acceder.', success:true});
 
         } catch (error) {
             logsCotroller.logsCRUD(`Hubo un  error  en  la comunicación !! -> ${error} `);
@@ -125,37 +135,55 @@ exports.cambioClaveUsuario = async (req, res)=>{
     //Revisar que que cumple con las reglas de validaciòn del routes 
     const errors = validationResult(req);
     if ( !errors.isEmpty() ){
-        return res.status(406).json({errores: errors.array()})
+        return res.status(200).json({errores: errors.array(), msg:`Validar el siguiente error ${errors.array(0)}`, success:false })
     }
 
   //Extraer informacion para validacion 
   try {
         //Distroccion de Json que se envia 
-        const { id, emailUsu, password } = req.body; //->Asi se usa cuando es un objeto 
-        //Valido Categoria 
-          let valExiste = await Usuario.findById( id ); 
-  
-        if (!valExiste) return res.status(406).json({msg:`Tu Usuario con nombre ${nomUsu}, No existe en la base de datos.`});
+        const { token, emailUsu, password, captcha } = req.body; //->Asi se usa cuando es un objeto 
         
-            //Hashear  la clave con el salt
-            //Creamos la instancias de bcrypt para el Hasheo de la  clave, con esto lo mandamos como parametro  
-            const salt = await bcrypt.genSalt(10);
-            let NewPass = await bcrypt.hash(password, salt)
+        //Valido Token 
+             //Puedo definir opciones para la verificacion 
+            const options = { algorithms: process.env.TOKEN_CODE, typ: process.env.TOKEN_TYP };
 
-            //crear un objeto con la nueva informaciòn 
-            const newObj     = {}
-            newObj.password    = NewPass; 
-        
-            let nomOld = valExiste.nomUsu; 
-        
-        //Proceso envio de correo  //todo 
+            // Validar el token
+            try {
+                const cifrado = jwt.verify( token,  process.env.SECRETA, options  );
+                const { id } = cifrado.usuario;
 
-        //Guadar Edicción 
-        valExiste = await Usuario.findByIdAndUpdate({ _id: id }, newObj, {new:true});
-        res.status(205).json({msg:`Tu Usuario con nombre ${nomOld}, cambio del password exitoso.`});
+                //Valido Usuario 
+                let valExiste = await Usuario.findById( id ); 
+                
+                if (!valExiste) return res.status(200).json({msg:`Este Usuario que nos porporcionaste no existe.`, success:false});
+                
+                    //Hashear  la clave con el salt
+                    //Creamos la instancias de bcrypt para el Hasheo de la  clave, con esto lo mandamos como parametro  
+                    const salt = await bcrypt.genSalt(10);
+                    let NewPass = await bcrypt.hash(password, salt)
+
+                    //crear un objeto con la nueva informaciòn 
+                    const newObj     = {}
+                    newObj.password    = NewPass; 
+                
+                    let nomOld = valExiste.nomUsu; 
+
+                    //Guadar Edicción 
+                    valExiste = await Usuario.findByIdAndUpdate({ _id: id }, newObj, {new:true});
+                
+                    //Mensaje de confirmación al correo 
+                        let mensaje = mailCambioClave(nomOld);
+                        let subject = `Hola, ${nomOld} Confirmación de Cambio de Clave - [AntVerify]`;
+                        mailCotroller.sendMailto( mensaje , emailUsu, subject );
+                
+                res.status(200).json({msg:`Hola  ${nomOld}, Cambiaste la clave de manera segura.`, success:true});                
+                
+            } catch (error) {
+              return  res.status(200).json({msg: `Token Expiro o no es correcto.`, success:false });
+            }
      
   } catch (error) {
       logsCotroller.logsCRUD(`Hubo un  error  en  la comunicación !! -> ${error} `);
-      res.status(500).json({msg: `Hubo un  error  en  la comunicación !!  `});
+      res.status(200).json({msg: `Hubo un  error  en  la comunicación !!  `, success:false});
   }
 }

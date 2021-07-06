@@ -5,20 +5,20 @@
 const express     = require('express');
 const connectarDB = require('./config/db'); // Importamos nuestro conector de BD // Debes crear la conexion antes
 const cors        = require('cors');
-
+const colors        = require('colors');
 //Configuro variables de entornos
 require('dotenv').config({ path :'config/variables.env'});
 
 //Crear el servidor
 const app = express();
  
-console.log(`Iniciando nuestro servidor en node.js - express`);
+console.log(`----- Iniciando nuestro servidor en node.js - express ----`);
  
 // ejecutamos la función para conectar a la base de datos
  connectarDB(); // Debes crear la conexion antes
  
  //Habilitar Cors -> Linea Nueva se debe instalar cors 
- console.log(`Habilitamos CORS`);
+ console.log(`Habilitamos CORS`.red);
 
 /* const opcionesCors = {
      origin:'http://localhost:3000/'
@@ -73,6 +73,6 @@ app.get('/', (_, res) => res.sendFile(__dirname + '/captcha.html'));
 //Iniciamos nuestro  servidor
 app.listen(port, '0.0.0.0', () => {
  
-   console.log(`El servidor esta funcionando en el puerto -> ${port}`);
+   console.log(`${'!!  Servidor Operando !!'.rainbow} ${ '<-|°.°|->  Puerto: '.green} -> ${port}`);
    
 });

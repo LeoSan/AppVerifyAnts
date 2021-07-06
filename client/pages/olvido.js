@@ -16,7 +16,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 
 //componentes UI
 import Error from '../components/ui/Error';
-import success from '../components/ui/Success';
+import Success from '../components/ui/Success';
 
 const login = () => {
 
@@ -76,7 +76,7 @@ const login = () => {
 
                }else{
                   setconfirmaRobot(false);
-                  console.log(confirmaRobot);
+                  //console.log(confirmaRobot);
                }
       }
 });      
@@ -130,11 +130,11 @@ const login = () => {
                                     <input 
                                              type="submit"
                                              className="btn-green cursor-pointer w-full mt-5 p-2"
-                                             value="Login"
+                                             value="Enviar Correo"
                                     />    
                                     
                                     { mensaje != null  ? (
-                                       <Error mensaje={ mensaje } ></Error>
+                                       <Success mensaje={ mensaje } ></Success>
                                        ): null}  
 
                               </form>  

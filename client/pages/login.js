@@ -141,7 +141,10 @@ const login = () => {
                                     
                                     <div className="mb-4 items-center">
                                           <label 
-                                             className="block text-gray-700 text-sm font-bold mb-2">¿ Eres un Robot ? ó   <Link href="/olvido">   ¿ Olvidaste tu contraseña ?  </Link> </label>
+                                             className="block text-gray-700 text-sm font-bold mb-2  justify-between">
+                                             ¿ Eres un Robot ? ó   
+                                             <Link href="/olvido">   ¿ Olvidaste tu contraseña ?  </Link> 
+                                          </label>
                                           
                                           <ReCAPTCHA className="flex items-center justify-center"
                                           sitekey='6LdxEHIUAAAAAMhzsqkP-Q6ddj3xXkQwGTd38m9D'

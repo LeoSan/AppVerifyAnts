@@ -13,6 +13,11 @@ const bodyParser  = require('body-parser');
 const fetch = require('node-fetch');
 const { stringify } = require('querystring');
 
+//Plantillas Controlador && Helpers 
+const { mailEnvioCorreoToken } = require('../template/PlantillaMail');
+const { validarCaptcha }       = require('../middleware/helpers');
+
+
 
 //Permite autenticar el usuario 
 exports.autenticarUsuario = async (req, res, next) => {
@@ -37,6 +42,18 @@ exports.autenticarUsuario = async (req, res, next) => {
         if (!passwordCorrecto  ){
             return res.status(200).json({msg:' ¡ Contraseña incorrecta !', success:false});
         }
+
+        //Como me devuelve una promeso declaro en una variable
+        let resultCaptha = validarCaptcha( req );
+
+        resultCaptha.then(function(result) {
+            
+            if (result.success !== true  ){
+                logsCotroller.logsCRUD(`Resultado captcha !! -> ${ result.success } `);
+                return res.status(200).json({msg: `Problemas con el captcha, Debes refrescar la pagina por favor` , success:false});
+            }
+         });
+
         
         //Validar si el usurio esta activo 
         if ( usuario.activo === 1 ){
@@ -78,7 +95,6 @@ exports.autenticarAutenticado = async (req, res)=>{
         res.status(500).json({msg: "Hubo un error  - autenticacion"}) 
     }
 }
-
 
 //Permite autenticar el usuario con Token 
 exports.autenticarUsuarioToken = async (req, res) => {
@@ -181,15 +197,37 @@ exports.olvidoClave = async (req, res)=>{
              return res.status(200).json({msg:' ¡ El usuario no existe !', success:false});
          }
 
-         let mensaje = 'Debes acceder a este portal para cambiar la contraseña <br><br> <a href="http://localhost:3000/cambio"> Ingresa Aqui  </a>';
-         mailCotroller.sendMailto( mensaje , emailUsu );
+        //Validar si el usurio esta activo 
+        if ( usuario.activo === 1 ){
+            //Crear payload
+                const payload = {
+                    usuario:{
+                        id:usuario.id, 
+                    }
+                };
 
-         return res.status(200).json({msg:' ¡ Por favor valida tu correo  !', success:true});
-      
+                //firmar el jwt 
+                jwt.sign(payload, process.env.SECRETA,{ 
+                    expiresIn:900, // 15 Minutos
+                    algorithm: process.env.TOKEN_CODE
+                }, (error, token)=>{
+                    if( error ) throw error; 
+                    //Mensaje de confirmación al correo 
+                   
+                    let mensaje = mailEnvioCorreoToken(usuario.nomUsu, token);  //`Debes acceder a este enlace para cambiar la contraseña <br><br> Enlace: [http://localhost:3000/cambio/${token}] , Solo tienes 15 minutos desde ahora para cambiar tu contraseña en caso deberas volver solicitar el cambio <br><br> Muchas gracias por su comprensión.`;
+                    let subject = `Hola, ${usuario.nomUsu} - Olvido su Clave en [AntVerify]`; 
+                    mailCotroller.sendMailto( mensaje , emailUsu, subject );
+           
+                    return res.status(200).json({msg:' ¡ Por favor valida tu correo  !', success:true});
+
+                });
+        }else{
+            return res.status(200).json({msg:'El usuario no esta activo.', success:false}); 
+        }//fin del usuario activo         
         
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).json({msg: "Hubo un error  - autenticacion"}) 
+        res.status(500).json({msg: "Hubo un problema en el servidor"}) 
     }
 }
 

@@ -54,3 +54,5 @@
 [2021-05-27T13:22:02.460] [ERROR] crud - Resultado captcha !! -> true 
 [2021-05-27T13:25:23.823] [ERROR] crud - Resultado captcha !! -> true 
 [2021-07-04T16:09:21.486] [ERROR] crud - [Validacion] - Crear usuario
+[2021-07-06T11:59:00.147] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: tokenEmail is not defined 
+[2021-07-06T13:01:22.093] [ERROR] crud - Hubo un  error  en  la comunicación !! -> ReferenceError: UsuarioToken is not defined 

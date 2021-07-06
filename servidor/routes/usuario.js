@@ -33,13 +33,13 @@ router.put('/',
     usuarioController.updateUsuario
 );
 
-//End-Point - Editar Usuario Cambio de clave 
+//End-Point - Editar Usuario Cambio de clave -> Desde Home  
 router.put('/pass', 
-      auth,
     [
-        check('id',        'El identificador es obligatorio.').not().isEmpty(), //Valida vacio    
+        check('token',     'El identificador es obligatorio.').not().isEmpty(), //Valida vacio    
         check('emailUsu',  'El correo es obligatorio.').not().isEmpty(), //Valida vacio    
         check('password',  'El password es obligatorio.').not().isEmpty(), //Valida vacio    
+        check('captcha',   'El Captcha es obligatorio.').not().isEmpty(), //Valida vacio    
     ],       
     usuarioController.cambioClaveUsuario
 );

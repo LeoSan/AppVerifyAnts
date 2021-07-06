@@ -1,8 +1,8 @@
 //Importo Librerias 
 import React, {useContext, useEffect, Fragment, useState} from 'react';
-
+import { useRouter } from 'next/router';
 //Importo componenentes 
-import Layout from '../components/layout/Layout';
+import Layout from '../../../components/layout/Layout';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 //Librerias para validación 
@@ -10,14 +10,14 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 //Importamos nuestros  useContext (Hooks)
-import UsuarioContext from '../context/usuario/usuarioContext';
+import UsuarioContext from '../../../context/usuario/usuarioContext';
 
 
 //componentes UI
-import Error from '../components/ui/Error';
-import Success from '../components/ui/Success';
+import Error from '../../../components/ui/Error';
+import Success from '../../../components/ui/Success';
 
-const crear = () => {
+const Cambio = () => {
 
 
    //Declaro mis useState 
@@ -28,8 +28,10 @@ const crear = () => {
 //Declaro Hooks -> UseContext para usar el state 
    //Acceder el state de auth 
    const valorContext = useContext(UsuarioContext);
-   const { registrarUsuario, mensaje, registro } =  valorContext;   
+   const { cambiarClave, mensaje, cambio } =  valorContext;   
    
+   const router = useRouter()
+   const { token } = router.query
    
    //Metodos Funcionales 
 
@@ -42,18 +44,16 @@ const crear = () => {
     //función: Esquema de validaciones 
     const formik =useFormik({
       initialValues:{
-              nombre:'',
               email:'',
               password:'',
               password2:'',
       },
       validationSchema:Yup.object({
+              
                email:Yup.string()
                       .email('El campo email no tiene formato adecuado.')
                       .required('El campo email es obligatorio.'),                
-               nombre:Yup.string()
-                      .min(5, "Tu nombre debe tener al menos 5 caracteres.")
-                      .required('El campo nombre es obligatorio.'),                         
+
                password:Yup.string()
                       .required('El campo password es obligatorio.')
                       .matches(
@@ -77,8 +77,9 @@ const crear = () => {
                   //Valido si no es un robot 
                   if ( valcaptcha !== 0 ){
                         formData.captcha = valcaptcha;
+                        formData.token   = token;
                         //Envio valores al state 
-                        registrarUsuario(formData);
+                        cambiarClave(formData);
 
                         //Dejo todo como estaba
                         setconfirmaRobot(true);
@@ -102,29 +103,14 @@ const crear = () => {
 
             <div className="flex justify-center mt-10">
             <div className="w-full max-w-3xl pl-3 pr-3 rounded-lg pt-3 bg-white mb-5 overflow-hidden shadow-lg">
-                              <form className="mb-8" onSubmit={formik.handleSubmit}>
+                              <form className="mb-8" onSubmit={formik.handleSubmit} action="POST">
                               <label 
-                                                      className="text-2xl font-bold text-yellow-500 " >Crear cuenta </label>
+                                                      className="text-2xl font-bold text-yellow-500 " >Cambiar Contraseña </label>
 
-                                    <div className="mb-4">
-                                          <label 
-                                                   className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nombre">Nombre</label>
-                                          <input 
-                                                   id="nombre"
-                                                   type="text"
-                                                   placeholder="Ingrese su Nombre"
-                                                   value={formik.nombre}
-                                                   onChange={formik.handleChange}
-                                                   onBlur={formik.handleBlur}                                                         
+                                    {formik.touched.token && formik.errors.token ? (
+                                       <Error mensaje={ formik.errors.token } ></Error>
+                                      ): null}                                     
 
-                                                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md "
-                                          />
-                                    </div>
-
-                                 {formik.touched.nombre && formik.errors.nombre ? (
-                                    <Error mensaje={ formik.errors.nombre } ></Error>
-                                    ): null}    
-         
                                     <div className="mb-4">
                                              <label 
                                                       className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email</label>
@@ -200,23 +186,19 @@ const crear = () => {
                                        ): null}    
                                                 
                                     
-                                       <input  
+                                    <input  
                                              type="submit"
-                                             className="btn-green cursor-pointer w-full mt-5"
-                                             value="Crear Cuenta"
-                                       />      
-                                       { mensaje != null && registro == null ? (
+                                             className="btn-green cursor-pointer w-full mt-5 "
+                                             value="Cambiar Contraseña"
+                                    />    
+                                       { mensaje != null && cambio == null ? (
                                        <Error mensaje={ mensaje } ></Error>
                                        ): null}  
                                                                            
                                        
-                                       { mensaje != null && registro != null  ? (
+                                       { mensaje != null && cambio != null  ? (
                                        <Success mensaje={ mensaje } ></Success>
                                        ): null}  
-                                       
-                                       
-                                       
-
                               </form>  
                </div>
             </div>
@@ -226,4 +208,4 @@ const crear = () => {
    );
 }
  
-export default crear ;
+export default Cambio ;

@@ -1,5 +1,7 @@
 //Importammos el controlador moogoose
 const mongoose = require('mongoose');
+const colors        = require('colors');
+
 //Importamos nuestro archivo de variables de entorno previamente creado
 require('dotenv').config({ path :'./config/variables.env'});
  
@@ -14,7 +16,7 @@ const conectarBD = async()=>{
            useCreateIndex : true , // Para quitar el error DeprecationWarning: collection.ensureInd 
        } );
        
-       console.log(`!!!BD Lista y en Linea!!! Estamos en ->  ${ process.env.DB_NOMBRE }`);
+       console.log(`!!!BD Lista y en Linea!!! Estamos en ->  ${ process.env.DB_NOMBRE }`.blue);
       
    } catch (error) {
        console.log(error);

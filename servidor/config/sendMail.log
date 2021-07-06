@@ -9,3 +9,19 @@
 [2021-07-05T17:26:48.677] [INFO] sendMail - Email enviado: 250 2.0.0 Ok: queued
 [2021-07-05T18:16:05.937] [INFO] sendMail - Email enviado: 250 2.0.0 Ok: queued
 [2021-07-05T18:17:46.923] [INFO] sendMail - Email enviado: 250 2.0.0 Ok: queued
+[2021-07-06T11:08:36.869] [INFO] sendMail - Email enviado: 250 2.0.0 Ok: queued
+[2021-07-06T12:00:50.160] [INFO] sendMail - Email enviado: 250 2.0.0 Ok: queued
+[2021-07-06T12:22:19.844] [INFO] sendMail - Email enviado: 250 2.0.0 Ok: queued
+[2021-07-06T12:58:19.821] [INFO] sendMail - Email enviado: 250 2.0.0 Ok: queued
+[2021-07-06T13:13:42.849] [INFO] sendMail - Email enviado: 250 2.0.0 Ok: queued
+[2021-07-06T13:34:04.712] [INFO] sendMail - Email enviado: 250 2.0.0 Ok: queued
+[2021-07-06T14:06:03.555] [INFO] sendMail - Email enviado: 250 2.0.0 Ok: queued
+[2021-07-06T14:07:13.657] [INFO] sendMail - Email enviado: 250 2.0.0 Ok: queued
+[2021-07-06T14:42:49.920] [INFO] sendMail - Email messageId: <e3bbb4ff-8ec1-2ac4-7b2b-f4177309dc50@gmail.com>
+[2021-07-06T14:42:49.917] [INFO] sendMail - Email Respuesta: 250 2.0.0 Ok: queued
+[2021-07-06T14:59:24.022] [INFO] sendMail - Email messageId: <52ad53e4-e07d-7e16-9de6-fd4c54aa2435@gmail.com>
+[2021-07-06T14:59:24.020] [INFO] sendMail - Email Respuesta: 250 2.0.0 Ok: queued
+[2021-07-06T16:18:33.737] [INFO] sendMail - Email Respuesta: 250 2.0.0 Ok: queued
+[2021-07-06T16:18:33.740] [INFO] sendMail - Email messageId: <a5db8474-722b-1be3-847d-3ec2a65dded1@gmail.com>
+[2021-07-06T16:19:41.350] [INFO] sendMail - Email Respuesta: 250 2.0.0 Ok: queued
+[2021-07-06T16:19:41.354] [INFO] sendMail - Email messageId: <96deae94-71eb-0382-8887-4b958d36517f@gmail.com>
