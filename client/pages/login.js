@@ -10,7 +10,6 @@ import * as Yup from 'yup';
 //Importamos nuestros  useContext (Hooks)
 import AuthContext from '../context/auth/AuthContext';
 
-
 //Importo componentes 
 import Layout from '../components/layout/Layout';
 import ReCAPTCHA from 'react-google-recaptcha';

@@ -42,6 +42,7 @@ const UsuarioState = ({children}) => {
                 nomUsu:datos.nombre, 
                 emailUsu:datos.email, 
                 password:datos.password2,
+                captcha:datos.captcha
                 
             }
 

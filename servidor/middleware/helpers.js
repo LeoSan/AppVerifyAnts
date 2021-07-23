@@ -4,7 +4,6 @@ const fetch = require('node-fetch');
 const logsCotroller = require('../controller/logsController'); 
 
 const validarCaptcha = async (req)=>{
-        /* Inicio  captcha */
         //Revisar si envio captcha
         if (!req.body.captcha)
             return ('Por favor seleccionar el captcha.');
@@ -20,23 +19,26 @@ const validarCaptcha = async (req)=>{
         });
         
         const verifyURL = `https://google.com/recaptcha/api/siteverify?${query}`;
+ 
 
-        const promesa = new Promise( (resolve, reject)=>{
-            //Cuerpo de la promesa
-             // Make a request to verifyURL
-             const result =  fetch(verifyURL).then(res => res.json());
-    
-            if (result.success === true ){ 
-                resolve(true);
+        try {
+
+            // Make a request to verifyURL
+            const result = await fetch(verifyURL).then(res => res.json());
+
+           // console.log("Result capthaback desde helper",result);
+            
+            // If not successful
+            if (result.success !== undefined && !result.success){
+                logsCotroller.logsCRUD(`Resultado captcha !! -> ${ result.success } `);
+                return 'Fallo captcha verificación.';
             }else{
-                reject( false );
-            }
-    
-        } );
-
-        return promesa;
-        /* Fin  captcha */
-
+                return 'ok';
+            }            
+            
+        } catch (error) {
+            return `Fallo captcha verification.${error}`;
+        }
 }
 
 module.exports = {

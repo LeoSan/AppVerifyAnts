@@ -12,6 +12,7 @@ import {
     LOGIN_ERROR,
     OLVIDO_CLAVE_ERROR, 
     OLVIDO_CLAVE_EXITOSO,
+    DATOS_USUARIOS,
 } from '../../types';
 
 //Importo nuetsra libreria axios para conectar con el servidor 
@@ -26,7 +27,8 @@ const AuthState = ({children}) => {
     const inicialState = {
         token: typeof window !== 'undefined' ? localStorage.getItem('token') : null, 
         autenticado:null, 
-        usuario:null, 
+        ninkName:null, 
+        nombre:null,
         mensaje:null, 
     }
 
@@ -34,6 +36,58 @@ const AuthState = ({children}) => {
     const [state, dispatch] = useReducer(authReducer, inicialState); 
 
     //Funciones Generales 
+    
+    //Metodo: Validamos si el usuario esta autenticado por cada acción que realice 
+    const usuarioAutenticado = async (datos)=>{
+    
+        const token = localStorage.getItem('token');
+        if (token){
+            //funcion para enviar el token por header 
+            tokenAuth(token);
+
+        }
+
+        const data = { 
+            emailUsu:datos.email, 
+        }
+        try {
+
+            const respuesta = await clienteAxios.get('/api/auth/', data)
+                .then((response) => {
+
+                    //console.log("Hola mundo",response.data.usuario);    
+                    if( response.status != 200  ){
+                        dispatch({
+                            type: LOGIN_ERROR, //Es la accion a ejecutar
+                            payload: response.statusText  //Son los datos que modifica el state 
+                        }); 
+
+                    }else{
+
+                        dispatch({
+                            type: DATOS_USUARIOS, //Es la accion a ejecutar
+                            payload: response.data.usuario  //Son los datos que modifica el state 
+                        });                         
+
+                    }
+                
+
+              }).catch((response) => {
+                    dispatch({
+                        type: LOGIN_ERROR, //Es la accion a ejecutar
+                        payload: "Hubo problema con el servidor 1."  //Son los datos que modifica el state 
+                    }); 
+              });            
+            
+        } catch (error) {
+            dispatch({
+                type: LOGIN_ERROR, //Es la accion a ejecutar
+                payload: "Hubo problema con el servidor 2."  //Son los datos que modifica el state 
+            }); 
+        }
+    
+    } 
+
 
     //Metodo:  Inicia Sessión al usuario 
     const iniciarSesion = async (datos)=>{
@@ -59,6 +113,9 @@ const AuthState = ({children}) => {
 
                     }else{
 
+                        //Obtengo los datos del usuario luego de realizar el login 
+                        usuarioAutenticado(data);
+
                         dispatch({
                             type: LOGIN_EXITOSO, //Es la accion a ejecutar
                             payload: response.data.token  //Son los datos que modifica el state 
@@ -82,17 +139,7 @@ const AuthState = ({children}) => {
         }
     
     }    
-    //Metodo: Validamos si el usuario esta autenticado por cada acción que realice 
-    const usuarioAutenticado = async (datos)=>{
-    
-        console.log("Desde iniciar Session ", datos );
-        try {
-            
-        } catch (error) {
-            console.log(error);
-        }
-    
-    } 
+
 
     //Metodo: Cerrar Session 
     const cerrarSesion = ()=>{
@@ -148,7 +195,35 @@ const AuthState = ({children}) => {
         }
 
     }    
+   
+   
     //Metodo:  
+    const saludoTiempo = ()=>{
+        
+        let fecha = new Date(); 
+        let hora = fecha.getHours();
+        let imagen = ''; 
+        let texto = ''; 
+       
+        if(hora >= 0 && hora < 12){
+          texto = "Día";
+          imagen = "img/dia.png";
+        }
+       
+        if(hora >= 12 && hora < 18){
+          texto = " Tarde";
+          imagen = "img/tarde.png";
+        }
+       
+        if(hora >= 18 && hora < 24){
+          texto = "Noche";
+          imagen = "img/noche.png";
+        }
+
+       return texto; 
+
+    }
+
 
     return (
         <AuthContext.Provider
@@ -156,10 +231,13 @@ const AuthState = ({children}) => {
                 token:state.token, 
                 autenticado:state.autenticado,
                 usuario:state.usuario, 
+                ninkName:state.ninkName, 
                 mensaje:state.mensaje, 
                 iniciarSesion,
                 cerrarSesion, 
                 olvidoClave,
+                usuarioAutenticado,
+                saludoTiempo,
             }}
         >
             {children}

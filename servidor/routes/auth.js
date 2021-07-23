@@ -14,7 +14,7 @@ const auth  = require('../middleware/auth');
 //api/auth // midleware 
 router.get('/',
     auth,
-    authController.autenticarAutenticado
+    authController.usuarioAutenticado
 );
 
 // Crea un usuario 

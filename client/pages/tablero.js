@@ -1,37 +1,61 @@
-//Importo Librerias 
-import React, {useContext, useEffect, Fragment, useState} from 'react';
+//Importar Librerias React 
+import React, {useContext, useEffect} from 'react';
+import Router , {useRouter}  from 'next/router';
 
-//Importo componenentes 
+//Importamos nuestros  useContext (Hooks)
+import AuthContext from '../context/auth/AuthContext';
+
+//Importo Componentes 
 import Layout from '../components/layout/Layout';
+import SideBar   from '../components/ui/SideBar'; 
 
+const Home = () => {
 
-const tablero = () => {
+   //Declaro useState 
 
+   //Declaro Hook 
+      //Hooks 
+      const router = useRouter()
+   
+   
+   //Declaro Hooks -> UseContext para usar el state 
+   //Acceder el state de auth 
+   const valorContext = useContext(AuthContext);
+   const { autenticado} =  valorContext; 
+   
+   //Declaro UseEffect   
 
-   //Declaro mis useState 
+   useEffect(()=>{
+
+    if(!autenticado){
+      router.push('/')
+      console.log("autenticado->", autenticado);
+    }
+
+ },[autenticado])
+
    
    
    //Metodos Funcionales 
 
-   //función : Para capturar el valor del captcha 
-  
-    
+   //función : 
+   //función : 
+   //función : 
 
   return ( 
       <Layout>
-         <Fragment>
+            <div className="md:flex flex min-h-screen">
+                <SideBar/>
+                <div className="md:w-3/5 xl:w-4/5 p-6">
 
-
-            <div className="flex justify-center mt-10">
-               <div className="w-full max-w-3xl pl-3 pr-3 rounded-lg pt-3 bg-white mb-5 overflow-hidden shadow-lg">
-                              
-                            Tablero se debe diseñar 
-               </div>
-            </div>
-
-      </Fragment>
+                  <div>
+                    <img  src="/home.gif" /> 
+                  </div>
+                    
+                </div>
+           </div>            
       </Layout>
    );
 }
  
-export default tablero;
+export default Home ;

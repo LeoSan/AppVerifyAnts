@@ -1,16 +1,18 @@
 //Importar Librerias React 
-import React, {Fragment} from 'react';
+import React, {Fragment, useContext} from 'react';
 import Head from 'next/head'; //-> Indispensable para poder usar link style o cualquier plugin
+
+
 
 //Importo Componentes 
 import Header from './Header'; 
-
 import Footer from './Footer'; 
 
 
-//Importo funciones propias 
-
 const Layout = ({children}) => {
+
+
+
     return ( 
         <Fragment>
             <Head>
@@ -24,7 +26,7 @@ const Layout = ({children}) => {
 
             </Head>
             <div className="font-Roboto bg-gray-100"> 
-                <Header/>
+                <Header />
                 <main className="mt-4">
                     {children}
                 </main>

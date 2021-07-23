@@ -56,3 +56,5 @@
 [2021-07-04T16:09:21.486] [ERROR] crud - [Validacion] - Crear usuario
 [2021-07-06T11:59:00.147] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: tokenEmail is not defined 
 [2021-07-06T13:01:22.093] [ERROR] crud - Hubo un  error  en  la comunicación !! -> ReferenceError: UsuarioToken is not defined 
+[2021-07-22T17:48:27.145] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: result is not defined 
+[2021-07-22T17:50:10.977] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: result is not defined 

@@ -1,18 +1,55 @@
-
 //Importo Librerias 
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+
+
+//Importamos nuestros  useContext (Hooks)
+import AuthContext from '../../context/auth/AuthContext';
 
 //importar icon 
-import { BeakerIcon, BookmarkIcon, CollectionIcon, CreditCardIcon, CashIcon, ClipboardIcon, HeartIcon, ClockIcon, ChatIcon, AnnotationIcon, DotsVerticalIcon } from '@heroicons/react/solid'
+import { BeakerIcon, BookmarkIcon, CollectionIcon, CreditCardIcon, CashIcon, ClipboardIcon, HeartIcon, ClockIcon, ChatIcon, AnnotationIcon, DotsVerticalIcon, UserCircleIcon,CogIcon, LogoutIcon } from '@heroicons/react/solid'
 
 const SideBar = () => {
+
+    //Declaro useState 
+
+   
+    //Declaro UseContext 
+        //Acceder el state de auth 
+        const  valorContext = useContext(AuthContext);
+        const { cerrarSesion, autenticado } =  valorContext; 
+
+    //Declaro Variables 
+
+    //Declaro Hook    
+        //Redireccionar   
+        const router = useRouter();
+
+       //Declaro UseEffect
+       useEffect(()=>{
+              if(!autenticado){
+                     router.push('/')
+              }
+       },[autenticado]);         
+   
+   
+    //Metodos Funcionales 
+
+        //función : 
+        //función : 
+        //función : Permite redireccionar al home 
+        const salirSesion = ()=>{
+            cerrarSesion();
+            router.push('/');
+        }
+
+       
        return (
               <Fragment>
                      <div className="md:w-2/5 xl:w-1/5 bg-green-600">
                             <div className="p-6">
-                                   <p className="uppercase text-white text-2xl tracking-wide text-center font-bold" >Configración
-                                   <DotsVerticalIcon className="h-5 w-5 text-yellow-600"/>
+                                   <p className="uppercase text-white text-2xl tracking-wide text-center font-bold" >Tablero
                                    
                                    </p>
 
@@ -84,6 +121,16 @@ const SideBar = () => {
                                           </Link>
 
                                    </nav>
+                                   <div className="flex flex-wrap  justify-around mt-5">
+                                          <Link href="/perfil">
+                                                 <button title="Editar tu perfil"  className="btn-yellow"> <UserCircleIcon className="h-5 w-5 "/></button>
+                                          </Link>                                          
+                                          <Link href="/config">
+                                                 <button title="Configuracones del sistema"  className="btn-yellow">  <CogIcon className="h-5 w-5 "/> </button>
+                                          </Link>
+                                          
+                                          <button title="Salir del sistema" onClick={ ()=>salirSesion() } className="btn-yellow"> <LogoutIcon className="h-5 w-5 "/></button>                                          
+                                   </div>
 
                             </div>
 

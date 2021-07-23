@@ -7,6 +7,21 @@ import SideBar   from '../components/ui/SideBar';
 
 const Home = () => {
 
+   //Declaro useState 
+   
+   
+   //Declaro UseContext  
+   
+   
+   //Declaro UseEffect   
+   
+   
+   //Metodos Funcionales 
+
+   //función : 
+   //función : 
+   //función : 
+
   return ( 
       <Layout>
             <div className="md:flex flex min-h-screen">

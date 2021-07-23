@@ -43,17 +43,21 @@ exports.autenticarUsuario = async (req, res, next) => {
             return res.status(200).json({msg:' ¡ Contraseña incorrecta !', success:false});
         }
 
-        //Como me devuelve una promeso declaro en una variable
-        let resultCaptha = validarCaptcha( req );
+        //******Inicio ******//  Nota Leonard:  
+            //Este metodo (autenticarUsuario) es un async y el metodo helper validarCaptcha es otro async,  da error  <pending> ya que no pueden estar dos metodos async anidados 
+            // La manera de resolver esto es usando promesa y esta es la manera de como se implementa  
 
-        resultCaptha.then(function(result) {
-            
-            if (result.success !== true  ){
-                logsCotroller.logsCRUD(`Resultado captcha !! -> ${ result.success } `);
-                return res.status(200).json({msg: `Problemas con el captcha, Debes refrescar la pagina por favor` , success:false});
-            }
-         });
+         validarCaptcha(req).then(resultado => {  
+                    console.log('Resultado del Recaptcha'.green, resultado);
+                    if (resultado !== 'ok' ){
+                        return res.status(200).json({msg: `Problemas con el captcha, Debes refrescar la pagina por favor` , success:false});
+                    }
+        } ) //Ejecuta el lado bueno 
+         .catch(err=> {
+            return res.status(200).json({msg: `Problemas de conexión!!` , success:false});
+         } );//Ejecuta el lado reject 
 
+        //************Fin ******
         
         //Validar si el usurio esta activo 
         if ( usuario.activo === 1 ){
@@ -85,14 +89,16 @@ exports.autenticarUsuario = async (req, res, next) => {
 }
 
 //Permite obtener que usuario esta autenticado 
-exports.autenticarAutenticado = async (req, res)=>{
+exports.usuarioAutenticado = async (req, res)=>{
+    
     try {
-        const usuario = await Usuario.findById(req.usuario.id).select('-password');
+        const usuario = await Usuario.findOne(req.emailUsu).select('-password');
+        
         res.status(200).json({usuario});
         
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).json({msg: "Hubo un error  - autenticacion"}) 
+        res.status(200).json({msg: "Hubo un error  - consulta"}) 
     }
 }
 
@@ -196,6 +202,23 @@ exports.olvidoClave = async (req, res)=>{
          if ( !usuario ){
              return res.status(200).json({msg:' ¡ El usuario no existe !', success:false});
          }
+
+
+        //******Inicio ******//  Nota Leonard:  
+            //Este metodo (autenticarUsuario) es un async y el metodo helper validarCaptcha es otro async,  da error  <pending> ya que no pueden estar dos metodos async anidados 
+            // La manera de resolver esto es usando promesa y esta es la manera de como se implementa  
+
+            validarCaptcha(req).then(resultado => {  
+                console.log('Resultado del Recaptcha'.green, resultado);
+                if (resultado !== 'ok' ){
+                    return res.status(200).json({msg: `Problemas con el captcha, Debes refrescar la pagina por favor` , success:false});
+                }
+            } ) //Ejecuta el lado bueno 
+            .catch(err=> {
+                return res.status(200).json({msg: `Problemas de conexión!!` , success:false});
+            } );//Ejecuta el lado reject 
+
+        //************Fin ******         
 
         //Validar si el usurio esta activo 
         if ( usuario.activo === 1 ){

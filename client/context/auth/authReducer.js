@@ -6,6 +6,7 @@ import {
     LOGIN_ERROR,
     OLVIDO_CLAVE_ERROR, 
     OLVIDO_CLAVE_EXITOSO,
+    DATOS_USUARIOS,
     
 } from '../../types';
 
@@ -21,7 +22,8 @@ const authReducer = (state,action) => {
             return{
                 ...state, 
                 token:null,
-                usuario:null, 
+                usuario:null,
+                nombre:null, 
                 autenticado:null,
             }
         
@@ -49,6 +51,12 @@ const authReducer = (state,action) => {
             return{
                 ...state, 
                 mensaje:action.payload
+            }        
+        case DATOS_USUARIOS: 
+            return{
+                ...state, 
+                usuario:action.payload,
+                ninkName:action.payload.nomUsu
             }        
         
         case LIMPIAR_REGISTRO: 
