@@ -56,72 +56,99 @@ const SideBar = () => {
                                    <p className="mt-2 text-white text-xl font-bold">Catalagos</p>
 
                                    <nav className="mt-2" >
-                                          <Link href="/home" >
-                                                 <a className="bg-gray-500 px-1 py-1  text-white mr-2  block">Ver Actividad
-                                                 <BeakerIcon className="h-5 w-5 text-yellow-500"/>
-                                                 </a>
-                                          </Link>
 
-                                          <Link href="/home">
-                                                 <a className="bg-gray-500 px-1 py-1  text-white  mr-2 mt-2 block">Ver Categoria
-                                                 <CollectionIcon className="h-5 w-5 text-yellow-500"/>
-                                                 </a>
-                                                 
-                                          </Link>
+                                          <div className="flex flex-nowrap hover:bg-gray-500 hover:cursor-pointer">
+                                                 <div className="bg-gray-500 px-1 py-1   mr-2 ">
+                                                        <BeakerIcon className="h-5 w-5 text-white"/> 
+                                                 </div>
+                                                 <div className=" px-1 py-1  text-white mr-2    ">
+                                                        Ver actividad
+                                                 </div>
+                                          </div>
 
-                                          <Link href="/home">
-                                                 <a className="bg-gray-500 px-1 py-1  text-white  mr-2 mt-2 block">Ver Recurrencia
-                                                 <ClockIcon className="h-5 w-5 text-yellow-500"/>
-                                                 </a>
-                                                 
-                                          </Link>
+                                          <div className="flex flex-nowrap hover:bg-gray-500 hover:cursor-pointer">
+                                                 <div className="bg-gray-500 px-1 py-1   mr-2 ">
+                                                        <CollectionIcon className="h-5 w-5 text-white "/> 
+                                                 </div>
+                                                 <div className=" px-1 py-1  text-white mr-2  ">
+                                                        Ver Categoria 
+                                                 </div>
+                                          </div>
+
+                                          <div className="flex flex-nowrap hover:bg-gray-500 hover:cursor-pointer">
+                                                 <div className="bg-gray-500 px-1 py-1   mr-2 ">
+                                                        <ClockIcon className="h-5 w-5 text-white"/> 
+                                                 </div>
+                                                 <div className=" px-1 py-1  text-white mr-2  ">
+                                                        Ver Recurrencia 
+                                                 </div>
+                                          </div>                                          
+                                          
+
+
                                    </nav>
                                    <p className="mt-2 text-white text-xl font-bold">Funcionalidad</p>
 
                                    <nav className="mt-2" >
-                                          <Link href="/home">
-                                                 <a className="bg-gray-500 px-1 py-1  text-white  mr-2 mt-2 block">Acción
-                                                 <HeartIcon className="h-5 w-5 text-yellow-500"/>
-                                                 </a>
-                                                 
-                                          </Link>
-                                          <Link href="/home">
-                                                 <a className="bg-gray-500 px-1 py-1  text-white  mr-2 mt-2 block">Patrimonio
-                                                 <ClipboardIcon className="h-5 w-5 text-yellow-500"/>
-                                                 </a>
-                                                 
-                                          </Link>
-                                          <Link href="/home">
-                                                 <a className="bg-gray-500 px-1 py-1  text-white  mr-2 mt-2 block">Ingreso
-                                                 <CashIcon className="h-5 w-5 text-yellow-500"/>
-                                                 </a>
-                                                 
-                                          </Link>
-                                          <Link href="/home">
-                                                 <a className="bg-gray-500 px-1 py-1  text-white  mr-2 mt-2 block">Gasto
-                                                 <CreditCardIcon className="h-5 w-5 text-yellow-500"/>
-                                                 </a>
-                                                
-                                          </Link>
+
+                                          
+                                          <div className="flex flex-nowrap hover:bg-yellow-500 hover:cursor-pointer">
+                                                 <div className="bg-yellow-500 px-1 py-1   mr-2 ">
+                                                        <HeartIcon className="h-5 w-5 text-white"/> 
+                                                 </div>
+                                                 <div className=" px-1 py-1  text-white mr-2 ">
+                                                        Acción
+                                                 </div>
+                                          </div>                                          
+                                          <div className="flex flex-nowrap hover:bg-yellow-500 hover:cursor-pointer">
+                                                 <div className="bg-yellow-500 px-1 py-1   mr-2 ">
+                                                        <ClipboardIcon className="h-5 w-5 text-white"/> 
+                                                 </div>
+                                                 <div className=" px-1 py-1  text-white mr-2  ">
+                                                        Patrimonio
+                                                 </div>
+                                          </div>                                          
+                                           
+                                          <div className="flex flex-nowrap hover:bg-yellow-500 hover:cursor-pointer">
+                                                 <div className="bg-yellow-500 px-1 py-1   mr-2 ">
+                                                        <CashIcon className="h-5 w-5 text-white"/> 
+                                                 </div>
+                                                 <div className=" px-1 py-1  text-white mr-2  ">
+                                                        Ingreso
+                                                 </div>
+                                          </div>                                          
+                                          <div className="flex flex-nowrap hover:bg-yellow-500 hover:cursor-pointer">
+                                                 <div className="bg-yellow-500 px-1 py-1   mr-2 ">
+                                                        <CreditCardIcon className="h-5 w-5 text-white"/> 
+                                                 </div>
+                                                 <div className=" px-1 py-1  text-white mr-2 ">
+                                                        Gasto
+                                                 </div>
+                                          </div>                                          
+
                                    </nav>
                                    <p className="mt-2 text-white text-xl font-bold">Notificaciones</p>
 
                                    <nav className="mt-2" >
-                                          <Link href="/home">
-                                                 <a className="bg-gray-500 px-1 py-1  text-white  mr-2 mt-2 block">Alarmas
-                                                 <AnnotationIcon className="h-5 w-5 text-yellow-500"/>
-                                                 </a>
-                                                 
-                                          </Link>
-                                          <Link href="/home">
-                                                 <a className="bg-gray-500 px-1 py-1  text-white  mr-2 mt-2 block">Consejos
-                                                 <ChatIcon className="h-5 w-5 text-yellow-500"/>
-                                                 </a>
-                                                 
-                                          </Link>
+                                          <div className="flex flex-nowrap hover:cursor-pointer hover:bg-gray-500">
+                                                 <div className="bg-gray-500 px-1 py-1   mr-2 ">
+                                                        <AnnotationIcon className="h-5 w-5 text-white"/> 
+                                                 </div>
+                                                 <div className=" px-1 py-1  text-white mr-2 ">
+                                                        Alarmas
+                                                 </div>
+                                          </div>                                          
+                                          <div className="flex flex-nowrap hover:cursor-pointer hover:bg-gray-500">
+                                                 <div className="bg-gray-500 px-1 py-1   mr-2 ">
+                                                        <ChatIcon className="h-5 w-5 text-white"/> 
+                                                 </div>
+                                                 <div className=" px-1 py-1  text-white mr-2 ">
+                                                        Gasto
+                                                 </div>
+                                          </div>  
 
                                    </nav>
-                                   <div className="flex flex-wrap  justify-around mt-5">
+                                   <div className="flex flex-wrap  justify-around mt-10">
                                           <Link href="/perfil">
                                                  <button title="Editar tu perfil"  className="btn-yellow"> <UserCircleIcon className="h-5 w-5 "/></button>
                                           </Link>                                          
