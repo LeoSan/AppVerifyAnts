@@ -56,7 +56,8 @@ const authReducer = (state,action) => {
             return{
                 ...state, 
                 usuario:action.payload,
-                ninkName:action.payload.nomUsu
+                ninkName:action.payload.nomUsu,
+                nickEmail:action.payload.emailUsu
             }        
         
         case LIMPIAR_REGISTRO: 

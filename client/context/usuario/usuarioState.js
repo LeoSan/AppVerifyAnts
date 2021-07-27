@@ -11,6 +11,8 @@ import {
     REGISTRO_USUARIO_ERROR,
     CAMBIO_CLAVE_EXITOSO, 
     CAMBIO_CLAVE_ERROR,
+    EDITAR_USUARIO_EXITOSO, 
+    EDITAR_USUARIO_ERROR,
 } from '../../types';
 
 //Importo nuetsra libreria axios para conectar con el servidor 
@@ -25,7 +27,8 @@ const UsuarioState = ({children}) => {
     const inicialState = {
         mensaje:null, 
         registro:null,
-        cambio:null
+        cambio:null,
+        editado:null
     }
 
     // Definimos Reducer 
@@ -134,7 +137,58 @@ const UsuarioState = ({children}) => {
     
     }    
   
-    //Metodo:  
+    //Metodo:  Editar un usuario 
+    const editarUsuario = async (datos)=>{
+    
+        //console.log("Desde Editar Usuario ", datos);
+        try {
+
+            const data = { 
+                emailUsu:datos.email, 
+                nomUsu:datos.nombre, 
+                apeUsu:datos.apellido, 
+                sexo:datos.sexo,
+                pais:datos.pais,
+                fechaNac:datos.fecha,
+                captcha:datos.captcha
+            }
+
+                
+            const respuesta = await clienteAxios.put('/api/usuarios/editar', data)
+                .then((response) => {
+
+                    if( response.data.success == false ){
+                        dispatch({
+                            type: EDITAR_USUARIO_EXITOSO, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        }); 
+
+                    }else{
+
+                        dispatch({
+                            type: EDITAR_USUARIO_ERROR, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        });                         
+
+                    }
+
+            }).catch((response) => {
+                    dispatch({
+                        type: EDITAR_USUARIO_ERROR, //Es la accion a ejecutar
+                        payload: response.data.msg  //Son los datos que modifica el state 
+                    }); 
+            });     
+          
+            
+            
+        } catch (error) {
+            dispatch({
+                type: EDITAR_USUARIO_ERROR, //Es la accion a ejecutar
+                payload: "Hubo un problema con el servidor"  //Son los datos que modifica el state 
+            }); 
+        }
+    
+    } 
     //Metodo:  
 
     return (
@@ -142,9 +196,11 @@ const UsuarioState = ({children}) => {
             value={{
                 mensaje:state.mensaje,
                 registro:state.registro,
+                editado:state.editado,
                 cambio:state.cambio,
                 registrarUsuario,
                 cambiarClave,
+                editarUsuario,
 
             }}
         >

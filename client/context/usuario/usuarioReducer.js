@@ -5,6 +5,8 @@ import {
     REGISTRO_USUARIO_ERROR,
     CAMBIO_CLAVE_EXITOSO, 
     CAMBIO_CLAVE_ERROR,
+    EDITAR_USUARIO_EXITOSO, 
+    EDITAR_USUARIO_ERROR,
 } from '../../types';
 
 //Debe hacerce asi ya que se volvio obsoleto hacer por defaul 
@@ -25,6 +27,19 @@ const usuarioReducer = (state,action) => {
                 mensaje:action.payload,
                 registro:true
             }     
+        case EDITAR_USUARIO_EXITOSO: 
+            return{
+                ...state, 
+                mensaje:action.payload,
+                editado:true
+            }
+        case EDITAR_USUARIO_ERROR: 
+            return{
+                ...state, 
+                mensaje:action.payload,
+                editado:null
+            }
+
             
         case CAMBIO_CLAVE_ERROR: 
             return{

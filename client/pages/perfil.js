@@ -1,5 +1,6 @@
 //Importo Librerias 
 import React, {useContext, useEffect, Fragment, useState} from 'react';
+import {  UserCircleIcon,CogIcon } from '@heroicons/react/solid'
 
 //Importo componenentes 
 import Layout from '../components/layout/Layout';
@@ -29,13 +30,13 @@ const perfil = () => {
 //Declaro Hooks -> UseContext para usar el state 
    //Acceder el state de auth 
    const valorContext = useContext(UsuarioContext);
-   const { registrarUsuario, mensaje, registro } =  valorContext;   
+   const { editarUsuario, mensaje, editado } =  valorContext;   
 
    const  valorContextAuth = useContext(AuthContext);
-   const { ninkName } =  valorContextAuth; 
+   const { ninkName, nickEmail } =  valorContextAuth; 
 
    //Declaro Variables 
-   
+  
        
    //Metodos Funcionales 
 
@@ -48,33 +49,26 @@ const perfil = () => {
     //función: Esquema de validaciones 
     const formik =useFormik({
       initialValues:{
-              nombre:'',
-              email:'',
-              password:'',
-              password2:'',
+              nombre:ninkName,
+              apellido:'',
+              fecha:'',
+              sexo:'',
+              pais:'',
       },
       validationSchema:Yup.object({
-               email:Yup.string()
-                      .email('El campo email no tiene formato adecuado.')
-                      .required('El campo email es obligatorio.'),                
+                           
                nombre:Yup.string()
                       .min(5, "Tu nombre debe tener al menos 5 caracteres.")
                       .required('El campo nombre es obligatorio.'),                         
-               password:Yup.string()
-                      .required('El campo password es obligatorio.')
-                      .matches(
-                        /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
-                        "Debe contener mas de8 Characters, Un caracter en Mayuscula, Un caracter en miniscula, Un Numero y un caracter especial"
-                      ),  
-                      
-               password2: Yup.string().when("password", {
-                        is: val => (val && val.length > 0 ? true : false),
-                        then: Yup.string().oneOf(
-                          [Yup.ref("password")],
-                          "Ambas contraseñas deben ser iguales"
-                        )
-                      }),                      
-             
+               apellido:Yup.string()
+                      .min(5, "Tu Apellido debe tener al menos 5 caracteres.")
+                      .required('El campo nombre es obligatorio.'),                         
+                fecha:Yup.string()
+                      .required('El campo fecha  es obligatorio.'),                 
+                sexo:Yup.string()
+                      .required('El campo Sexo  es obligatorio.'),                 
+                pais:Yup.string()
+                      .required('El campo pais  es obligatorio.'),                                              
       }),
       
       onSubmit:formData=>{
@@ -83,8 +77,10 @@ const perfil = () => {
                   //Valido si no es un robot 
                   if ( valcaptcha !== 0 ){
                         formData.captcha = valcaptcha;
+                        formData.email   = nickEmail;
+                        console.log(formData);
                         //Envio valores al state 
-                        registrarUsuario(formData);
+                        editarUsuario(formData);
 
                         //Dejo todo como estaba
                         setconfirmaRobot(true);
@@ -98,21 +94,28 @@ const perfil = () => {
                       console.log(error);                                        
               }
       }
-});    
-    
+}); //fin del formik     
+
+//
 
   return ( 
 
         <Layout>
             <div className="md:flex flex min-h-screen">
-                <SideBar/>
+            <SideBar/>
                 <div className="md:w-3/5 xl:w-4/5 p-6">
+                        <div className="flex flex-wrap  justify-around mt-10">
+                                <button title="Editar tu perfil"  className="btn-yellow"><UserCircleIcon className="h-5 w-5 "/> Editar Perfil </button>
+                                <button title="Editar Password"   className="btn-yellow"><CogIcon className="h-5 w-5 "/> Editar Pass </button>
+                        </div>
 
-                        <div className="flex justify-center mt-10">
+
+                        <div id="divEditPerfil" className="flex justify-center mt-10">
+
                             <div className="w-full max-w-3xl pl-3 pr-3 rounded-lg pt-3 bg-white mb-5 overflow-hidden shadow-lg">
                                     <form className="mb-8" onSubmit={formik.handleSubmit}>
                                         <label 
-                                                                className="text-2xl font-bold text-yellow-500 " >Perfil <span className="uppercase font-bold"> {ninkName} </span>  </label>
+                                                className="text-2xl font-bold text-yellow-500 " >Perfil <span className="uppercase font-bold"> {ninkName} </span>  </label>
             
                                                 <div className="mb-4">
                                                     <label 
@@ -131,86 +134,87 @@ const perfil = () => {
             
                                             {formik.touched.nombre && formik.errors.nombre ? (
                                                 <Error mensaje={ formik.errors.nombre } ></Error>
-                                                ): null}    
-                    
+                                                ): null}                                                  
+                                                
                                                 <div className="mb-4">
-                                                        <label 
-                                                                className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email</label>
-                                                        <input 
-                                                                id="email"
-                                                                type="text"
-                                                                placeholder="Ingrese Email"
-                                                                value={formik.email}
-                                                                onChange={formik.handleChange}
-                                                                onBlur={formik.handleBlur}                 
+                                                    <label 
+                                                            className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nombre">Apellido</label>
+                                                    <input 
+                                                            id="apellido"
+                                                            type="text"
+                                                            placeholder="Ingrese su apellido"
+                                                            value={formik.apellido}
+                                                            onChange={formik.handleChange}
+                                                            onBlur={formik.handleBlur}                                                         
             
-                                                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md "
-                                                        />
+                                                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md "
+                                                    />
                                                 </div>
             
-                                                {formik.touched.email && formik.errors.email ? (
-                                                <Error mensaje={ formik.errors.email } ></Error>
-                                                ): null}                                     
-            
-            
-                                                <div className="mb-4">
-                                                        <label 
-                                                                className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Password</label>
-                                                        <input 
-                                                                id="password"
-                                                                type="password"
-                                                                placeholder="Ingrese Password"
-                                                                value={formik.password}
-                                                                onChange={formik.handleChange}
-                                                                onBlur={formik.handleBlur}                                                        
-            
-                                                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md "
-                                                        />
-                                                </div>    
-            
-                                                {formik.touched.password && formik.errors.password ? (
-                                                <Error mensaje={ formik.errors.password } ></Error>
+                                            {formik.touched.nombre && formik.errors.nombre ? (
+                                                <Error mensaje={ formik.errors.nombre } ></Error>
                                                 ): null}    
-            
+                    
+                                                
                                                 <div className="mb-4">
                                                         <label 
                                                                 className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Sexo</label>
                                                         <select  
                                                                 id="sexo"
                                                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md"
+                                                                value={formik.sexo}
+                                                                onChange={formik.handleChange}
+                                                                
                                                         >
                                                             <option > Seleccione </option>
+                                                            <option > Femenino </option>
                                                             <option > Masculino </option>
-                                                            <option > Femenno </option>
                                                             <option > Otros </option>
                                                         </select>
-                                                </div>    
-            
-                                                {formik.touched.password && formik.errors.password ? (
-                                                <Error mensaje={ formik.errors.password } ></Error>
-                                                ): null}    
-
-                                                 
-                                                            
-            
+                                                </div>   
+                                                {formik.touched.sexo && formik.errors.sexo ? (
+                                                        <Error mensaje={ formik.errors.sexo } ></Error>
+                                                        ): null}                                                                                                 
+                                                
                                                 <div className="mb-4">
                                                         <label 
-                                                                className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password2">Confirmar Password </label>
-                                                        <input 
-                                                                id="password2"
-                                                                type="password"
-                                                                placeholder="Confirme Password"
-                                                                value={formik.password2}
+                                                                className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Pais</label>
+                                                        <select  
+                                                                id="pais"
+                                                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md"
+                                                                value={formik.pais}
                                                                 onChange={formik.handleChange}
-                                                                onBlur={formik.handleBlur}                                                       
-            
-                                                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md "
-                                                        />
-                                                </div>         
+                                                        >
+                                                            <option > Seleccione </option>
+                                                            <option option="CO" > Colombia </option>
+                                                            <option option="PE" > Peru </option>
+                                                            <option option="MX" > Mexico </option>
+                                                            <option option="VE" > Venezuela </option>
+                                                        </select>
+                                                </div>  
                                                 
-                                                {formik.touched.password2 && formik.errors.password2 ? (
-                                                <Error mensaje={ formik.errors.password2 } ></Error>
-                                                ): null}    
+                                                {formik.touched.pais && formik.errors.pais ? (
+                                                        <Error mensaje={ formik.errors.pais } ></Error>
+                                                        ): null}                                                   
+            
+
+                                                <div className="mb-4">
+                                                        <label 
+                                                                className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Fecha Nacimiento</label>
+                                                        <input 
+                                                                id="fecha"
+                                                                type="date"
+                                                                value={formik.fecha}
+                                                                onChange={formik.handleChange}
+                                                                onBlur={formik.handleBlur} 
+                                                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md "
+                                                        />                        
+
+                                                </div>    
+            
+                                                {formik.touched.fecha && formik.errors.fecha ? (
+                                                <Error mensaje={ formik.errors.fecha } ></Error>
+                                                ): null}                                                    
                                                 
                                                 
                                                 <div className="mb-4 items-center">
@@ -233,17 +237,96 @@ const perfil = () => {
                                                         className="btn-green cursor-pointer w-full mt-5"
                                                         value="Editar Perfil"
                                                 />      
-                                                { mensaje != null && registro == null ? (
+                                                { mensaje != null && editado == null ? (
                                                 <Error mensaje={ mensaje } ></Error>
                                                 ): null}  
                                                                                     
                                                 
-                                                { mensaje != null && registro != null  ? (
+                                                { mensaje != null && editado == true  ? (
                                                 <Success mensaje={ mensaje } ></Success>
                                                 ): null}  
                                     </form>  
                             </div>
                         </div>
+                
+                        
+
+                        <div id="divEditPass" className="flex justify-center mt-10 ">
+                                <div className="w-full max-w-3xl pl-3 pr-3 rounded-lg pt-3 bg-white mb-5 overflow-hidden shadow-lg">
+                                        <form className="mb-8" onSubmit={formik.handleSubmit} action="POST">
+                                        <div className="mb-4">
+                                        <label 
+                                                 className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Password</label>
+                                        <input 
+                                                 id="password"
+                                                 type="password"
+                                                 placeholder="Ingrese Password"
+                                                 value={formik.password}
+                                                 onChange={formik.handleChange}
+                                                 onBlur={formik.handleBlur}                                                        
+
+                                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md "
+                                        />
+                               </div>    
+
+                               {formik.touched.password && formik.errors.password ? (
+                                  <Error mensaje={ formik.errors.password } ></Error>
+                                 ): null}    
+
+
+                               <div className="mb-4">
+                                        <label 
+                                                 className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password2">Confirmar Password </label>
+                                        <input 
+                                                 id="password2"
+                                                 type="password"
+                                                 placeholder="Confirme Password"
+                                                 value={formik.password2}
+                                                 onChange={formik.handleChange}
+                                                 onBlur={formik.handleBlur}                                                       
+
+                                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md "
+                                        />
+                               </div>         
+                               
+                               {formik.touched.password2 && formik.errors.password2 ? (
+                                  <Error mensaje={ formik.errors.password2 } ></Error>
+                                 ): null}    
+                               
+                               
+                               <div className="mb-4 items-center">
+                                      <label 
+                                         className="block text-gray-700 text-sm font-bold mb-2">¿ Eres un Robot ?</label>
+                            
+                                     <ReCAPTCHA className="flex items-center justify-center"
+                                        sitekey='6LdxEHIUAAAAAMhzsqkP-Q6ddj3xXkQwGTd38m9D'
+                                        onChange={getValCapctha}
+                                     />
+                               </div>     
+                               
+                               { confirmaRobot == false  ? (
+                                  <Error mensaje={ 'Debes validar que no eres un robot' } ></Error>
+                                  ): null}    
+                                           
+                               
+                               <input  
+                                        type="submit"
+                                        className="btn-green cursor-pointer w-full mt-5 "
+                                        value="Cambiar Contraseña"
+                               />    
+                                  { mensaje != null && cambio == null ? (
+                                  <Error mensaje={ mensaje } ></Error>
+                                  ): null}  
+                                                                      
+                                  
+                                  { mensaje != null && cambio != null  ? (
+                                  <Success mensaje={ mensaje } ></Success>
+                                  ): null}  
+                                        </form>
+                                </div>                                                                
+                        </div>                                                                
+
+                        
                 </div>
             </div>            
         </Layout>

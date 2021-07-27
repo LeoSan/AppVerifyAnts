@@ -30,6 +30,7 @@ const AuthState = ({children}) => {
         ninkName:null, 
         nombre:null,
         mensaje:null, 
+        nickEmail:null
     }
 
     // Definimos Reducer 
@@ -232,6 +233,7 @@ const AuthState = ({children}) => {
                 autenticado:state.autenticado,
                 usuario:state.usuario, 
                 ninkName:state.ninkName, 
+                nickEmail:state.nickEmail, 
                 mensaje:state.mensaje, 
                 iniciarSesion,
                 cerrarSesion, 
