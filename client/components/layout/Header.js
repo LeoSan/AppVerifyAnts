@@ -45,8 +45,7 @@ const Header = (  ) => {
                <nav className="flex flex-wrap md:flex-row lg:flex-row bg-gray-300">
                     
                     <div className="w-full flex-wrap  md:w-1/2 lg:w-1/2 px-2">
-                         <img className="hover:cursor-pointer"  onClick={ ()=>redireccionar()  } src="/image/logo001.png" />  
-                         <span className='text-gray-800 text-bold text-right'>Measuring for a best decision!</span>
+                         <img className="hover:cursor-pointer"  onClick={ ()=>redireccionar()  } src="/image/Logo004.png" />  
                     </div>
                     { ( autenticado ) ? (
                          <Bin />   

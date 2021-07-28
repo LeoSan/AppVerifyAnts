@@ -7,6 +7,7 @@ import {
     OLVIDO_CLAVE_ERROR, 
     OLVIDO_CLAVE_EXITOSO,
     DATOS_USUARIOS,
+    LIMPIAR_MENSAJE,
     
 } from '../../types';
 
@@ -25,6 +26,7 @@ const authReducer = (state,action) => {
                 usuario:null,
                 nombre:null, 
                 autenticado:null,
+                mensaje:null,
             }
         
 
@@ -60,10 +62,10 @@ const authReducer = (state,action) => {
                 nickEmail:action.payload.emailUsu
             }        
         
-        case LIMPIAR_REGISTRO: 
+        case LIMPIAR_MENSAJE: 
             return{
                 ...state, 
-                classMensaje:action.payload
+                mensaje:null
             }
         default:
             return state;

@@ -42,7 +42,7 @@ const login = () => {
       if(autenticado){
         // router.push('/tablero'); 
         router.push('/tablero')
-        console.log("autenticado->", autenticado);
+        //console.log("autenticado->", autenticado);
       }
 
    },[autenticado])

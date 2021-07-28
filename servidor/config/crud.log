@@ -58,3 +58,7 @@
 [2021-07-06T13:01:22.093] [ERROR] crud - Hubo un  error  en  la comunicación !! -> ReferenceError: UsuarioToken is not defined 
 [2021-07-22T17:48:27.145] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: result is not defined 
 [2021-07-22T17:50:10.977] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: result is not defined 
+[2021-07-26T19:48:47.279] [ERROR] crud - Hubo un  error  en  la comunicación !! -> TypeError: Usuario.findByOne is not a function 
+[2021-07-26T19:50:36.497] [ERROR] crud - Hubo un  error  en  la comunicación !! -> TypeError: Usuario.findByOne is not a function 
+[2021-07-26T19:52:24.629] [ERROR] crud - Hubo un  error  en  la comunicación !! -> TypeError: Usuario.findByOne is not a function 
+[2021-07-26T19:54:11.113] [ERROR] crud - Hubo un  error  en  la comunicación !! -> ObjectParameterError: Parameter "filter" to findOne() must be an object, got cuenca623@gmail.com 

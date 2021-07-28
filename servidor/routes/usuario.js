@@ -23,12 +23,12 @@ router.post('/',
 );
 
 //End-Point - Editar Usuario
-router.put('/', 
+router.put('/editar', 
     auth,
     [
-        check('id',        'El identificador es obligatorio.').not().isEmpty(), //Valida vacio    
         check('emailUsu',  'El correo es obligatorio.').not().isEmpty(), //Valida vacio    
         check('nomUsu',    'El nombre es obligatorio.').not().isEmpty(), //Valida vacio    
+        check('apeUsu',    'El apellido es obligatorio.').not().isEmpty(), //Valida vacio    
     ],       
     usuarioController.updateUsuario
 );

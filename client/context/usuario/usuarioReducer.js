@@ -7,6 +7,7 @@ import {
     CAMBIO_CLAVE_ERROR,
     EDITAR_USUARIO_EXITOSO, 
     EDITAR_USUARIO_ERROR,
+    LIMPIAR_MENSAJE
 } from '../../types';
 
 //Debe hacerce asi ya que se volvio obsoleto hacer por defaul 
@@ -51,7 +52,13 @@ const usuarioReducer = (state,action) => {
                 ...state, 
                 mensaje:action.payload,
                 cambio:true
-            }             
+            } 
+            
+        case LIMPIAR_MENSAJE: 
+            return{
+                ...state, 
+                mensaje:null
+            }            
 
         default:
             return state;

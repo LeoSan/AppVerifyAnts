@@ -13,6 +13,7 @@ import {
     CAMBIO_CLAVE_ERROR,
     EDITAR_USUARIO_EXITOSO, 
     EDITAR_USUARIO_ERROR,
+    LIMPIAR_MENSAJE
 } from '../../types';
 
 //Importo nuetsra libreria axios para conectar con el servidor 
@@ -189,6 +190,15 @@ const UsuarioState = ({children}) => {
         }
     
     } 
+    //Metodo: Permite limpiar los mensajes luegos de realizar un proceso 
+    const limpiarEstadoMensaje = ()=>{
+        setTimeout(() => {
+            dispatch({
+                type: LIMPIAR_MENSAJE, //Es la accion a ejecutar
+            }); 
+        }, 5000);
+    }     
+    
     //Metodo:  
 
     return (
@@ -201,6 +211,7 @@ const UsuarioState = ({children}) => {
                 registrarUsuario,
                 cambiarClave,
                 editarUsuario,
+                limpiarEstadoMensaje
 
             }}
         >

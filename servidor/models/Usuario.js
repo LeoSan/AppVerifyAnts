@@ -18,6 +18,30 @@ const usuariosSchema = new Schema({
 	   required:true,
 	   lowercase:true,
 	   trim:true,
+	},	
+	apeUsu:{
+	   type: String,
+	   default:null,
+	   lowercase:true,
+	   trim:true,
+	},	
+	sexo:{
+	   type: String,
+	   default:null,
+	   lowercase:true,
+	   trim:true,
+	},
+	pais:{
+	   type: String,
+	   default:null,
+	   lowercase:true,
+	   trim:true,
+	},	
+	fechaNac:{
+	   type: Date,
+	   default:null,
+	   lowercase:true,
+	   trim:true,
 	},
 	password:{
 	   type: String,

@@ -13,13 +13,12 @@ import {
     OLVIDO_CLAVE_ERROR, 
     OLVIDO_CLAVE_EXITOSO,
     DATOS_USUARIOS,
+    LIMPIAR_MENSAJE
 } from '../../types';
 
 //Importo nuetsra libreria axios para conectar con el servidor 
 import clienteAxios from '../../config/axios';
 import tokenAuth from '../../config/tokenAuth';
-
-
 
 const AuthState = ({children}) => {
 
@@ -28,9 +27,8 @@ const AuthState = ({children}) => {
         token: typeof window !== 'undefined' ? localStorage.getItem('token') : null, 
         autenticado:null, 
         ninkName:null, 
-        nombre:null,
+        nickEmail:null,
         mensaje:null, 
-        nickEmail:null
     }
 
     // Definimos Reducer 
@@ -114,13 +112,13 @@ const AuthState = ({children}) => {
 
                     }else{
 
-                        //Obtengo los datos del usuario luego de realizar el login 
-                        usuarioAutenticado(data);
-
                         dispatch({
                             type: LOGIN_EXITOSO, //Es la accion a ejecutar
                             payload: response.data.token  //Son los datos que modifica el state 
-                        });                         
+                        });  
+
+                        //Obtengo los datos del usuario luego de realizar el login 
+                        usuarioAutenticado(data);
 
                     }
 
@@ -150,8 +148,16 @@ const AuthState = ({children}) => {
         }); 
 
     }      
-    //Metodo: 
-    
+    //Metodo: Permite limpiar los mensajes luegos de realizar un proceso 
+    const limpiarEstadoMensaje = ()=>{
+        setTimeout(() => {
+            dispatch({
+                type: LIMPIAR_MENSAJE, //Es la accion a ejecutar
+            }); 
+        }, 5000);
+    }      
+
+    //Metodo: Permite cambiar la clave 0
     const olvidoClave =  async (datos)=>{
 
         try {
@@ -240,6 +246,7 @@ const AuthState = ({children}) => {
                 olvidoClave,
                 usuarioAutenticado,
                 saludoTiempo,
+                limpiarEstadoMensaje,
             }}
         >
             {children}

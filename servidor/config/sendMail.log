@@ -33,3 +33,9 @@
 [2021-07-22T18:33:18.266] [INFO] sendMail - Email messageId: <44cee638-4312-455b-3559-b2df9504c76a@gmail.com>
 [2021-07-22T18:37:43.807] [INFO] sendMail - Email Respuesta: 250 2.0.0 Ok: queued
 [2021-07-22T18:37:43.810] [INFO] sendMail - Email messageId: <b77dbdc6-429f-27ff-e6c1-016c62e51b77@gmail.com>
+[2021-07-26T19:20:02.922] [INFO] sendMail - Email Respuesta: 250 2.0.0 Ok: queued
+[2021-07-26T19:20:02.927] [INFO] sendMail - Email messageId: <3b171ba9-64a0-4f95-b459-428cd0695581@gmail.com>
+[2021-07-27T20:13:44.947] [INFO] sendMail - Email Respuesta: 250 2.0.0 Ok: queued
+[2021-07-27T20:13:44.954] [INFO] sendMail - Email messageId: <bc2a68b1-d3be-2927-0dc0-72ea58cf6f29@gmail.com>
+[2021-07-27T22:19:57.069] [INFO] sendMail - Email Respuesta: 250 2.0.0 Ok: queued
+[2021-07-27T22:19:57.078] [INFO] sendMail - Email messageId: <e0129cfc-4d74-ee88-2ccb-9948fdf6d9b7@gmail.com>
