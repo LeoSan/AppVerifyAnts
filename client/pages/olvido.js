@@ -1,6 +1,7 @@
 //Importo Librerias 
 import React, {useContext, useEffect, Fragment, useState} from 'react';
 import Router , {useRouter}  from 'next/router';
+import PropTypes from "prop-types";
 
 //Librerias para validación 
 import { useFormik } from 'formik';
@@ -8,7 +9,6 @@ import * as Yup from 'yup';
 
 //Importamos nuestros  useContext (Hooks)
 import AuthContext from '../context/auth/AuthContext';
-
 
 //Importo componentes 
 import Layout from '../components/layout/Layout';
@@ -39,8 +39,6 @@ const login = () => {
    //Declaro UseEffect
    
 
-
-
    //función : Para capturar el valor del captcha 
    function getValCapctha(value) {
       setvalcaptcha(value);
@@ -49,7 +47,7 @@ const login = () => {
 
 
     //función: Esquema de validaciones 
-    const formik =useFormik({
+    const formik = useFormik({
       initialValues:{
               email:'',
             
@@ -145,5 +143,14 @@ const login = () => {
       </Layout>
    );
 }
+
+login.propTypes = {
+    getValCapctha: PropTypes.func,
+    valcaptcha: PropTypes.string,
+    mensaje: PropTypes.string,
+    confirmaRobot: PropTypes.bool,
+    olvidoClave: PropTypes.bool,
+    formik:  PropTypes.object,
+  };
  
 export default login ;

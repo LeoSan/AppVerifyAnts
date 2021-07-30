@@ -1,5 +1,6 @@
 //Importo Librerias 
 import React, {Fragment} from 'react';
+import PropTypes from "prop-types";
 
 
 const Error = ({mensaje}) => {
@@ -12,5 +13,15 @@ const Error = ({mensaje}) => {
         </Fragment>
      );
 }
+
+
+Error.propTypes = {
+   /* handleClick: PropTypes.func,
+    direction: PropTypes.string,
+    playState: PropTypes.bool,
+    imgProps:  PropTypes.object,
+    wrapperProps: PropTypes.object*/
+  };
+  
  
 export default Error;

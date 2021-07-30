@@ -8,6 +8,7 @@ import UsuarioState from '../context/usuario/usuarioState';
 
 //import 'tailwindcss/tailwind.css'
 import '../public/assets/main.css';
+import '../public/assets/swiper.css';
 
 
 const MyApp = ( {Component, pageProps } )=>{

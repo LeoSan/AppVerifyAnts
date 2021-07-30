@@ -7,6 +7,14 @@ module.exports = {
     fontFamily: {
       Roboto: ['Roboto Slab'],
     },
+    height:{
+      '80':'20rem',
+      '98': '26rem',
+      '336':'84rem',
+    },
+    with:{
+      '336':'84rem',
+    }    
 
   },
   variants: {
