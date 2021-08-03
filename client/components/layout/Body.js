@@ -47,29 +47,27 @@ const Body = () => {
                 <Swiper 
                     spaceBetween={30} 
                     centeredSlides={true} 
-                    speed={600} 
-                    parallax={true}
+                    speed={1000} 
                     pagination={{
                         "clickable": true
                     }} 
                     navigation={true} 
                     className="mySwiper2"
-
                     autoplay={{
-                        "delay": 2500,
+                        "delay": 15000,
                         "disableOnInteraction": false
                       }}                    
                 >
                         <SwiperSlide>
-                            <img src="/imgSlider/bosque.png"  alt="pruebas"   />
+                            <img src="/imgSlider/slider/GastosHormiga_001.png"  alt="GastosHormiga_001"   />
                         </SwiperSlide>
 
                         <SwiperSlide>
-                            <img src="/image/GastosA.jpg"     alt="pruebas"   />
+                            <img src="/imgSlider/slider/GastosHormiga_002.png"     alt="GastosHormiga_002"   />
                         </SwiperSlide>
 
                         <SwiperSlide>
-                            <img src="/image/ListaHomeA.jpg"  alt="pruebas"  />
+                        <img src="/imgSlider/slider/GastosHormiga_003.png"     alt="GastosHormiga_003"   />
                         </SwiperSlide>
 
                 </Swiper>

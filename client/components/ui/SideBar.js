@@ -38,10 +38,22 @@ const SideBar = () => {
 
         //función : 
         //función : 
-        //función : Permite redireccionar al home 
+        //función : Permite redireccionar al home y cerra sessión  
         const salirSesion = ()=>{
             cerrarSesion();
             router.push('/');
+        }
+        //función : Permite redireccionar listado de categoria
+        const listarCategoria = ()=>{
+            router.push('/categoria');
+        }
+        //función : Permite redireccionar listado de categoria
+        const listarSubCategoria = ()=>{
+            router.push('/subcategoria');
+        }
+        //función : Permite redireccionar listado de programación de gastos recurrentes 
+        const listarGastosRecurrentes = ()=>{
+            router.push('/gastosrecurrente');
         }
 
        
@@ -61,8 +73,8 @@ const SideBar = () => {
                                                  <div className="bg-gray-500 px-1 py-1   mr-2 ">
                                                         <BeakerIcon className="h-5 w-5 text-white"/> 
                                                  </div>
-                                                 <div className=" px-1 py-1  text-white mr-2    ">
-                                                        Ver actividad
+                                                 <div className=" px-1 py-1  text-white mr-2" onClick={ ()=>listarCategoria() } >
+                                                        Ver Categorias
                                                  </div>
                                           </div>
 
@@ -70,8 +82,8 @@ const SideBar = () => {
                                                  <div className="bg-gray-500 px-1 py-1   mr-2 ">
                                                         <CollectionIcon className="h-5 w-5 text-white "/> 
                                                  </div>
-                                                 <div className=" px-1 py-1  text-white mr-2  ">
-                                                        Ver Categoria 
+                                                 <div className=" px-1 py-1  text-white mr-2" onClick={ ()=>listarSubCategoria() } >
+                                                        Ver Subcategorias 
                                                  </div>
                                           </div>
 
@@ -79,8 +91,8 @@ const SideBar = () => {
                                                  <div className="bg-gray-500 px-1 py-1   mr-2 ">
                                                         <ClockIcon className="h-5 w-5 text-white"/> 
                                                  </div>
-                                                 <div className=" px-1 py-1  text-white mr-2  ">
-                                                        Ver Recurrencia 
+                                                 <div className=" px-1 py-1  text-white mr-2" onClick={ ()=>listarGastosRecurrentes() }>
+                                                        Ver Recurrencias 
                                                  </div>
                                           </div>                                          
                                           
