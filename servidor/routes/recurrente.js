@@ -24,7 +24,7 @@ router.post('/',
 );
 
 //End-Point - Consultar Recurrente 
-router.get('/',
+router.post('/get-recurrentes',
       auth,  
       recurrenteCotroller.getRecurrente
 );

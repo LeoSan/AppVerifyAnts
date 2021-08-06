@@ -28,6 +28,7 @@ const AuthState = ({children}) => {
         autenticado:null, 
         ninkName:null, 
         nickEmail:null,
+        nickID:null,
         mensaje:null, 
     }
 
@@ -240,6 +241,7 @@ const AuthState = ({children}) => {
                 usuario:state.usuario, 
                 ninkName:state.ninkName, 
                 nickEmail:state.nickEmail, 
+                nickID:state.nickID, 
                 mensaje:state.mensaje, 
                 iniciarSesion,
                 cerrarSesion, 

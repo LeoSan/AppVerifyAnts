@@ -41,30 +41,31 @@ exports.getCategoria = async (req, res) =>{
     try {
         //Distroccion 
         const { nomCate, autor, activo, tipo } = req.body; //->Asi se usa cuando es un objeto 
+          
 
-        if ( tipo === "1-M" ){
+        if ( tipo == "1-M" ){
             //Obtener 1-M
             let existeVAl = await Categoria.findOne({ autor }); 
 
-            if(!existeVAl) return res.status(406).json({msg:`No Existe categorias para este usuario.`});
+            if(!existeVAl) return res.status(200).json({msg:`No Existe categorias para este usuario.`, success:false});
 
-            const categoria = await Categoria.find( { $and: [{autor:autor}, {activo: activo }] } ).sort({nomCate:-1});
-            res.status(200).json({ categoria });
+            const categoria = await Categoria.find( { $and: [{autor:autor}, {activo: activo }] } ).populate({ path: 'actividad', model: 'Actividad', select: 'nomActi'}).sort({nomCate:-1});
+            res.status(200).json({ categoria , success:true });
 
         }else{
             //Obtener 1.1
             let existeVAl = await Categoria.findOne({ nomCate }); 
 
-            if(!existeVAl) return res.status(406).json({msg:`Tu categoria con nombre ${ nomCate }, No existe en la base de datos.`});
+            if(!existeVAl) return res.status(200).json({msg:`Tu categoria con nombre ${ nomCate }, No existe en la base de datos.`, success:false});
 
-            const categoria = await Categoria.find({ nomCate });
-            res.status(200).json({ categoria });
+            const categoria = await Categoria.find({ nomCate }).populate({ path: 'actividad', model: 'Actividad', select: 'nomActi'});
+            res.status(200).json({ categoria, success:true });
         }   
 
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         //res.status(500).send('Hubo un error');
-        res.status(500).json({msj: `Hubo un  error  en  la comunicación !!  `});
+        res.status(200).json({msj: `Hubo un  error  en  la comunicación !!  `, success:false});
     }
 }
 

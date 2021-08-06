@@ -5,6 +5,8 @@ import React from 'react';
 // Nota: si usamos hook en next debemos colocar aqui el state.js 
 import AuthState from '../context/auth/authState';
 import UsuarioState from '../context/usuario/usuarioState';
+import CategoriaState from '../context/categoria/categoriaState';
+import RecurrenteState from '../context/recurrente/recurrenteState';
 
 //import 'tailwindcss/tailwind.css'
 import '../public/assets/main.css';
@@ -16,7 +18,11 @@ const MyApp = ( {Component, pageProps } )=>{
     return(
         <AuthState>
             <UsuarioState>
-                <Component { ...pageProps }  />
+                <CategoriaState>
+                    <RecurrenteState>
+                        <Component { ...pageProps }  />
+                    </RecurrenteState>
+                </CategoriaState>
             </UsuarioState>
         </AuthState>
     )

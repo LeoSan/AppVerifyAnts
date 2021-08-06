@@ -42,27 +42,27 @@ exports.getRecurrente = async (req, res) =>{
             //Obtener 1-M
             let existeVAl = await Recurrente.findOne({ activo }); 
 
-            if(!existeVAl) return res.status(406).json({msg:`No Existe algun tipo de Recurrente activo.`});
+            if(!existeVAl) return res.status(200).json({msg:`No Existe algun tipo de Recurrente activo.`, success:false});
             
              //Ejemplo Multiple de modelos 
             //const recurrente = await Recurrente.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'usuario', model: 'Usuario', select: 'nomUsu'}).populate({ path: 'usuario', model: 'Usuario', select: 'nomUsu'}).exec();
             const recurrente = await Recurrente.find( { $and: [{activo: activo }] } );
-            res.status(200).json({ recurrente });
+            res.status(200).json({ recurrente, success:true });
            
         }else{
             //Obtener 1.1
             let existeVAl = await Recurrente.findOne({ nomRecu }); 
 
-            if(!existeVAl) return res.status(406).json({msg:`Tu Recurrencia con nombre ${ nomRecu }, No existe en la base de datos.`});
+            if(!existeVAl) return res.status(200).json({msg:`Tu Recurrencia con nombre ${ nomRecu }, No existe en la base de datos.`, success:false});
             
             const recurrente = await Recurrente.find( { nomRecu } ).exec();
-            res.status(200).json({ recurrente });
+            res.status(200).json({ recurrente , success:true});
         }   
 
     } catch (error) {
         
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).json({msg: `Hubo un error en la comunicación !! `});
+        res.status(200).json({msg: `Hubo un error en la comunicación !! `, success:false});
     }
 }
 

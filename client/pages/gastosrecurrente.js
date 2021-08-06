@@ -12,6 +12,7 @@ import * as Yup from 'yup';
 
 //Importamos nuestros  useContext (Hooks)
 import AuthContext from '../context/auth/AuthContext';
+import RecurrenteContext from '../context/recurrente/RecurrenteContext';
 
 //Importo Componentes 
 import Layout from '../components/layout/Layout';
@@ -26,46 +27,33 @@ const Gastosrecurrente = () => {
     //Declaro useState 
 
 
-    //Declaro UseContext  
+    //Declaro Hooks -> UseContext para usar el state 
+    //Acceder el state de auth 
+    const valorAuthContext = useContext(AuthContext);
+    const { nickEmail, nickID  }   =  valorAuthContext;
 
+    //Acceder el state de Categoria 
+    const valorContextRe = useContext(RecurrenteContext);
+    const { listarRecurrente, mensajeListRe, recurrente, editRec  } =  valorContextRe;
 
+    //Declaración Variables
+    let ListRecurrente = [];
+    const datos = { nickID,  nickEmail  }
+    
     //Declaro UseEffect   
+    useEffect( ()=>{
+        listarRecurrente( datos );
+    }, []); 
 
+    //Asignación de Valores 
+        //Esto me permite controlar el arreglo con los valores del listado 
+        ListRecurrente = recurrente; 
 
-    //Metodos Funcionales 
 
     //función : 
     //función : 
     //función : 
-    const people = [
-        {
-            name: 'Jane Cooper',
-            title: 'Regional Paradigm Technician',
-            department: 'Optimization',
-            role: 'Admin',
-            email: 'jane.cooper@example.com',
-            image:
-                'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
-        }, {
-            name: 'Jane Cooper',
-            title: 'Regional Paradigm Technician',
-            department: 'Optimization',
-            role: 'Admin',
-            email: 'jane.cooper@example.com',
-            image:
-                'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
-        }, {
-            name: 'Jane Cooper',
-            title: 'Regional Paradigm Technician',
-            department: 'Optimization',
-            role: 'Admin',
-            email: 'jane.cooper@example.com',
-            image:
-                'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
-        },
-
-        // More people...
-    ]    
+ 
 
     return (
         <Layout>
@@ -76,7 +64,7 @@ const Gastosrecurrente = () => {
                 <div className="md:w-3/5 xl:w-4/5 p-6">
 
                     <div className="flex justify-center mt-10">
-                        <div className="w-full max-w-3xl pl-3 pr-3 rounded-lg pt-3 bg-white mb-5 overflow-hidden shadow-lg">
+                        <div className="w-full max-w-1xl pl-3 pr-3 rounded-lg pt-3 bg-white mb-5 overflow-hidden shadow-lg">
 
                             <label className="text-2xl font-bold text-yellow-500 " >Listado de Programación de Gastos Recurrentes</label>
 
@@ -90,7 +78,7 @@ const Gastosrecurrente = () => {
                                                     <tr>
                                                         <th
                                                             scope="col"
-                                                            className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                                            className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
                                                         >
                                                             Nombre
                                                         </th>
@@ -100,6 +88,7 @@ const Gastosrecurrente = () => {
                                                         >
                                                             Descripción
                                                         </th>
+
                                                         <th
                                                             scope="col"
                                                             className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
@@ -115,34 +104,60 @@ const Gastosrecurrente = () => {
 
                                                     </tr>
                                                 </thead>
-                                                <tbody className="bg-white divide-y divide-gray-200">
-                                                    {people.map((person) => (
-                                                        
-                                                        <tr key={person.email} className="text-center hover:bg-yellow-100">
-                                                            <td className="px-6 py-4 whitespace-nowrap">
-                                                                {person.name}
-                                                            </td>
-                                                            <td className="px-6 py-4 ">
-                                                                <div className="text-sm text-gray-900">{person.title}</div>
-                                                            </td>
-                                                            <td className="px-6 py-4 whitespace-nowrap">
-                                                                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                                    Active
-                                                                </span>
-                                                            </td>
-                                                           
-                                                            <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                                <button title="Editar Categoria"  className="btn-yellow"> <PencilIcon className="w-5 "/></button>                                          
-                                                                <button title="Eliminar Categoria"  className="btn-yellow btn-tran-danger"> <TrashIcon className="w-5 "/></button>                                          
-                                                            </td>
-                                                        </tr>
-                                                    ))}
-                                                </tbody>
+
+                                                {
+                                                    (recurrente != null) ? (
+
+                                                        <tbody className="bg-white divide-y divide-gray-200">
+                                                            {ListRecurrente.map((list) => (
+
+                                                                <tr key={list._id} className="text-center hover:bg-yellow-100">
+                                                                    <td className="px-6 py-4 whitespace-nowrap capitalize">
+                                                                        {list.nomRecu}
+                                                                    </td>
+                                                                    <td className="px-6 py-4 ">
+                                                                        <div className="text-sm text-gray-900">{list.desRecu}</div>
+                                                                    </td>
+
+                                                                    <td className="px-6 py-4 whitespace-nowrap">
+
+                                                                        {(list.activo == 1) ? (
+
+                                                                            <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                                                Activo
+                                                                            </span>
+
+                                                                        ) : (
+
+                                                                            <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                                                                Inactivo
+                                                                            </span>
+
+                                                                        )}
+
+                                                                    </td>
+
+                                                                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                                        <button title="Editar Recurrencia" className="btn-yellow"> <PencilIcon className="w-5 " /></button>
+                                                                        <button title="Eliminar Categoria" className="btn-yellow btn-tran-danger"> <TrashIcon className="w-5 " /></button>
+                                                                    </td>
+                                                                </tr>
+                                                            ))}
+                                                        </tbody>
+
+
+                                                    ) : null
+                                                }
+
                                             </table>
                                         </div>
                                     </div>
                                 </div>
-                            </div>                            
+                            </div>
+                            
+                            { mensajeListRe != null  && recurrente == null ? (
+                                <Error mensaje={ mensajeListRe } ></Error>
+                                ): null}  
 
 
 

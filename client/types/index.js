@@ -1,4 +1,4 @@
-//Acciones para login 
+//SEGMENTO DE --- AUTENTICAR  ---
 export const CERRAR_SESION       = 'CERRAR_SESION';
 export const LOGIN_EXITOSO       = 'LOGIN_EXITOSO';
 export const LOGIN_ERROR         = 'LOGIN_ERROR';
@@ -6,7 +6,7 @@ export const LIMPIAR_MENSAJE     = 'LIMPIAR_MENSAJE';
 
 
 
-//Acciones para Usuario 
+//SEGMENTO DE --- USUARIO  ---
 export const REGISTRO_USUARIO_EXITOSO    = 'REGISTRO_USUARIO_EXITOSO';
 export const REGISTRO_USUARIO_ERROR      = 'REGISTRO_USUARIO_ERROR';
 
@@ -15,4 +15,15 @@ export const OLVIDO_CLAVE_ERROR    = 'OLVIDO_CLAVE_ERROR';
 
 export const CAMBIO_CLAVE_EXITOSO  = 'CAMBIO_CLAVE_EXITOSO';
 export const CAMBIO_CLAVE_ERROR    = 'CAMBIO_CLAVE_ERROR';
+
+
+//SEGMENTO DE --- CATEGORIA ---
+
+export const LISTAR_CATEGORIA          = 'LISTAR_CATEGORIA';
+export const LISTAR_CATEGORIA_ERROR    = 'LISTAR_CATEGORIA_ERROR';
+
+//SEGMENTO DE --- RECURRENTE ---
+
+export const LISTAR_RECURRENTE          = 'LISTAR_RECURRENTE';
+export const LISTAR_RECURRENTE_ERROR    = 'LISTAR_RECURRENTE_ERROR';
 

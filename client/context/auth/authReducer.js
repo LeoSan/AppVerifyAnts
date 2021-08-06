@@ -59,7 +59,8 @@ const authReducer = (state,action) => {
                 ...state, 
                 usuario:action.payload,
                 ninkName:action.payload.nomUsu,
-                nickEmail:action.payload.emailUsu
+                nickEmail:action.payload.emailUsu,
+                nickID:action.payload._id
             }        
         
         case LIMPIAR_MENSAJE: 
