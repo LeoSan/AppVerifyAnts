@@ -6,6 +6,7 @@ import React from 'react';
 import AuthState from '../context/auth/authState';
 import UsuarioState from '../context/usuario/usuarioState';
 import CategoriaState from '../context/categoria/categoriaState';
+import SubcategoriaState from '../context/subcategoria/subcategoriaState';
 import RecurrenteState from '../context/recurrente/recurrenteState';
 
 //import 'tailwindcss/tailwind.css'
@@ -14,14 +15,16 @@ import '../public/assets/swiper.css';
 
 
 const MyApp = ( {Component, pageProps } )=>{
-
+     
     return(
         <AuthState>
             <UsuarioState>
                 <CategoriaState>
-                    <RecurrenteState>
-                        <Component { ...pageProps }  />
-                    </RecurrenteState>
+                    <SubcategoriaState>
+                        <RecurrenteState>
+                            <Component { ...pageProps }  />
+                        </RecurrenteState>
+                    </SubcategoriaState>                        
                 </CategoriaState>
             </UsuarioState>
         </AuthState>

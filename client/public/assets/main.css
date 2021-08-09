@@ -577,9 +577,6 @@ video {
 .min-w-full{
 	min-width: 100%;
 }
-.max-w-2xl{
-	max-width: 42rem;
-}
 .max-w-3xl{
 	max-width: 48rem;
 }

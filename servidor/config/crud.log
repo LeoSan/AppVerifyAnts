@@ -62,3 +62,5 @@
 [2021-07-26T19:50:36.497] [ERROR] crud - Hubo un  error  en  la comunicación !! -> TypeError: Usuario.findByOne is not a function 
 [2021-07-26T19:52:24.629] [ERROR] crud - Hubo un  error  en  la comunicación !! -> TypeError: Usuario.findByOne is not a function 
 [2021-07-26T19:54:11.113] [ERROR] crud - Hubo un  error  en  la comunicación !! -> ObjectParameterError: Parameter "filter" to findOne() must be an object, got cuenca623@gmail.com 
+[2021-08-09T12:34:29.510] [ERROR] crud - Hubo un error en la comunicación !! -> ValidationError: categoria: Path `categoria` is required. 
+[2021-08-09T12:35:56.065] [ERROR] crud - Hubo un error en la comunicación !! -> ValidationError: categoria: Path `categoria` is required. 

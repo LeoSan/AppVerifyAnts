@@ -19,17 +19,6 @@ router.post('/',
         categoriaCotroller.newCategoria 
 );
 
-//End-Point - Crear Sub Categorias
-router.post('/sub',
-        auth, 
-        [
-            check('nomCate',      'El nombre de la categoria es obligatorio.').not().isEmpty(), //Valida vacio
-            check('autor',        'El Autor es obligatorio.').not().isEmpty(), //Valida vacio
-            check('idCategoria',  'Debe seleccionar la categoria.').isLength({min:6}), //Valida minimo 6 caracteres
-        ] , 
-        categoriaCotroller.newCategoria 
-);
-
 
 //End-Point - Consultar Categoria
 router.post('/get-cat',
@@ -37,11 +26,6 @@ router.post('/get-cat',
       categoriaCotroller.getCategoria
 );
 
-//End-Point - Consultar Subcategoria
-router.get('/getsub',
-      auth,  
-      categoriaCotroller.getCategoria
-);
 
 //End-Point - Editar Categoria
 router.put('/', 

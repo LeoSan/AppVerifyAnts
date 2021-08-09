@@ -48,6 +48,9 @@ app.use('/api/auth',      require('./routes/auth'));
 //Router Categoria  
 app.use('/api/categoria', require('./routes/categoria'));
 
+//Router Subcategoria  
+app.use('/api/subcategoria', require('./routes/subcategoria'));
+
 //Router Gasto
 app.use('/api/gasto',     require('./routes/gasto'));
 

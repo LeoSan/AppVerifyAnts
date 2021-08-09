@@ -12,6 +12,7 @@ import * as Yup from 'yup';
 
 //Importamos nuestros  useContext (Hooks)
 import AuthContext from '../context/auth/AuthContext';
+import SubcategoriaContext from '../context/subcategoria/SubcategoriaContext';
 
 //Importo Componentes 
 import Layout from '../components/layout/Layout';
@@ -23,13 +24,35 @@ import SideBar from '../components/ui/SideBar';
 
 const Subcategoria = () => {
 
+
     //Declaro useState 
+
+
+    //Declaro Hooks -> UseContext para usar el state 
+    //Acceder el state de auth 
+    const valorAuthContext = useContext(AuthContext);
+    const { nickEmail, nickID } = valorAuthContext;
+
+    //Acceder el state de Categoria 
+    const valorContext = useContext(SubcategoriaContext);
+    const { listarSubCategoria, msgListSubCa, subcategoria } = valorContext;
+
+    //Declaración Variables
+    let ListSubCategoria = [];
+    const datos = { nickID, nickEmail }
+
+    //Declaro UseEffect   
+    useEffect(() => {
+        listarSubCategoria(datos);
+    }, []);
+
+    //Asignación de Valores 
+    //Esto me permite controlar el arreglo con los valores del listado 
+    ListSubCategoria = subcategoria;
 
 
     //Declaro UseContext  
 
-
-    //Declaro UseEffect   
 
 
     //Metodos Funcionales 
@@ -38,49 +61,22 @@ const Subcategoria = () => {
     //función : 
     //función : 
 
-    const people = [
-        {
-            name: 'Jane Cooper',
-            title: 'Regional Paradigm Technician',
-            department: 'Optimization',
-            role: 'Admin',
-            email: 'jane.cooper@example.com',
-            image:
-                'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
-        }, {
-            name: 'Jane Cooper',
-            title: 'Regional Paradigm Technician',
-            department: 'Optimization',
-            role: 'Admin',
-            email: 'jane.cooper@example.com',
-            image:
-                'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
-        }, {
-            name: 'Jane Cooper',
-            title: 'Regional Paradigm Technician',
-            department: 'Optimization',
-            role: 'Admin',
-            email: 'jane.cooper@example.com',
-            image:
-                'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
-        },
+    // https://tailwindcomponents.com/component/table-1
+    // https://tailwindui.com/components/application-ui/lists/tables
 
-        // More people...
-    ]
 
     return (
         <Layout>
             <div className="md:flex flex min-h-screen">
-                
+
                 <SideBar />
-                
+
                 <div className="md:w-3/5 xl:w-4/5 p-6">
 
                     <div className="flex justify-center mt-10">
-                        <div className="w-full max-w-3xl pl-3 pr-3 rounded-lg pt-3 bg-white mb-5 overflow-hidden shadow-lg">
+                        <div className="w-full pl-3 pr-3 rounded-lg pt-3 bg-white mb-5 overflow-hidden shadow-lg">
 
                             <label className="text-2xl font-bold text-yellow-500 " >Listado de Tus Subcategorias</label>
-
                             <div className="flex flex-col mt-5 mb-5">
                                 <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -90,7 +86,7 @@ const Subcategoria = () => {
                                                     <tr>
                                                         <th
                                                             scope="col"
-                                                            className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                                            className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
                                                         >
                                                             Nombre
                                                         </th>
@@ -99,6 +95,12 @@ const Subcategoria = () => {
                                                             className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
                                                         >
                                                             Descripción
+                                                        </th>
+                                                        <th
+                                                            scope="col"
+                                                            className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                                        >
+                                                            Categoria
                                                         </th>
                                                         <th
                                                             scope="col"
@@ -115,34 +117,63 @@ const Subcategoria = () => {
 
                                                     </tr>
                                                 </thead>
-                                                <tbody className="bg-white divide-y divide-gray-200">
-                                                    {people.map((person) => (
-                                                        
-                                                        <tr key={person.email} className="text-center hover:bg-yellow-100">
-                                                            <td className="px-6 py-4 whitespace-nowrap">
-                                                                {person.name}
-                                                            </td>
-                                                            <td className="px-6 py-4 ">
-                                                                <div className="text-sm text-gray-900">{person.title}</div>
-                                                            </td>
-                                                            <td className="px-6 py-4 whitespace-nowrap">
-                                                                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                                    Active
-                                                                </span>
-                                                            </td>
-                                                           
-                                                            <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                                <button title="Editar Categoria"  className="btn-yellow"> <PencilIcon className="w-5 "/></button>                                          
-                                                                <button title="Eliminar Categoria"  className="btn-yellow btn-tran-danger"> <TrashIcon className="w-5 "/></button>                                          
-                                                            </td>
-                                                        </tr>
-                                                    ))}
-                                                </tbody>
+
+                                                {
+                                                    (subcategoria != null) ? (
+
+                                                        <tbody className="bg-white divide-y divide-gray-200">
+                                                            {ListSubCategoria.map((list) => (
+
+                                                                <tr key={list._id} className="text-center hover:bg-yellow-100">
+                                                                    <td className="px-6 py-4 whitespace-nowrap capitalize">
+                                                                        {list.nomCate}
+                                                                    </td>
+                                                                    <td className="px-6 py-4 ">
+                                                                        <div className="text-sm text-gray-900">{list.desCate}</div>
+                                                                    </td>
+                                                                    <td className="px-6 py-4 ">
+                                                                        <div className="text-sm text-gray-900">{list.categoria.nomCate}</div>
+                                                                    </td>
+                                                                    <td className="px-6 py-4 whitespace-nowrap">
+
+                                                                        {(list.activo == 1) ? (
+
+                                                                            <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                                                Activo
+                                                                            </span>
+
+                                                                        ) : (
+
+                                                                            <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                                                                Inactivo
+                                                                            </span>
+
+                                                                        )}
+
+                                                                    </td>
+
+                                                                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                                        <button title="Editar Categoria" className="btn-yellow"> <PencilIcon className="w-5 " /></button>
+                                                                        <button title="Eliminar Categoria" className="btn-yellow btn-tran-danger"> <TrashIcon className="w-5 " /></button>
+                                                                    </td>
+                                                                </tr>
+                                                            ))}
+                                                        </tbody>
+
+
+                                                    ) : null
+                                                }
+
                                             </table>
                                         </div>
                                     </div>
                                 </div>
-                            </div>                            
+                            </div>
+
+                            {msgListSubCa != null && subcategoria == null ? (
+                                <Error mensaje={msgListSubCa} ></Error>
+                            ) : null}
+
 
                         </div>
                     </div>
