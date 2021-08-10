@@ -22,16 +22,16 @@ exports.newCategoria = async(req, res)=>{
             // Anexo  Vaidación 
             let  categoria = await Categoria.findOne({nomCate}); 
 
-            if ( categoria ) return  res.status(406).json({msg: `La categoria No la puedes repetir, ${nomCate}`});
+            if ( categoria ) return  res.status(200).json({msg: `La categoria No la puedes repetir, ${nomCate}`, success:false});
 
         //Creamos Categoria si no esta duplicado 
             categoria = new Categoria(req.body);
             await categoria.save();
-            res.status(201).json({msj: 'Categoria Creada Exitosamente!!'});
+            res.status(201).json({msg: 'Categoria Creada Exitosamente!!', success:true});
 
         } catch (error) {
             logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-            res.status(500).json({msj: `Hubo un error en la comunicación !! -> ${error} `});
+            res.status(200).json({msg: `Hubo un error en la comunicación !! -> ${error} `, success:false});
         }
 }
 
@@ -102,7 +102,7 @@ exports.updateCategoria = async (req, res)=>{
   } catch (error) {
       logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
       //res.status(500).send("Error en el servidor");
-      res.status(500).json({msj: `Hubo un  error  en  la comunicación !!  `});
+      res.status(500).json({msg: `Hubo un  error  en  la comunicación !!  `});
   }
 }
 
@@ -122,6 +122,6 @@ exports.deleteCategoria = async (req, res)=>{
        
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).json({msj: `Hubo un  error  en  la comunicación !!  `});
+        res.status(500).json({msg: `Hubo un  error  en  la comunicación !!  `});
     }
 }

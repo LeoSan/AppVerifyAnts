@@ -3,7 +3,9 @@
 //Importo las acciones definidas en el type
 import {
     LISTAR_CATEGORIA,
-    LISTAR_CATEGORIA_ERROR
+    LISTAR_CATEGORIA_ERROR, 
+    CREAR_CATEGORIA_ERROR,
+    CREAR_CATEGORIA_EXITO
 } from '../../types';
 
 
@@ -23,6 +25,19 @@ const categoriaReducer = (state,action) => {
             return{
                 ...state, 
                 mensajeList:action.payload,
+            }        
+        case CREAR_CATEGORIA_EXITO: 
+            return{
+                ...state, 
+                msgCrearCat:action.payload,
+                crearCat:true
+                
+            }        
+        case CREAR_CATEGORIA_ERROR: 
+            return{
+                ...state, 
+                msgCrearCat:action.payload,
+                crearCat:false
             }
 
 

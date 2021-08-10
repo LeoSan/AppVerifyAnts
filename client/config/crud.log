@@ -1,0 +1,66 @@
+[2021-05-17T12:39:14.020] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: registro is not defined 
+[2021-05-17T12:41:39.819] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: registro is not defined 
+[2021-05-17T12:57:33.902] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: Unrecognized expression '$usuario' 
+[2021-05-18T11:06:46.211] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: gasto is not defined 
+[2021-05-18T11:17:42.307] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: $expr is not allowed in this context 
+[2021-05-18T11:20:41.745] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: $expr is not allowed in this context 
+[2021-05-18T11:20:50.138] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: $expr is not allowed in this context 
+[2021-05-18T11:23:24.145] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: mongoose is not defined 
+[2021-05-18T11:25:40.969] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: $expr is not allowed in this context 
+[2021-05-20T15:59:02.318] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Patrimonio.find(...).aggregate is not a function 
+[2021-05-20T16:02:24.087] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Patrimonio.find(...).aggregate is not a function 
+[2021-05-20T16:03:47.400] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: The field 'usuario' must be an accumulator object 
+[2021-05-20T16:06:57.077] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Patrimonio.find(...).aggregate is not a function 
+[2021-05-20T16:25:22.920] [ERROR] crud - Hubo un error en la comunicación !! -> MongooseError: Mongoose 5.x disallows passing a spread of operators to `Model.aggregate()`. Instead of `Model.aggregate({ $match }, { $skip })`, do `Model.aggregate([{ $match }, { $skip }])` 
+[2021-05-20T16:48:41.193] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Patrimonio.where(...).aggregate is not a function 
+[2021-05-20T16:49:53.853] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Patrimonio.aggregate(...).where is not a function 
+[2021-05-20T16:59:31.933] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: unknown top level operator: $usuario 
+[2021-05-20T16:59:39.152] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: unknown top level operator: $usuario 
+[2021-05-20T17:09:06.693] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: a group specification must include an _id 
+[2021-05-20T17:15:58.527] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: unknown top level operator: $activo 
+[2021-05-20T17:16:38.463] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Patrimonio.explain is not a function 
+[2021-05-20T17:17:48.402] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: paserInt is not defined 
+[2021-05-20T17:36:57.079] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: $_internalSearchMongotRemote is only valid as the first stage in a pipeline. 
+[2021-05-20T17:40:07.671] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: unknown top level operator: $year 
+[2021-05-20T17:44:17.862] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "60931369a379ab3cc4a7e65" at path "usuario" for model "Patrimonio" 
+[2021-05-24T12:01:24.628] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: Schema is not defined 
+[2021-05-24T12:03:33.246] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read property 'Types' of undefined 
+[2021-05-24T12:03:55.531] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Usuario.ObjectId is not a function 
+[2021-05-25T11:37:50.479] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: startOfDay is not a function 
+[2021-05-25T11:44:16.111] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read property 'startOf' of undefined 
+[2021-05-25T11:46:54.507] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: moment is not a function 
+[2021-05-25T11:47:34.517] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: FieldPath field names may not start with '$'. 
+[2021-05-25T11:50:48.806] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: FieldPath field names may not start with '$'. 
+[2021-05-25T12:13:06.469] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: gasto is not defined 
+[2021-05-25T12:13:18.123] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: gasto is not defined 
+[2021-05-25T12:13:57.775] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: gasto is not defined 
+[2021-05-25T12:38:29.512] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: moment is not defined 
+[2021-05-26T13:16:15.577] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: moment is not defined 
+[2021-05-26T13:34:52.938] [ERROR] crud - Hubo un error en la comunicación !! -> ValidationError: recurrente.0: Cast to [ObjectId] failed for value "["null"]" at path "recurrente.0", duracion: Cast to Number failed for value "null" at path "duracion" 
+[2021-05-26T13:35:31.163] [ERROR] crud - Hubo un error en la comunicación !! -> ValidationError: recurrente.0: Cast to [ObjectId] failed for value "["null"]" at path "recurrente.0", duracion: Cast to Number failed for value "null" at path "duracion" 
+[2021-05-26T13:36:00.475] [ERROR] crud - Hubo un error en la comunicación !! -> ValidationError: recurrente.0: Cast to [ObjectId] failed for value "["0"]" at path "recurrente.0" 
+[2021-05-26T15:51:45.504] [ERROR] crud - Hubo un error en la comunicación !! -> ObjectParameterError: Parameter "filter" to findOne() must be an object, got 60931369a379ab3cc4a7e655 
+[2021-05-27T12:36:04.953] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: stringify is not defined 
+[2021-05-27T12:39:03.612] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T12:58:16.677] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T12:59:33.571] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T12:59:56.498] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T13:01:33.534] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T13:05:21.360] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T13:05:52.906] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T13:05:57.749] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T13:06:24.821] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T13:19:55.072] [ERROR] crud - Resultado captcha !! -> [object Object] 
+[2021-05-27T13:22:02.460] [ERROR] crud - Resultado captcha !! -> true 
+[2021-05-27T13:25:23.823] [ERROR] crud - Resultado captcha !! -> true 
+[2021-07-04T16:09:21.486] [ERROR] crud - [Validacion] - Crear usuario
+[2021-07-06T11:59:00.147] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: tokenEmail is not defined 
+[2021-07-06T13:01:22.093] [ERROR] crud - Hubo un  error  en  la comunicación !! -> ReferenceError: UsuarioToken is not defined 
+[2021-07-22T17:48:27.145] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: result is not defined 
+[2021-07-22T17:50:10.977] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: result is not defined 
+[2021-07-26T19:48:47.279] [ERROR] crud - Hubo un  error  en  la comunicación !! -> TypeError: Usuario.findByOne is not a function 
+[2021-07-26T19:50:36.497] [ERROR] crud - Hubo un  error  en  la comunicación !! -> TypeError: Usuario.findByOne is not a function 
+[2021-07-26T19:52:24.629] [ERROR] crud - Hubo un  error  en  la comunicación !! -> TypeError: Usuario.findByOne is not a function 
+[2021-07-26T19:54:11.113] [ERROR] crud - Hubo un  error  en  la comunicación !! -> ObjectParameterError: Parameter "filter" to findOne() must be an object, got cuenca623@gmail.com 
+[2021-08-09T12:34:29.510] [ERROR] crud - Hubo un error en la comunicación !! -> ValidationError: categoria: Path `categoria` is required. 
+[2021-08-09T12:35:56.065] [ERROR] crud - Hubo un error en la comunicación !! -> ValidationError: categoria: Path `categoria` is required. 

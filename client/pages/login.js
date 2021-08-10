@@ -2,6 +2,7 @@
 import React, {useContext, useEffect, Fragment, useState} from 'react';
 import Router , {useRouter}  from 'next/router';
 import Link from 'next/link';
+import PropTypes from "prop-types";
 
 //Librerias para validación 
 import { useFormik } from 'formik';

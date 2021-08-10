@@ -1,6 +1,8 @@
 //Importar Librerias React 
 import React, { useContext, useEffect } from 'react';
 import PropTypes from "prop-types";
+import { useRouter } from 'next/router';
+
 
 //importar icon 
 import { PencilIcon, TrashIcon } from '@heroicons/react/solid'
@@ -19,7 +21,6 @@ import Layout from '../components/layout/Layout';
 
 //componentes UI
 import Error from '../components/ui/Error';
-import Success from '../components/ui/Success';
 import SideBar from '../components/ui/SideBar';
 
 const Categoria = () => {
@@ -27,8 +28,11 @@ const Categoria = () => {
 
     //Declaro useState 
 
+    //Declaro Hook    
+        //Redireccionar   
+        const router = useRouter();
 
-    //Declaro Hooks -> UseContext para usar el state 
+    //Declaro UseContext 
     //Acceder el state de auth 
     const valorAuthContext = useContext(AuthContext);
     const { nickEmail, nickID } = valorAuthContext;
@@ -50,14 +54,15 @@ const Categoria = () => {
     //Esto me permite controlar el arreglo con los valores del listado 
     ListCategoria = categoria;
 
-
-    //Declaro UseContext  
-
-
-
     //Metodos Funcionales 
 
-    //función : 
+    //función : Permite redireccionar al formulario de crear categoria 
+    const linkCrearCategoria = ()=>{
+
+        router.push('/categoriacrear');
+
+    }
+
     //función : 
     //función : 
 
@@ -82,6 +87,15 @@ const Categoria = () => {
                                 <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                                         <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+
+                                        <input
+                                        type="submit"
+                                        className="btn-green cursor-pointer w-full mt-5 rounded"
+                                        value="+"
+                                        onClick={()=>linkCrearCategoria()}
+                                        />
+             
+
                                             <table className="min-w-full divide-y divide-gray-200">
                                                 <thead className="bg-gray-50">
                                                     <tr>

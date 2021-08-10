@@ -27,6 +27,7 @@ module.exports = {
       maxHeight: ['focus'],
       opacity: ['disabled'],
     },
+    opacity: ({ after }) => after(['disabled']),
   },
   plugins: [],
 }
