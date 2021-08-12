@@ -16,7 +16,7 @@ const conectarBD = async()=>{
            useCreateIndex : true , // Para quitar el error DeprecationWarning: collection.ensureInd 
        } );
        
-       console.log(`!!!BD Lista y en Linea!!! Estamos en ->  ${ process.env.DB_NOMBRE }`.blue);
+       console.log(` ${'!!!BD Lista y en Linea!!! Estamos en'.yellow} ->  ${ process.env.DB_NOMBRE }`);
       
    } catch (error) {
        console.log(error);

@@ -27,11 +27,11 @@ exports.createSubcategoria = async(req, res)=>{
         //Creamos Categoria si no esta duplicado 
             subcategoria = new Subcategoria(req.body);
             await subcategoria.save();
-            res.status(201).json({msj: 'Subcategoria Creada Exitosamente!!', success:true});
+            res.status(201).json({msg: 'Subcategoria Creada Exitosamente!!', success:true});
 
         } catch (error) {
             logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-            res.status(200).json({msj: `Hubo un error en la comunicación !! -> ${error} `, success:false});
+            res.status(200).json({msg: `Hubo un error en la comunicación !! -> ${error} `, success:false});
         }
 }
 

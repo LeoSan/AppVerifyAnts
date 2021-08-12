@@ -4,13 +4,13 @@ import React, { useContext, useEffect, Fragment, useState } from 'react';
 //Importo componenentes 
 import Layout from '../components/layout/Layout';
 
-
 //Librerias para validación 
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 //Importamos nuestros  useContext (Hooks)
 import CategoriaContext from '../context/categoria/categoriaContext';
+import SubcategoriaContext from '../context/subcategoria/SubcategoriaContext';
 import AuthContext from '../context/auth/AuthContext';
 
 
@@ -19,29 +19,39 @@ import Error from '../components/ui/Error';
 import Success from '../components/ui/Success';
 import SideBar from '../components/ui/SideBar';
 
-const categoriacrear = () => {
+const subcategoriacrear = () => {
 
    //Declaro mis useState 
-
    //Declaro Hooks -> UseContext para usar el state 
    //Acceder el state de auth 
    const valorContext = useContext(CategoriaContext);
-   const { crearCategoria, msgCrearCat, crearCat } = valorContext;   
+   const { crearCategoria, msgCrearCat, crearCat, categoria } = valorContext;   
+      
+   //Acceder el state de auth 
+   const valorSubcategoriaContext = useContext(SubcategoriaContext);
+   const { crearSubCategoria, msgCrearSubCat, crearSubCat } = valorSubcategoriaContext;   
    
    //Acceder el state de auth 
    const valorAuthContext = useContext(AuthContext);
-   const { nickID } = valorAuthContext;
+   const { nickID, nickEmail } = valorAuthContext;
+   
+   //Declaro UseEffect   
+
+
+  //Asignación de Valores 
+  //Esto me permite controlar el arreglo con los valores del listado 
+
 
    //Metodos Funcionales 
 
-   //función : Para capturar el valor del captcha 
+   //Función : Para capturar el valor del captcha 
 
-   //función: Esquema de validaciones 
+   //Función: Esquema de validaciones 
    const formik = useFormik({
       initialValues: {
          nomCate: '',
          desCate: '',
-         actividad: '',
+         categoria: '',
          autor: nickID
       },
       validationSchema: Yup.object({
@@ -51,8 +61,8 @@ const categoriacrear = () => {
          desCate: Yup.string()
             .min(10, "Descripción categoria debe tener al menos 10 caracteres.")
             .required('El campo descripción es obligatorio.'),
-         actividad: Yup.string()
-            .required('El campo tipo actividad es obligatorio.'),
+         categoria: Yup.string()
+            .required('El campo tipo categoria es obligatorio.'),
       }),
 
       onSubmit: formData => {
@@ -60,7 +70,7 @@ const categoriacrear = () => {
 
             console.log('Datos Formulario', formData);
             //Envio valores al state 
-            crearCategoria(formData);
+             crearSubCategoria(formData);
 
          } catch (error) {
             console.log(error);
@@ -72,40 +82,44 @@ const categoriacrear = () => {
    return (
       <Layout>
          <div className="md:flex flex min-h-screen">
-
-         <SideBar />          
-
+        
+            <SideBar />          
+        
             <div className="md:w-3/5 xl:w-4/5 p-6">
                <div className="flex justify-center mt-10">
                   <div className="w-full  pl-3 pr-3 rounded-lg pt-3 bg-white mb-5 overflow-hidden shadow-lg">
 
                      <form className="mb-8" onSubmit={formik.handleSubmit}>
                         <label
-                           className="text-2xl font-bold text-yellow-500 " >Crear Categoria </label>
+                           className="text-2xl font-bold text-yellow-500 " >Crear Subcategoria </label>
 
 
                         <div className="mb-4">
                            <label
-                              className="block text-gray-700 text-sm font-bold mb-2" htmlFor="actividad">Tipo Actividad</label>
+                              className="block text-gray-700 text-sm font-bold mb-2" htmlFor="actividad">Tipo Categoria</label>
                            <select
-                              id="actividad"
+                              id="categoria"
                               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md"
-                              value={formik.actividad}
+                              value={formik.categoria}
                               onChange={formik.handleChange}
                            >
                               <option > Seleccione </option>
-                              <option value="6095819506be383f7cf49ce6" > AntVerify  </option>
-                              <option value="60ae92dc3cb1ca2e14baeb8b" > ActivityVerify </option>
+
+                                    {categoria.map((list) => (
+
+                                       <option key={list._id} value={list._id} > { list.nomCate} </option>
+                                    ))}
+
                            </select>
                         </div>
 
-                        {formik.touched.actividad && formik.errors.actividad ? (
+                        {formik.touched.categoria && formik.errors.categoria ? (
                            <Error mensaje={formik.errors.actividad} ></Error>
                         ) : null}
 
                         <div className="mb-4">
                            <label
-                              className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nomCate">Nombre Categoria</label>
+                              className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nomCate">Nombre Subcategoria</label>
                            <input
                               id="nomCate"
                               type="text"
@@ -145,16 +159,16 @@ const categoriacrear = () => {
                         <input
                            type="submit"
                            className="btn-green cursor-pointer w-full mt-5"
-                           value="Crear Categoria"
+                           value="Crear SubCategoria"
                         />
 
-                        {msgCrearCat != null && crearCat == false ? (
-                           <Error mensaje={msgCrearCat} ></Error>
+                        {msgCrearSubCat != null && crearSubCat == false ? (
+                           <Error mensaje={msgCrearSubCat} ></Error>
                         ) : null}
 
 
-                        {msgCrearCat != null && crearCat != false ? (
-                           <Success mensaje={msgCrearCat} ></Success>
+                        {msgCrearSubCat != null && crearSubCat == true ? (
+                           <Success mensaje={msgCrearSubCat} ></Success>
                         ) : null}
 
 
@@ -169,7 +183,7 @@ const categoriacrear = () => {
    );
 }
 
-categoriacrear.propTypes = {
+subcategoriacrear.propTypes = {
    /* getValCapctha: PropTypes.func,
     valcaptcha: PropTypes.string,
     mensaje: PropTypes.string,
@@ -178,4 +192,4 @@ categoriacrear.propTypes = {
     formik:  PropTypes.object,*/
 };
 
-export default categoriacrear;
+export default subcategoriacrear;

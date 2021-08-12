@@ -28,7 +28,7 @@ const SideBar = () => {
 
        //Declaro UseEffect
        useEffect(()=>{
-              if(!autenticado){
+              if( autenticado == false ){
                      router.push('/')
               }
        },[autenticado]);         

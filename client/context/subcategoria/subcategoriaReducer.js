@@ -3,7 +3,9 @@
 //Importo las acciones definidas en el type
 import {
     LISTAR_SUBCATEGORIA,
-    LISTAR_SUBCATEGORIA_ERROR
+    LISTAR_SUBCATEGORIA_ERROR,
+    CREAR_SUBCATEGORIA_ERROR,
+    CREAR_SUBCATEGORIA_EXITO
 } from '../../types';
 
 
@@ -17,6 +19,7 @@ const subcategoriaReducer = (state,action) => {
             return{
                 ...state, 
                 subcategoria:action.payload,
+                msgCrearSubCat:null
             }        
         
         case LISTAR_SUBCATEGORIA_ERROR: 
@@ -24,6 +27,20 @@ const subcategoriaReducer = (state,action) => {
                 ...state, 
                 msgListSubCa:action.payload,
             }
+        case CREAR_SUBCATEGORIA_ERROR: 
+            return{
+                ...state, 
+                msgCrearSubCat:action.payload,
+                crearSubCat:false
+                
+            }        
+        case CREAR_SUBCATEGORIA_EXITO: 
+            return{
+                ...state, 
+                msgCrearSubCat:action.payload,
+                crearSubCat:true
+            }
+
 
 
         default:

@@ -25,7 +25,7 @@ const authReducer = (state,action) => {
                 token:null,
                 usuario:null,
                 nombre:null, 
-                autenticado:null,
+                autenticado:false,
                 mensaje:null,
             }
         

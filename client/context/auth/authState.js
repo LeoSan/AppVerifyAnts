@@ -25,7 +25,7 @@ const AuthState = ({children}) => {
     // Crear state inicial
     const inicialState = {
         token: typeof window !== 'undefined' ? localStorage.getItem('token') : null, 
-        autenticado:null, 
+        autenticado:false, 
         ninkName:null, 
         nickEmail:null,
         nickID:null,

@@ -3,9 +3,8 @@ import React, { useContext, useEffect } from 'react';
 import PropTypes from "prop-types";
 import { useRouter } from 'next/router';
 
-
 //importar icon 
-import { PencilIcon, TrashIcon } from '@heroicons/react/solid'
+import { PencilIcon, TrashIcon, PlusCircleIcon } from '@heroicons/react/solid'
 
 
 //Librerias para validación 
@@ -29,8 +28,8 @@ const Categoria = () => {
     //Declaro useState 
 
     //Declaro Hook    
-        //Redireccionar   
-        const router = useRouter();
+    //Redireccionar   
+    const router = useRouter();
 
     //Declaro UseContext 
     //Acceder el state de auth 
@@ -57,7 +56,7 @@ const Categoria = () => {
     //Metodos Funcionales 
 
     //función : Permite redireccionar al formulario de crear categoria 
-    const linkCrearCategoria = ()=>{
+    const linkCrearCategoria = () => {
 
         router.push('/categoriacrear');
 
@@ -87,14 +86,12 @@ const Categoria = () => {
                                 <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                                         <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-
-                                        <input
-                                        type="submit"
-                                        className="btn-green cursor-pointer w-full mt-5 rounded"
-                                        value="+"
-                                        onClick={()=>linkCrearCategoria()}
-                                        />
-             
+                                            
+                                            <div className="flex justify-center items-end space-x-6">
+                                                <button title="Crear Categoria" className="btn-yellow cursor-pointer h-24 w-24  text-center font-extrabold flex  rounded-full" onClick={() => linkCrearCategoria()}>
+                                                    <PlusCircleIcon className="w-5 " /> Crear
+                                                </button>
+                                            </div>
 
                                             <table className="min-w-full divide-y divide-gray-200">
                                                 <thead className="bg-gray-50">

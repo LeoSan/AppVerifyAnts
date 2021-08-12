@@ -1,18 +1,15 @@
 //Importar Librerias React 
 import React, { useContext, useEffect } from 'react';
 import PropTypes from "prop-types";
+import { useRouter } from 'next/router';
 
 //importar icon 
-import { PencilIcon, TrashIcon } from '@heroicons/react/solid'
-
-
-//Librerias para validación 
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
+import { PencilIcon, TrashIcon, PlusCircleIcon } from '@heroicons/react/solid'
 
 //Importamos nuestros  useContext (Hooks)
-import AuthContext from '../context/auth/AuthContext';
+import AuthContext         from '../context/auth/AuthContext';
 import SubcategoriaContext from '../context/subcategoria/SubcategoriaContext';
+import CategoriaContext    from '../context/categoria/categoriaContext';
 
 //Importo Componentes 
 import Layout from '../components/layout/Layout';
@@ -27,15 +24,23 @@ const Subcategoria = () => {
 
     //Declaro useState 
 
+    //Declaro Hook    
+    //Redireccionar   
+    const router = useRouter();    
 
-    //Declaro Hooks -> UseContext para usar el state 
+
+    //Declaro UseContext 
     //Acceder el state de auth 
     const valorAuthContext = useContext(AuthContext);
     const { nickEmail, nickID } = valorAuthContext;
 
-    //Acceder el state de Categoria 
+    //Acceder el state de Subcategoria 
     const valorContext = useContext(SubcategoriaContext);
     const { listarSubCategoria, msgListSubCa, subcategoria } = valorContext;
+    
+    //Acceder el state de Categoria 
+    const valorCategoriaContext  = useContext(CategoriaContext);
+    const { listarCategoria } = valorCategoriaContext;
 
     //Declaración Variables
     let ListSubCategoria = [];
@@ -44,18 +49,22 @@ const Subcategoria = () => {
     //Declaro UseEffect   
     useEffect(() => {
         listarSubCategoria(datos);
+        listarCategoria(datos); 
     }, []);
 
     //Asignación de Valores 
     //Esto me permite controlar el arreglo con los valores del listado 
     ListSubCategoria = subcategoria;
-
-
-    //Declaro UseContext  
-
+    
 
 
     //Metodos Funcionales 
+    //función : Permite redireccionar al formulario de crear categoria 
+    const linkCrearSubCategoria = () => {
+
+        router.push('/subcategoriacrear');
+
+    }
 
     //función : 
     //función : 
@@ -81,6 +90,14 @@ const Subcategoria = () => {
                                 <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                                         <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+
+                                            <div className="flex justify-center items-end space-x-6">
+                                                <button title="Crear Subcategoria" className="btn-yellow cursor-pointer h-24 w-24  text-center font-extrabold flex  rounded-full" onClick={() => linkCrearSubCategoria()}>
+                                                    <PlusCircleIcon className="w-5 " /> Crear
+                                                </button>
+                                            </div>
+
+
                                             <table className="min-w-full divide-y divide-gray-200">
                                                 <thead className="bg-gray-50">
                                                     <tr>
@@ -184,8 +201,8 @@ const Subcategoria = () => {
 }
 
 Subcategoria.propTypes = {
-    // getValCapctha: PropTypes.func,
-    // valcaptcha: PropTypes.string,
+    // linkCrearSubCategoria: PropTypes.func,
+    // ListSubCategoria: PropTypes.array,
     // mensaje: PropTypes.string,
     // confirmaRobot: PropTypes.bool,
     // olvidoClave: PropTypes.bool,
