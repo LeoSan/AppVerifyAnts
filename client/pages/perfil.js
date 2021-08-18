@@ -159,7 +159,7 @@ const perfil = () => {
 
                                                                                 <div className="mb-4">
                                                                                         <label
-                                                                                                className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nombre">Nombre</label>
+                                                                                                className="label-form" htmlFor="nombre">Nombre</label>
                                                                                         <input
                                                                                                 id="nombre"
                                                                                                 type="text"
@@ -168,7 +168,7 @@ const perfil = () => {
                                                                                                 onChange={formik.handleChange}
                                                                                                 onBlur={formik.handleBlur}
 
-                                                                                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md "
+                                                                                                className="input-form"
                                                                                         />
                                                                                 </div>
 
@@ -178,7 +178,7 @@ const perfil = () => {
 
                                                                                 <div className="mb-4">
                                                                                         <label
-                                                                                                className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nombre">Apellido</label>
+                                                                                                className="label-form" htmlFor="nombre">Apellido</label>
                                                                                         <input
                                                                                                 id="apellido"
                                                                                                 type="text"
@@ -187,7 +187,7 @@ const perfil = () => {
                                                                                                 onChange={formik.handleChange}
                                                                                                 onBlur={formik.handleBlur}
 
-                                                                                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md "
+                                                                                                className="input-form"
                                                                                         />
                                                                                 </div>
 
@@ -198,10 +198,10 @@ const perfil = () => {
 
                                                                                 <div className="mb-4">
                                                                                         <label
-                                                                                                className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Sexo</label>
+                                                                                                className="label-form" htmlFor="password">Sexo</label>
                                                                                         <select
                                                                                                 id="sexo"
-                                                                                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md"
+                                                                                                className="input-form"
                                                                                                 value={formik.sexo}
                                                                                                 onChange={formik.handleChange}
 
@@ -218,10 +218,10 @@ const perfil = () => {
 
                                                                                 <div className="mb-4">
                                                                                         <label
-                                                                                                className="block text-gray-700 text-sm font-bold mb-2" htmlFor="pais">Pais</label>
+                                                                                                className="label-form" htmlFor="pais">Pais</label>
                                                                                         <select
                                                                                                 id="pais"
-                                                                                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md"
+                                                                                                className="input-form"
                                                                                                 value={formik.pais}
                                                                                                 onChange={formik.handleChange}
                                                                                         >
@@ -240,14 +240,15 @@ const perfil = () => {
 
                                                                                 <div className="mb-4">
                                                                                         <label
-                                                                                                className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Fecha Nacimiento</label>
+                                                                                                className="label-form" htmlFor="password">Fecha Nacimiento</label>
                                                                                         <input
                                                                                                 id="fecha"
                                                                                                 type="date"
                                                                                                 value={formik.fecha}
                                                                                                 onChange={formik.handleChange}
                                                                                                 onBlur={formik.handleBlur}
-                                                                                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md "
+                                                                                                
+                                                                                                className="input-form"
                                                                                         />
 
                                                                                 </div>

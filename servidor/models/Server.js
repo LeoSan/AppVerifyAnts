@@ -15,19 +15,19 @@ class Server{
         this.port  = process.env.DB_PORT;
         this.seguridad  = 'C:/laragon/www/project-AppVerifyAnts/servidor/public/';
 
+		//Conectamos con la DB de Mongo 
+		this.conexMongoDB();
+
         //midlewares
         this.midlewares();
         
         //rutas de aplicación
         this.routes();
 
-		// ejecutamos la función para conectar a la base de datos
- 		connectarDB(); // Debes crear la conexion antes
-
     }
 
     routes(){
-		//Habilitar leer los valores de un body
+		//Habilitar leer los valores de un body del raw -> Esta manera es de enviar json a los apis 
 		this.app.use(express.json());
 		 
 		//Rutas de Accesos Para las APIS 
@@ -68,8 +68,8 @@ class Server{
 		//Ejemplo de como consumir un archivo html -> Validando re-captcha Monta la interfaz  http://localhost:4000/
 		this.app.get('/', (_, res) => res.sendFile(__dirname + '../captcha.html'));
 
-		this.app.get('*', (req,  res)=>{
-			console.log( __dirname );
+		//Evita entrar sin saber que ruta  
+		this.app.get('*', (req,  res)=>{			
 			res.sendFile( this.seguridad );
 		});	
         
@@ -96,6 +96,12 @@ class Server{
 		this.app.use(cors());
 
     }
+
+    async conexMongoDB(){
+		// ejecutamos la función para conectar a la base de datos
+		await connectarDB(); // Debes crear la conexion antes
+	
+	}	
 
 }
 

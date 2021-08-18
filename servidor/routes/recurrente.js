@@ -13,8 +13,8 @@ const router  = express.Router();
 const auth  = require('../middleware/auth');
 
 
-//End-Point - Crear Categoria Recurrente
-router.post('/',
+//End-Point - Crear  Recurrente
+router.post('/create',
         auth,
         [
             check('nomRecu',  'El nombre de la categoria recurrente es obligatorio.').not().isEmpty(), //Valida vacio
@@ -40,7 +40,7 @@ router.put('/',
 );
 
 //End-Point - Eliminar Recurrente
-router.delete('/', 
+router.post('/del-rec', 
       auth,
       [
         check('id',       'El identificador es obligatorio.').not().isEmpty(), //Valida vacio    

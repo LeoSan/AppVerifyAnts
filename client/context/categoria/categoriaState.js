@@ -11,22 +11,29 @@ import {
     LISTAR_CATEGORIA,
     LISTAR_CATEGORIA_ERROR, 
     CREAR_CATEGORIA_ERROR,
-    CREAR_CATEGORIA_EXITO
+    CREAR_CATEGORIA_EXITO, 
+    ELIMINAR_CATEGORIA_ERROR,
+    ELIMINAR_CATEGORIA_EXITO
 } from '../../types';
+
 
 
 //Importo nuetsra libreria axios para conectar con el servidor 
 import clienteAxios from '../../config/axios';
 import tokenAuth from '../../config/tokenAuth';
 
-
+import Alerta from '../../components/ui/Alerta';
 
 const CategoriaState = ({children}) => {
+
+    //Declaración  de variables o instancias 
+    const alerta  = new Alerta();
 
     // Crear state inicial
     const inicialState = {
         mensajeList:null, 
-        msgCrearCat:null, 
+        msgCrearCat:null,  
+        msgDeleteCat:null, 
         categoria:null,
         editaCat:false,
         crearCat:false,
@@ -80,13 +87,6 @@ const CategoriaState = ({children}) => {
                         });                         
 
                     }
-
-
-            }).catch((response) => {
-                    dispatch({
-                        type: LISTAR_CATEGORIA_ERROR, //Es la accion a ejecutar
-                        payload: response.data.msg  //Son los datos que modifica el state 
-                    }); 
             });             
             
         } catch (error) {
@@ -144,11 +144,6 @@ const CategoriaState = ({children}) => {
                     }
 
 
-            }).catch((response) => {
-                    dispatch({
-                        type: CREAR_CATEGORIA_ERROR, //Es la accion a ejecutar
-                        payload: response.data.msg  //Son los datos que modifica el state 
-                    }); 
             });             
             
         } catch (error) {
@@ -160,6 +155,57 @@ const CategoriaState = ({children}) => {
     
     }    
 
+    //Metodo:  Permite eliminar el registro de una Categoria
+    const deleteCategoria = async (id, nombre)=>{
+    
+        try {
+
+            const token = localStorage.getItem('token');
+            
+            if (token){
+                //funcion para enviar el token por header 
+                tokenAuth(token);
+            }
+            
+            const data = { 
+                id:id, 
+                nomCate:nombre
+            }
+
+            const respuesta = await clienteAxios.post('/api/categoria/del-cat', data)
+                .then((response) => {
+
+                    if( response.data.success == true ){
+                        dispatch({
+                            type: ELIMINAR_CATEGORIA_EXITO, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        }); 
+
+                        alerta.deploySucces();
+                    }else{
+
+                        dispatch({
+                            type: ELIMINAR_CATEGORIA_ERROR, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        });   
+                        alerta.deployFault();
+
+                    }
+            });             
+         
+        } catch (error) {
+            dispatch({
+                type: ELIMINAR_CATEGORIA_ERROR, //Es la accion a ejecutar
+                payload: `Hubo un problema con el servidor, ${error}`  //Son los datos que modifica el state 
+            }); 
+
+            alerta.deployFault();
+        }
+         
+        
+
+    }//fin del metodo     
+
     
     //Metodo:  
 
@@ -168,12 +214,14 @@ const CategoriaState = ({children}) => {
             value={{
                 mensajeList:state.mensajeList,
                 msgCrearCat:state.msgCrearCat,
+                msgDeleteCat:state.msgDeleteCat,
                 categoria:state.categoria,
                 editaCat:state.editado,
                 crearCat:state.crearCat,
                 elimiCat:state.elimiCat,
                 listarCategoria,
-                crearCategoria
+                crearCategoria,
+                deleteCategoria
 
             }}
         >

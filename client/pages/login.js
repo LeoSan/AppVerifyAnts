@@ -98,13 +98,13 @@ const login = () => {
 
             <div className="flex justify-center mt-10">
                <div className="w-full max-w-3xl pl-3 pr-3 rounded-lg pt-3 bg-white mb-5 overflow-hidden shadow-lg">
-                              <form className="mb-8" onSubmit={formik.handleSubmit} action="POST" >
+                              <form  className="mb-8" onSubmit={formik.handleSubmit} action="POST" >
                                      <label 
                                                       className="text-2xl font-bold text-yellow-500 " >Ingrese sus credenciales</label>
 
-                                    <div className="mb-4 ">
+                                    <div className="mb-4">
                                              <label 
-                                                      className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email</label>
+                                                      className="label-form" htmlFor="email">Email</label>
                                              <input 
                                                       id="email"
                                                       type="text"
@@ -112,7 +112,7 @@ const login = () => {
                                                       value={formik.email}
                                                       onChange={formik.handleChange}
                                                       onBlur={formik.handleBlur}                                                      
-                                                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md focus:border-yellow-500"
+                                                      className="input-form"
                                              />
                                     </div>
 
@@ -123,7 +123,7 @@ const login = () => {
 
                                     <div className="mb-4">
                                              <label 
-                                                      className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Password</label>
+                                                      className="label-form" htmlFor="password">Password</label>
                                              <input 
                                                       id="password"
                                                       type="password"
@@ -131,7 +131,7 @@ const login = () => {
                                                       value={formik.password}
                                                       onChange={formik.handleChange}
                                                       onBlur={formik.handleBlur}
-                                                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md focus:border-yellow-500 "
+                                                      className="input-form"
                                              />
                                     </div>   
 
@@ -158,7 +158,7 @@ const login = () => {
                                                                                                                      
                                     <input 
                                              type="submit"
-                                             className="btn-green cursor-pointer w-full mt-5 p-2"
+                                             className="btn-green cursor-pointer w-full"
                                              value="Login"
                                     />    
                                     

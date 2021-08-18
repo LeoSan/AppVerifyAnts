@@ -2,14 +2,15 @@
 import React, { useContext, useEffect } from 'react';
 import PropTypes from "prop-types";
 import { useRouter } from 'next/router';
+const Swal = require('sweetalert2');
 
 //importar icon 
-import { PencilIcon, TrashIcon, PlusCircleIcon } from '@heroicons/react/solid'
+import { PencilIcon, TrashIcon, PlusCircleIcon } from '@heroicons/react/solid';
 
 //Importamos nuestros  useContext (Hooks)
-import AuthContext         from '../context/auth/AuthContext';
+import AuthContext from '../context/auth/AuthContext';
 import SubcategoriaContext from '../context/subcategoria/SubcategoriaContext';
-import CategoriaContext    from '../context/categoria/categoriaContext';
+import CategoriaContext from '../context/categoria/categoriaContext';
 
 //Importo Componentes 
 import Layout from '../components/layout/Layout';
@@ -26,7 +27,7 @@ const Subcategoria = () => {
 
     //Declaro Hook    
     //Redireccionar   
-    const router = useRouter();    
+    const router = useRouter();
 
 
     //Declaro UseContext 
@@ -36,10 +37,10 @@ const Subcategoria = () => {
 
     //Acceder el state de Subcategoria 
     const valorContext = useContext(SubcategoriaContext);
-    const { listarSubCategoria, msgListSubCa, subcategoria } = valorContext;
-    
+    const { listarSubCategoria, deleteSubCategoria, msgListSubCa, msgDeleteSubCat, subcategoria, elimiSubCat } = valorContext;
+
     //Acceder el state de Categoria 
-    const valorCategoriaContext  = useContext(CategoriaContext);
+    const valorCategoriaContext = useContext(CategoriaContext);
     const { listarCategoria } = valorCategoriaContext;
 
     //Declaración Variables
@@ -49,30 +50,40 @@ const Subcategoria = () => {
     //Declaro UseEffect   
     useEffect(() => {
         listarSubCategoria(datos);
-        listarCategoria(datos); 
+        listarCategoria(datos);
     }, []);
 
     //Asignación de Valores 
     //Esto me permite controlar el arreglo con los valores del listado 
     ListSubCategoria = subcategoria;
-    
-
 
     //Metodos Funcionales 
     //función : Permite redireccionar al formulario de crear categoria 
     const linkCrearSubCategoria = () => {
-
         router.push('/subcategoriacrear');
-
     }
 
-    //función : 
-    //función : 
-    //función : 
+    //Función : Permite pdesplegar un dialog (Swal) para validar si desea  eliminar  
+    const getDialog = (id, nombre) => {
+        Swal.fire({
+            title: 'Alerta',
+            text: '¿ Seguro que deseas eliminar este registro ?',
+            // icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#059669',
+            cancelButtonColor: '#b91c1c',
+            confirmButtonText: 'Si, Deseo eliminarlo!'
+        }).then((result) => {
 
-    // https://tailwindcomponents.com/component/table-1
-    // https://tailwindui.com/components/application-ui/lists/tables
+            if (result.isConfirmed) {
+                deleteSubCategoria(id, nombre);
+                listarSubCategoria(datos);
+                listarCategoria(datos);
+            }
 
+        });
+
+    }//fin del metodo  getDialog
 
     return (
         <Layout>
@@ -86,6 +97,11 @@ const Subcategoria = () => {
                         <div className="w-full pl-3 pr-3 rounded-lg pt-3 bg-white mb-5 overflow-hidden shadow-lg">
 
                             <label className="text-2xl font-bold text-yellow-500 " >Listado de Tus Subcategorias</label>
+
+                            {msgDeleteSubCat != null && elimiSubCat == null ? (
+                                <Error mensaje={msgDeleteSubCat} ></Error>
+                            ) : null}
+
                             <div className="flex flex-col mt-5 mb-5">
                                 <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -171,12 +187,11 @@ const Subcategoria = () => {
 
                                                                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                                                         <button title="Editar Categoria" className="btn-yellow"> <PencilIcon className="w-5 " /></button>
-                                                                        <button title="Eliminar Categoria" className="btn-yellow btn-tran-danger"> <TrashIcon className="w-5 " /></button>
+                                                                        <button title="Eliminar Categoria" className="btn-yellow btn-tran-danger" onClick={() => getDialog(list._id, list.nomCate)}> <TrashIcon className="w-5 " /></button>
                                                                     </td>
                                                                 </tr>
                                                             ))}
                                                         </tbody>
-
 
                                                     ) : null
                                                 }

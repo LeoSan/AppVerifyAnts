@@ -1,14 +1,11 @@
 //Importar Librerias React 
 import React, { useContext, useEffect } from 'react';
 import PropTypes from "prop-types";
+import { useRouter } from 'next/router';
+const Swal = require('sweetalert2');
 
 //importar icon 
-import { PencilIcon, TrashIcon } from '@heroicons/react/solid'
-
-
-//Librerias para validación 
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
+import { PencilIcon, TrashIcon, PlusCircleIcon } from '@heroicons/react/solid';
 
 //Importamos nuestros  useContext (Hooks)
 import AuthContext from '../context/auth/AuthContext';
@@ -19,46 +16,73 @@ import Layout from '../components/layout/Layout';
 
 //componentes UI
 import Error from '../components/ui/Error';
-import Success from '../components/ui/Success';
 import SideBar from '../components/ui/SideBar';
 
 const Gastosrecurrente = () => {
 
     //Declaro useState 
 
+    //Declaro Hook    
+    //Redireccionar   
+    const router = useRouter();  
 
-    //Declaro Hooks -> UseContext para usar el state 
+
+    //Declaro UseContext 
     //Acceder el state de auth 
     const valorAuthContext = useContext(AuthContext);
-    const { nickEmail, nickID  }   =  valorAuthContext;
+    const { nickEmail, nickID } = valorAuthContext;
 
     //Acceder el state de Categoria 
     const valorContextRe = useContext(RecurrenteContext);
-    const { listarRecurrente, mensajeListRe, recurrente, editRec  } =  valorContextRe;
+    const { listarRecurrente, deleteRecurrente, mensajeListRe, recurrente, msgDeleteRec, elimiRecu  } = valorContextRe;
 
     //Declaración Variables
     let ListRecurrente = [];
-    const datos = { nickID,  nickEmail  }
-    
+    const datos = { nickID, nickEmail }
+
+  
+
     //Declaro UseEffect   
-    useEffect( ()=>{
-        listarRecurrente( datos );
-    }, []); 
+    useEffect(() => {
+        listarRecurrente(datos);
+    }, []);
 
     //Asignación de Valores 
-        //Esto me permite controlar el arreglo con los valores del listado 
-        ListRecurrente = recurrente; 
+    //Esto me permite controlar el arreglo con los valores del listado 
+    ListRecurrente = recurrente;
 
 
-    //función : 
-    //función : 
-    //función : 
- 
+    //Metodos Funcionales 
+    //Función : Permite redireccionar al formulario de crear Recurrencia 
+    const linkCrearRecurrencia = () => {
+        router.push('/gastosrecurrentecrear');
+    }
+
+    //Función : Permite pdesplegar un dialog (Swal) para validar si desea  eliminar  
+    const getDialog = (id, nombre) => {
+        Swal.fire({
+            title: 'Alerta',
+            text: '¿ Seguro que deseas eliminar este registro ?',
+            // icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#059669',
+            cancelButtonColor: '#b91c1c',
+            confirmButtonText: 'Si, Deseo eliminarlo!'
+        }).then((result) => {
+
+            if (result.isConfirmed) {
+                deleteRecurrente(id, nombre);
+                listarRecurrente(datos);
+            }
+
+        });
+
+    }//fin del metodo  getDialog
 
     return (
         <Layout>
             <div className="md:flex flex min-h-screen">
-              
+
                 <SideBar />
 
                 <div className="md:w-3/5 xl:w-4/5 p-6">
@@ -68,11 +92,23 @@ const Gastosrecurrente = () => {
 
                             <label className="text-2xl font-bold text-yellow-500 " >Listado de Programación de Gastos Recurrentes</label>
 
+                            
+                            {msgDeleteRec != null && elimiRecu == null ? (
+                                <Error mensaje={msgDeleteRec} ></Error>
+                            ) : null}
 
                             <div className="flex flex-col mt-5 mb-5">
                                 <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                                         <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+
+
+                                            <div className="flex justify-center items-end space-x-6">
+                                                <button title="Crear Recurrencia" className="btn-yellow cursor-pointer h-24 w-24  text-center font-extrabold flex  rounded-full" onClick={() => linkCrearRecurrencia()}>
+                                                    <PlusCircleIcon className="w-5 " /> Crear
+                                                </button>
+                                            </div>
+
                                             <table className="min-w-full divide-y divide-gray-200">
                                                 <thead className="bg-gray-50">
                                                     <tr>
@@ -139,7 +175,7 @@ const Gastosrecurrente = () => {
 
                                                                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                                                         <button title="Editar Recurrencia" className="btn-yellow"> <PencilIcon className="w-5 " /></button>
-                                                                        <button title="Eliminar Categoria" className="btn-yellow btn-tran-danger"> <TrashIcon className="w-5 " /></button>
+                                                                        <button title="Eliminar Categoria" className="btn-yellow btn-tran-danger" onClick={ ()=>getDialog(list._id, list.nomRecu) }> <TrashIcon className="w-5 " /></button>
                                                                     </td>
                                                                 </tr>
                                                             ))}
@@ -154,12 +190,10 @@ const Gastosrecurrente = () => {
                                     </div>
                                 </div>
                             </div>
-                            
-                            { mensajeListRe != null  && recurrente == null ? (
-                                <Error mensaje={ mensajeListRe } ></Error>
-                                ): null}  
 
-
+                            {mensajeListRe != null && recurrente == null ? (
+                                <Error mensaje={mensajeListRe} ></Error>
+                            ) : null}
 
                         </div>
                     </div>
@@ -170,12 +204,16 @@ const Gastosrecurrente = () => {
 }
 
 Gastosrecurrente.propTypes = {
-    // getValCapctha: PropTypes.func,
-    // valcaptcha: PropTypes.string,
-    // mensaje: PropTypes.string,
-    // confirmaRobot: PropTypes.bool,
-    // olvidoClave: PropTypes.bool,
-    // formik:  PropTypes.object,
+     listarRecurrente: PropTypes.func,
+     nickEmail: PropTypes.string,
+     nickID: PropTypes.string,
+     mensajeListRe: PropTypes.string,
+     msgDeleteRec: PropTypes.string,
+     recurrente: PropTypes.array,
+     ListRecurrente: PropTypes.array,
+     valorAuthContext:  PropTypes.object,
+     valorContextRe:  PropTypes.object,
+     elimiRecu:  PropTypes.bool,
 };
 
 export default Gastosrecurrente;

@@ -86,10 +86,10 @@ const categoriacrear = () => {
 
                         <div className="mb-4">
                            <label
-                              className="block text-gray-700 text-sm font-bold mb-2" htmlFor="actividad">Tipo Actividad</label>
+                                 className="label-form" htmlFor="actividad">Tipo Actividad</label>
                            <select
                               id="actividad"
-                              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md"
+                              className="input-form"
                               value={formik.actividad}
                               onChange={formik.handleChange}
                            >
@@ -105,7 +105,7 @@ const categoriacrear = () => {
 
                         <div className="mb-4">
                            <label
-                              className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nomCate">Nombre Categoria</label>
+                                 className="label-form" htmlFor="nomCate">Nombre Categoria</label>
                            <input
                               id="nomCate"
                               type="text"
@@ -114,7 +114,7 @@ const categoriacrear = () => {
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
 
-                              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md "
+                              className="input-form"
                            />
                         </div>
 
@@ -124,7 +124,7 @@ const categoriacrear = () => {
 
                         <div className="mb-4">
                            <label
-                              className="block text-gray-700 text-sm font-bold mb-2" htmlFor="desCate">Descripción </label>
+                              className="label-form" htmlFor="desCate">Descripción </label>
                            <input
                               id="desCate"
                               type="text"
@@ -133,7 +133,7 @@ const categoriacrear = () => {
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
 
-                              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md "
+                              className="input-form"
                                
                            />
                         </div>

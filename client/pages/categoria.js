@@ -2,6 +2,7 @@
 import React, { useContext, useEffect } from 'react';
 import PropTypes from "prop-types";
 import { useRouter } from 'next/router';
+const Swal = require('sweetalert2');
 
 //importar icon 
 import { PencilIcon, TrashIcon, PlusCircleIcon } from '@heroicons/react/solid'
@@ -22,6 +23,7 @@ import Layout from '../components/layout/Layout';
 import Error from '../components/ui/Error';
 import SideBar from '../components/ui/SideBar';
 
+
 const Categoria = () => {
 
 
@@ -38,13 +40,13 @@ const Categoria = () => {
 
     //Acceder el state de Categoria 
     const valorContext = useContext(CategoriaContext);
-    const { listarCategoria, mensajeList, categoria, editado } = valorContext;
+    const {  listarCategoria, deleteCategoria, mensajeList, categoria, msgDeleteCat, elimiCat } = valorContext;
 
     //Declaración Variables
     let ListCategoria = [];
     const datos = { nickID, nickEmail }
 
-    //Declaro UseEffect   
+    //Declaro UseEffect    
     useEffect(() => {
         listarCategoria(datos);
     }, []);
@@ -55,15 +57,44 @@ const Categoria = () => {
 
     //Metodos Funcionales 
 
-    //función : Permite redireccionar al formulario de crear categoria 
+    //Función : Permite redireccionar al formulario de crear categoria 
     const linkCrearCategoria = () => {
-
         router.push('/categoriacrear');
+    }//fin del metodo 
 
-    }
+    //Función : Permite pdesplegar un dialog (Swal) para validar si desea  eliminar  
+    const getDialog = (id, nombre)=>{
 
-    //función : 
-    //función : 
+      //  const alerta    = new Alerta('Alerta', '¿ Seguro que deseas eliminar este registro ?', 'warning');
+        
+        Swal.fire({
+            title: 'Alerta',
+            text: '¿ Seguro que deseas eliminar este registro ?',
+           // icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#059669',
+            cancelButtonColor: '#b91c1c',
+            confirmButtonText: 'Si, Deseo eliminarlo!'
+          }).then((result) => {
+           
+           if (result.isConfirmed){
+                deleteCategoria( id, nombre ); 
+                listarCategoria(datos);
+           }
+           
+          });
+
+    }//fin del metodo  getDialog
+    
+    //Función : Permite Enviar y redicreccionar parametros 
+    const linkEditarCategoria = (id, nombre, desc) => {
+      
+        Router.Push({
+            pathname: '/categoriacrear',
+            query: { id: id, nombre:nombre, desc:desc },
+          })
+
+    }//fin del metodo 
 
     // https://tailwindcomponents.com/component/table-1
     // https://tailwindui.com/components/application-ui/lists/tables
@@ -82,11 +113,16 @@ const Categoria = () => {
 
                             <label className="text-2xl font-bold text-yellow-500 " >Listado de Tus Categorias</label>
 
+
+                            {msgDeleteCat != null && elimiCat == null ? (
+                                <Error mensaje={msgDeleteCat} ></Error>
+                            ) : null}                            
+
                             <div className="flex flex-col mt-5 mb-5">
                                 <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                                         <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                                            
+
                                             <div className="flex justify-center items-end space-x-6">
                                                 <button title="Crear Categoria" className="btn-yellow cursor-pointer h-24 w-24  text-center font-extrabold flex  rounded-full" onClick={() => linkCrearCategoria()}>
                                                     <PlusCircleIcon className="w-5 " /> Crear
@@ -166,14 +202,14 @@ const Categoria = () => {
 
                                                                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                                                         <button title="Editar Categoria" className="btn-yellow"> <PencilIcon className="w-5 " /></button>
-                                                                        <button title="Eliminar Categoria" className="btn-yellow btn-tran-danger"> <TrashIcon className="w-5 " /></button>
+                                                                        <button title="Eliminar Categoria" className="btn-yellow btn-tran-danger" onClick={ ()=>getDialog(list._id, list.nomCate) }> <TrashIcon className="w-5 " /></button>
                                                                     </td>
                                                                 </tr>
                                                             ))}
                                                         </tbody>
 
 
-                                                    ) : null
+                                                    ) :  null
                                                 }
 
                                             </table>
@@ -196,12 +232,13 @@ const Categoria = () => {
 }
 
 Categoria.propTypes = {
-    // getValCapctha: PropTypes.func,
-    // valcaptcha: PropTypes.string,
-    // mensaje: PropTypes.string,
-    // confirmaRobot: PropTypes.bool,
-    // olvidoClave: PropTypes.bool,
-    // formik:  PropTypes.object,
+     listarCategoria: PropTypes.func,
+     mensajeList: PropTypes.string,
+     nickEmail: PropTypes.string,
+     nickID: PropTypes.string,
+     categoria: PropTypes.object,
+     ListCategoria: PropTypes.array,
+     router:  PropTypes.object,
 };
 
 export default Categoria;

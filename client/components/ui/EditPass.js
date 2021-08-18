@@ -107,7 +107,7 @@ const EditPass = () => {
                         className="text-2xl font-bold text-yellow-500 " >Cambiar Contraseña   </label>
                     <div className="mb-4">
                         <label
-                            className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Password</label>
+                            className="label-form" htmlFor="password">Password</label>
                         <input
                             id="password"
                             type="password"
@@ -116,7 +116,7 @@ const EditPass = () => {
                             onChange={formikPass.handleChange}
                             onBlur={formikPass.handleBlur}
 
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md "
+                            className="input-form"
                         />
                     </div>
 
@@ -127,7 +127,7 @@ const EditPass = () => {
 
                     <div className="mb-4">
                         <label
-                            className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password2">Confirmar Password </label>
+                            className="label-form" htmlFor="password2">Confirmar Password </label>
                         <input
                             id="password2"
                             type="password"
@@ -136,7 +136,7 @@ const EditPass = () => {
                             onChange={formikPass.handleChange}
                             onBlur={formikPass.handleBlur}
 
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md "
+                            className="input-form"
                         />
                     </div>
 
@@ -147,7 +147,7 @@ const EditPass = () => {
 
                     <div className="mb-4 items-center">
                         <label
-                            className="block text-gray-700 text-sm font-bold mb-2">¿ Eres un Robot ?</label>
+                            className="label-form">¿ Eres un Robot ?</label>
 
                         <ReCAPTCHA className="flex items-center justify-center"
                             sitekey='6LdxEHIUAAAAAMhzsqkP-Q6ddj3xXkQwGTd38m9D'

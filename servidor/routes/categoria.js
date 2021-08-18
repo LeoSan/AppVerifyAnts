@@ -34,7 +34,7 @@ router.put('/',
 );
 
 //End-Point - Aliminar Categoria
-router.delete('/', 
+router.post('/del-cat', 
       auth,
       categoriaCotroller.deleteCategoria
 );

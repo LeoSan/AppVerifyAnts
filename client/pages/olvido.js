@@ -93,7 +93,7 @@ const login = () => {
 
                                     <div className="mb-4 ">
                                              <label 
-                                                      className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email</label>
+                                                      className="label-form" htmlFor="email">Email</label>
                                              <input 
                                                       id="email"
                                                       type="text"
@@ -101,7 +101,7 @@ const login = () => {
                                                       value={formik.email}
                                                       onChange={formik.handleChange}
                                                       onBlur={formik.handleBlur}                                                      
-                                                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md focus:border-yellow-500"
+                                                      className="input-form"
                                              />
                                     </div>
 
@@ -113,7 +113,7 @@ const login = () => {
                                     
                                     <div className="mb-4 items-center">
                                           <label 
-                                             className="block text-gray-700 text-sm font-bold mb-2">¿ Eres un Robot ? </label>
+                                             className="label-form">¿ Eres un Robot ? </label>
                                           
                                           <ReCAPTCHA className="flex items-center justify-center"
                                           sitekey='6LdxEHIUAAAAAMhzsqkP-Q6ddj3xXkQwGTd38m9D'

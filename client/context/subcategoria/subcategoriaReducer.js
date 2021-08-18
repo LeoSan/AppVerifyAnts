@@ -5,7 +5,9 @@ import {
     LISTAR_SUBCATEGORIA,
     LISTAR_SUBCATEGORIA_ERROR,
     CREAR_SUBCATEGORIA_ERROR,
-    CREAR_SUBCATEGORIA_EXITO
+    CREAR_SUBCATEGORIA_EXITO,
+    ELIMINAR_SUBCATEGORIA_ERROR,
+    ELIMINAR_SUBCATEGORIA_EXITO
 } from '../../types';
 
 
@@ -13,32 +15,47 @@ import {
 //-> Asi no mas -> export default (state, action) =>{
 //Es ahora asi -> const authReducer = (state,action) => {
 
-const subcategoriaReducer = (state,action) => {
+const subcategoriaReducer = (state, action) => {
     switch (action.type) {
-        case LISTAR_SUBCATEGORIA: 
-            return{
-                ...state, 
-                subcategoria:action.payload,
-                msgCrearSubCat:null
-            }        
-        
-        case LISTAR_SUBCATEGORIA_ERROR: 
-            return{
-                ...state, 
-                msgListSubCa:action.payload,
+        case LISTAR_SUBCATEGORIA:
+            return {
+                ...state,
+                subcategoria: action.payload,
+                msgCrearSubCat: null,
+                crearSubCat: false,
+                elimiSubCat:false,
+
             }
-        case CREAR_SUBCATEGORIA_ERROR: 
-            return{
-                ...state, 
-                msgCrearSubCat:action.payload,
-                crearSubCat:false
-                
-            }        
-        case CREAR_SUBCATEGORIA_EXITO: 
-            return{
-                ...state, 
-                msgCrearSubCat:action.payload,
-                crearSubCat:true
+
+        case LISTAR_SUBCATEGORIA_ERROR:
+            return {
+                ...state,
+                msgListSubCa: action.payload,
+            }
+        case CREAR_SUBCATEGORIA_ERROR:
+            return {
+                ...state,
+                msgCrearSubCat: action.payload,
+                crearSubCat: false
+
+            }
+        case CREAR_SUBCATEGORIA_EXITO:
+            return {
+                ...state,
+                msgCrearSubCat: action.payload,
+                crearSubCat: true
+            }
+        case ELIMINAR_SUBCATEGORIA_ERROR:
+            return {
+                ...state,
+                msgDeleteCat: action.payload,
+                elimiSubCat: false
+            }
+        case ELIMINAR_SUBCATEGORIA_EXITO:
+            return {
+                ...state,
+                msgDeleteCat: action.payload,
+                elimiSubCat: true
             }
 
 

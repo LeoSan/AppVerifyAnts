@@ -29,7 +29,14 @@ const AuthState = ({children}) => {
         ninkName:null, 
         nickEmail:null,
         nickID:null,
-        mensaje:null, 
+        mensaje:null,
+        mensajeList:null,
+        msgCrearCat:null,
+        msgDeleteCat:null,
+        msgListSubCa:null,
+        msgCrearSubCat:null,
+        msgDeleteCat:null
+
     }
 
     // Definimos Reducer 

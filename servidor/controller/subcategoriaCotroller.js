@@ -8,11 +8,10 @@ const logsCotroller = require('./logsController');
 //Crear SubCategoria  
 exports.createSubcategoria = async(req, res)=>{
     //Mostrar mensaje de error de express-validator 
-    const errores  = validationResult(req); 
-
-    if (!errores.isEmpty()){
-        return res.status(200).json({errores: errores.array(), success:false});
-    }
+    const errors = validationResult(req);
+    if ( !errors.isEmpty() ){
+        return res.status(200).json({msg: `Falta un Campo, ${errors.array(0)}`, success:false})
+    }   
     
     //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
    // console.log(req.body);
@@ -38,15 +37,10 @@ exports.createSubcategoria = async(req, res)=>{
 //Obtener SubCategoria  
 exports.getSubcategoria = async (req, res) =>{
     
-    //Mostrar mensaje de error de express-validator 
-    const errores  = validationResult(req); 
-
-   //  console.log( "Desde el serv->" ,req.body);
-
-
-    if (!errores.isEmpty()){
-        return res.status(200).json({errores: errores.array(), success:false});
-    }    
+    const errors = validationResult(req);
+    if ( !errors.isEmpty() ){
+        return res.status(200).json({msg: `Falta un Campo, ${errors.array(0)}`, success:false})
+    }       
     
     //Extraer proyecto 
     try {
@@ -95,3 +89,28 @@ exports.getSubcategoria = async (req, res) =>{
 //Udadate Categoria 
 
 //Delete Categoria
+
+//Delete Categoria
+exports.deleteSubCategoria = async (req, res)=>{
+    
+    const errors = validationResult(req);
+    if ( !errors.isEmpty() ){
+        return res.status(200).json({msg: `Falta un Campo, ${errors.array(0)}`, success:false})
+    }    
+    //Extraer informacion del proyecto 
+    try {
+        const {id, nomCate} = req.body;// Asi es cuando se pasa un objeto  es decir un json 
+        //Valido Categoria 
+        let valExiste = await Subcategoria.findById(id); // Leo : Mucho ojo es la forma de obtener los parametros por post 
+  
+        if (!valExiste)  return res.status(200).json({msg:`Tu Categoria con nombre ${nomCate}, No existe en la base de datos.`, success:false});
+        
+        //Eliminar Categoria 
+        await Subcategoria.findByIdAndRemove( { _id:id } )
+        res.status(200).json({msg:`Tu Categoria con nombre ${nomCate}, fue eliminado.`, success:true});
+       
+    } catch (error) {
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
+        res.status(200).json({msg: `Hubo un  error  en  la comunicación !!  `, success:false});
+    }
+}

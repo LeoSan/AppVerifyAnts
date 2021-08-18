@@ -96,10 +96,10 @@ const subcategoriacrear = () => {
 
                         <div className="mb-4">
                            <label
-                              className="block text-gray-700 text-sm font-bold mb-2" htmlFor="actividad">Tipo Categoria</label>
+                                 className="label-form" htmlFor="actividad">Tipo Categoria</label>
                            <select
                               id="categoria"
-                              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md"
+                              className="input-form"
                               value={formik.categoria}
                               onChange={formik.handleChange}
                            >
@@ -119,7 +119,7 @@ const subcategoriacrear = () => {
 
                         <div className="mb-4">
                            <label
-                              className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nomCate">Nombre Subcategoria</label>
+                                 className="label-form" htmlFor="nomCate">Nombre Subcategoria</label>
                            <input
                               id="nomCate"
                               type="text"
@@ -128,7 +128,7 @@ const subcategoriacrear = () => {
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
 
-                              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md "
+                              className="input-form"
                            />
                         </div>
 
@@ -138,7 +138,7 @@ const subcategoriacrear = () => {
 
                         <div className="mb-4">
                            <label
-                              className="block text-gray-700 text-sm font-bold mb-2" htmlFor="desCate">Descripción </label>
+                                 className="label-form" htmlFor="desCate">Descripción </label>
                            <input
                               id="desCate"
                               type="text"
@@ -147,7 +147,7 @@ const subcategoriacrear = () => {
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
 
-                              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md "
+                              className="input-form"
                                
                            />
                         </div>

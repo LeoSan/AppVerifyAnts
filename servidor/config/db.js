@@ -1,6 +1,5 @@
 //Importammos el controlador moogoose
 const mongoose = require('mongoose');
-const colors        = require('colors');
 
 //Importamos nuestro archivo de variables de entorno previamente creado
 require('dotenv').config({ path :'./config/variables.env'});
