@@ -13,7 +13,7 @@ module.exports = (req, res, next) => {
       /* Nota: el token debe estar presente en el header*/
 
     //console.log(token)
-    // Revisar ek no hay token
+    // Revisar no hay token
     if(!token){
         return res.status(401).json({msg: 'No hay token, permiso no valido'})
     }

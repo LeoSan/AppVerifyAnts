@@ -31,7 +31,7 @@ const SideBar = () => {
               if( autenticado == false ){
                      router.push('/')
               }
-       },[autenticado]);         
+       },[]);         
    
    
     //Metodos Funcionales 

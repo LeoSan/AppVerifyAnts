@@ -28,7 +28,7 @@ router.post('/get-cat',
 
 
 //End-Point - Editar Categoria
-router.put('/', 
+router.post('/edit-cat', 
       auth,
       categoriaCotroller.updateCategoria
 );

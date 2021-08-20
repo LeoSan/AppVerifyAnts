@@ -25,7 +25,7 @@ exports.newCategoria = async(req, res)=>{
         //Creamos Categoria si no esta duplicado 
             categoria = new Categoria(req.body);
             await categoria.save();
-            res.status(201).json({msg: 'Categoria Creada Exitosamente!!', success:true});
+            res.status(201).json({msg: `¡ Tu Categoria  "${nomCate}", fue creada exitosamente !`, success:true});
 
         } catch (error) {
             logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
@@ -82,7 +82,7 @@ exports.updateCategoria = async (req, res)=>{
         //Valido Categoria 
           let valExiste = await Categoria.findById(id); // Leo : Mucho ojo es la forma de obtener los parametros por post 
   
-          if (!valExiste) return res.status(406).json({msg:`Tu Categoria con nombre ${nomCate}, No existe en la base de datos.`});
+          if (!valExiste) return res.status(200).json({msg:`Tu Categoria con nombre ${nomCate}, No existe en la base de datos.`, success:false});
           
         //crear un objeto con la nueva informaciòn 
         const newObj     = {}
@@ -94,12 +94,12 @@ exports.updateCategoria = async (req, res)=>{
         
         //Guadar Edicción 
         valExiste = await Categoria.findByIdAndUpdate({ _id: id }, newObj, {new:true});
-        res.status(205).json({msg:`Tu Categoria con nombre ${nomOld}, fue editado.`});
+        res.status(200).json({msg:`Tu Categoria con nombre ${nomOld}, fue editada.`, success:true});
      
   } catch (error) {
       logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
       //res.status(500).send("Error en el servidor");
-      res.status(500).json({msg: `Hubo un  error  en  la comunicación !!  `});
+      res.status(200).json({msg: `Hubo un  error  en  la comunicación !!  `, success:false});
   }
 }
 

@@ -7,7 +7,9 @@ import {
     CREAR_CATEGORIA_ERROR,
     CREAR_CATEGORIA_EXITO,
     ELIMINAR_CATEGORIA_ERROR,
-    ELIMINAR_CATEGORIA_EXITO
+    ELIMINAR_CATEGORIA_EXITO,
+    EDITAR_CATEGORIA_ERROR,
+    EDITAR_CATEGORIA_EXITO
 } from '../../types';
 
 
@@ -58,6 +60,19 @@ const categoriaReducer = (state, action) => {
                 ...state,
                 msgDeleteCat: action.payload,
                 elimiCat: true
+            }        
+        case EDITAR_CATEGORIA_ERROR:
+            return {
+                ...state,
+                msgCrearCat: action.payload,
+                crearCat: false
+
+            }
+        case EDITAR_CATEGORIA_EXITO:
+            return {
+                ...state,
+                msgCrearCat: action.payload,
+                crearCat: true
             }
 
 

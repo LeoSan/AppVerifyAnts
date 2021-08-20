@@ -35,6 +35,10 @@
     @apply transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none;
 }
 
+.btn-tran-access{
+    @apply transition duration-300 hover:bg-green-700 hover:text-white focus:outline-none;
+}
+
 .input-form{
     @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md focus:border-yellow-500;
 }

@@ -31,7 +31,7 @@ const validarCaptcha = async (req)=>{
             // If not successful
             if (result.success !== undefined && !result.success){
                 logsCotroller.logsCRUD(`Resultado captcha !! -> ${ result.success } `);
-                return 'Fallo captcha verificación.';
+                return 'Fallo recaptcha verificación.';
             }else{
                 return 'ok';
             }            

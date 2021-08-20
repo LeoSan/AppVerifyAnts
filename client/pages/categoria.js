@@ -59,7 +59,7 @@ const Categoria = () => {
 
     //Función : Permite redireccionar al formulario de crear categoria 
     const linkCrearCategoria = () => {
-        router.push('/categoriacrear');
+        router.push('/categoriaform');
     }//fin del metodo 
 
     //Función : Permite pdesplegar un dialog (Swal) para validar si desea  eliminar  
@@ -87,11 +87,12 @@ const Categoria = () => {
     }//fin del metodo  getDialog
     
     //Función : Permite Enviar y redicreccionar parametros 
-    const linkEditarCategoria = (id, nombre, desc) => {
-      
-        Router.Push({
-            pathname: '/categoriacrear',
-            query: { id: id, nombre:nombre, desc:desc },
+    const linkEditarCategoria = (id ) => {
+        //e.preventDefault();
+
+        router.push({
+            pathname: '/categoriaform',
+            query: { id: id },
           })
 
     }//fin del metodo 
@@ -201,7 +202,7 @@ const Categoria = () => {
                                                                     </td>
 
                                                                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                                        <button title="Editar Categoria" className="btn-yellow"> <PencilIcon className="w-5 " /></button>
+                                                                        <button title="Editar Categoria" className="btn-yellow btn-tran-access" onClick={ ()=>linkEditarCategoria( list._id ) }> <PencilIcon className="w-5 " /></button>
                                                                         <button title="Eliminar Categoria" className="btn-yellow btn-tran-danger" onClick={ ()=>getDialog(list._id, list.nomCate) }> <TrashIcon className="w-5 " /></button>
                                                                     </td>
                                                                 </tr>
