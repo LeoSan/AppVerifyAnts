@@ -24,12 +24,17 @@
 }
 
 .btn-green{
-    @apply bg-green-500  px-2 py-3 rounded-lg text-white font-bold uppercase m-1 focus:shadow-md;
+    @apply bg-green-500  px-2 py-3 rounded-lg text-white font-bold uppercase m-1 focus:shadow-md cursor-pointer;
 }
 
 .btn-yellow{
-    @apply bg-yellow-500  px-2 py-3 rounded-lg text-white font-bold uppercase m-1 focus:shadow-md;
+    @apply bg-yellow-500  px-2 py-3 rounded-lg text-white font-bold uppercase m-1 focus:shadow-md cursor-pointer;
 }
+
+.btn-yellow-circle{
+    @apply bg-yellow-500 rounded-full  text-white font-bold uppercase focus:shadow-md cursor-pointer;
+}
+
 
 .btn-tran-danger{
     @apply transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none;

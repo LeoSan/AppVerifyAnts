@@ -4,10 +4,10 @@
 import {
     LISTAR_SUBCATEGORIA,
     LISTAR_SUBCATEGORIA_ERROR,
-    CREAR_SUBCATEGORIA_ERROR,
-    CREAR_SUBCATEGORIA_EXITO,
     ELIMINAR_SUBCATEGORIA_ERROR,
-    ELIMINAR_SUBCATEGORIA_EXITO
+    ELIMINAR_SUBCATEGORIA_EXITO,
+    MUTAR_SUBCATEGORIA_ERROR,
+    MUTAR_SUBCATEGORIA_EXITO, 
 } from '../../types';
 
 
@@ -24,7 +24,6 @@ const subcategoriaReducer = (state, action) => {
                 msgCrearSubCat: null,
                 crearSubCat: false,
                 elimiSubCat:false,
-
             }
 
         case LISTAR_SUBCATEGORIA_ERROR:
@@ -32,14 +31,14 @@ const subcategoriaReducer = (state, action) => {
                 ...state,
                 msgListSubCa: action.payload,
             }
-        case CREAR_SUBCATEGORIA_ERROR:
+        case MUTAR_SUBCATEGORIA_ERROR:
             return {
                 ...state,
                 msgCrearSubCat: action.payload,
                 crearSubCat: false
 
             }
-        case CREAR_SUBCATEGORIA_EXITO:
+        case MUTAR_SUBCATEGORIA_EXITO:
             return {
                 ...state,
                 msgCrearSubCat: action.payload,
@@ -57,8 +56,6 @@ const subcategoriaReducer = (state, action) => {
                 msgDeleteCat: action.payload,
                 elimiSubCat: true
             }
-
-
 
         default:
             return state;

@@ -60,7 +60,7 @@ const Subcategoria = () => {
     //Metodos Funcionales 
     //función : Permite redireccionar al formulario de crear categoria 
     const linkCrearSubCategoria = () => {
-        router.push('/subcategoriacrear');
+        router.push('/subcategoriaform');
     }
 
     //Función : Permite pdesplegar un dialog (Swal) para validar si desea  eliminar  
@@ -85,6 +85,16 @@ const Subcategoria = () => {
 
     }//fin del metodo  getDialog
 
+    //Función : Permite Enviar y redicreccionar parametros 
+    const linkEditarSubCategoria = (id ) => {
+        //e.preventDefault();
+        router.push({
+            pathname: '/subcategoriaform',
+            query: { id: id },
+          })
+
+    }//fin del metodo     
+
     return (
         <Layout>
             <div className="md:flex flex min-h-screen">
@@ -107,9 +117,9 @@ const Subcategoria = () => {
                                     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                                         <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
 
-                                            <div className="flex justify-center items-end space-x-6">
-                                                <button title="Crear Subcategoria" className="btn-yellow cursor-pointer h-24 w-24  text-center font-extrabold flex  rounded-full" onClick={() => linkCrearSubCategoria()}>
-                                                    <PlusCircleIcon className="w-5 " /> Crear
+                                            <div className="flex justify-end space-x-6 pr-10">
+                                                <button title="Crear Subcategoria" className="btn-yellow" onClick={() => linkCrearSubCategoria()}>
+                                                    <PlusCircleIcon className="w-9 " /> 
                                                 </button>
                                             </div>
 
@@ -186,7 +196,7 @@ const Subcategoria = () => {
                                                                     </td>
 
                                                                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                                        <button title="Editar Categoria" className="btn-yellow"> <PencilIcon className="w-5 " /></button>
+                                                                        <button title="Editar Categoria" className="btn-yellow" onClick={ ()=>linkEditarSubCategoria(list._id) } > <PencilIcon className="w-5 " /></button>
                                                                         <button title="Eliminar Categoria" className="btn-yellow btn-tran-danger" onClick={() => getDialog(list._id, list.nomCate)}> <TrashIcon className="w-5 " /></button>
                                                                     </td>
                                                                 </tr>
@@ -216,7 +226,8 @@ const Subcategoria = () => {
 }
 
 Subcategoria.propTypes = {
-    // linkCrearSubCategoria: PropTypes.func,
+     linkCrearSubCategoria: PropTypes.func,
+     linkEditarSubCategoria: PropTypes.func,
     // ListSubCategoria: PropTypes.array,
     // mensaje: PropTypes.string,
     // confirmaRobot: PropTypes.bool,

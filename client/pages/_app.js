@@ -8,23 +8,26 @@ import UsuarioState from '../context/usuario/usuarioState';
 import CategoriaState from '../context/categoria/categoriaState';
 import SubcategoriaState from '../context/subcategoria/subcategoriaState';
 import RecurrenteState from '../context/recurrente/recurrenteState';
+import ActoState from '../context/acto/actoState';
 
 //import 'tailwindcss/tailwind.css'
 import '../public/assets/main.css';
 import '../public/assets/swiper.css';
 
 
-const MyApp = ( {Component, pageProps } )=>{
-     
-    return(
+const MyApp = ({ Component, pageProps }) => {
+
+    return (
         <AuthState>
             <UsuarioState>
                 <CategoriaState>
                     <SubcategoriaState>
                         <RecurrenteState>
-                            <Component { ...pageProps }  />
+                            <ActoState>
+                                <Component {...pageProps} />
+                            </ActoState>
                         </RecurrenteState>
-                    </SubcategoriaState>                        
+                    </SubcategoriaState>
                 </CategoriaState>
             </UsuarioState>
         </AuthState>

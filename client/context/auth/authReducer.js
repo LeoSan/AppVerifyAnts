@@ -37,6 +37,7 @@ const authReducer = (state,action) => {
                 ...state, 
                 token:action.payload,
                 autenticado:true,
+                mensaje:null,
             }
         
         case LOGIN_ERROR: 

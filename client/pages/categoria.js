@@ -7,11 +7,6 @@ const Swal = require('sweetalert2');
 //importar icon 
 import { PencilIcon, TrashIcon, PlusCircleIcon } from '@heroicons/react/solid'
 
-
-//Librerias para validación 
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-
 //Importamos nuestros  useContext (Hooks)
 import AuthContext from '../context/auth/AuthContext';
 import CategoriaContext from '../context/categoria/categoriaContext';
@@ -124,9 +119,9 @@ const Categoria = () => {
                                     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                                         <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
 
-                                            <div className="flex justify-center items-end space-x-6">
-                                                <button title="Crear Categoria" className="btn-yellow cursor-pointer h-24 w-24  text-center font-extrabold flex  rounded-full" onClick={() => linkCrearCategoria()}>
-                                                    <PlusCircleIcon className="w-5 " /> Crear
+                                            <div className="flex justify-end space-x-6 pr-10">
+                                                <button title="Crear Categoria" className="btn-yellow" onClick={() => linkCrearCategoria()}>
+                                                    <PlusCircleIcon className="w-9" /> 
                                                 </button>
                                             </div>
 

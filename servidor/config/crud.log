@@ -64,3 +64,20 @@
 [2021-07-26T19:54:11.113] [ERROR] crud - Hubo un  error  en  la comunicación !! -> ObjectParameterError: Parameter "filter" to findOne() must be an object, got cuenca623@gmail.com 
 [2021-08-09T12:34:29.510] [ERROR] crud - Hubo un error en la comunicación !! -> ValidationError: categoria: Path `categoria` is required. 
 [2021-08-09T12:35:56.065] [ERROR] crud - Hubo un error en la comunicación !! -> ValidationError: categoria: Path `categoria` is required. 
+[2021-08-24T16:51:11.448] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T16:56:22.810] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T16:57:46.237] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T16:59:27.959] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T17:03:20.956] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T17:04:26.214] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T17:05:34.981] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T17:06:48.708] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T17:07:41.867] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T17:08:49.824] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T17:12:46.580] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T17:17:01.632] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-30T17:43:35.233] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.actos index: nomAccion_1 dup key: { nomAccion: null } 
+[2021-08-30T17:46:11.385] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.actos index: nomAccion_1 dup key: { nomAccion: null } 
+[2021-08-30T17:56:35.054] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.actos index: nomAccion_1 dup key: { nomAccion: null } 
+[2021-08-30T17:58:47.896] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.actos index: nomAccion_1 dup key: { nomAccion: null } 
+[2021-08-30T18:01:20.852] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.actos index: nomAccion_1 dup key: { nomAccion: null } 

@@ -5,30 +5,26 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema
  
 // Creamos nuestra estructura que tedra nuestra tabla en la base de datos.
-const subcategoriaSchema = new Schema({
-	nomCate : {
-	   type:String,
-	   required:true,
-	   unique:true,
-	   lowercase:true,
-	   trim:true,
-	},
-	desCate:{
-	   type: String,
-	   required:true,
-	   lowercase:true,
-	   trim:true,
-	},
+const ActoregistroSchema = new Schema({
     autor:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Usuario',
         required:true,
     },
-    categoria:{
+    acto:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'Categoria',
+        ref:'Acto',
         required:true,
     },	
+	duracion:{
+	   type: Number,
+	   default:	1
+	},	
+	nota:{
+		type:String,
+		lowercase:true,
+		trim:true,
+	},	
 	activo:{
 	   type: Number,
 	   default:	1
@@ -40,4 +36,4 @@ const subcategoriaSchema = new Schema({
 	
 });
 //Esta  sentencia nos  permite eportar nuestro modelo  como vemos se pasa como parametros (NombreModelo, EstructuraModelo ) -> definidos previamente.
-module.exports = mongoose.model('Subcategoria', subcategoriaSchema);
+module.exports = mongoose.model('Actoregistro', ActoregistroSchema);

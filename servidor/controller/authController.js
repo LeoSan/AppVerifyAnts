@@ -1,6 +1,5 @@
 //Librerias 
 const bcryptjs             = require('bcrypt');
-const { validationResult } = require('express-validator'); 
 const jwt                  = require('jsonwebtoken');
 //Modelos 
 const Usuario              = require('../models/Usuario');
@@ -9,7 +8,6 @@ const logsCotroller = require('../controller/logsController');
 const mailCotroller = require('../controller/mailCotroller'); 
 
 //Importo implementos para el captcha
-const bodyParser  = require('body-parser');
 const fetch = require('node-fetch');
 const { stringify } = require('querystring');
 
@@ -21,12 +19,6 @@ const { validarCaptcha }       = require('../middleware/helpers');
 
 //Permite autenticar el usuario 
 exports.autenticarUsuario = async (req, res, next) => {
-    //Revisar si hay errores (Nuevo)
-        const errors = validationResult(req);
-        if ( !errors.isEmpty() ){
-            return res.status(200).json({errores: errors.array(),  success:false, msg:` ¡ Error en el servidor  !,  ${errors.array(0)}`})
-        }
-
     //Extraer en  email  y password 
     const { emailUsu, password } = req.body; 
 
@@ -104,11 +96,6 @@ exports.usuarioAutenticado = async (req, res)=>{
 
 //Permite autenticar el usuario con Token 
 exports.autenticarUsuarioToken = async (req, res) => {
-    //Revisar si hay errores (Nuevo)
-        const errors = validationResult(req);
-        if ( !errors.isEmpty() ){
-            return res.status(406).json({errores: errors.array()})
-        }
 
     //Extraer en  email  y password 
     const { emailUsu, password, captcha } = req.body; 
@@ -116,9 +103,6 @@ exports.autenticarUsuarioToken = async (req, res) => {
     try {
         //Revisar que el usuario sea unico 
         let usuario = await Usuario.findOne({emailUsu}); 
-        if ( !usuario ){
-            return res.status(406).json({success: false, msg:'El usuario no existe'});
-        }
 
         //Revisar Password
         const passwordCorrecto = await bcryptjs.compare(password, usuario.password ); 
@@ -188,21 +172,11 @@ exports.autenticarUsuarioToken = async (req, res) => {
 exports.olvidoClave = async (req, res)=>{
     try {
 
-        //Revisar si hay errores (Nuevo)
-        const errors = validationResult(req);
-        if ( !errors.isEmpty() ){
-            return res.status(200).json({errores: errors.array(),  success:false, msg:` ¡ Error en el servidor  !,  ${errors.array(0)}`})
-        }
-
         //Extraer en  email  y password 
         const { emailUsu } = req.body; 
 
          //Revisar que el usuario sea unico 
          let usuario = await Usuario.findOne({emailUsu}); 
-         if ( !usuario ){
-             return res.status(200).json({msg:' ¡ El usuario no existe !', success:false});
-         }
-
 
         //******Inicio ******//  Nota Leonard:  
             //Este metodo (autenticarUsuario) es un async y el metodo helper validarCaptcha es otro async,  da error  <pending> ya que no pueden estar dos metodos async anidados 
@@ -250,7 +224,7 @@ exports.olvidoClave = async (req, res)=>{
         
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).json({msg: "Hubo un problema en el servidor"}) 
+        res.status(500).json({msg: "Hubo un problema en el servidor", success:false}) 
     }
 }
 

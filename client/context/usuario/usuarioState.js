@@ -38,8 +38,7 @@ const UsuarioState = ({children}) => {
     //Funciones Generales 
     //Metodo:  Registra un usuario 
     const registrarUsuario = async (datos)=>{
-    
-        console.log("Desde Registrar Usuario ", datos);
+        //console.log("Desde Registrar Usuario ", datos);
         try {
 
             const data = { 
@@ -49,39 +48,30 @@ const UsuarioState = ({children}) => {
                 captcha:datos.captcha
                 
             }
-
-
                 const respuesta = await clienteAxios.post('/api/usuarios/', data)
                 .then((response) => {
 
-
-                    if( response.data.success == false ){
+                  console.log(response.data);
+                       
+                    if( response.data.success == true ){
                         dispatch({
                             type: REGISTRO_USUARIO_EXITOSO, //Es la accion a ejecutar
                             payload: response.data.msg  //Son los datos que modifica el state 
                         }); 
 
                     }else{
-
                         dispatch({
                             type: REGISTRO_USUARIO_ERROR, //Es la accion a ejecutar
                             payload: response.data.msg  //Son los datos que modifica el state 
                         });                         
-
                     }
 
-
-            }).catch((response) => {
-                    dispatch({
-                        type: REGISTRO_USUARIO_ERROR, //Es la accion a ejecutar
-                        payload: response.data.msg  //Son los datos que modifica el state 
-                    }); 
-            });             
+            })             
             
         } catch (error) {
             dispatch({
                 type: REGISTRO_USUARIO_ERROR, //Es la accion a ejecutar
-                payload: "Hubo un problema con el servidor"  //Son los datos que modifica el state 
+                payload: `Hubo un error en el servidor!`  //Son los datos que modifica el state 
             }); 
         }
     

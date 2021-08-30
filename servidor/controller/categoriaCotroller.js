@@ -7,30 +7,22 @@ const logsCotroller = require('../controller/logsController');
 
 //Crear Categoria  
 exports.newCategoria = async(req, res)=>{
-    //Mostrar mensaje de error de express-validator 
-    const errors = validationResult(req);
-    if ( !errors.isEmpty() ){
-        return res.status(200).json({msg: `Falta un Campo, ${errors.array(0)}`, success:false})
-    }   
-    //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
-   // console.log(req.body);
     const {nomCate} = req.body; 
+    try {
+        // Anexo  Vaidación 
+        let  categoria = await Categoria.findOne({nomCate}); 
 
-        try {
-            // Anexo  Vaidación 
-            let  categoria = await Categoria.findOne({nomCate}); 
+        if ( categoria ) return  res.status(200).json({msg: `La categoria No la puedes repetir, ${nomCate}`, success:false});
 
-            if ( categoria ) return  res.status(200).json({msg: `La categoria No la puedes repetir, ${nomCate}`, success:false});
+    //Creamos Categoria si no esta duplicado 
+        categoria = new Categoria(req.body);
+        await categoria.save();
+        res.status(201).json({msg: `¡ Tu Categoria  "${nomCate}", fue creada exitosamente !`, success:true});
 
-        //Creamos Categoria si no esta duplicado 
-            categoria = new Categoria(req.body);
-            await categoria.save();
-            res.status(201).json({msg: `¡ Tu Categoria  "${nomCate}", fue creada exitosamente !`, success:true});
-
-        } catch (error) {
-            logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-            res.status(200).json({msg: `Hubo un error en la comunicación !! -> ${error} `, success:false});
-        }
+    } catch (error) {
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
+        res.status(200).json({msg: `Hubo un error en la comunicación !! -> ${error} `, success:false});
+    }
 }
 
 //Obtener Categoria  
@@ -70,11 +62,7 @@ exports.getCategoria = async (req, res) =>{
 //Udadate Categoria 
 exports.updateCategoria = async (req, res)=>{
     
-    //Revisar que que cumple con las reglas de validaciòn del routes 
-    const errors = validationResult(req);
-    if ( !errors.isEmpty() ){
-        return res.status(200).json({msg: `Falta un Campo, ${errors.array(0)}`, success:false})
-    }   
+ 
   //Extraer informacion para validacion 
   try {
         //Distroccion de Json que se envia 

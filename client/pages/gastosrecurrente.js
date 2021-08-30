@@ -55,7 +55,7 @@ const Gastosrecurrente = () => {
     //Metodos Funcionales 
     //Función : Permite redireccionar al formulario de crear Recurrencia 
     const linkCrearRecurrencia = () => {
-        router.push('/gastosrecurrentecrear');
+        router.push('/gastosrecurrenteform');
     }
 
     //Función : Permite pdesplegar un dialog (Swal) para validar si desea  eliminar  
@@ -78,6 +78,15 @@ const Gastosrecurrente = () => {
         });
 
     }//fin del metodo  getDialog
+
+    //Función : Permite Enviar y redicreccionar parametros 
+    const linkEditarRecurrente = (id ) => {
+        router.push({
+            pathname: '/gastosrecurrenteform',
+            query: { id: id },
+          })
+
+    }//fin del metodo 
 
     return (
         <Layout>
@@ -102,10 +111,9 @@ const Gastosrecurrente = () => {
                                     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                                         <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
 
-
-                                            <div className="flex justify-center items-end space-x-6">
-                                                <button title="Crear Recurrencia" className="btn-yellow cursor-pointer h-24 w-24  text-center font-extrabold flex  rounded-full" onClick={() => linkCrearRecurrencia()}>
-                                                    <PlusCircleIcon className="w-5 " /> Crear
+                                            <div className="flex justify-end space-x-6 pr-10">
+                                                <button title="Crear Recurrencia" className="btn-yellow" onClick={() => linkCrearRecurrencia()}>
+                                                    <PlusCircleIcon className="w-9" /> 
                                                 </button>
                                             </div>
 
@@ -174,7 +182,7 @@ const Gastosrecurrente = () => {
                                                                     </td>
 
                                                                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                                        <button title="Editar Recurrencia" className="btn-yellow"> <PencilIcon className="w-5 " /></button>
+                                                                        <button title="Editar Recurrencia" className="btn-yellow" onClick={ ()=>linkEditarRecurrente(list._id) }> <PencilIcon className="w-5 " /></button>
                                                                         <button title="Eliminar Categoria" className="btn-yellow btn-tran-danger" onClick={ ()=>getDialog(list._id, list.nomRecu) }> <TrashIcon className="w-5 " /></button>
                                                                     </td>
                                                                 </tr>
@@ -205,6 +213,8 @@ const Gastosrecurrente = () => {
 
 Gastosrecurrente.propTypes = {
      listarRecurrente: PropTypes.func,
+     getDialog: PropTypes.func,
+     linkEditarRecurrente: PropTypes.func,
      nickEmail: PropTypes.string,
      nickID: PropTypes.string,
      mensajeListRe: PropTypes.string,

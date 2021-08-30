@@ -1,11 +1,9 @@
 //Importo Librerias 
-import React, { useContext, useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import React, { useContext, useEffect, Fragment, useState } from 'react';
 import PropTypes from "prop-types";
-
+import { useRouter } from 'next/router';
 //Importo componenentes 
 import Layout from '../components/layout/Layout';
-
 
 //Librerias para validación 
 import { useFormik } from 'formik';
@@ -13,6 +11,7 @@ import * as Yup from 'yup';
 
 //Importamos nuestros  useContext (Hooks)
 import CategoriaContext from '../context/categoria/categoriaContext';
+import SubcategoriaContext from '../context/subcategoria/SubcategoriaContext';
 import AuthContext from '../context/auth/AuthContext';
 
 
@@ -21,43 +20,49 @@ import Error from '../components/ui/Error';
 import Success from '../components/ui/Success';
 import SideBar from '../components/ui/SideBar';
 
-const categoriaform = () => {
-   //Declaro useState 
+const subcategoriaform = () => {
 
+   //Declaro mis useState 
    const [formval, setformval] = useState({
-      actividad:'',
-      nomCate:'Ingrese categoria',
-      desCate:'Ingrese Descripción',
-  });  
+      actividad: '',
+      nomCate: 'Ingrese categoria',
+      desCate: 'Ingrese Descripción',
+   });
 
    //Declaro Hook    
    //Redireccionar   
    const router = useRouter()
 
    //Forma de recibir parametros por get 
-   let LisCate = [];
+   let ListSub = [];
    const { id } = router.query
    let titulo = 'Crear';
    if (id) { titulo = 'Editar' }
 
    //Declaro Hooks -> UseContext para usar el state 
-   //Acceder el state de auth 
+   //Acceder el stateContext  de Categoria 
    const valorContext = useContext(CategoriaContext);
-   const { crearCategoria, editCategoria, msgCrearCat, msgEditCat, crearCat,  editaCat, categoria } = valorContext;
+   const { categoria = null } = valorContext;
+   
+   //Acceder el stateContext de SubCategoria  
+   const valorSubcategoriaContext = useContext(SubcategoriaContext);
+   const { crearSubCategoria, editSubCategoria, msgCrearSubCat, crearSubCat, subcategoria } = valorSubcategoriaContext;
+
+   //Acceder el stateContext de auth 
+   const valorAuthContext = useContext(AuthContext);
+   const { nickID } = valorAuthContext;
 
    //Para poder iterarlo debes transformarlo en un arreglo ya que esta tipo objeto la categoria  
-   LisCate = categoria;
+   ListSub  = subcategoria;
 
-   //Acceder el state de auth 
-   const valorAuthContext = useContext(AuthContext);
-   const { nickID } = valorAuthContext;   
+   //Metodos Funcionales Generales 
 
-   //Objeto : Plugin Formik para gestionar las validaciones de formulario 
+   //Función: Esquema de validaciones 
    const formik = useFormik({
       initialValues: {
          nomCate: '',
          desCate: '',
-         actividad: '',
+         categoria: '',
          autor: nickID
       },
       validationSchema: Yup.object({
@@ -67,80 +72,65 @@ const categoriaform = () => {
          desCate: Yup.string()
             .min(10, "Descripción categoria debe tener al menos 10 caracteres.")
             .required('El campo descripción es obligatorio.'),
-         actividad: Yup.string()
-            .required('El campo tipo actividad es obligatorio.'),
+         categoria: Yup.string()
+            .required('El campo tipo categoria es obligatorio.'),
       }),
 
       onSubmit: formData => {
          try {
-            if (id){
+
+            if (id) {
                //state para Editar 
-               formData.id=id;
-               editCategoria(formData);
-            }else{
+               formData.id = id;
+               editSubCategoria(formData);
+
+            } else {
                //Envio valores al state 
-               crearCategoria(formData);
+               crearSubCategoria(formData);
+
             }
 
+
          } catch (error) {
-            //genear dispath para manejo de errror 
             console.log(error);
          }
       }
    });
 
-   //Metodos Funcionales Generales 
-
    //Función: Permite encontrar que categoria editar 
-   const getCategoriaId = (categoria, id, formik) => {
-     // console.log("Paso 1-> id->",id); //Paso 1-> id-> undefined
-      if ( id ) {
-         //Forma de buscar la seleccion 
-         const result = categoria.find(({ _id }) => _id === id);
+   const getSubCategoriaId = (arreglo, id, formik) => {
+      // console.log("Paso 1-> id->",id); //Paso 1-> id-> undefined
+   
+      
+      if (id) {
+         //Forma de buscar la seleccion //Aqui hay un error hay que meterle un condicional cuando el arreglo esta vacio 
+         const result = arreglo.find(({ _id }) => _id === id);
          // Forma de extraer e incorporar en los campos del formulario 
+         //console.log("result", result);
          setformval({
-            actividad:result.actividad._id,
-            nomCate:result.nomCate,
-            desCate:result.desCate,
+            actividad: result.categoria._id,
+            nomCate: result.nomCate,
+            desCate: result.desCate,
          })
 
          //Permite set select e input con el valor a editar    
-         document.getElementById("actividad").value = result.actividad._id; ;
-         document.getElementById("nomCate").value = result.nomCate; ;
-         document.getElementById("desCate").value = result.desCate; ;
+         document.getElementById("categoria").value = result.categoria._id;
+         document.getElementById("nomCate").value = result.nomCate;
+         document.getElementById("desCate").value = result.desCate;
 
          //Inicializo el formik cuando es editar 
-         formik.initialValues.actividad = result.actividad._id;
+         formik.initialValues.categoria = result.categoria._id;
          formik.initialValues.nomCate = result.nomCate;
          formik.initialValues.desCate = result.desCate;
-
-         return  result;    
-         //Recordar Leonard no funciono tu idea primaria 
-         //formik.actividad = result.actividad._id;
+         return result;
       }
    }
 
-
-   //Ejecución de Metodo Dinamicos 
+   //Declaro UseEffect   
    //Metodo: Permite incorporar al campo de los formulario la categoria seleccionada    
-       //Declaro UseEffect    
-      useEffect(() => {
-          getCategoriaId(LisCate, id, formik);
-     }, []);
- 
-
-   
-
-
-   //Metodo que al escribir  tiene que ir guardando // Mas como referencia no esta implementado 
-   const editarCampo = (e, formik, titulo )=>{
-         //Forma de pasar la e de eventos  No olvidar leo 
-        // onChange={formik.handleChange, (e)=>{editarCampo(e, formik, titulo)}}
-         editarBusqueda({
-            ...editar,
-           [e.target.name] : e.target.value
-        });
-   }//fin del evento 
+   useEffect(() => {
+      getSubCategoriaId(ListSub, id, formik);
+   }, []);
 
    return (
       <Layout>
@@ -154,31 +144,39 @@ const categoriaform = () => {
 
                      <form className="mb-8" onSubmit={formik.handleSubmit}>
                         <label
-                           className="text-2xl font-bold text-yellow-500 " >{titulo} Categoria </label>
+                           className="text-2xl font-bold text-yellow-500 " >{titulo} Subcategoria </label>
+
 
                         <div className="mb-4">
                            <label
-                              className="label-form" htmlFor="actividad">Tipo Actividad</label>
+                              className="label-form" htmlFor="actividad">Tipo Categoria</label>
                            <select
-                              id="actividad"
-                              name="actividad"
+                              id="categoria"
+                              name="categoria"
                               className="input-form"
-                              value={formik.actividad}
+                              value={formik.categoria}
                               onChange={formik.handleChange}
                            >
-                              <option value="0" selected> Seleccione </option>
-                              <option value="6095819506be383f7cf49ce6" > AntVerify  </option>
-                              <option value="60ae92dc3cb1ca2e14baeb8b" > ActivityVerify </option>
+                              <option value="0" > Seleccione </option>
+
+                           {
+
+                             !categoria ? null : categoria.map((list) => (
+                                 <option key={list._id} value={list._id} > {list.nomCate} </option>
+                              ))
+                              
+                           }
+
                            </select>
                         </div>
 
-                        {formik.touched.actividad && formik.errors.actividad ? (
-                           <Error mensaje={formik.errors.actividad} ></Error>
+                        {formik.touched.categoria && formik.errors.categoria ? (
+                           <Error mensaje={formik.errors.categoria} ></Error>
                         ) : null}
 
                         <div className="mb-4">
                            <label
-                              className="label-form" htmlFor="nomCate">Nombre Categoria</label>
+                              className="label-form" htmlFor="nomCate">Nombre Subcategoria</label>
                            <input
                               id="nomCate"
                               name="nomCate"
@@ -207,6 +205,7 @@ const categoriaform = () => {
                               value={formik.desCate}
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
+
                               className="input-form"
 
                            />
@@ -222,16 +221,19 @@ const categoriaform = () => {
                            value={titulo}
                         />
 
-                        {msgCrearCat != null && crearCat == false   ? (
-                           <Error mensaje={msgCrearCat} ></Error>
+                        {msgCrearSubCat != null && crearSubCat == false ? (
+                           <Error mensaje={msgCrearSubCat} ></Error>
                         ) : null}
 
 
-                        { msgCrearCat != null  && crearCat != false  ? (
-                           <Success mensaje={msgCrearCat} ></Success>
+                        {msgCrearSubCat != null && crearSubCat == true ? (
+                           <Success mensaje={msgCrearSubCat} ></Success>
                         ) : null}
+
 
                      </form>
+
+
                   </div>
                </div>
             </div>
@@ -240,17 +242,20 @@ const categoriaform = () => {
    );
 }
 
-categoriaform.propTypes = {
-    getCategoriaId: PropTypes.func,
-    LisCate: PropTypes.array,
-    msgCrearCat: PropTypes.string,
-    crearCat: PropTypes.bool,
-    router: PropTypes.object,
-    formik:  PropTypes.object,
-    valorContext:  PropTypes.object,
-    valorAuthContext:  PropTypes.object,
-    categoria:  PropTypes.object,
-    crearCategoria:  PropTypes.object,
+subcategoriaform.propTypes = {
+   crearSubCategoria: PropTypes.func,
+   getSubCategoriaId: PropTypes.func,
+   editSubCategoria: PropTypes.func,
+   formik:  PropTypes.object,
+   formval:  PropTypes.object,
+   valorContext:  PropTypes.object,
+   valorSubcategoriaContext:  PropTypes.object,
+   valorAuthContext:  PropTypes.object,
+   msgCrearSubCat: PropTypes.string,
+   nickID: PropTypes.string,
+   crearSubCat: PropTypes.bool,
+   subcategoria: PropTypes.array,
+   categoria: PropTypes.array,
 };
 
-export default categoriaform;
+export default subcategoriaform;

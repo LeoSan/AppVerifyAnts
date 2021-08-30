@@ -9,8 +9,8 @@ import recurrenteReducer from './recurrenteReducer';
 import {
     LISTAR_RECURRENTE,
     LISTAR_RECURRENTE_ERROR,
-    CREAR_RECURRENTE_ERROR,
-    CREAR_RECURRENTE_EXITO,
+    MUTAR_RECURRENTE_ERROR,
+    MUTAR_RECURRENTE_EXITO,
     ELIMINAR_RECURRENTE_ERROR,
     ELIMINAR_RECURRENTE_EXITO
 } from '../../types';
@@ -123,7 +123,7 @@ const RecurrenteState = ({ children }) => {
 
                     if (response.data.success == true) {
                         dispatch({
-                            type: CREAR_RECURRENTE_EXITO, //Es la accion a ejecutar
+                            type: MUTAR_RECURRENTE_EXITO, //Es la accion a ejecutar
                             payload: response.data.msg  //Son los datos que modifica el state 
                         });
 
@@ -135,7 +135,7 @@ const RecurrenteState = ({ children }) => {
                     } else {
 
                         dispatch({
-                            type: CREAR_RECURRENTE_ERROR, //Es la accion a ejecutar
+                            type: MUTAR_RECURRENTE_ERROR, //Es la accion a ejecutar
                             payload: response.data.msg  //Son los datos que modifica el state 
                         });
 
@@ -144,14 +144,14 @@ const RecurrenteState = ({ children }) => {
 
                 }).catch((response) => {
                     dispatch({
-                        type: CREAR_RECURRENTE_ERROR, //Es la accion a ejecutar
+                        type: MUTAR_RECURRENTE_ERROR, //Es la accion a ejecutar
                         payload: response.data.msg  //Son los datos que modifica el state 
                     });
                 });
 
         } catch (error) {
             dispatch({
-                type: CREAR_RECURRENTE_ERROR, //Es la accion a ejecutar
+                type: MUTAR_RECURRENTE_ERROR, //Es la accion a ejecutar
                 payload: "Hubo un problema con el servidor"  //Son los datos que modifica el state 
             });
         }
@@ -204,7 +204,61 @@ const RecurrenteState = ({ children }) => {
         }
 
     }//fin del metodo 
+   
+    //Metodo:  Permite eliminar el registro de una Categoria
+    const editRecurrente = async (datos)=>{
+    
+        try {
 
+            const token = localStorage.getItem('token');
+            
+            if (token){
+                //funcion para enviar el token por header 
+                tokenAuth(token);
+            }
+            
+            const data = { 
+                id:datos.id, 
+                nomRecu:datos.nomRecu,
+                desRecu:datos.desRecu,
+                activo:1
+            }
+
+            const respuesta = await clienteAxios.post('/api/recurrente/edit-rec', data)
+                .then((response) => {
+
+                    console.log(response)
+
+                    if( response.data.success == true ){
+                        dispatch({
+                            type: MUTAR_RECURRENTE_EXITO, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        }); 
+
+                        alerta.deploySucces();
+                    }else{
+
+                        dispatch({
+                            type: MUTAR_RECURRENTE_ERROR, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        });   
+                        alerta.deployFault();
+
+                    }
+            });             
+         
+        } catch (error) {
+            dispatch({
+                type: MUTAR_RECURRENTE_ERROR, //Es la accion a ejecutar
+                payload: `Hubo un problema con el servidor.`  //Son los datos que modifica el state 
+            }); 
+
+            alerta.deployFault();
+        }
+         
+        
+
+    }//fin del metodo   
 
     //Metodo:  
 
@@ -220,7 +274,8 @@ const RecurrenteState = ({ children }) => {
                 elimiRecu: state.elimiRecu,
                 listarRecurrente,
                 crearRecurrencia,
-                deleteRecurrente
+                deleteRecurrente,
+                editRecurrente
             }}
         >
             {children}

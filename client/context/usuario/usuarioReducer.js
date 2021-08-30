@@ -20,13 +20,14 @@ const usuarioReducer = (state,action) => {
             return{
                 ...state, 
                 mensaje:action.payload,
+                registro:true,
             }
 
         case REGISTRO_USUARIO_ERROR: 
             return{
                 ...state, 
                 mensaje:action.payload,
-                registro:true
+                registro:false
             }     
         case EDITAR_USUARIO_EXITOSO: 
             return{
@@ -57,7 +58,10 @@ const usuarioReducer = (state,action) => {
         case LIMPIAR_MENSAJE: 
             return{
                 ...state, 
-                mensaje:null
+                mensaje:null,
+                registro:null, 
+                cambio:null, 
+                editado:null
             }            
 
         default:

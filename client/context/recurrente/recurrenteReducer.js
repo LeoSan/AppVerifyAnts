@@ -4,8 +4,8 @@
 import {
     LISTAR_RECURRENTE,
     LISTAR_RECURRENTE_ERROR,
-    CREAR_RECURRENTE_ERROR,
-    CREAR_RECURRENTE_EXITO,
+    MUTAR_RECURRENTE_ERROR,
+    MUTAR_RECURRENTE_EXITO,
     ELIMINAR_RECURRENTE_ERROR,
     ELIMINAR_RECURRENTE_EXITO
 } from '../../types';
@@ -32,14 +32,14 @@ const recurrenteReducer = (state, action) => {
                 mensajeListRe: action.payload,
             }
 
-        case CREAR_RECURRENTE_ERROR:
+        case MUTAR_RECURRENTE_ERROR:
             return {
                 ...state,
                 msgCrearRecu: action.payload,
                 crearRecu: false
 
             }
-        case CREAR_RECURRENTE_EXITO:
+        case MUTAR_RECURRENTE_EXITO:
             return {
                 ...state,
                 msgCrearRecu: action.payload,

@@ -1,5 +1,6 @@
 //Importo Librerias 
 import React, { useContext, useEffect, Fragment, useState } from 'react';
+import PropTypes from "prop-types";
 
 //Importo componenentes 
 import Layout from '../components/layout/Layout';
@@ -12,31 +13,26 @@ import * as Yup from 'yup';
 //Importamos nuestros  useContext (Hooks)
 import UsuarioContext from '../context/usuario/usuarioContext';
 
-
 //componentes UI
 import Error from '../components/ui/Error';
 import Success from '../components/ui/Success';
 
 const crear = () => {
 
-
    //Declaro mis useState 
    const [valcaptcha, setvalcaptcha] = useState(0);
    const [confirmaRobot, setconfirmaRobot] = useState(true);
-   const [valLogin, setvalLogin] = useState(false);
 
    //Declaro Hooks -> UseContext para usar el state 
    //Acceder el state de auth 
    const valorContext = useContext(UsuarioContext);
    const { registrarUsuario, mensaje, registro } = valorContext;
 
-
    //Metodos Funcionales 
 
    //función : Para capturar el valor del captcha 
    function getValCapctha(value) {
       setvalcaptcha(value);
-      console.log("Captcha value:", value);
    }
 
    //función: Esquema de validaciones 
@@ -205,12 +201,12 @@ const crear = () => {
                         className="btn-green cursor-pointer w-full"
                         value="Crear Cuenta"
                      />
-                     {mensaje != null && registro == null ? (
+                     {mensaje != null && registro == false ? (
                         <Error mensaje={mensaje} ></Error>
                      ) : null}
 
 
-                     {mensaje != null && registro != null ? (
+                     {mensaje != null && registro == true ? (
                         <Success mensaje={mensaje} ></Success>
                      ) : null}
 
@@ -222,5 +218,15 @@ const crear = () => {
       </Layout>
    );
 }
+
+crear.propTypes = {
+     getValCapctha: PropTypes.func,
+     valcaptcha: PropTypes.string,
+     confirmaRobot: PropTypes.bool,
+     valorContext:  PropTypes.object,
+     formik:  PropTypes.object,
+   
+};
+
 
 export default crear;

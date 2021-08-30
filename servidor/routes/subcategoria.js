@@ -8,6 +8,9 @@ const subcategoriaCotroller = require('../controller/subcategoriaCotroller');  /
 //Importamos el validador de Token para ejecutar esta tarea 
 const auth = require('../middleware/auth');
 
+//importamos helper 
+const { validaCampos } = require('../middleware/helpers');
+
 //End-Point - Crear Categorias
 router.post('/create',
       auth,
@@ -16,12 +19,10 @@ router.post('/create',
             check('nomCate', 'El nombre de la subcategoria es obligatorio.').not().isEmpty(), //Valida vacio
             check('autor', 'El Autor es obligatorio.').not().isEmpty(), //Valida vacio
             check('nomCate', 'El nombre de la categoria debe ser de al menos 6 caracteres.').isLength({ min: 6 }), //Valida minimo 6 caracteres
+            validaCampos
       ],
       subcategoriaCotroller.createSubcategoria
 );
-
-
-
 
 //End-Point - Consultar Subcategoria
 router.post('/get-subcat',
@@ -31,14 +32,21 @@ router.post('/get-subcat',
             check('nomCate', 'El nombre de la subcategoria es obligatorio.').not().isEmpty(), //Valida vacio
             check('autor', 'El Autor es obligatorio.').not().isEmpty(), //Valida vacio
             check('nomCate', 'El nombre de la categoria debe ser de al menos 6 caracteres.').isLength({ min: 6 }), //Valida minimo 6 caracteres
+            validaCampos
       ],
       subcategoriaCotroller.getSubcategoria
 );
 
-//End-Point - Consultar Subcategoria
-
-
 //End-Point - Editar SubCategoria
+router.post('/edit-subcat',
+      auth,
+      [
+            check('id', 'La clave PK es obligatoria.').not().isEmpty(), //Valida vacio
+            check('categoria', 'La categoria es obligatoria.').not().isEmpty(), //Valida vacio
+            validaCampos
+      ],
+      subcategoriaCotroller.updateSubCategoria
+);
 
 
 //End-Point - Eliminar SubCategoria
@@ -47,10 +55,9 @@ router.post('/del-subcat',
       [
             check('id', 'Debes indicar que tipo de consulta deseas.').not().isEmpty(), //Valida vacio
             check('nomCate', 'El nombre de la subcategoria es obligatorio.').not().isEmpty(), //Valida vacio
+            validaCampos
       ],
       subcategoriaCotroller.deleteSubCategoria
 );
-
-
 
 module.exports = router;

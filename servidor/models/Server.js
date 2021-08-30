@@ -32,7 +32,7 @@ class Server{
 		 
 		//Rutas de Accesos Para las APIS 
 		//Router  Acción
-		this.app.use('/api/accion',    require('../routes/accion'));
+		this.app.use('/api/acto',    require('../routes/acto'));
 
 		//Router Actividad  
 		this.app.use('/api/actividad', require('../routes/actividad'));

@@ -9,10 +9,10 @@ import subcategoriaReducer from './subcategoriaReducer';
 import {
     LISTAR_SUBCATEGORIA,
     LISTAR_SUBCATEGORIA_ERROR,
-    CREAR_SUBCATEGORIA_ERROR,
-    CREAR_SUBCATEGORIA_EXITO,
     ELIMINAR_SUBCATEGORIA_ERROR,
-    ELIMINAR_SUBCATEGORIA_EXITO
+    ELIMINAR_SUBCATEGORIA_EXITO,
+    MUTAR_SUBCATEGORIA_ERROR,
+    MUTAR_SUBCATEGORIA_EXITO, 
 } from '../../types';
 
 
@@ -97,8 +97,7 @@ const SubcategoriaState = ({ children }) => {
             });
         }
 
-    }
-
+    }//fin del metodo 
 
     //Metodo: Registra una Categoria
     const crearSubCategoria = async (datos) => {
@@ -128,7 +127,7 @@ const SubcategoriaState = ({ children }) => {
 
                     if (response.data.success == true) {
                         dispatch({
-                            type: CREAR_SUBCATEGORIA_EXITO, //Es la accion a ejecutar
+                            type: MUTAR_SUBCATEGORIA_EXITO, //Es la accion a ejecutar
                             payload: response.data.msg  //Son los datos que modifica el state 
                         });
 
@@ -140,7 +139,7 @@ const SubcategoriaState = ({ children }) => {
                     } else {
 
                         dispatch({
-                            type: CREAR_SUBCATEGORIA_ERROR, //Es la accion a ejecutar
+                            type: MUTAR_SUBCATEGORIA_EXITO, //Es la accion a ejecutar
                             payload: response.data.msg  //Son los datos que modifica el state 
                         });
 
@@ -149,19 +148,19 @@ const SubcategoriaState = ({ children }) => {
 
                 }).catch((response) => {
                     dispatch({
-                        type: CREAR_SUBCATEGORIA_ERROR, //Es la accion a ejecutar
+                        type: MUTAR_SUBCATEGORIA_EXITO, //Es la accion a ejecutar
                         payload: response.data.msg  //Son los datos que modifica el state 
                     });
                 });
 
         } catch (error) {
             dispatch({
-                type: CREAR_SUBCATEGORIA_ERROR, //Es la accion a ejecutar
+                type: MUTAR_SUBCATEGORIA_EXITO, //Es la accion a ejecutar
                 payload: "Hubo un problema con el servidor"  //Son los datos que modifica el state 
             });
         }
 
-    }
+    }//fin del metodo 
 
     //Metodo: Permite eliminar el registro de una SubCategoria
     const deleteSubCategoria = async (id, nombre)=>{
@@ -210,7 +209,66 @@ const SubcategoriaState = ({ children }) => {
         }
 
     }//fin del metodo 
+    
+    //Metodo:  Permite eliminar el registro de una Categoria
+    const editSubCategoria = async (datos)=>{
+    
+        try {
+
+            const token = localStorage.getItem('token');
+            
+            if (token){
+                //funcion para enviar el token por header 
+                tokenAuth(token);
+            }
+            
+            const data = { 
+                id:datos.id, 
+                nomCate:datos.nomCate,
+                desCate:datos.desCate,
+                categoria:datos.categoria
+            }
+
+            const respuesta = await clienteAxios.post('/api/subcategoria/edit-subcat', data)
+                .then((response) => {
+
+                    console.log(response)
+
+                    if( response.data.success == true ){
+                        dispatch({
+                            type: MUTAR_SUBCATEGORIA_EXITO, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        }); 
+
+                        alerta.deploySucces();
+                    }else{
+
+                        dispatch({
+                            type: MUTAR_SUBCATEGORIA_ERROR, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        });   
+                        alerta.deployFault();
+
+                    }
+            });             
+         
+        } catch (error) {
+            dispatch({
+                type: MUTAR_SUBCATEGORIA_ERROR, //Es la accion a ejecutar
+                payload: `Hubo un problema con el servidor.`  //Son los datos que modifica el state 
+            }); 
+
+            alerta.deployFault();
+        }
+         
+        
+
+    }//fin del metodo     
+    
+    
     //Metodo:  
+
+
 
     return (
         <SubcategoriaContext.Provider
@@ -224,7 +282,8 @@ const SubcategoriaState = ({ children }) => {
                 elimiSubCat: state.elimiSubCat,
                 listarSubCategoria,
                 crearSubCategoria,
-                deleteSubCategoria
+                deleteSubCategoria,
+                editSubCategoria
             }}
         >
             {children}

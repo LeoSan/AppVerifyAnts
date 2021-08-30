@@ -39,3 +39,13 @@
 [2021-07-27T20:13:44.954] [INFO] sendMail - Email messageId: <bc2a68b1-d3be-2927-0dc0-72ea58cf6f29@gmail.com>
 [2021-07-27T22:19:57.069] [INFO] sendMail - Email Respuesta: 250 2.0.0 Ok: queued
 [2021-07-27T22:19:57.078] [INFO] sendMail - Email messageId: <e0129cfc-4d74-ee88-2ccb-9948fdf6d9b7@gmail.com>
+[2021-08-24T17:42:45.482] [INFO] sendMail - Email Respuesta: 250 2.0.0 Ok: queued
+[2021-08-24T17:42:45.489] [INFO] sendMail - Email messageId: <1b37d6ad-30d0-dfaf-989f-6e2bfaf39c22@gmail.com>
+[2021-08-24T18:00:17.319] [INFO] sendMail - Email Respuesta: 250 2.0.0 Ok: queued
+[2021-08-24T18:00:17.327] [INFO] sendMail - Email messageId: <458052d9-0530-62f1-dd68-8d6eea74a389@gmail.com>
+[2021-08-24T18:05:47.465] [INFO] sendMail - Email Respuesta: 250 2.0.0 Ok: queued
+[2021-08-24T18:05:47.473] [INFO] sendMail - Email messageId: <e9adbb9f-da34-a721-012a-4a32599a0b19@gmail.com>
+[2021-08-25T12:07:37.592] [INFO] sendMail - Email Respuesta: 250 2.0.0 Ok: queued
+[2021-08-25T12:07:37.608] [INFO] sendMail - Email messageId: <4b53502f-1a48-849a-c35a-78819225a137@gmail.com>
+[2021-08-25T12:12:04.126] [INFO] sendMail - Email Respuesta: 250 2.0.0 Ok: queued
+[2021-08-25T12:12:04.132] [INFO] sendMail - Email messageId: <2807f60d-f5ae-4dfc-800d-ed5c402be3a0@gmail.com>

@@ -1,0 +1,161 @@
+//Importo librerias React 
+import React, { useReducer } from 'react';
+
+//Importo context y reducer 
+import ActoContext from "./ActoContext";
+import actoReducer from './actoReducer';
+
+import {
+    LISTAR_ACTO,
+    LISTAR_ACTO_ERROR,
+    ELIMINAR_ACTO_ERROR,
+    ELIMINAR_ACTO_EXITO,
+    MUTAR_ACTO_ERROR,
+    MUTAR_ACTO_EXITO,
+} from '../../types';
+
+//Importo nuetsra libreria axios para conectar con el servidor 
+import clienteAxios from '../../config/axios';
+import tokenAuth from '../../config/tokenAuth';
+import Alerta from '../../components/ui/Alerta';
+
+
+const ActoState = ({ children }) => {
+
+    //Declaración Variables o Instancias de clases 
+    const alerta = new Alerta();
+
+    // Crear state inicial
+    const inicialState = {
+        msgListActo: null,
+        acto: null,
+        msgMutaActo: null,
+        msgDeleteActo: null,
+        mutaActo: null,
+        elimiActo: null
+    }
+
+    // Definimos Reducer 
+    const [state, dispatch] = useReducer(actoReducer, inicialState);
+
+    //Funciones Generales 
+    //Metodo:  Registra un usuario 
+    const listarActo = async (datos) => {
+
+        try {
+
+            const token = localStorage.getItem('token');
+
+            if (token) {
+                //funcion para enviar el token por header 
+                tokenAuth(token);
+            }
+
+            // nomCate, autor, activo, tipo
+            const data = {
+                nomCate: datos.nickEmail,
+                autor: datos.nickID,
+                activo: 1,
+                tipo: "1-M-A"
+            }
+
+            //console.log("Desde cliente ->", data);
+
+            const respuesta = await clienteAxios.post('/api/acto/get-acto', data)
+                .then((response) => {
+
+                    if (response.data.success == true) {
+                        dispatch({
+                            type: LISTAR_ACTO, //Es la accion a ejecutar
+                            payload: response.data.acto  //Son los datos que modifica el state 
+                        });
+
+                    } else {
+
+                        dispatch({
+                            type: LISTAR_ACTO_ERROR, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        });
+
+                    }
+
+
+                }); //Fin de la async 
+
+        } catch (error) {
+            dispatch({
+                type: LISTAR_ACTO_ERROR, //Es la accion a ejecutar
+                payload: "Hubo un problema con el servidor"  //Son los datos que modifica el state 
+            });
+        }
+
+    }//fin del metodo 
+
+    //Metodo: Registra una Categoria
+    const crearActo = async (datos) => {
+
+        try {
+
+            const token = localStorage.getItem('token');
+
+            if (token) {
+                //funcion para enviar el token por header 
+                tokenAuth(token);
+            }
+
+            // nomCate, autor, activo, tipo
+            const data = {
+                nomActo: datos.nomActo,
+                desActo: datos.desActo,
+                categoria: datos.categoria,
+                autor: datos.autor,
+            }
+
+            const respuesta = await clienteAxios.post('/api/acto/create-acto', data)
+                .then((response) => {
+
+                    console.log(response.data);
+
+                    if (response.data.success == true) {
+                        dispatch({
+                            type: MUTAR_ACTO_EXITO, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        });
+
+                    } else {
+
+                        dispatch({
+                            type: MUTAR_ACTO_ERROR, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        });
+                    }
+                });
+
+        } catch (error) {
+            dispatch({
+                type: MUTAR_ACTO_ERROR, //Es la accion a ejecutar
+                payload: "Hubo un problema con el servidor"  //Son los datos que modifica el state 
+            });
+        }
+
+    }//fin del metodo 
+
+    return (
+        <ActoContext.Provider
+            value={{
+                msgListActo: state.msgListActo,
+                acto: state.acto,
+                msgMutaActo: state.msgMutaActo,
+                msgDeleteActo: state.msgDeleteActo,
+                mutaActo: state.mutaActo,
+                elimiActo: state.elimiActo,
+                listarActo,
+                crearActo
+            }}
+        >
+            {children}
+        </ActoContext.Provider>
+    )
+}
+
+export default ActoState;
