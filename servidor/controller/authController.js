@@ -39,7 +39,7 @@ exports.autenticarUsuario = async (req, res, next) => {
             //Este metodo (autenticarUsuario) es un async y el metodo helper validarCaptcha es otro async,  da error  <pending> ya que no pueden estar dos metodos async anidados 
             // La manera de resolver esto es usando promesa y esta es la manera de como se implementa  
 
-         validarCaptcha(req).then(resultado => {  
+ /*        validarCaptcha(req).then(resultado => {  
                     console.log('Resultado del Recaptcha'.green, resultado);
                     if (resultado !== 'ok' ){
                         return res.status(200).json({msg: `Problemas con el captcha, Debes refrescar la pagina por favor` , success:false});
@@ -48,7 +48,7 @@ exports.autenticarUsuario = async (req, res, next) => {
          .catch(err=> {
             return res.status(200).json({msg: `Problemas de conexión!!` , success:false});
          } );//Ejecuta el lado reject 
-
+*/
         //************Fin ******
         
         //Validar si el usurio esta activo 
@@ -110,33 +110,23 @@ exports.autenticarUsuarioToken = async (req, res) => {
             return res.status(401).json({success: false, msg:'Contraseña incorrecto'});
         }
 
-        /* Inicio  captcha */
-        //Revisar si envio captcha
-        if (!captcha)
-            return res.status(401).json({ success: false, msg: 'Por favor seleccionar el captcha.' });
-    
-        // Secret key - De  mi cuenta Google 
-        const secretKey = '6LdxEHIUAAAAAKaXkVCS8lF-yW2LXHAU3Z-BqW4V';
 
-        // Verify URL
-        const query = stringify({
-            secret: secretKey,
-            response: req.body.captcha,
-            remoteip: req.connection.remoteAddress
-        });
-        
-        const verifyURL = `https://google.com/recaptcha/api/siteverify?${query}`;
- 
-        // Make a request to verifyURL
-        const result = await fetch(verifyURL).then(res => res.json());
-        
-        logsCotroller.logsCRUD(`Resultado captcha !! -> ${ result.success } `);
 
-        // If not successful
-        if (result.success !== undefined && !result.success)
-            return res.status(401).json({ success: false, msg: 'Fallo captcha verification.' });
+        //******Inicio ******//  Nota Leonard:  
+            //Este metodo (autenticarUsuario) es un async y el metodo helper validarCaptcha es otro async,  da error  <pending> ya que no pueden estar dos metodos async anidados 
+            // La manera de resolver esto es usando promesa y esta es la manera de como se implementa  
 
-        /* Fin  captcha */
+         validarCaptcha(req).then(resultado => {  
+                    console.log('Resultado del Recaptcha'.green, resultado);
+                    if (resultado !== 'ok' ){
+                        return res.status(200).json({msg: `Problemas con el captcha, Debes refrescar la pagina por favor` , success:false});
+                    }
+        } ) //Ejecuta el lado bueno 
+         .catch(err=> {
+            return res.status(200).json({msg: `Problemas de conexión!!` , success:false});
+         } );//Ejecuta el lado reject 
+
+        //************Fin ******
 
         
         //Validar si el usurio esta activo 
@@ -156,7 +146,7 @@ exports.autenticarUsuarioToken = async (req, res) => {
                     }, (error, token)=>{
                         if( error ) throw error; 
                         //Mensaje de confirmación 
-                        res.status(201).json({ token:token })
+                        res.status(201).json({ token:token, success:true  })
                     });
         }else{
             return res.status(401).json({success: false, msg:'El usuario no esta activo.'}); 

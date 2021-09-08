@@ -26,12 +26,17 @@ router.post('/create-acto',
 );
 
 //End-Point - Consultar Acto 
-/*
-router.get('/get-acto',
+
+router.post('/get-acto',
       auth,  
-      actoCotroller.getAccion
+        [
+            check('autor',  'El Autor es obligatorio.').not().isEmpty(), 
+            check('tipo',   'El tipo de consulta es obligatario.').not().isEmpty(), 
+            validaCampos
+        ] ,       
+      actoCotroller.getActo
 );
-*/
+
 
 //End-Point - Consultar Acto  por fecha 
 /*router.get('/a-between-fecha',
@@ -55,9 +60,14 @@ router.put('/edit-acto',
 */
 //End-Point - Eliminar Acto
 
-/*router.delete('/del-acto', 
+router.post('/del-acto', 
       auth,
-      actoCotroller.deleteAccion
+        [
+            check('id',      'El Autor es obligatorio.').not().isEmpty(), 
+            check('nomActo', 'El nombre del acto es obligatorio.').not().isEmpty(), 
+            validaCampos
+        ] ,      
+      actoCotroller.deleteActo
 );
-*/
+
 module.exports = router;

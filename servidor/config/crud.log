@@ -81,3 +81,7 @@
 [2021-08-30T17:56:35.054] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.actos index: nomAccion_1 dup key: { nomAccion: null } 
 [2021-08-30T17:58:47.896] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.actos index: nomAccion_1 dup key: { nomAccion: null } 
 [2021-08-30T18:01:20.852] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.actos index: nomAccion_1 dup key: { nomAccion: null } 
+[2021-09-04T01:57:26.808] [ERROR] crud - Hubo un error en la comunicación !! -> MissingSchemaError: Schema hasn't been registered for model ">ategoria".
+Use mongoose.model(name, schema) 
+[2021-09-04T01:57:43.042] [ERROR] crud - Hubo un error en la comunicación !! -> MissingSchemaError: Schema hasn't been registered for model ">ategoria".
+Use mongoose.model(name, schema) 

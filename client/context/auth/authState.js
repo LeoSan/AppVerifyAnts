@@ -131,12 +131,7 @@ const AuthState = ({children}) => {
                     }
 
 
-              }).catch((response) => {
-                    dispatch({
-                        type: LOGIN_ERROR, //Es la accion a ejecutar
-                        payload: "Hubo problema con el servidor."  //Son los datos que modifica el state 
-                    }); 
-              }); 
+              })
             
         } catch (error) {
             dispatch({

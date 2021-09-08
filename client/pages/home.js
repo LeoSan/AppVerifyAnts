@@ -1,5 +1,5 @@
 //Importar Librerias React 
-import React, {useContext, useEffect} from 'react';
+import React from 'react';
 
 //Importo Componentes 
 import Layout from '../components/layout/Layout';

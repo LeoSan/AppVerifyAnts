@@ -48,11 +48,13 @@ const Actoform = ({ view }) => {
   const { nickID } = valorAuthContext;
 
   //Acceder el stateContext de ActoContext 
-  const valorActohContext = useContext(ActoContext);
-  const { crearActo, msgMutaActo, mutaActo } = valorActohContext;
+  const valorActoContext = useContext(ActoContext);
+  const { crearActo,listarActo, msgMutaActo, mutaActo } = valorActoContext;
 
   //Para poder iterarlo debes transformarlo en un arreglo ya que esta tipo objeto la categoria  
   ListActo = []; // acto;
+   const datos = { nickID }
+
 
   //Metodos Funcionales Generales 
 
@@ -86,6 +88,7 @@ const Actoform = ({ view }) => {
         } else {
           //Envio valores al state 
           crearActo(formData);
+          listarActo(datos);
 
         }
 

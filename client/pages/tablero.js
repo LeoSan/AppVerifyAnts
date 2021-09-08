@@ -28,8 +28,8 @@ const Home = () => {
    useEffect(()=>{
 
     if(!autenticado){
-      router.push('/')
-      console.log("autenticado->", autenticado);
+     // router.push('/')
+      console.log("Estoy en tablero autenticado->", autenticado);
     }
 
  },[autenticado])
