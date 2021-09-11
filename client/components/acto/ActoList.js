@@ -7,18 +7,13 @@ const Swal = require('sweetalert2');
 import { PencilIcon, TrashIcon, PlusCircleIcon } from '@heroicons/react/solid'
 
 //Importamos nuestros  useContext (Hooks)
-//Importamos nuestros  useContext (Hooks)
 import AuthContext from '../../context/auth/AuthContext';
-import CategoriaContext from '../../context/categoria/categoriaContext';
 import ActoContext from '../../context/acto/ActoContext';
 
 
 const ActoList = ({ view }) => {
-
+    
     //Declaro Hooks -> UseContext para usar el state 
-    //Acceder el stateContext  de Categoria 
-    const valorContext = useContext(CategoriaContext);
-    const { categoria } = valorContext;
 
     //Acceder el stateContext de auth 
     const valorAuthContext = useContext(AuthContext);
@@ -28,6 +23,9 @@ const ActoList = ({ view }) => {
     const valorActoContext = useContext(ActoContext);
     const { deleteActo, listarActo, acto} = valorActoContext;
 
+    //Declaro Hook    
+    //Redireccionar   
+    const router = useRouter()    
 
     //Declaración Variables
     const datos = { nickID }
@@ -35,12 +33,16 @@ const ActoList = ({ view }) => {
     //Declaro UseEffect   
     useEffect(() => {
         listarActo(datos);
-        
     }, []);
 
 
+    //Función : Permite Enviar y redicreccionar parametros 
     const linkEditarActo = (id)=>{
-
+            //e.preventDefault();
+            router.push({
+                pathname: '/actoform',
+                query: { id: id },
+              })
 
     }
 
@@ -82,13 +84,13 @@ const ActoList = ({ view }) => {
                             scope="col"
                             className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
                         >
-                            Catálogo
+                        Descripción
                         </th>
                         <th
                             scope="col"
                             className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
                         >
-                            Descripción
+                        Catálogo 
                         </th>
 
                         <th

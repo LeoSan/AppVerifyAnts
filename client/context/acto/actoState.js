@@ -74,12 +74,8 @@ const ActoState = ({ children }) => {
                             type: LISTAR_ACTO_ERROR, //Es la accion a ejecutar
                             payload: response.data.msg  //Son los datos que modifica el state 
                         });
-
                     }
-
-
                 }); //Fin de la async 
-
         } catch (error) {
             dispatch({
                 type: LISTAR_ACTO_ERROR, //Es la accion a ejecutar
@@ -119,6 +115,8 @@ const ActoState = ({ children }) => {
                             type: MUTAR_ACTO_EXITO, //Es la accion a ejecutar
                             payload: response.data.msg  //Son los datos que modifica el state 
                         });
+                        
+                         alerta.deploySucces();
 
                     } else {
 
@@ -126,6 +124,7 @@ const ActoState = ({ children }) => {
                             type: MUTAR_ACTO_ERROR, //Es la accion a ejecutar
                             payload: response.data.msg  //Son los datos que modifica el state 
                         });
+                        alerta.deployFault();
                     }
                 });
 
@@ -134,6 +133,7 @@ const ActoState = ({ children }) => {
                 type: MUTAR_ACTO_ERROR, //Es la accion a ejecutar
                 payload: "Hubo un problema con el servidor"  //Son los datos que modifica el state 
             });
+            alerta.deployFault();
         }
 
     }//fin del metodo 
@@ -186,6 +186,56 @@ const ActoState = ({ children }) => {
 
     }//fin del metodo 
 
+    //Metodo: Permite eliminar el registro de una SubCategoria
+    const editActo = async (datos)=>{
+    
+        try {
+
+            const token = localStorage.getItem('token');
+            
+            if (token){
+                //funcion para enviar el token por header 
+                tokenAuth(token);
+            }
+            const data = { 
+                id:datos.id, 
+                nomActo:datos.nomActo,
+                desActo:datos.desActo,
+                categoria:datos.categoria
+            }
+
+            const respuesta = await clienteAxios.post('/api/acto/edit-acto', data)
+                .then((response) => {
+
+                    if( response.data.success == true ){
+                        dispatch({
+                            type: MUTAR_ACTO_EXITO, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        }); 
+
+                        alerta.deploySucces();
+                    }else{
+
+                        dispatch({
+                            type: MUTAR_ACTO_ERROR, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        });   
+                        alerta.deployFault();
+                    }
+            });   
+
+         
+        } catch (error) {
+            dispatch({
+                type: MUTAR_ACTO_ERROR, //Es la accion a ejecutar
+                payload: `Hubo un problema con el servidor ${error}`  //Son los datos que modifica el state 
+            }); 
+
+            alerta.deployFault();
+        }
+
+    }//fin del metodo 
+
     return (
         <ActoContext.Provider
             value={{
@@ -197,7 +247,8 @@ const ActoState = ({ children }) => {
                 elimiActo: state.elimiActo,
                 listarActo,
                 crearActo,
-                deleteActo
+                deleteActo,
+                editActo
             }}
         >
             {children}

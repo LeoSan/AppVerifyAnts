@@ -49,10 +49,10 @@ const Actoform = ({ view }) => {
 
   //Acceder el stateContext de ActoContext 
   const valorActoContext = useContext(ActoContext);
-  const { crearActo,listarActo, msgMutaActo, mutaActo } = valorActoContext;
+  const { crearActo,listarActo, editActo,  msgMutaActo, mutaActo, acto } = valorActoContext;
 
   //Para poder iterarlo debes transformarlo en un arreglo ya que esta tipo objeto la categoria  
-  ListActo = []; // acto;
+  ListActo = acto;
    const datos = { nickID }
 
 
@@ -83,14 +83,18 @@ const Actoform = ({ view }) => {
         if (id) {
           //state para Editar 
           formData.id = id;
-          //  editSubCategoria(formData);
+          editActo(formData);
 
         } else {
-          //Envio valores al state 
+          //state para Crear
           crearActo(formData);
-          listarActo(datos);
 
         }
+
+          //Luego que el usuario vea el mensaje refresco la lista 
+          setTimeout(() => {
+            listarActo(datos);  
+          }, 10000);
 
 
       } catch (error) {
@@ -101,38 +105,38 @@ const Actoform = ({ view }) => {
 
 
 
-  //Función: Permite encontrar que categoria editar 
-  const getActoId = (arreglo, id, formik) => {
-    // console.log("Paso 1-> id->",id); //Paso 1-> id-> undefined
+    //Función: Permite encontrar que categoria editar 
+    const getActoId = (arreglo, id, formik) => {
+      // console.log("Paso 1-> id->",id); //Paso 1-> id-> undefined
 
-    /*   if (id) {
-          //Forma de buscar la seleccion //Aqui hay un error hay que meterle un condicional cuando el arreglo esta vacio 
-          const result = arreglo.find(({ _id }) => _id === id);
-          // Forma de extraer e incorporar en los campos del formulario 
-          //console.log("result", result);
-          setformval({
-               categoria: result.categoria._id,
-               nomActo: 'Ingrese Acto',
-               desActo: 'Ingrese Descripción',
-          })
-   
-          //Permite set select e input con el valor a editar    
-          document.getElementById("categoria").value = result.categoria._id;
-          document.getElementById("nomActo").value = result.nomActo;
-          document.getElementById("desActo").value = result.desActo;
-   
-          //Inicializo el formik cuando es editar 
-          formik.initialValues.categoria = result.categoria._id;
-          formik.initialValues.nomActo = result.nomActo;
-          formik.initialValues.desActo = result.desActo;
-          return result;
-       }*/
+         if (id) {
+            //Forma de buscar la seleccion //Aqui hay un error hay que meterle un condicional cuando el arreglo esta vacio 
+            const result = arreglo.find(({ _id }) => _id === id);
+            // Forma de extraer e incorporar en los campos del formulario 
+            //console.log("result", result);
+            setformval({
+                 categoria: result.categoria._id,
+                 nomActo: 'Ingrese Acto',
+                 desActo: 'Ingrese Descripción',
+            })
+     
+            //Permite set select e input con el valor a editar    
+            document.getElementById("categoria").value = result.categoria._id;
+            document.getElementById("nomActo").value = result.nomActo;
+            document.getElementById("desActo").value = result.desActo;
+     
+            //Inicializo el formik cuando es editar 
+            formik.initialValues.categoria = result.categoria._id;
+            formik.initialValues.nomActo = result.nomActo;
+            formik.initialValues.desActo = result.desActo;
+            return result;
+         }
   }
 
   //Declaro UseEffect   
   //Metodo: Permite incorporar al campo de los formulario la categoria seleccionada    
   useEffect(() => {
-    getActoId(ListActo, id, formik);
+      getActoId(ListActo, id, formik);
   }, []);
 
 

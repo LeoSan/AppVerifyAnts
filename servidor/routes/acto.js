@@ -1,11 +1,11 @@
 //Importamos la librerias de express
 const express = require('express');
-const {check} = require('express-validator');
-const router  = express.Router();
+const { check } = require('express-validator');
+const router = express.Router();
 //Controlador 
-const actoCotroller = require('../controller/actoCotroller'); 
+const actoCotroller = require('../controller/actoCotroller');
 //Importamos el validador de Token para ejecutar esta tarea 
-const auth  = require('../middleware/auth');
+const auth = require('../middleware/auth');
 
 //importamos helper 
 const { validaCampos } = require('../middleware/helpers');
@@ -13,27 +13,27 @@ const { validaCampos } = require('../middleware/helpers');
 
 //End-Point - Crear Acto 
 router.post('/create-acto',
-        auth,
-        [
-            check('nomActo',    'El nombre de la categoria es obligatorio.').not().isEmpty(), 
-            check('desActo',    'El nombre de la categoria es obligatorio.').not().isEmpty(), 
-            check('autor',      'El Autor es obligatorio.').not().isEmpty(), 
-            check('categoria',  'La Categoria es obligatorio.').not().isEmpty(), 
-            check('nomActo',    'El nombre de la categoria debe ser de al menos 6 caracteres.').isLength({min:6}), //Valida minimo 6 caracteres
+      auth,
+      [
+            check('nomActo', 'El nombre de la categoria es obligatorio.').not().isEmpty(),
+            check('desActo', 'El nombre de la categoria es obligatorio.').not().isEmpty(),
+            check('autor', 'El Autor es obligatorio.').not().isEmpty(),
+            check('categoria', 'La Categoria es obligatorio.').not().isEmpty(),
+            check('nomActo', 'El nombre de la categoria debe ser de al menos 6 caracteres.').isLength({ min: 6 }), //Valida minimo 6 caracteres
             validaCampos
-        ] , 
-        actoCotroller.newActo 
+      ],
+      actoCotroller.newActo
 );
 
 //End-Point - Consultar Acto 
 
 router.post('/get-acto',
-      auth,  
-        [
-            check('autor',  'El Autor es obligatorio.').not().isEmpty(), 
-            check('tipo',   'El tipo de consulta es obligatario.').not().isEmpty(), 
+      auth,
+      [
+            check('autor', 'El Autor es obligatorio.').not().isEmpty(),
+            check('tipo', 'El tipo de consulta es obligatario.').not().isEmpty(),
             validaCampos
-        ] ,       
+      ],
       actoCotroller.getActo
 );
 
@@ -52,21 +52,25 @@ router.post('/get-acto',
 */
 
 //End-Point - Editar Acto
-/*
-router.put('/edit-acto', 
+router.post('/edit-acto',
       auth,
-      actoCotroller.updateAccion
+      [
+            check('id', 'Campo PK Obligatorio.').not().isEmpty(),
+            check('nomActo', 'El nombre del acto es obligatorio.').not().isEmpty(),
+            validaCampos
+      ],
+      actoCotroller.updateActo
 );
-*/
+
 //End-Point - Eliminar Acto
 
-router.post('/del-acto', 
+router.post('/del-acto',
       auth,
-        [
-            check('id',      'El Autor es obligatorio.').not().isEmpty(), 
-            check('nomActo', 'El nombre del acto es obligatorio.').not().isEmpty(), 
+      [
+            check('id', 'Campo PK Obligatorio.').not().isEmpty(),
+            check('nomActo', 'El nombre del acto es obligatorio.').not().isEmpty(),
             validaCampos
-        ] ,      
+      ],
       actoCotroller.deleteActo
 );
 

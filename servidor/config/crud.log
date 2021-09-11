@@ -85,3 +85,7 @@
 Use mongoose.model(name, schema) 
 [2021-09-04T01:57:43.042] [ERROR] crud - Hubo un error en la comunicación !! -> MissingSchemaError: Schema hasn't been registered for model ">ategoria".
 Use mongoose.model(name, schema) 
+[2021-09-08T15:17:43.231] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-08T15:17:44.367] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-08T15:21:16.776] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-10T16:04:44.339] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 

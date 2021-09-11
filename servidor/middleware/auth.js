@@ -27,6 +27,7 @@ module.exports = (req, res, next) => {
         req.usuario = cifrado.usuario; // objeto usuario | payload
         next() // Vaya al siguiente middleware
     } catch (error) {
+        logsCotroller.logsCRUD(`Resultado captcha !! -> ${ error } `);
         res.status(401).json({msg: 'Token no válido'});
     }
 }
