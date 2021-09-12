@@ -11,9 +11,13 @@ import AuthContext from '../../context/auth/AuthContext';
 import ActoContext from '../../context/acto/ActoContext';
 
 
+//Importar UI 
+import Alerta from '../../components/ui/Alerta';
+
 const ActoSemana = ({ view }) => {
 
     //Declaro Hooks -> UseContext para usar el state 
+   const  alerta = new Alerta();
 
     //Acceder el stateContext de auth 
     const valorAuthContext = useContext(AuthContext);
@@ -31,7 +35,13 @@ const ActoSemana = ({ view }) => {
         listarActo(datos);
     }, []);
 
+    const dialogCheck = async(id)=>{
 
+        const formValues = alerta.deployModal();
+        console.log(formValues);
+     
+
+    }
 
 
 
@@ -43,8 +53,8 @@ const ActoSemana = ({ view }) => {
             <div className="rounded-t-xl p-2 bg-gradient-to-r from-gray-50 to-gray-200">
                 <div className="flex space-x-4">
                     
-                    <div className="flex-none w-16 h-10 rounded-md bg-green-500 text-white text-2xl font-extrabold flex items-center justify-center">
-                        <svg className="w-5 h-5 cursor-pointer" fill="none">
+                    <div className="flex-none w-16 h-10 rounded-md bg-green-500 text-white text-2xl font-extrabold flex items-center justify-center cursor-pointer shadow-sm">
+                        <svg className="w-5 h-5" fill="none">
                                 <ArrowSmLeftIcon className="w-6 cursor-pointer" />
                         </svg>
                     </div>
@@ -55,8 +65,8 @@ const ActoSemana = ({ view }) => {
                             </svg>
                             Semana: <span className="text-gray-200"> 36</span>
                     </div>
-                    <div className="flex-none w-16 h-10 rounded-md bg-green-500 text-white text-2xl font-extrabold flex items-center justify-center">
-                    <svg className="w-5 h-5 cursor-pointer" fill="none">
+                    <div className="flex-none w-16 h-10 rounded-md bg-green-500 text-white text-2xl font-extrabold flex items-center justify-center cursor-pointer shadow-sm">
+                    <svg className="w-5 h-5" fill="none">
                          <ArrowSmRightIcon className="w-6" />
                     </svg>
                     </div>
@@ -118,14 +128,14 @@ const ActoSemana = ({ view }) => {
 
                         <tbody className="bg-white divide-y divide-gray-200">
                             {acto.map((list) => (
-
-                                <tr key={list._id} className="text-center hover:bg-yellow-100">
-
+                                <tr key={list._id} className="text-left hover:bg-yellow-100">
                                     <td className="px-6 py-4 whitespace-nowrap capitalize">
+                                        { list.categoria.nomCate }
+                                        &nbsp;&nbsp;
                                         {list.nomActo}
                                     </td>
-                                    <td className="px-6 py-4 ">
-                                        check
+                                    <td className="px-6 py-4 text-center">
+                                        <input type="checkbox" onClick={ ()=>dialogCheck( list._id )  }  />
                                     </td>
                                     <td className="px-6 py-4 ">
                                         check

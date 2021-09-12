@@ -13,7 +13,6 @@ class Alert {
         
     }
 
-
     deploySucces(){
       Swal.fire({
         position: 'center',
@@ -33,6 +32,30 @@ class Alert {
         timer: 1500
       })
     }
+
+    deployModal = async()=>{
+
+      const { value: formValues } = await  Swal.fire({
+        title: 'Bitácora Actividad',
+        html:
+          'Duración :<input id="swal-input1" class="swal2-input">' +
+          'Nota :<textarea id="swal-input2" class="swal2-input"> </textarea>',
+        focusConfirm: false,
+        showCancelButton: true,
+        confirmButtonText: 'Guardar',
+        confirmButtonColor: '#3085d6',
+        preConfirm: () => {
+          return [
+            document.getElementById('swal-input1').value,
+            document.getElementById('swal-input2').value
+          ]
+        }
+      })
+
+      return formValues;
+
+
+    }    
 
 }
  
