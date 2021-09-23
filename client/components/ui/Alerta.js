@@ -36,14 +36,15 @@ class Alert {
     deployModal = async()=>{
 
       const { value: formValues } = await  Swal.fire({
-        title: 'Bitácora Actividad',
+        title: '<label class="text-2xl font-bold text-yellow-500 " >Tu Bitácora </label>',
         html:
-          'Duración :<input id="swal-input1" class="swal2-input">' +
-          'Nota :<textarea id="swal-input2" class="swal2-input"> </textarea>',
+          '<div class="mb-4"><label class="label-form">Duración Actividad:</label><input id="swal-input1" class="input-form" type="number" placeholder="Ingrese el total de minutos que duro esta actividad"/></div>' +
+          '<div class="mb-4"><label class="label-form">Incluye una Nota:</label><textarea id="swal-input2" class="input-form" placeholder="Describe tu experiencia para reflexionar" > </textarea></div>'
+        ,
         focusConfirm: false,
         showCancelButton: true,
         confirmButtonText: 'Guardar',
-        confirmButtonColor: '#3085d6',
+        confirmButtonColor: '#10b981',
         preConfirm: () => {
           return [
             document.getElementById('swal-input1').value,

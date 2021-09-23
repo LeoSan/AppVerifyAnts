@@ -2,6 +2,7 @@
 const moment = require('moment');  
 //Modelos 
 const Acto = require('../models/Acto');
+const Actoregistro = require('../models/Actoregistro');
 //Controladores 
 const logsCotroller = require('./logsController'); 
 
@@ -139,6 +140,29 @@ exports.getActoBetweenFecha = async (req, res) =>{
                 res.status(200).json({ acto , success:true});
              }
             
+    } catch (error) {
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
+        res.status(200).json({msg: `Hubo un error en la comunicación !! `, success:false});
+    }
+}
+
+//Obtener Acto fechas Inicio y fin  
+exports.addActoRegistro = async (req, res) =>{
+        
+    try {
+        //Distroccion 
+        const { autor, acto, duracion, nota, dia, checked} = req.body; //->Asi se usa cuando es un objeto 
+
+        try {
+        //Creamos Acto si no esta duplicado 
+            actoregistro = new Actoregistro(req.body);
+            await actoregistro.save();
+            res.status(200).json({msg: `Tu Actividad con nombre  fue creada Exitosamente!!`, success:true});
+        } catch (error) {
+            logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
+            res.status(200).json({msg: `Hubo un error en la comunicación !! `, success:false});
+        }        
+
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(200).json({msg: `Hubo un error en la comunicación !! `, success:false});

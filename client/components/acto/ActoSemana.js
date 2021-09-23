@@ -25,7 +25,7 @@ const ActoSemana = ({ view }) => {
 
     //Acceder el stateContext de ActoContext 
     const valorActoContext = useContext(ActoContext);
-    const { listarActo, acto } = valorActoContext;
+    const { listarActo, crearActoRegistroSemanal, acto } = valorActoContext;
 
     //Declaración Variables
     const datos = { nickID }
@@ -35,11 +35,39 @@ const ActoSemana = ({ view }) => {
         listarActo(datos);
     }, []);
 
-    const dialogCheck = async(id)=>{
 
-        const formValues = alerta.deployModal();
-        console.log(formValues);
-     
+
+
+
+    const dialogCheck = async(acto, dia, checkedId)=>{
+
+        const formValues = await alerta.deployModal();
+        let checked = false;  
+        let duracion = null;
+        let nota = null;
+        
+        if( document.getElementById(checkedId).checked ){
+             checked = true; 
+             document.getElementById( checkedId ).checked = true;
+        }
+
+        document.getElementById( checkedId ).checked = false;
+
+        if ( formValues != undefined){
+            duracion = formValues[0];
+            nota = formValues[1];
+        }
+        
+        const data = {
+            autor: nickID,
+            acto: acto,
+            duracion: duracion,
+            nota: nota,
+            dia: dia,
+            checked:checked
+        }
+        //Envio de valores para el endpoint
+        crearActoRegistroSemanal(data);
 
     }
 
@@ -86,38 +114,38 @@ const ActoSemana = ({ view }) => {
                             scope="col"
                             className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
                         >
-                            Lunes
+                            Lun
                         </th>
                         <th
                             scope="col"
                             className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
                         >
-                            Martes
+                            Mar
                         </th>
 
                         <th
                             scope="col"
                             className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                         >
-                            Miercoles
+                            Mier
                         </th>
                         <th
                             scope="col"
                             className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
                         >
-                            Jueves
+                            Jue
                         </th>
                         <th
                             scope="col"
                             className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
                         >
-                            Viernes
+                            Vier
                         </th>
                         <th
                             scope="col"
                             className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
                         >
-                            Sabado
+                            Sab
                         </th>
 
 
@@ -129,28 +157,28 @@ const ActoSemana = ({ view }) => {
                         <tbody className="bg-white divide-y divide-gray-200">
                             {acto.map((list) => (
                                 <tr key={list._id} className="text-left hover:bg-yellow-100">
-                                    <td className="px-6 py-4 whitespace-nowrap capitalize">
-                                        { list.categoria.nomCate }
+                                    <td className="px-6 py-4 whitespace-nowrap capitalize text-sm" >
+                                        <span className="bg-white font-bold"> { list.categoria.nomCate } </span>
                                         &nbsp;&nbsp;
                                         {list.nomActo}
                                     </td>
                                     <td className="px-6 py-4 text-center">
-                                        <input type="checkbox" onClick={ ()=>dialogCheck( list._id )  }  />
+                                        <input type="checkbox" id={list._id+"Lun"} onClick={ ()=>dialogCheck( list._id, 'Lunes', list._id+"Lun" )  }  />
                                     </td>
-                                    <td className="px-6 py-4 ">
-                                        check
+                                    <td className="px-6 py-4 text-center">
+                                        <input type="checkbox" id={list._id+"Mar"} onClick={ ()=>dialogCheck( list._id, 'Martes', list._id+"Mar" )  }  />
                                     </td>
-                                    <td className="px-6 py-4 whitespace-nowrap">
-                                        check
+                                    <td className="px-6 py-4 text-center">
+                                        <input type="checkbox" id={list._id+"Mier"} onClick={ ()=>dialogCheck( list._id, 'Miercoles', list._id+"Mier" )  }  />
                                     </td>
-                                    <td className="px-6 py-4 whitespace-nowrap">
-                                        check
+                                    <td className="px-6 py-4 text-center">
+                                        <input type="checkbox" id={list._id+"Jue"} onClick={ ()=>dialogCheck( list._id, 'Jueves', list._id+"Jue" )  }  />
                                     </td>
-                                    <td className="px-6 py-4 whitespace-nowrap">
-                                        check
+                                    <td className="px-6 py-4 text-center">
+                                        <input type="checkbox" id={list._id+"Vie"} onClick={ ()=>dialogCheck( list._id, 'Viernes', list._id+"Vie" )  }  />
                                     </td>
-                                    <td className="px-6 py-4 whitespace-nowrap">
-                                        check
+                                    <td className="px-6 py-4 text-center">
+                                        <input type="checkbox" id={list._id+"Sab"} onClick={ ()=>dialogCheck( list._id, 'Sabado', list._id+"Sab" )  }  />
                                     </td>
 
                                 </tr>

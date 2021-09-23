@@ -129,7 +129,7 @@ const gastosrecurrenteform = () => {
                <div className="flex justify-center mt-10">
                   <div className="w-full  pl-3 pr-3 rounded-lg pt-3 bg-white mb-5 overflow-hidden shadow-lg">
 
-                     <form className="mb-8" onSubmit={formik.handleSubmit}>
+                     <form className="mb-8 px-8" onSubmit={formik.handleSubmit}>
                         <label
                            className="text-2xl font-bold text-yellow-500 " >{titulo} Recurrencia </label>
 

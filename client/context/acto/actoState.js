@@ -236,6 +236,56 @@ const ActoState = ({ children }) => {
 
     }//fin del metodo 
 
+    //Metodo: Registra una Categoria
+    const crearActoRegistroSemanal = async (datos) => {
+
+        try {
+
+            const token = localStorage.getItem('token');
+
+            if (token) {
+                //funcion para enviar el token por header 
+                tokenAuth(token);
+            }
+
+            console.log("Data->", datos);
+
+            
+
+           /* const respuesta = await clienteAxios.post('/api/acto/create-acto-registro', data)
+                .then((response) => {
+
+                    console.log(response.data);
+
+                    if (response.data.success == true) {
+                        dispatch({
+                            type: MUTAR_ACTO_EXITO, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        });
+                        
+                         alerta.deploySucces();
+
+                    } else {
+
+                        dispatch({
+                            type: MUTAR_ACTO_ERROR, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        });
+                        alerta.deployFault();
+                    }
+                });*/
+
+        } catch (error) {
+            dispatch({
+                type: MUTAR_ACTO_ERROR, //Es la accion a ejecutar
+                payload: "Hubo un problema con el servidor"  //Son los datos que modifica el state 
+            });
+            alerta.deployFault();
+        }
+
+    }//fin del metodo 
+
+
     return (
         <ActoContext.Provider
             value={{
@@ -248,7 +298,8 @@ const ActoState = ({ children }) => {
                 listarActo,
                 crearActo,
                 deleteActo,
-                editActo
+                editActo,
+                crearActoRegistroSemanal
             }}
         >
             {children}

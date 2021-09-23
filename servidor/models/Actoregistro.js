@@ -32,7 +32,12 @@ const ActoregistroSchema = new Schema({
 	registro:{
 		type:Date, 
 		default:Date.now()
-	}
+	},
+	dia:{
+		type:String,
+		lowercase:true,
+		trim:true,
+	},
 	
 });
 //Esta  sentencia nos  permite eportar nuestro modelo  como vemos se pasa como parametros (NombreModelo, EstructuraModelo ) -> definidos previamente.

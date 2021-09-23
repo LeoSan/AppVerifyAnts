@@ -147,7 +147,7 @@ const Actoform = ({ view }) => {
   if (view.viewForm == false) { return null }
 
   return (
-    <form className="mb-8" onSubmit={formik.handleSubmit}>
+    <form className="mb-8 px-8" onSubmit={formik.handleSubmit}>
       <label
         className="text-2xl font-bold text-yellow-500 " >{titulo} Acto </label>
 
@@ -222,7 +222,7 @@ const Actoform = ({ view }) => {
 
       <input
         type="submit"
-        className="btn-green cursor-pointer w-full mt-5"
+        className="btn-green cursor-pointer w-full mt-5 px-5"
         value={titulo}
       />
       

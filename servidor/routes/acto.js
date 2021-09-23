@@ -74,4 +74,21 @@ router.post('/del-acto',
       actoCotroller.deleteActo
 );
 
+//End-Point - create-acto-registro
+
+router.post('/create-acto-registro',
+      auth,
+      [
+            check('autor', 'Campo PK autor.').not().isEmpty(),
+            check('acto',  'Campo PK Acto.').not().isEmpty(),
+            check('nota',  'Campo PK Acto.').not().isEmpty(),
+            check('duracion',  'Campo PK Acto.').isNumeric(),
+            validaCampos
+      ],
+      actoCotroller.addActoRegistro
+);
+
+
+
+
 module.exports = router;
