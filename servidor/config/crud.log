@@ -140,3 +140,20 @@ Use mongoose.model(name, schema)
 [2021-09-21T17:39:55.177] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
 [2021-09-21T17:39:55.182] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
 [2021-09-21T17:40:21.337] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-27T22:29:43.846] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: Categoria is not defined 
+[2021-09-27T22:34:57.792] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: Categoria is not defined 
+[2021-09-27T22:35:45.733] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: Categoria is not defined 
+[2021-09-27T22:39:11.831] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "{ acto: '6149f98ec1aa3f304ca1a59c', dia: 'Lunes' }" at path "_id" for model "Actoregistro" 
+[2021-09-27T22:47:58.971] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "{ id: undefined }" at path "_id" for model "Actoregistro" 
+[2021-09-27T22:51:11.303] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "{ _id: undefined }" at path "_id" for model "Actoregistro" 
+[2021-09-27T22:52:24.341] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: id is not defined 
+[2021-09-27T22:52:24.338] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "{ _id: undefined }" at path "_id" for model "Actoregistro" 
+[2021-09-27T23:06:51.684] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "{ _id: undefined }" at path "_id" for model "Actoregistro" 
+[2021-09-27T23:07:51.307] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "{ _id: undefined }" at path "_id" for model "Actoregistro" 
+[2021-09-27T23:09:59.665] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "{
+  autor: '60ff5131e31f320ebc54b1bf',
+  acto: '6149f98ec1aa3f304ca1a59c',
+  dia: 'Lunes',
+  semana: 39
+}" at path "_id" for model "Actoregistro" 
+[2021-09-27T23:16:08.847] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 

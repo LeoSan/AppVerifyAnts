@@ -248,14 +248,8 @@ const ActoState = ({ children }) => {
                 tokenAuth(token);
             }
 
-            console.log("Data->", datos);
-
-            
-
-           /* const respuesta = await clienteAxios.post('/api/acto/create-acto-registro', data)
+            const respuesta = await clienteAxios.post('/api/acto/create-acto-registro', datos)
                 .then((response) => {
-
-                    console.log(response.data);
 
                     if (response.data.success == true) {
                         dispatch({
@@ -273,7 +267,7 @@ const ActoState = ({ children }) => {
                         });
                         alerta.deployFault();
                     }
-                });*/
+                });
 
         } catch (error) {
             dispatch({

@@ -147,25 +147,37 @@ exports.getActoBetweenFecha = async (req, res) =>{
 }
 
 //Obtener Acto fechas Inicio y fin  
-exports.addActoRegistro = async (req, res) =>{
+exports.actoCheckSemana = async (req, res) =>{
         
     try {
         //Distroccion 
-        const { autor, acto, duracion, nota, dia, checked} = req.body; //->Asi se usa cuando es un objeto 
+        const { autor, acto, duracion, nota, dia, semana, checked} = req.body; //->Asi se usa cuando es un objeto 
 
         try {
-        //Creamos Acto si no esta duplicado 
-            actoregistro = new Actoregistro(req.body);
-            await actoregistro.save();
-            res.status(200).json({msg: `Tu Actividad con nombre  fue creada Exitosamente!!`, success:true});
+
+            if (checked === false){
+
+                let objActoregistro = await Actoregistro.find({'autor': autor,  'acto': acto, "dia":dia, "semana":semana }); 
+                if( objActoregistro ){
+                    await Actoregistro.findByIdAndRemove( { _id:objActoregistro[0]._id } );
+                    res.status(200).json({msg:`Tu acto con fue removido de día ${dia} semana ${semana}.`, success:true});        
+                }
+
+            }else{
+                actoregistro = new Actoregistro(req.body);
+                await actoregistro.save();
+                res.status(200).json({msg: `Tu Actividad con nota (${nota}), fue creada Exitosamente!!`, success:true});
+            }
+
+
         } catch (error) {
             logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-            res.status(200).json({msg: `Hubo un error en la comunicación !! `, success:false});
+            res.status(200).json({msg: `Hubo un error en la comunicación !! `, success:false });
         }        
 
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(200).json({msg: `Hubo un error en la comunicación !! `, success:false});
+        res.status(200).json({msg: `Hubo un error en la comunicación !! `, success:false });
     }
 }
 

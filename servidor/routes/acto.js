@@ -79,13 +79,13 @@ router.post('/del-acto',
 router.post('/create-acto-registro',
       auth,
       [
-            check('autor', 'Campo PK autor.').not().isEmpty(),
+            check('autor', 'Campo PK Autor.').not().isEmpty(),
             check('acto',  'Campo PK Acto.').not().isEmpty(),
-            check('nota',  'Campo PK Acto.').not().isEmpty(),
-            check('duracion',  'Campo PK Acto.').isNumeric(),
+            check('dia',   'Dia Obligatorio.').not().isEmpty(),
+            check('semana', 'Aemana Obligatorio.').not().isEmpty(),
             validaCampos
       ],
-      actoCotroller.addActoRegistro
+      actoCotroller.actoCheckSemana
 );
 
 

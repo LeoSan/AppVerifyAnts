@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import moment from 'moment';
 import PropTypes from "prop-types";
 import { useRouter } from 'next/router';
 const Swal = require('sweetalert2');
@@ -13,6 +14,7 @@ import ActoContext from '../../context/acto/ActoContext';
 
 //Importar UI 
 import Alerta from '../../components/ui/Alerta';
+import Error from '../../components/ui/Error';
 
 const ActoSemana = ({ view }) => {
 
@@ -25,7 +27,7 @@ const ActoSemana = ({ view }) => {
 
     //Acceder el stateContext de ActoContext 
     const valorActoContext = useContext(ActoContext);
-    const { listarActo, crearActoRegistroSemanal, acto } = valorActoContext;
+    const { listarActo, crearActoRegistroSemanal, acto, msgMutaActo, mutaActo } = valorActoContext;
 
     //Declaración Variables
     const datos = { nickID }
@@ -39,19 +41,21 @@ const ActoSemana = ({ view }) => {
 
 
 
-    const dialogCheck = async(acto, dia, checkedId)=>{
+    const dialogCheck = async(acto, dia,  checkedId)=>{
 
-        const formValues = await alerta.deployModal();
+        let formValues = undefined;
         let checked = false;  
         let duracion = null;
         let nota = null;
-        
+        let semana = moment(Date()).week();
+
         if( document.getElementById(checkedId).checked ){
              checked = true; 
              document.getElementById( checkedId ).checked = true;
+             formValues = await alerta.deployModal();
+        }else{
+            document.getElementById( checkedId ).checked = false;
         }
-
-        document.getElementById( checkedId ).checked = false;
 
         if ( formValues != undefined){
             duracion = formValues[0];
@@ -64,6 +68,7 @@ const ActoSemana = ({ view }) => {
             duracion: duracion,
             nota: nota,
             dia: dia,
+            semana: semana,
             checked:checked
         }
         //Envio de valores para el endpoint
@@ -78,6 +83,11 @@ const ActoSemana = ({ view }) => {
     return (
         <div className="flex flex-col">
 
+        {msgMutaActo != null && mutaActo == null ? (
+            <Error mensaje={msgMutaActo} ></Error>
+        ) : null}
+
+
             <div className="rounded-t-xl p-2 bg-gradient-to-r from-gray-50 to-gray-200">
                 <div className="flex space-x-4">
                     
@@ -88,7 +98,7 @@ const ActoSemana = ({ view }) => {
                     </div>
                     <div className="flex-grow h-10 rounded-md bg-green-500 text-white font-extrabold flex items-center justify-center">
                             Fecha Actual: <span className="text-gray-200"> 09, Septiembre 2021</span>
-                            <svg class="h-5 w-14" fill="none">
+                            <svg className="h-5 w-14" fill="none">
                                 <CalendarIcon className="w-6" />
                             </svg>
                             Semana: <span className="text-gray-200"> 36</span>

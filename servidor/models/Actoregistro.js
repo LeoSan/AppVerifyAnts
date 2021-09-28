@@ -37,6 +37,10 @@ const ActoregistroSchema = new Schema({
 		type:String,
 		lowercase:true,
 		trim:true,
+	},	
+	semana:{
+		type: Number,
+		required:true,
 	},
 	
 });

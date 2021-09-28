@@ -28,6 +28,9 @@ module.exports = (req, res, next) => {
         next() // Vaya al siguiente middleware
     } catch (error) {
         logsCotroller.logsCRUD(`Resultado captcha !! -> ${ error } `);
-        res.status(401).json({msg: 'Token no válido'});
+        if (error === 'TokenExpiredError: jwt expired'){
+            res.status(401).json({msg: 'Se vencio el tiempo de sesión', success:false});
+        }
+        res.status(401).json({msg: 'Token no válido', success:false});
     }
 }
