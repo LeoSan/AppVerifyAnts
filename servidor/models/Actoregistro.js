@@ -44,5 +44,13 @@ const ActoregistroSchema = new Schema({
 	},
 	
 });
+
+//Meotdo para sobreescribir 
+ActoregistroSchema.methods.toJSON = function(){ //Tiene que ser una funcion normal para poder usar el this lo que no ()=> 
+	const {__v, _id, ...data } = this.toObject();
+	data.id = _id
+	return data;
+  }
+  
 //Esta  sentencia nos  permite eportar nuestro modelo  como vemos se pasa como parametros (NombreModelo, EstructuraModelo ) -> definidos previamente.
 module.exports = mongoose.model('Actoregistro', ActoregistroSchema);

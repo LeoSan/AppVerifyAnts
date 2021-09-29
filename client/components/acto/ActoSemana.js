@@ -18,50 +18,55 @@ import Error from '../../components/ui/Error';
 
 const ActoSemana = ({ view }) => {
 
-    //Declaro Hooks -> UseContext para usar el state 
-   const  alerta = new Alerta();
-
     //Acceder el stateContext de auth 
     const valorAuthContext = useContext(AuthContext);
     const { nickID } = valorAuthContext;
 
     //Acceder el stateContext de ActoContext 
     const valorActoContext = useContext(ActoContext);
-    const { listarActo, crearActoRegistroSemanal, acto, msgMutaActo, mutaActo } = valorActoContext;
+    const { listarActo, listarActoSemana, crearActoRegistroSemanal, acto, actoSemana, msgMutaActo, mutaActo } = valorActoContext;
 
-    //Declaración Variables
-    const datos = { nickID }
+    //Declaro Variable del Entorno 
+    const alerta       = new Alerta();
+    let   semanaActual = moment().week();
+    let   semanaSig    = moment().add(1, 'w').week();
+    let   semanaAtras  = moment().subtract(1, 'w').week();
+    let   fechaAtual   = moment().format('MMMM Do YYYY');
+    const datos        = { nickID, semanaActual }
 
     //Declaro UseEffect   
     useEffect(() => {
-        listarActo(datos);
+        listarActoSemana(datos);
     }, []);
 
 
+    console.log("actoSemana", actoSemana);
 
 
+    //Declaración de Metodos Funcionales
 
-    const dialogCheck = async(acto, dia,  checkedId)=>{
+    //Metodo: Ventana Modal Check 
+    const dialogCheck = async (acto, dia, checkedId) => {
 
         let formValues = undefined;
-        let checked = false;  
+        let checked = false;
         let duracion = null;
         let nota = null;
-        let semana = moment(Date()).week();
+        let semana = moment().week();
 
-        if( document.getElementById(checkedId).checked ){
-             checked = true; 
-             document.getElementById( checkedId ).checked = true;
-             formValues = await alerta.deployModal();
-        }else{
-            document.getElementById( checkedId ).checked = false;
+        if (document.getElementById(checkedId).checked) {
+            checked = true;
+            document.getElementById(checkedId).checked = true;
+            formValues = await alerta.deployModal();
+        } else {
+            document.getElementById(checkedId).checked = false;
         }
 
-        if ( formValues != undefined){
+        if (formValues != undefined) {
             duracion = formValues[0];
             nota = formValues[1];
         }
-        
+
         const data = {
             autor: nickID,
             acto: acto,
@@ -69,13 +74,25 @@ const ActoSemana = ({ view }) => {
             nota: nota,
             dia: dia,
             semana: semana,
-            checked:checked
+            checked: checked
         }
         //Envio de valores para el endpoint
         crearActoRegistroSemanal(data);
 
     }
 
+    //Metodo: Consulta atras dias de la semana
+    const consultaSemanaAtras = (semana, autor) => {
+
+        console.log("Semana", semana);
+
+    }
+
+    //Metodo: Consulta siguiente dias de la semana
+    const consultaSemanaSig = (semana, autor) => {
+        console.log("Semana", semana);
+
+    }
 
 
     if (view.viewSemana == false) { return null }
@@ -83,34 +100,37 @@ const ActoSemana = ({ view }) => {
     return (
         <div className="flex flex-col">
 
-        {msgMutaActo != null && mutaActo == null ? (
-            <Error mensaje={msgMutaActo} ></Error>
-        ) : null}
+            {msgMutaActo != null && mutaActo == false ? (
+                <Error mensaje={msgMutaActo} ></Error>
+            ) : null}
 
 
             <div className="rounded-t-xl p-2 bg-gradient-to-r from-gray-50 to-gray-200">
                 <div className="flex space-x-4">
-                    
-                    <div className="flex-none w-16 h-10 rounded-md bg-green-500 text-white text-2xl font-extrabold flex items-center justify-center cursor-pointer shadow-sm">
+
+                    <div className="flex-none w-16 h-10 rounded-md bg-green-500 text-white text-2xl font-extrabold flex items-center justify-center cursor-pointer shadow-sm" onClick={() => { consultaSemanaAtras(semanaAtras, nickID) }}>
                         <svg className="w-5 h-5" fill="none">
-                                <ArrowSmLeftIcon className="w-6 cursor-pointer" />
+                            <ArrowSmLeftIcon className="w-6" />
                         </svg>
                     </div>
                     <div className="flex-grow h-10 rounded-md bg-green-500 text-white font-extrabold flex items-center justify-center">
-                            Fecha Actual: <span className="text-gray-200"> 09, Septiembre 2021</span>
-                            <svg className="h-5 w-14" fill="none">
-                                <CalendarIcon className="w-6" />
-                            </svg>
-                            Semana: <span className="text-gray-200"> 36</span>
+                        <svg className="h-5 w-14" fill="none">
+                            <CalendarIcon className="w-6" />
+                        </svg>
+                        Fecha Actual : &nbsp; <span className="text-gray-100"> {fechaAtual}</span>
+                        <svg className="h-5 w-14" fill="none">
+                            <CalendarIcon className="w-6" />
+                        </svg>
+                        Semana: &nbsp;<span className="text-gray-200"> {semanaActual} </span>
                     </div>
-                    <div className="flex-none w-16 h-10 rounded-md bg-green-500 text-white text-2xl font-extrabold flex items-center justify-center cursor-pointer shadow-sm">
-                    <svg className="w-5 h-5" fill="none">
-                         <ArrowSmRightIcon className="w-6" />
-                    </svg>
+                    <div className="flex-none w-16 h-10 rounded-md bg-green-500 text-white text-2xl font-extrabold flex items-center justify-center cursor-pointer shadow-sm" onClick={() => { consultaSemanaSig(semanaSig, nickID) }}>
+                        <svg className="w-5 h-5" fill="none">
+                            <ArrowSmRightIcon className="w-6" />
+                        </svg>
                     </div>
                 </div>
             </div>
-            
+
             <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">
                     <tr>
@@ -162,39 +182,39 @@ const ActoSemana = ({ view }) => {
                     </tr>
                 </thead>
                 {
-                    (acto != null) ? (
+                    (actoSemana != null) ? (
 
                         <tbody className="bg-white divide-y divide-gray-200">
-                            {acto.map((list) => (
-                                <tr key={list._id} className="text-left hover:bg-yellow-100">
-                                    <td className="px-6 py-4 whitespace-nowrap capitalize text-sm" >
-                                        <span className="bg-white font-bold"> { list.categoria.nomCate } </span>
-                                        &nbsp;&nbsp;
-                                        {list.nomActo}
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <input type="checkbox" id={list._id+"Lun"} onClick={ ()=>dialogCheck( list._id, 'Lunes', list._id+"Lun" )  }  />
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <input type="checkbox" id={list._id+"Mar"} onClick={ ()=>dialogCheck( list._id, 'Martes', list._id+"Mar" )  }  />
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <input type="checkbox" id={list._id+"Mier"} onClick={ ()=>dialogCheck( list._id, 'Miercoles', list._id+"Mier" )  }  />
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <input type="checkbox" id={list._id+"Jue"} onClick={ ()=>dialogCheck( list._id, 'Jueves', list._id+"Jue" )  }  />
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <input type="checkbox" id={list._id+"Vie"} onClick={ ()=>dialogCheck( list._id, 'Viernes', list._id+"Vie" )  }  />
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <input type="checkbox" id={list._id+"Sab"} onClick={ ()=>dialogCheck( list._id, 'Sabado', list._id+"Sab" )  }  />
-                                    </td>
-
-                                </tr>
-                            ))}
+                            {
+                                Object.keys(actoSemana).map((key) => (
+                                    
+                                    <tr key={actoSemana[key]._id} className="text-left hover:bg-yellow-100">
+                                        <td className="px-6 py-4 whitespace-nowrap capitalize text-sm" >
+                                            <span className="bg-yellow-200 font-bold rounded-md px-2">  { actoSemana[key].categoria.nomCate } </span>
+                                            &nbsp;&nbsp;
+                                            { actoSemana[key].nomActo}
+                                        </td>
+                                        <td className="px-6 py-4 text-center">
+                                            <input type="checkbox" id={actoSemana[key]._id + "Lun"} onClick={() => dialogCheck(actoSemana[key]._id, 'Lunes', actoSemana[key]._id + "Lun")} checked={actoSemana[key].checkVals.lunes}  />
+                                        </td>
+                                        <td className="px-6 py-4 text-center">
+                                            <input type="checkbox" id={actoSemana[key]._id + "Mar"} onClick={() => dialogCheck(actoSemana[key]._id, 'Martes', actoSemana[key]._id + "Mar")}  checked={actoSemana[key].checkVals.martes} />
+                                        </td>
+                                        <td className="px-6 py-4 text-center">
+                                            <input type="checkbox" id={actoSemana[key]._id + "Mier"} onClick={() => dialogCheck(actoSemana[key]._id, 'Miercoles', actoSemana[key]._id + "Mier")} checked={actoSemana[key].checkVals.miercoles} />
+                                        </td>
+                                        <td className="px-6 py-4 text-center">
+                                            <input type="checkbox" id={actoSemana[key]._id + "Jue"} onClick={() => dialogCheck(actoSemana[key]._id, 'Jueves', actoSemana[key]._id + "Jue")} checked={actoSemana[key].checkVals.jueves} />
+                                        </td>
+                                        <td className="px-6 py-4 text-center">
+                                            <input type="checkbox" id={actoSemana[key]._id + "Vie"} onClick={() => dialogCheck(actoSemana[key]._id, 'Viernes', actoSemana[key]._id + "Vie")} checked={actoSemana[key].checkVals.viernes} />
+                                        </td>
+                                        <td className="px-6 py-4 text-center">
+                                            <input type="checkbox" id={actoSemana[key]._id + "Sab"} onClick={() => dialogCheck(actoSemana[key]._id, 'Sabado', actoSemana[key]._id + "Sab")}  checked={actoSemana[key].checkVals.sabado}/>
+                                        </td>
+                                    </tr>
+                                ))}
                         </tbody>
-
                     ) : null
                 }
 

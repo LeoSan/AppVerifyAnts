@@ -5,6 +5,7 @@ const logsCotroller = require('../controller/logsController');
 
 //Modelos 
 const Usuario = require('../models/Usuario');
+const Acto = require('../models/Acto');
 
 //importo librerias 
 const { validationResult }  = require('express-validator');
@@ -75,9 +76,17 @@ const notIsUserId = async(req, res, next)=>{
 
 }
 
+const validarActo = async(req, res, next)=>{
+    const existeVal = await Acto.findOne({ autor:req }); 
+    //Verificar el autor  
+    if (!existeVal) return res.status(200).json({msg:'No autorizado', success:false});
+}
+
 module.exports = {
+    validarActo,
     validarCaptcha,
     validaCampos,
     isUserId,
-    notIsUserId
+    notIsUserId,
+    
 }

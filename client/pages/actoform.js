@@ -17,8 +17,6 @@ import ActoContext from '../context/acto/ActoContext';
 
 //componentes UI
 import Layout from '../components/layout/Layout';
-import Error from '../components/ui/Error';
-import Success from '../components/ui/Success';
 import ActoForm from '../components/acto/ActoForm';
 import SideBar from '../components/ui/SideBar';
 
@@ -116,11 +114,6 @@ const Actoform = () => {
             }
         }
     });
-
-
-
-
-
 
     return (
         <Layout>

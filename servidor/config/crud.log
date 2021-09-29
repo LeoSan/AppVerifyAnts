@@ -157,3 +157,31 @@ Use mongoose.model(name, schema)
   semana: 39
 }" at path "_id" for model "Actoregistro" 
 [2021-09-27T23:16:08.847] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-28T10:22:14.645] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-28T10:22:19.481] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-28T10:24:05.409] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-28T10:24:15.739] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-28T10:25:32.830] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-28T11:00:34.625] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: array[index].push is not a function 
+[2021-09-28T11:02:07.651] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: array[index].push is not a function 
+[2021-09-28T11:23:35.628] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: aux.push is not a function 
+[2021-09-28T11:52:16.673] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: currentValue.assign is not a function 
+[2021-09-28T11:55:50.422] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Assignment to constant variable. 
+[2021-09-28T12:26:33.028] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: ObjActo.assing is not a function 
+[2021-09-29T10:50:30.089] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: _id is not defined 
+[2021-09-29T13:09:40.363] [ERROR] crud - Resultado captcha !! -> JsonWebTokenError: invalid token 
+[2021-09-29T14:08:59.337] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-29T15:03:02.496] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: this.getActoSemanaDia is not a function 
+[2021-09-29T15:03:29.763] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: this.getActoSemanaDia is not a function 
+[2021-09-29T15:06:33.774] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:06:33.780] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:06:33.778] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:06:33.783] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:06:56.677] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:06:56.675] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:06:56.678] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:06:56.679] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:08:26.253] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:08:26.256] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:08:26.254] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:08:26.248] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 

@@ -8,7 +8,7 @@ const actoCotroller = require('../controller/actoCotroller');
 const auth = require('../middleware/auth');
 
 //importamos helper 
-const { validaCampos } = require('../middleware/helpers');
+const {  validarActo, validaCampos } = require('../middleware/helpers');
 
 
 //End-Point - Crear Acto 
@@ -32,9 +32,22 @@ router.post('/get-acto',
       [
             check('autor', 'El Autor es obligatorio.').not().isEmpty(),
             check('tipo', 'El tipo de consulta es obligatario.').not().isEmpty(),
+            check('autor').custom(validarActo),//Si lo haces asi solo recibe como req = autor 
             validaCampos
       ],
       actoCotroller.getActo
+);
+
+//End-Point - Consultar Acto Semanal con Check de Registro de Acto  
+router.post('/get-acto-check-semanal',
+      //auth,
+      [
+            check('autor', 'El Autor es obligatorio.').not().isEmpty(),
+            check('tipo', 'El tipo de consulta es obligatario.').not().isEmpty(),
+            check('autor').custom(validarActo),//Si lo haces asi solo recibe como req = autor 
+            validaCampos
+      ],
+      actoCotroller.getActoCheckSemanal
 );
 
 
@@ -56,6 +69,7 @@ router.post('/edit-acto',
       auth,
       [
             check('id', 'Campo PK Obligatorio.').not().isEmpty(),
+            check('id', 'Campo PK no valido.').isMongoId(),
             check('nomActo', 'El nombre del acto es obligatorio.').not().isEmpty(),
             validaCampos
       ],
@@ -86,6 +100,16 @@ router.post('/create-acto-registro',
             validaCampos
       ],
       actoCotroller.actoCheckSemana
+);
+
+router.post('/get-semana',
+      auth,
+      [
+            check('autor', 'Campo PK Autor.').not().isEmpty(),
+            check('semana', 'Aemana Obligatorio.').not().isEmpty(),
+            validaCampos
+      ],
+      actoCotroller.getActoSemana
 );
 
 

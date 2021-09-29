@@ -1,4 +1,5 @@
 //Librerias 
+const {reponse} = require('express')
 const moment = require('moment');  
 //Modelos 
 const Acto = require('../models/Acto');
@@ -6,10 +7,8 @@ const Actoregistro = require('../models/Actoregistro');
 //Controladores 
 const logsCotroller = require('./logsController'); 
 
-require('dotenv').config({ path :'./config/variables.env'});
-
 //Crear  Acto 
-exports.newActo = async(req, res)=>{
+exports.newActo = async(req, res=reponse)=>{
     const {nomActo} = req.body; 
     try {
         //Vaidación 
@@ -26,25 +25,15 @@ exports.newActo = async(req, res)=>{
 }
 
 //Obtener Acto  
-exports.getActo = async (req, res) =>{
+exports.getActo = async (req, res=reponse) =>{
     //Extraer proyecto 
     try {
         //Distroccion 
         const { nomActo, autor, tipo } = req.body; //->Asi se usa cuando es un objeto 
-        
-        let existeVAl = await Acto.findOne({ autor }); 
-
-        if(!existeVAl) return res.status(200).json({msg:`Tu acción con nombre ${ nomActo }, No existe en la base de datos.`, success:false});
-
-        //Verificar el autor  
-        if (existeVAl.autor.toString() !== autor ){
-            return res.status(200).json({msg:'No autorizado', success:false});
-        }
 
         if ( tipo === "1-M" ){
             //Obtener 1-M
-            //const acto = await acto.find({ autor }).sort({autor:-1});
-            const acto = await Acto.find({ autor }).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate' }).sort({ nomActo: -1 });
+            const acto = await Acto.find({ autor }).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate' }).sort({ categoria: -1 });
             res.status(200).json({ acto, success:true });
        }else{
             //Obtener 1.1
@@ -57,8 +46,49 @@ exports.getActo = async (req, res) =>{
     }
 }
 
+
+//Obtener Acto Check Semanal  
+exports.getActoCheckSemanal = async (req, res=reponse) =>{
+    //Extraer proyecto 
+    try {
+        //Distroccion 
+        const { autor, tipo, semana } = req.body; //->Asi se usa cuando es un objeto 
+
+        if ( tipo === "1-M" ){
+            //Obtener 1-M
+            const acto = await Acto.find({ autor }).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate' }).sort({ categoria: -1 });
+            let ObjActo = {}
+            /**INI**/
+                acto.forEach(function callback(currentValue, index, array) {
+                    // tu iterador
+                    //ini//
+                    //Logica de consulta para validar si registro o no actividad y poder marcar los checke 
+                    //const actoregistro =  getActoSemanaDia(autor, currentValue._id , 'lunes', semana );
+                    //ini//
+
+                    ObjActo[index]={
+                        _id:currentValue._id,
+                        activo:currentValue.activo,
+                        registro:currentValue.registro,
+                        nomActo:currentValue.nomActo,
+                        desActo:currentValue.desActo,
+                        categoria:currentValue.categoria,
+                        autor:currentValue.autor,
+                        checkVals:{'lunes':false, 'martes':true, 'miercoles':true, 'jueves':true, 'viernes':true, 'sabado':false}
+                    }                    
+                });
+            /**FIN**/
+           
+            res.status(200).json({ObjActo, success:true });
+       }
+    } catch (error) {
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
+        res.status(200).json({msg: `Hubo un error en la comunicación !! ${error}`, success:false});
+    }
+}
+
 //Eliminar Acto
-exports.deleteActo = async (req, res)=>{
+exports.deleteActo = async (req, res=reponse)=>{
     //Extraer informacion del proyecto 
     try {
           //Extraer proyecto y comprobar si existe
@@ -82,7 +112,7 @@ exports.deleteActo = async (req, res)=>{
 }
 
 //Udadate Acto
-exports.updateActo = async (req, res)=>{
+exports.updateActo = async (req, res=reponse)=>{
     
   //Extraer informacion para validacion 
   try {
@@ -112,10 +142,8 @@ exports.updateActo = async (req, res)=>{
   }
 }
 
-
-
 //Obtener Acto fechas Inicio y fin  
-exports.getActoBetweenFecha = async (req, res) =>{
+exports.getActoBetweenFecha = async (req, res=reponse) =>{
         
     try {
         //Distroccion 
@@ -147,7 +175,7 @@ exports.getActoBetweenFecha = async (req, res) =>{
 }
 
 //Obtener Acto fechas Inicio y fin  
-exports.actoCheckSemana = async (req, res) =>{
+exports.actoCheckSemana = async (req, res=reponse) =>{
         
     try {
         //Distroccion 
@@ -159,7 +187,7 @@ exports.actoCheckSemana = async (req, res) =>{
 
                 let objActoregistro = await Actoregistro.find({'autor': autor,  'acto': acto, "dia":dia, "semana":semana }); 
                 if( objActoregistro ){
-                    await Actoregistro.findByIdAndRemove( { _id:objActoregistro[0]._id } );
+                    await Actoregistro.findByIdAndRemove( { _id:objActoregistro[0].id } );//Recuerda que inplementamos un metodo en el modelo 
                     res.status(200).json({msg:`Tu acto con fue removido de día ${dia} semana ${semana}.`, success:true});        
                 }
 
@@ -178,6 +206,42 @@ exports.actoCheckSemana = async (req, res) =>{
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(200).json({msg: `Hubo un error en la comunicación !! `, success:false });
+    }
+}
+
+//Obtener Acto por semanas 
+exports.getActoSemana = async (req, res=reponse) =>{
+        
+    try {
+        //Distroccion 
+        const { autor, semana } = req.body; //->Asi se usa cuando es un objeto 
+
+        let objActoregistro = await Actoregistro.find({'autor': autor,  'semana': semana }); 
+
+        if(!objActoregistro) return res.status(200).json({msg:`No Existe algun tipo de Acto para este usuario.`, success:false});
+        
+        //Consulta 
+        res.status(200).json({ objActoregistro, success:true });
+            
+    } catch (error) {
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
+        res.status(200).json({msg: `Hubo un error en la comunicación !! `, success:false});
+    }
+}
+
+
+//Obtener Acto por semanas 
+const getActoSemanaDia = async (autor,acto, dia, semana) =>{
+    try {
+        consonle.log("Semana", semana);
+
+        let objActoregistro = await Actoregistro.find({'autor': autor, acto:acto, 'dia':dia, 'semana': semana, 'dia':dia, 'semana': semana }); 
+        //let objActoregistro = await Actoregistro.find({'autor': autor, acto:acto, 'dia':dia, 'semana': semana, 'dia':dia, 'semana': semana }); 
+        //Consulta 
+        return objActoregistro
+    } catch (error) {
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
+        return 'Fallo';
     }
 }
 

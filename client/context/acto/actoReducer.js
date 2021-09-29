@@ -8,6 +8,8 @@ import {
     ELIMINAR_ACTO_EXITO,
     MUTAR_ACTO_ERROR,
     MUTAR_ACTO_EXITO, 
+    LISTAR_ACTO_SEMANA, 
+    LISTAR_ACTO_ERROR_SEMANA,
 } from '../../types';
 
 
@@ -25,9 +27,19 @@ const actoReducer = (state, action) => {
                 msgDeleteActo: null,
                 mutaActo: false,
                 elimiActo:false,
+            }        
+        case LISTAR_ACTO_SEMANA:
+            return {
+                ...state,
+                actoSemana: action.payload,
+                msgMutaActo: null,
+                msgDeleteActo: null,
+                mutaActo: false,
+                elimiActo:false,
             }
 
         case LISTAR_ACTO_ERROR:
+            case LISTAR_ACTO_ERROR_SEMANA:
             return {
                 ...state,
                 msgListActo: action.payload,

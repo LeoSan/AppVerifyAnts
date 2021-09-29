@@ -32,7 +32,7 @@ const ActoSchema = new Schema({
 	activo:{
 	   type: Number,
 	   default:	1
-	},
+	},	
 	registro:{
 		type:Date, 
 		default:Date.now()

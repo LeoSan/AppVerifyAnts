@@ -12,7 +12,7 @@ import ActoContext from '../../context/acto/ActoContext';
 
 
 const ActoList = ({ view }) => {
-    
+
     //Declaro Hooks -> UseContext para usar el state 
 
     //Acceder el stateContext de auth 
@@ -21,11 +21,11 @@ const ActoList = ({ view }) => {
 
     //Acceder el stateContext de ActoContext 
     const valorActoContext = useContext(ActoContext);
-    const { deleteActo, listarActo, acto} = valorActoContext;
+    const { deleteActo, listarActo, acto } = valorActoContext;
 
     //Declaro Hook    
     //Redireccionar   
-    const router = useRouter()    
+    const router = useRouter()
 
     //Declaración Variables
     const datos = { nickID }
@@ -37,12 +37,12 @@ const ActoList = ({ view }) => {
 
 
     //Función : Permite Enviar y redicreccionar parametros 
-    const linkEditarActo = (id)=>{
-            //e.preventDefault();
-            router.push({
-                pathname: '/actoform',
-                query: { id: id },
-              })
+    const linkEditarActo = (id) => {
+        //e.preventDefault();
+        router.push({
+            pathname: '/actoform',
+            query: { id: id },
+        })
 
     }
 
@@ -52,10 +52,10 @@ const ActoList = ({ view }) => {
             title: 'Alerta',
             text: '¿ Seguro que deseas eliminar este registro ?',
             // icon: 'warning',
-            showCancelButton:   true,
+            showCancelButton: true,
             confirmButtonColor: '#059669',
-            cancelButtonColor:  '#b91c1c',
-            confirmButtonText:  'Si, Deseo eliminarlo!'
+            cancelButtonColor: '#b91c1c',
+            confirmButtonText: 'Si, Deseo eliminarlo!'
         }).then((result) => {
             if (result.isConfirmed) {
                 deleteActo(id, nombre);
@@ -78,20 +78,21 @@ const ActoList = ({ view }) => {
                             scope="col"
                             className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
                         >
+                             Catálogo
+                        </th>
+                        <th
+                            scope="col"
+                            className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                        >
                             Nombre
                         </th>
                         <th
                             scope="col"
                             className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
                         >
-                        Descripción
+                            Descripción
                         </th>
-                        <th
-                            scope="col"
-                            className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
-                        >
-                        Catálogo 
-                        </th>
+
 
                         <th
                             scope="col"
@@ -108,7 +109,7 @@ const ActoList = ({ view }) => {
 
                     </tr>
                 </thead>
-                
+
                 {
                     (acto != null) ? (
 
@@ -116,14 +117,19 @@ const ActoList = ({ view }) => {
                             {acto.map((list) => (
 
                                 <tr key={list._id} className="text-center hover:bg-yellow-100">
+                                    <td className="px-6 py-4 ">
+                                        <div className="text-sm text-gray-900">
+                                            <span className="bg-yellow-200 font-bold rounded-md border-solid border-black capitalize px-2">
+                                                {list.categoria.nomCate}
+                                            </span>
+                                        </div>
+                                    </td>
+
                                     <td className="px-6 py-4 whitespace-nowrap capitalize">
                                         {list.nomActo}
                                     </td>
                                     <td className="px-6 py-4 ">
                                         <div className="text-sm text-gray-900">{list.desActo}</div>
-                                    </td>
-                                    <td className="px-6 py-4 ">
-                                        <div className="text-sm text-gray-900">{list.categoria.nomCate}</div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap">
 
@@ -144,7 +150,7 @@ const ActoList = ({ view }) => {
                                     </td>
 
                                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <button title="Editar Acto" className="btn-yellow" onClick={ ()=>linkEditarActo(list._id) } > <PencilIcon className="w-5 " /></button>
+                                        <button title="Editar Acto" className="btn-yellow" onClick={() => linkEditarActo(list._id)} > <PencilIcon className="w-5 " /></button>
                                         <button title="Eliminar Acto" className="btn-yellow btn-tran-danger" onClick={() => getDialog(list._id, list.nomActo)}> <TrashIcon className="w-5 " /></button>
                                     </td>
                                 </tr>
@@ -153,7 +159,7 @@ const ActoList = ({ view }) => {
 
                     ) : null
                 }
-                
+
             </table>
 
 
