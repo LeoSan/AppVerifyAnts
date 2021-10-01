@@ -185,3 +185,5 @@ Use mongoose.model(name, schema)
 [2021-09-29T15:08:26.256] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
 [2021-09-29T15:08:26.254] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
 [2021-09-29T15:08:26.248] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-10-01T11:01:44.405] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: index is not defined 
+[2021-10-01T11:04:45.091] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: index is not defined 

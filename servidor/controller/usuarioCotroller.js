@@ -28,7 +28,7 @@ exports.nuevoUsuario = async(req, res)=>{
 
         try {
             //Valido Recaptcha 
-            //Como me devuelve una promeso declaro en una variable
+            //Como me devuelve una promesa declaro en una variable
             //******Inicio ******//  Nota Leonard:  
             //Este metodo (autenticarUsuario) es un async y el metodo helper validarCaptcha es otro async,  da error  <pending> ya que no pueden estar dos metodos async anidados 
             // La manera de resolver esto es usando promesa y esta es la manera de como se implementa  

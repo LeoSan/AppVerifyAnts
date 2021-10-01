@@ -127,7 +127,7 @@ const ActoState = ({ children }) => {
         } catch (error) {
             dispatch({
                 type: LISTAR_ACTO_ERROR_SEMANA, //Es la accion a ejecutar
-                payload: "Hubo un problema con el servidor"  //Son los datos que modifica el state 
+                payload: `Hubo un problema con el servidor ${error}`  //Son los datos que modifica el state 
             });
         }
 
