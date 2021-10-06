@@ -9,12 +9,16 @@ const { check } = require('express-validator');
 //Importamos nuestro middleware de auth 
 const auth  = require('../middleware/auth');
 
+//importamos helper 
+const { validaCampos, notIsUserId } = require('../middleware/helpers');
+
+
 
 //obtener un usuario 
 //api/auth // midleware 
 router.get('/',
     auth,
-    authController.autenticarAutenticado
+    authController.usuarioAutenticado
 );
 
 // Crea un usuario 
@@ -23,6 +27,7 @@ router.post('/',
     [
         check('emailUsu',  'Agrega un email valido').isEmail(),
         check('password',  'El password debe ser minimo de 6 caracteres').isLength({min:6}),
+        validaCampos
     ], 
     authController.autenticarUsuario
 );
@@ -35,9 +40,30 @@ router.post('/captcha',
         check('emailUsu',  'Agrega un email valido').isEmail(),
         check('password',  'El password debe ser minimo de 6 caracteres').isLength({min:6}),
         check('captcha',   'El sitekey debe ser minimo de 6 caracteres').not().isEmpty(),
+        validaCampos,
+        notIsUserId
     ], 
     authController.autenticarUsuarioToken
 );
+
+
+//Permitir enviar correo para cambio de clave 
+//api/auth // midleware 
+router.post('/olvidoClave',
+    [
+        check('emailUsu',  'Agrega un email valido').isEmail(),
+        check('captcha',   'El sitekey debe ser minimo de 6 caracteres').not().isEmpty(),
+        validaCampos,
+        notIsUserId
+
+    ], 
+    authController.olvidoClave
+);
+
+
+
+
+
 
 
 

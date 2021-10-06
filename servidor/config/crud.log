@@ -53,3 +53,137 @@
 [2021-05-27T13:19:55.072] [ERROR] crud - Resultado captcha !! -> [object Object] 
 [2021-05-27T13:22:02.460] [ERROR] crud - Resultado captcha !! -> true 
 [2021-05-27T13:25:23.823] [ERROR] crud - Resultado captcha !! -> true 
+[2021-07-04T16:09:21.486] [ERROR] crud - [Validacion] - Crear usuario
+[2021-07-06T11:59:00.147] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: tokenEmail is not defined 
+[2021-07-06T13:01:22.093] [ERROR] crud - Hubo un  error  en  la comunicación !! -> ReferenceError: UsuarioToken is not defined 
+[2021-07-22T17:48:27.145] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: result is not defined 
+[2021-07-22T17:50:10.977] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: result is not defined 
+[2021-07-26T19:48:47.279] [ERROR] crud - Hubo un  error  en  la comunicación !! -> TypeError: Usuario.findByOne is not a function 
+[2021-07-26T19:50:36.497] [ERROR] crud - Hubo un  error  en  la comunicación !! -> TypeError: Usuario.findByOne is not a function 
+[2021-07-26T19:52:24.629] [ERROR] crud - Hubo un  error  en  la comunicación !! -> TypeError: Usuario.findByOne is not a function 
+[2021-07-26T19:54:11.113] [ERROR] crud - Hubo un  error  en  la comunicación !! -> ObjectParameterError: Parameter "filter" to findOne() must be an object, got cuenca623@gmail.com 
+[2021-08-09T12:34:29.510] [ERROR] crud - Hubo un error en la comunicación !! -> ValidationError: categoria: Path `categoria` is required. 
+[2021-08-09T12:35:56.065] [ERROR] crud - Hubo un error en la comunicación !! -> ValidationError: categoria: Path `categoria` is required. 
+[2021-08-24T16:51:11.448] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T16:56:22.810] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T16:57:46.237] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T16:59:27.959] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T17:03:20.956] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T17:04:26.214] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T17:05:34.981] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T17:06:48.708] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T17:07:41.867] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T17:08:49.824] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T17:12:46.580] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-24T17:17:01.632] [ERROR] crud - Hubo un  error  en  la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.usuarios index: emailUsu_1 dup key: { emailUsu: "cuenca623@gmail.com" } 
+[2021-08-30T17:43:35.233] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.actos index: nomAccion_1 dup key: { nomAccion: null } 
+[2021-08-30T17:46:11.385] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.actos index: nomAccion_1 dup key: { nomAccion: null } 
+[2021-08-30T17:56:35.054] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.actos index: nomAccion_1 dup key: { nomAccion: null } 
+[2021-08-30T17:58:47.896] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.actos index: nomAccion_1 dup key: { nomAccion: null } 
+[2021-08-30T18:01:20.852] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: E11000 duplicate key error collection: AppVerifyAnts.actos index: nomAccion_1 dup key: { nomAccion: null } 
+[2021-09-04T01:57:26.808] [ERROR] crud - Hubo un error en la comunicación !! -> MissingSchemaError: Schema hasn't been registered for model ">ategoria".
+Use mongoose.model(name, schema) 
+[2021-09-04T01:57:43.042] [ERROR] crud - Hubo un error en la comunicación !! -> MissingSchemaError: Schema hasn't been registered for model ">ategoria".
+Use mongoose.model(name, schema) 
+[2021-09-08T15:17:43.231] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-08T15:17:44.367] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-08T15:21:16.776] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-10T16:04:44.339] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T02:38:31.297] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T02:38:47.131] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T02:38:57.402] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T02:39:15.520] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T02:39:26.749] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T02:39:35.810] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T02:40:07.320] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T02:40:22.561] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T02:41:08.397] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T02:41:22.639] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T02:41:41.368] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T02:41:46.527] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T02:42:41.812] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T02:49:05.455] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T02:49:10.849] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T02:49:49.345] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T02:49:49.354] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T02:50:03.779] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T02:52:37.101] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T03:25:34.853] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T03:29:10.307] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T03:29:40.161] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T03:39:57.038] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T03:41:14.214] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T03:41:37.138] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T03:42:06.649] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T03:42:23.340] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T03:42:35.968] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T03:43:03.379] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T03:54:16.911] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T03:54:53.664] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T03:55:12.424] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T04:00:39.289] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T04:01:47.371] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T04:03:32.325] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-12T04:05:33.205] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-21T12:56:22.426] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-21T16:15:55.966] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-21T17:20:49.216] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-21T17:21:15.318] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-21T17:25:30.547] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-21T17:25:58.204] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-21T17:29:28.516] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-21T17:34:31.506] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-21T17:34:40.192] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-21T17:35:01.197] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-21T17:35:38.650] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-21T17:39:54.183] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-21T17:39:55.177] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-21T17:39:55.182] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-21T17:40:21.337] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-27T22:29:43.846] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: Categoria is not defined 
+[2021-09-27T22:34:57.792] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: Categoria is not defined 
+[2021-09-27T22:35:45.733] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: Categoria is not defined 
+[2021-09-27T22:39:11.831] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "{ acto: '6149f98ec1aa3f304ca1a59c', dia: 'Lunes' }" at path "_id" for model "Actoregistro" 
+[2021-09-27T22:47:58.971] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "{ id: undefined }" at path "_id" for model "Actoregistro" 
+[2021-09-27T22:51:11.303] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "{ _id: undefined }" at path "_id" for model "Actoregistro" 
+[2021-09-27T22:52:24.341] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: id is not defined 
+[2021-09-27T22:52:24.338] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "{ _id: undefined }" at path "_id" for model "Actoregistro" 
+[2021-09-27T23:06:51.684] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "{ _id: undefined }" at path "_id" for model "Actoregistro" 
+[2021-09-27T23:07:51.307] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "{ _id: undefined }" at path "_id" for model "Actoregistro" 
+[2021-09-27T23:09:59.665] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "{
+  autor: '60ff5131e31f320ebc54b1bf',
+  acto: '6149f98ec1aa3f304ca1a59c',
+  dia: 'Lunes',
+  semana: 39
+}" at path "_id" for model "Actoregistro" 
+[2021-09-27T23:16:08.847] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-28T10:22:14.645] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-28T10:22:19.481] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-28T10:24:05.409] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-28T10:24:15.739] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-28T10:25:32.830] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-28T11:00:34.625] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: array[index].push is not a function 
+[2021-09-28T11:02:07.651] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: array[index].push is not a function 
+[2021-09-28T11:23:35.628] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: aux.push is not a function 
+[2021-09-28T11:52:16.673] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: currentValue.assign is not a function 
+[2021-09-28T11:55:50.422] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Assignment to constant variable. 
+[2021-09-28T12:26:33.028] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: ObjActo.assing is not a function 
+[2021-09-29T10:50:30.089] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: _id is not defined 
+[2021-09-29T13:09:40.363] [ERROR] crud - Resultado captcha !! -> JsonWebTokenError: invalid token 
+[2021-09-29T14:08:59.337] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-09-29T15:03:02.496] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: this.getActoSemanaDia is not a function 
+[2021-09-29T15:03:29.763] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: this.getActoSemanaDia is not a function 
+[2021-09-29T15:06:33.774] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:06:33.780] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:06:33.778] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:06:33.783] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:06:56.677] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:06:56.675] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:06:56.678] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:06:56.679] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:08:26.253] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:08:26.256] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:08:26.254] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-09-29T15:08:26.248] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
+[2021-10-01T11:01:44.405] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: index is not defined 
+[2021-10-01T11:04:45.091] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: index is not defined 

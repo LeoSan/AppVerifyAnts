@@ -8,20 +8,44 @@ const Schema = mongoose.Schema
 const usuariosSchema = new Schema({
 	emailUsu: {
 	   type:String,
-	   required:true,
+	   required:[true, 'El  correo es Obligatorio.'],
 	   unique:true,
 	   lowercase:true,
 	   trim:true,
 	},
 	nomUsu:{
 	   type: String,
-	   required:true,
+	   required:[true, 'El  nombre es Obligatorio.'],
+	   lowercase:true,
+	   trim:true,
+	},	
+	apeUsu:{
+	   type: String,
+	   default:null,
+	   lowercase:true,
+	   trim:true,
+	},	
+	sexo:{
+	   type: String,
+	   default:null,
+	   lowercase:true,
+	   trim:true,
+	},
+	pais:{
+	   type: String,
+	   default:null,
+	   lowercase:true,
+	   trim:true,
+	},	
+	fechaNac:{
+	   type: Date,
+	   default:null,
 	   lowercase:true,
 	   trim:true,
 	},
 	password:{
 	   type: String,
-	   required:true,
+	   required:[true, 'El password es Obligatorio.'],
 	   trim:true,
 	},   
 	activo:{

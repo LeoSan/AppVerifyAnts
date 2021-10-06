@@ -10,12 +10,12 @@ const Bout = ({ valor }) => {
                     <div className=" flex-wrap mt-5">
                         <Link href="/login"> 
                             <button className="btn-yellow">Acceder </button>
-                            </Link>
+                        </Link>
                     </div>
                     <div className=" flex-wrap mt-5">
                         <Link href="/crear">
                             <button className="btn-green"> Registrar  </button>
-                            </Link>
+                        </Link>
                     </div>
                 </div>              
         </Fragment>

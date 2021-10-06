@@ -15,7 +15,8 @@ module.exports = (req, res, next) => {
     //console.log(token)
     // Revisar ek no hay token
     if(!token){
-        return res.status(401).json({msg: 'No hay token, permiso no valido'})
+        logsCotroller.logsCRUD(`No hay token, permiso no valido !!`);
+        return res.status(401).json({msg: 'No hay token, permiso no valido'});
     }
 
     //Puedo definir opciones para la verificacion 
@@ -27,6 +28,11 @@ module.exports = (req, res, next) => {
         req.usuario = cifrado.usuario; // objeto usuario | payload
         next() // Vaya al siguiente middleware
     } catch (error) {
-        res.status(401).json({msg: 'Token no válido'});
+        logsCotroller.logsCRUD(`Resultado captcha !! -> ${ error } `);
+        if (error === 'TokenExpiredError: jwt expired'){
+            res.status(401).json({msg: 'Se vencio el tiempo de sesión', success:false});
+        }
+        
+        res.status(401).json({msg: 'Token no válido', success:false});
     }
 }

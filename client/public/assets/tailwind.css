@@ -16,17 +16,52 @@
 }
 
 .card {
-    @apply rounded overflow-hidden shadow-lg;
+    @apply rounded overflow-hidden shadow-lg bg-white;
 }
 
 .somHeader {
-    @apply rounded-b-md overflow-hidden shadow-lg;
+    @apply rounded-b-lg overflow-hidden;
 }
 
 .btn-green{
-    @apply bg-green-500  px-2 py-3 rounded-lg text-white font-bold uppercase m-1;
+    @apply bg-green-500  px-2 py-3 rounded-lg text-white font-bold uppercase m-1 focus:shadow-md cursor-pointer;
 }
 
 .btn-yellow{
-    @apply bg-yellow-500  px-2 py-3 rounded-lg text-white font-bold uppercase m-1;
+    @apply bg-yellow-500  px-2 py-3 rounded-lg text-white font-bold uppercase m-1 focus:shadow-md cursor-pointer;
 }
+
+.btn-yellow-circle{
+    @apply bg-yellow-500 rounded-full  text-white font-bold uppercase focus:shadow-md cursor-pointer;
+}
+
+
+.btn-tran-danger{
+    @apply transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none;
+}
+
+.btn-tran-access{
+    @apply transition duration-300 hover:bg-green-700 hover:text-white focus:outline-none;
+}
+
+.input-form{
+    @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-md focus:border-yellow-500;
+}
+
+.label-form{
+    @apply block text-gray-700 text-sm font-bold mb-2;
+}
+
+.centrar{
+    @apply flex items-center justify-center;
+}
+
+.alert-error {
+    @apply bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-5 mt-5
+
+}
+
+.alert-success {
+    @apply bg-green-100 border-l-4 border-green-500 text-gray-700 p-4 mb-5 mt-5
+}
+

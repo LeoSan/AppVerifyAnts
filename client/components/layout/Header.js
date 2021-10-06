@@ -4,15 +4,35 @@ import { useRouter } from 'next/router';
 
 //Importar Componentes 
 import Bout from '../ui/Bout';
+import Bin from '../ui/Bin';
+
+//Importamos nuestros  useContext (Hooks)
+import AuthContext from '../../context/auth/AuthContext';
 
 //Importar funciones Propias 
 
 
-const Header = () => {
+const Header = (  ) => {
 
-     const router = useRouter();
+   //Declaro useState 
 
-     // Esta función permite limpiar el state 
+   
+   //Declaro UseContext 
+     //Acceder el state de auth 
+     const  valorContext = useContext(AuthContext);
+     const { autenticado } =  valorContext; 
+
+
+   //Declaro Hook    
+       //Redireccionar   
+       const router = useRouter();
+
+   
+   //Metodos Funcionales 
+
+   //función : 
+   //función : 
+   //función : Permite redireccionar al home 
      const redireccionar = ()=>{
           router.push('/');
           //limpiarState();
@@ -25,11 +45,13 @@ const Header = () => {
                <nav className="flex flex-wrap md:flex-row lg:flex-row bg-gray-300">
                     
                     <div className="w-full flex-wrap  md:w-1/2 lg:w-1/2 px-2">
-                         <img className=""  onClick={ ()=>redireccionar()  } src="/image/logo001.png" />  
+                         <img className="hover:cursor-pointer"  onClick={ ()=>redireccionar()  } src="/image/LogoAntb.png" />  
                     </div>
-
-                    <Bout/>
-   
+                    { ( autenticado ) ? (
+                         <Bin />   
+                    ) : (
+                         <Bout/>    
+                    ) }
                </nav>   
         </header>
      );
