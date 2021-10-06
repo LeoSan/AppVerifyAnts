@@ -39,7 +39,7 @@ exports.getCategoria = async (req, res) =>{
 
             if(!existeVAl) return res.status(200).json({msg:`No Existe categorias para este usuario.`, success:false});
 
-            const categoria = await Categoria.find( { $and: [{autor:autor}, {activo: activo }] } ).populate({ path: 'actividad', model: 'Actividad', select: 'nomActi'}).sort({nomCate:-1});
+            const categoria = await Categoria.find( { $and: [{autor:autor}, {activo: activo }] } ).populate({ path: 'actividad', model: 'Actividad', select: 'nomActi'}).sort({nomActi:1});
             res.status(200).json({ categoria , success:true });
 
         }else{

@@ -102,7 +102,7 @@ const ActoState = ({ children }) => {
             // nomCate, autor, activo, tipo
             const data = {
                 autor: datos.nickID,
-                semana: datos.semanaActual,
+                semana: datos.semana,
                 tipo: "1-M"
             }
 

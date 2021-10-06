@@ -50,6 +50,13 @@ exports.getActo = async (req, res = reponse) => {
 //Obtener Acto Check Semanal  
 exports.getActoCheckSemanal = async (req, res = reponse) => {
     //Extraer proyecto 
+
+    /*  //Lo sque para ver si mejora la carga tarda mucho 
+        activo: filas.activo,
+        registro: filas.registro,
+        autor: filas.autor,
+       */
+
     try {
         //Distroccion 
         const { autor, tipo, semana } = req.body; //->Asi se usa cuando es un objeto 
@@ -62,23 +69,19 @@ exports.getActoCheckSemanal = async (req, res = reponse) => {
             /**INI**/
             //Nota:Recuerda Leonard que cada asyn await son promesas y cuando usas 
             //foreach estas no las captura hay que usarlo de esta manera para poder consultar await iterativos 
-            for (const filas of acto){
+            for (const filas of acto) {
 
                 ObjActo[index] = {
                     _id: filas._id,
-                    activo: filas.activo,
-                    registro: filas.registro,
                     nomActo: filas.nomActo,
-                    desActo: filas.desActo,
                     categoria: filas.categoria,
-                    autor: filas.autor,
                     checkVals: {
                         'lunes': await getActoSemanaDia(autor, filas._id, 'Lunes', semana)
                         , 'martes': await getActoSemanaDia(autor, filas._id, 'martes', semana)
                         , 'miercoles': await getActoSemanaDia(autor, filas._id, 'miercoles', semana)
-                        , 'jueves':  await getActoSemanaDia(autor, filas._id, 'jueves', semana)
-                        , 'viernes':  await getActoSemanaDia(autor, filas._id, 'viernes', semana)
-                        , 'sabado':  await getActoSemanaDia(autor, filas._id, 'sabado', semana)
+                        , 'jueves': await getActoSemanaDia(autor, filas._id, 'jueves', semana)
+                        , 'viernes': await getActoSemanaDia(autor, filas._id, 'viernes', semana)
+                        , 'sabado': await getActoSemanaDia(autor, filas._id, 'sabado', semana)
                     }
                 }
 
@@ -244,7 +247,7 @@ const getActoSemanaDia = async (autor, acto, dia, semana) => {
     try {
 
         let objActoregistro = await Actoregistro.find({ 'autor': autor, acto: acto, 'dia': dia, 'semana': semana, 'dia': dia, 'semana': semana });
-        if ( objActoregistro.length > 0 ) {
+        if (objActoregistro.length > 0) {
             return true;
         } else {
             return false;

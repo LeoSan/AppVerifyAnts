@@ -28,25 +28,31 @@ const ActoSemana = ({ view }) => {
     //Declaro Variable del Entorno 
     const alerta       = new Alerta();
     let   semanaActual = moment().week();
-    let   semanaSig    = moment().add(1, 'w').week();
-    let   semanaAtras  = moment().subtract(1, 'w').week();
+    //let   semaSig    = moment().add(1, 'w').week();
+    //let   semAtras  = moment().subtract(1, 'w').week();    
     let   fechaAtual   = moment().format('MMMM Do YYYY');
-    const datos        = { nickID, semanaActual }
+    let   datos        = { nickID, semana:semanaActual }
+    const [semanaSig, setSemanaSig] = useState(semanaActual);
+    const [semanaAtras, setSemanaAtras] = useState(semanaActual);
+    const [auxSemana, setAuxSemana] = useState(semanaActual);
+
 
     //Declaro UseEffect   
     useEffect(() => {
         listarActoSemana(datos);
+    
     }, []);
 
     //Declaración de Metodos Funcionales
     //Metodo: Ventana Modal Check 
-    const dialogCheck = async (acto, dia, checkedId) => {
+    const dialogCheck = async (acto, dia, checkedId, auxSemana) => {
 
         let formValues = undefined;
         let checked = false;
         let duracion = null;
         let nota = null;
-        let semana = moment().week();
+       // let semana = moment().week();
+        let semana = auxSemana;
 
         console.log("checkedId", checkedId);
 
@@ -56,6 +62,7 @@ const ActoSemana = ({ view }) => {
             formValues = await alerta.deployModal();
         } else {
             document.getElementById(checkedId).checked = false;
+            
         }
 
         if (formValues != undefined) {
@@ -74,19 +81,32 @@ const ActoSemana = ({ view }) => {
         }
         //Envio de valores para el endpoint
         crearActoRegistroSemanal(data);
-
+        datos = { nickID, semana:semanaSig  } //Debo ir al state y cambiar semana 
+        listarActoSemana(datos);
     }
 
     //Metodo: Consulta atras dias de la semana
-    const consultaSemanaAtras = (semana, autor) => {
-
-        console.log("Semana", semana);
-
+    const consultaSemanaAtras = (e, valSemana) => {
+        e.preventDefault();
+        setSemanaAtras(valSemana - 1);
+        setAuxSemana(semanaAtras);
+        
+        console.log("SemanaAtras", semanaAtras);
+        datos = { nickID, semana:semanaAtras  }
+        console.log("datos", datos)
+        listarActoSemana(datos);
     }
 
     //Metodo: Consulta siguiente dias de la semana
-    const consultaSemanaSig = (semana, autor) => {
-        console.log("Semana", semana);
+    const consultaSemanaSig = ( e, semana) => {
+        e.preventDefault();
+        setSemanaSig( semana + 1 );
+        setAuxSemana(semanaSig);
+
+        console.log("semanaSig", semanaSig);
+        datos = { nickID, semana:semanaSig  }
+        console.log("datos", datos)
+        listarActoSemana(datos);
 
     }
 
@@ -104,7 +124,7 @@ const ActoSemana = ({ view }) => {
             <div className="rounded-t-xl p-2 bg-gradient-to-r from-gray-50 to-gray-200">
                 <div className="flex space-x-4">
 
-                    <div className="flex-none w-16 h-10 rounded-md bg-green-500 text-white text-2xl font-extrabold flex items-center justify-center cursor-pointer shadow-sm" onClick={() => { consultaSemanaAtras(semanaAtras, nickID) }}>
+                    <div className="flex-none w-16 h-10 rounded-md bg-green-500 text-white text-2xl font-extrabold flex items-center justify-center cursor-pointer shadow-sm" onClick={(e) => { consultaSemanaAtras(e, auxSemana) }}>
                         <svg className="w-5 h-5" fill="none">
                             <ArrowSmLeftIcon className="w-6" />
                         </svg>
@@ -117,9 +137,9 @@ const ActoSemana = ({ view }) => {
                         <svg className="h-5 w-14" fill="none">
                             <CalendarIcon className="w-6" />
                         </svg>
-                        Semana: &nbsp;<span className="text-gray-200"> {semanaActual} </span>
+                        Semana: &nbsp;<span className="text-gray-200"> {auxSemana} </span>
                     </div>
-                    <div className="flex-none w-16 h-10 rounded-md bg-green-500 text-white text-2xl font-extrabold flex items-center justify-center cursor-pointer shadow-sm" onClick={() => { consultaSemanaSig(semanaSig, nickID) }}>
+                    <div className="flex-none w-16 h-10 rounded-md bg-green-500 text-white text-2xl font-extrabold flex items-center justify-center cursor-pointer shadow-sm" onClick={(e) => { consultaSemanaSig(e, auxSemana) }}>
                         <svg className="w-5 h-5" fill="none">
                             <ArrowSmRightIcon className="w-6" />
                         </svg>
@@ -191,22 +211,22 @@ const ActoSemana = ({ view }) => {
                                             { actoSemana[key].nomActo}
                                         </td>
                                         <td className="px-6 py-4 text-center">
-                                            <input type="checkbox" id={actoSemana[key]._id + "Lun"} onClick={() => dialogCheck(actoSemana[key]._id, 'Lunes', actoSemana[key]._id + "Lun")} checked={actoSemana[key].checkVals.lunes} onChange={e => {}}  />
+                                            <input type="checkbox" id={actoSemana[key]._id + "Lun"} onClick={() => dialogCheck(actoSemana[key]._id, 'Lunes', actoSemana[key]._id + "Lun", auxSemana)} checked={actoSemana[key].checkVals.lunes} onChange={e => {}}  />
                                         </td>
                                         <td className="px-6 py-4 text-center">
-                                            <input type="checkbox" id={actoSemana[key]._id + "Mar"} onClick={() => dialogCheck(actoSemana[key]._id, 'Martes', actoSemana[key]._id + "Mar")}  checked={actoSemana[key].checkVals.martes} onChange={e => {}} />
+                                            <input type="checkbox" id={actoSemana[key]._id + "Mar"} onClick={() => dialogCheck(actoSemana[key]._id, 'Martes', actoSemana[key]._id + "Mar", auxSemana)}  checked={actoSemana[key].checkVals.martes} onChange={e => {}} />
                                         </td>
                                         <td className="px-6 py-4 text-center">
-                                            <input type="checkbox" id={actoSemana[key]._id + "Mier"} onClick={() => dialogCheck(actoSemana[key]._id, 'Miercoles', actoSemana[key]._id + "Mier")} checked={actoSemana[key].checkVals.miercoles}  onChange={e => {}}/>
+                                            <input type="checkbox" id={actoSemana[key]._id + "Mier"} onClick={() => dialogCheck(actoSemana[key]._id, 'Miercoles', actoSemana[key]._id + "Mier", auxSemana)} checked={actoSemana[key].checkVals.miercoles}  onChange={e => {}}/>
                                         </td>
                                         <td className="px-6 py-4 text-center">
-                                            <input type="checkbox" id={actoSemana[key]._id + "Jue"} onClick={() => dialogCheck(actoSemana[key]._id, 'Jueves', actoSemana[key]._id + "Jue")} checked={actoSemana[key].checkVals.jueves}  onChange={e => {}} />
+                                            <input type="checkbox" id={actoSemana[key]._id + "Jue"} onClick={() => dialogCheck(actoSemana[key]._id, 'Jueves', actoSemana[key]._id + "Jue", auxSemana)} checked={actoSemana[key].checkVals.jueves}  onChange={e => {}} />
                                         </td>
                                         <td className="px-6 py-4 text-center">
-                                            <input type="checkbox" id={actoSemana[key]._id + "Vie"} onClick={() => dialogCheck(actoSemana[key]._id, 'Viernes', actoSemana[key]._id + "Vie")} checked={actoSemana[key].checkVals.viernes} onChange={e => {}} />
+                                            <input type="checkbox" id={actoSemana[key]._id + "Vie"} onClick={() => dialogCheck(actoSemana[key]._id, 'Viernes', actoSemana[key]._id + "Vie", auxSemana)} checked={actoSemana[key].checkVals.viernes} onChange={e => {}} />
                                         </td>
                                         <td className="px-6 py-4 text-center">
-                                            <input type="checkbox" id={actoSemana[key]._id + "Sab"} onClick={() => dialogCheck(actoSemana[key]._id, 'Sabado', actoSemana[key]._id + "Sab")}  checked={actoSemana[key].checkVals.sabado} onChange={e => {}}/>
+                                            <input type="checkbox" id={actoSemana[key]._id + "Sab"} onClick={() => dialogCheck(actoSemana[key]._id, 'Sabado', actoSemana[key]._id + "Sab", auxSemana)}  checked={actoSemana[key].checkVals.sabado} onChange={e => {}}/>
                                         </td>
                                     </tr>
                                 ))}

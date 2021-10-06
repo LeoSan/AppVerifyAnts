@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 const Swal = require('sweetalert2');
 
 //importar icon 
-import { PencilIcon, TrashIcon, PlusCircleIcon } from '@heroicons/react/solid'
+import { PencilIcon, ClipboardCheckIcon, PlusCircleIcon, ViewListIcon, CheckCircleIcon } from '@heroicons/react/solid'
 
 //Importamos nuestros  useContext (Hooks)
 import AuthContext from '../context/auth/AuthContext';
@@ -93,25 +93,26 @@ const Acto = () => {
                         <div className="w-full  pl-3 pr-3 rounded-lg pt-3 bg-white mb-5 overflow-hidden shadow-lg">
 
                             <div className="flex flex-col">
-                                <label className="text-2xl font-bold text-yellow-500 " >Tablero de Actos </label>
-                                <label className="text-xs font-bold text-gray-500 " >Acto es una acción u obra que realiza una persona.</label>
-                                <label className="text-xs font-bold text-gray-500 " >Los Actos opueden mejorarse si son medidos en el tiempo</label>
+                                <label className="text-2xl font-bold text-yellow-500 " >Tus Actos </label>
+                                <label className="text-xs font-bold text-gray-500 " >Un acto es una acción u obra que tu realizas, una forma facil y unica de alcanzar lo que deseas.</label>
+                                <label className="text-xs font-bold text-gray-500 " >Los Actos te ayudan a mejorar, es mejor un paso firme a la vez, que correr sin rumbo, recuerda lo que puedes medir lo puedes mejorar</label>
                             </div>
 
 
                             <div className="flex flex-row justify-around">
+                                <button title="Ver Listado de Actos" className="btn-yellow cursor-pointer w-full  text-center font-extrabold flex  rounded-full" onClick={() => { clickList(contView) }}>
+                                    <ViewListIcon className="w-6 " /> Lista tus actos
+                                </button>
                                 <button title="Ver talero de semana Actual" className="btn-yellow cursor-pointer  w-full  text-center font-extrabold flex  rounded-full" onClick={() => { clickForm(contView) }}>
-                                    <PlusCircleIcon className="w-6 " /> Crear
+                                    <PlusCircleIcon className="w-6 " /> Crea tus actos
                                 </button>
                                 <button title="Ver talero de semana Actual" className="btn-yellow cursor-pointer  w-full  text-center font-extrabold flex  rounded-full" onClick={() => { clickSemana(contView) }}>
-                                    <PlusCircleIcon className="w-6" /> Semana
+                                    <CheckCircleIcon className="w-6" /> Actos por Semana
                                 </button>
                                 <button title="Ver estadísticas" className="btn-yellow cursor-pointer  w-full  text-center font-extrabold flex  rounded-full" onClick={() => { clickEstadisticas(contView) }}>
-                                    <PlusCircleIcon className="w-6 " /> Estadística
+                                    <ClipboardCheckIcon className="w-6 " /> Evalua tus actos
                                 </button>
-                                <button title="Ver Listado de Actos" className="btn-yellow cursor-pointer w-full  text-center font-extrabold flex  rounded-full" onClick={() => { clickList(contView) }}>
-                                    <PlusCircleIcon className="w-6 " /> Listado
-                                </button>
+
                             </div>
 
                             <div className="flex flex-col mt-5 mb-5">
@@ -120,8 +121,8 @@ const Acto = () => {
                                         <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
 
                                             <ActoEstadistica view={view} />
-                                            <ActoForm view={view}  />
-                                            <ActoList view={view } />
+                                            <ActoForm view={view} />
+                                            <ActoList view={view} />
                                             <ActoSemana view={view} />
 
                                         </div>
