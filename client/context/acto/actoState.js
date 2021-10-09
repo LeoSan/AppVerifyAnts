@@ -14,6 +14,7 @@ import {
     MUTAR_ACTO_EXITO,
     LISTAR_ACTO_SEMANA, 
     LISTAR_ACTO_ERROR_SEMANA,
+    CAMBIO_LOADING,
 } from '../../types';
 
 //Importo nuetsra libreria axios para conectar con el servidor 
@@ -35,7 +36,8 @@ const ActoState = ({ children }) => {
         msgMutaActo: null,
         msgDeleteActo: null,
         mutaActo: null,
-        elimiActo: null
+        elimiActo: null,
+        loadActo:false
     }
 
     // Definimos Reducer 
@@ -103,7 +105,8 @@ const ActoState = ({ children }) => {
             const data = {
                 autor: datos.nickID,
                 semana: datos.semana,
-                tipo: "1-M"
+                categoria:datos.categoria,
+                tipo: datos.tipo
             }
 
 
@@ -327,6 +330,15 @@ const ActoState = ({ children }) => {
 
     }//fin del metodo 
 
+    //Metodo: Permite cargar el load 
+    const cambioLoad = () => {
+        dispatch({
+            type: CAMBIO_LOADING, //Es la accion a ejecutar
+            payload: true  //Son los datos que modifica el state 
+        });
+
+    }//fin del metodo     
+
 
     return (
         <ActoContext.Provider
@@ -338,12 +350,15 @@ const ActoState = ({ children }) => {
                 msgDeleteActo: state.msgDeleteActo,
                 mutaActo:  state.mutaActo,
                 elimiActo: state.elimiActo,
+                loadActo: state.loadActo,
+                loadClass: state.loadClass,
                 listarActo,
                 crearActo,
                 deleteActo,
                 editActo,
                 crearActoRegistroSemanal,
-                listarActoSemana
+                listarActoSemana,
+                cambioLoad
             }}
         >
             {children}

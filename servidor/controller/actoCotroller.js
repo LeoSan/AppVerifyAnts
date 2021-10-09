@@ -51,7 +51,7 @@ exports.getActo = async (req, res = reponse) => {
 exports.getActoCheckSemanal = async (req, res = reponse) => {
     //Extraer proyecto 
 
-    /*  //Lo sque para ver si mejora la carga tarda mucho 
+    /*  //Campos que saque, para  ver si mejora la carga tarda mucho  
         activo: filas.activo,
         registro: filas.registro,
         autor: filas.autor,
@@ -59,16 +59,27 @@ exports.getActoCheckSemanal = async (req, res = reponse) => {
 
     try {
         //Distroccion 
-        const { autor, tipo, semana } = req.body; //->Asi se usa cuando es un objeto 
+        const { autor, tipo, semana, categoria } = req.body; //->Asi se usa cuando es un objeto 
 
+        //Declaro Variables 
+        let acto = null;
+        let ObjActo = {}
+        let index = 0;
+
+        //Condiciono Consulta 
         if (tipo === "1-M") {
-            //Obtener 1-M
-            const acto = await Acto.find({ autor }).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate' }).sort({ categoria: -1 });
-            let ObjActo = {}
-            let index = 0;
-            /**INI**/
+            //Obtener 1-M Por autor
+             acto = await Acto.find({ autor }).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate' }).sort({ categoria: -1 });
+        }  
+        if (tipo === "1-MC") {
+            //Obtener 1-MC Por autor y categoria
+             acto = await Acto.find({ autor, categoria }).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate' }).sort({ categoria: -1 });
+        }  
+           
+        //Itero La consulta para     
             //Nota:Recuerda Leonard que cada asyn await son promesas y cuando usas 
-            //foreach estas no las captura hay que usarlo de esta manera para poder consultar await iterativos 
+            //foreach estas no las captura hay que usarlo de esta manera para poder consultar await iterativos con el (for of ) 
+            
             for (const filas of acto) {
 
                 ObjActo[index] = {
@@ -86,12 +97,11 @@ exports.getActoCheckSemanal = async (req, res = reponse) => {
                 }
 
                 index += 1;
-
-            }
-            /**FIN**/
-
+            }//fin del for 
+            
+            //Envio respuesta 
             res.status(200).json({ ObjActo, success: true });
-        }
+       
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(200).json({ msg: `Hubo un error en la comunicación !! ${error}`, success: false });

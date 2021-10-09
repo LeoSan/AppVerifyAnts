@@ -10,6 +10,7 @@ import {
     MUTAR_ACTO_EXITO, 
     LISTAR_ACTO_SEMANA, 
     LISTAR_ACTO_ERROR_SEMANA,
+    CAMBIO_LOADING,
 } from '../../types';
 
 
@@ -36,6 +37,8 @@ const actoReducer = (state, action) => {
                 msgDeleteActo: null,
                 mutaActo: false,
                 elimiActo:false,
+                loadActo:false,
+                loadClass:''
             }
 
         case LISTAR_ACTO_ERROR:
@@ -68,6 +71,12 @@ const actoReducer = (state, action) => {
                 ...state,
                 msgDeleteActo: action.payload,
                 elimiActo: true
+            }        
+        case CAMBIO_LOADING:
+            return {
+                ...state,
+                loadActo: true,
+                loadClass:'animate-pulse'
             }
 
         default:
