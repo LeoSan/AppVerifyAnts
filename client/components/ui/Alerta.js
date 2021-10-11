@@ -51,7 +51,7 @@ class Alert {
             document.getElementById('swal-input2').value
           ]
         }
-      })
+      });
 
       return formValues;
 

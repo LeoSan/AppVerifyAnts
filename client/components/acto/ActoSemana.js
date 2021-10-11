@@ -2,7 +2,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import moment from 'moment';
 import PropTypes from "prop-types";
-import { useRouter } from 'next/router';
 
 //importar icon 
 import { ArrowSmRightIcon, ArrowSmLeftIcon, CalendarIcon, BookOpenIcon } from '@heroicons/react/solid'
@@ -29,7 +28,7 @@ const ActoSemana = ({ view }) => {
 
     //Acceder el stateContext de ActoContext 
     const valorActoContext = useContext(ActoContext);
-    const { listarActo, listarActoSemana, crearActoRegistroSemanal, cambioLoad, acto, actoSemana, msgMutaActo, mutaActo, loadActo, loadClass } = valorActoContext;
+    const { listarActo, listarActoSemana, crearActoRegistroSemanal, cambioLoad, acto, actoSemana, msgMutaActo, mutaActo, loadActo, loadClass, cambioLoadOFF } = valorActoContext;
 
     //Declaro Variable del Entorno 
     const alerta = new Alerta();
@@ -39,8 +38,6 @@ const ActoSemana = ({ view }) => {
     let fechaAtual = moment().format('MMMM Do YYYY');
     let datos = { nickID, semana: semanaActual, categoria:null,  tipo: "1-M" }
     
-    const [semanaSig, setSemanaSig] = useState(semanaActual);
-    const [semanaAtras, setSemanaAtras] = useState(semanaActual);
     const [auxSemana, setAuxSemana] = useState(semanaActual);
     const [valorSelect, setvalorSelect] = useState(0);
     
@@ -58,13 +55,21 @@ const ActoSemana = ({ view }) => {
         let checked = false;
         let duracion = null;
         let nota = null;
+        let valCancel = true; // Evaluo si dio clic en el boton cancelar
 
         if (document.getElementById(checkedId).checked) {
             checked = true;
             document.getElementById(checkedId).checked = true;
             formValues = await alerta.deployModal();
+            valCancel = false; 
+            if (formValues == undefined) {
+                valCancel = true; 
+                cambioLoadOFF();
+            }
+            
         } else {
             document.getElementById(checkedId).checked = false;
+            valCancel = false; 
         }
 
         //Capturo valores desde el Modal 
@@ -73,25 +78,26 @@ const ActoSemana = ({ view }) => {
             nota = formValues[1];
         }
 
-        const data = {autor: nickID,acto: acto,duracion: duracion,nota: nota,dia: dia,semana: auxSemana,checked: checked }
+        if (valCancel !=true){//Solo entra si no le dio al boton cancelar 
+            const data = {autor: nickID,acto: acto,duracion: duracion,nota: nota,dia: dia,semana: auxSemana,checked: checked }
 
-        //Guardo Datos
-        crearActoRegistroSemanal(data);
+            //Guardo Datos
+            crearActoRegistroSemanal(data);
+    
+            //Recargo Listado 
+            datos = { nickID, semana: auxSemana,categoria:valorSelect, tipo: (valorSelect == 0)?"1-M":"1-MC"} //Debo ir al state y cambiar semana 
+            listarActoSemana(datos);
+        }
 
-        //Recargo Listado 
-        datos = { nickID, semana: auxSemana,categoria:valorSelect, tipo: (valorSelect == 0)?"1-M":"1-MC"} //Debo ir al state y cambiar semana 
-        listarActoSemana(datos);
+        
     }
 
     //Metodo: Consulta atras dias de la semana
-    const consultaSemanaAtras = (e, valSemana) => {
+    const consultaSemanaAtras = (e, semana) => {
         e.preventDefault();
         cambioLoad();
-        setSemanaAtras(valSemana - 1);
-        setAuxSemana(semanaAtras);
-
-        console.log("SemanaAtras", semanaAtras);
-        datos = { nickID, semana: auxSemana, categoria:valorSelect, tipo: (valorSelect == 0)?"1-M":"1-MC" }
+        setAuxSemana(eval( semana - 1 ));
+        datos = { nickID, semana: semana - 1, categoria:valorSelect, tipo: (valorSelect == 0)?"1-M":"1-MC" }
         //Listado 
         listarActoSemana(datos);
     }
@@ -100,11 +106,8 @@ const ActoSemana = ({ view }) => {
     const consultaSemanaSig = (e, semana) => {
         e.preventDefault();
         cambioLoad();
-        setSemanaSig(semana + 1);
-        setAuxSemana(semanaSig);
-
-        console.log("semanaSig", semanaSig);
-        datos = { nickID, semana: auxSemana, categoria:valorSelect, tipo: (valorSelect == 0)?"1-M":"1-MC" }
+        setAuxSemana(eval( semana + 1 ));
+        datos = { nickID, semana: semana + 1, categoria:valorSelect, tipo: (valorSelect == 0)?"1-M":"1-MC" }
         //Listado         
         listarActoSemana(datos);
 

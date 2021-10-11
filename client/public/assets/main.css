@@ -595,6 +595,18 @@ video {
 .w-14{
 	width: 3.5rem;
 }
+.w-10{
+	width: 2.5rem;
+}
+.w-8{
+	width: 2rem;
+}
+.w-7{
+	width: 1.75rem;
+}
+.w-4{
+	width: 1rem;
+}
 .w-64{
 	width: 16rem;
 }
@@ -615,34 +627,6 @@ video {
 }
 .flex-grow{
 	flex-grow: 1;
-}
-@-webkit-keyframes bounce{
-	0%, 100%{
-		transform: translateY(-25%);
-		-webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
-		        animation-timing-function: cubic-bezier(0.8,0,1,1);
-	}
-	50%{
-		transform: none;
-		-webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
-		        animation-timing-function: cubic-bezier(0,0,0.2,1);
-	}
-}
-@keyframes bounce{
-	0%, 100%{
-		transform: translateY(-25%);
-		-webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
-		        animation-timing-function: cubic-bezier(0.8,0,1,1);
-	}
-	50%{
-		transform: none;
-		-webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
-		        animation-timing-function: cubic-bezier(0,0,0.2,1);
-	}
-}
-.animate-bounce{
-	-webkit-animation: bounce 1s infinite;
-	        animation: bounce 1s infinite;
 }
 @-webkit-keyframes pulse{
 	50%{
@@ -671,6 +655,34 @@ video {
 .animate-spin{
 	-webkit-animation: spin 1s linear infinite;
 	        animation: spin 1s linear infinite;
+}
+@-webkit-keyframes bounce{
+	0%, 100%{
+		transform: translateY(-25%);
+		-webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+		        animation-timing-function: cubic-bezier(0.8,0,1,1);
+	}
+	50%{
+		transform: none;
+		-webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+		        animation-timing-function: cubic-bezier(0,0,0.2,1);
+	}
+}
+@keyframes bounce{
+	0%, 100%{
+		transform: translateY(-25%);
+		-webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+		        animation-timing-function: cubic-bezier(0.8,0,1,1);
+	}
+	50%{
+		transform: none;
+		-webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+		        animation-timing-function: cubic-bezier(0,0,0.2,1);
+	}
+}
+.animate-bounce{
+	-webkit-animation: bounce 1s infinite;
+	        animation: bounce 1s infinite;
 }
 .cursor-pointer{
 	cursor: pointer;
@@ -837,6 +849,10 @@ video {
 	--tw-bg-opacity: 1;
 	background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
 }
+.bg-yellow-500{
+	--tw-bg-opacity: 1;
+	background-color: rgba(245, 158, 11, var(--tw-bg-opacity));
+}
 .bg-black{
 	--tw-bg-opacity: 1;
 	background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
@@ -844,10 +860,6 @@ video {
 .bg-gray-800{
 	--tw-bg-opacity: 1;
 	background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
-}
-.bg-yellow-500{
-	--tw-bg-opacity: 1;
-	background-color: rgba(245, 158, 11, var(--tw-bg-opacity));
 }
 .bg-green-600{
 	--tw-bg-opacity: 1;
@@ -1097,6 +1109,9 @@ video {
 }
 .duration-300{
 	transition-duration: 300ms;
+}
+.duration-500{
+	transition-duration: 500ms;
 }
 .duration-700{
 	transition-duration: 700ms;

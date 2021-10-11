@@ -15,6 +15,7 @@ import {
     LISTAR_ACTO_SEMANA, 
     LISTAR_ACTO_ERROR_SEMANA,
     CAMBIO_LOADING,
+    CAMBIO_LOADING_OFF,
 } from '../../types';
 
 //Importo nuetsra libreria axios para conectar con el servidor 
@@ -337,6 +338,13 @@ const ActoState = ({ children }) => {
             payload: true  //Son los datos que modifica el state 
         });
 
+    }//fin del metodo        //Metodo: Permite cargar el load 
+    const cambioLoadOFF = () => {
+        dispatch({
+            type: CAMBIO_LOADING_OFF, //Es la accion a ejecutar
+            payload: true  //Son los datos que modifica el state 
+        });
+
     }//fin del metodo     
 
 
@@ -358,7 +366,8 @@ const ActoState = ({ children }) => {
                 editActo,
                 crearActoRegistroSemanal,
                 listarActoSemana,
-                cambioLoad
+                cambioLoad,
+                cambioLoadOFF
             }}
         >
             {children}

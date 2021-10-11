@@ -11,6 +11,7 @@ import {
     LISTAR_ACTO_SEMANA, 
     LISTAR_ACTO_ERROR_SEMANA,
     CAMBIO_LOADING,
+    CAMBIO_LOADING_OFF,
 } from '../../types';
 
 
@@ -77,6 +78,12 @@ const actoReducer = (state, action) => {
                 ...state,
                 loadActo: true,
                 loadClass:'animate-pulse'
+            }        
+        case CAMBIO_LOADING_OFF:
+            return {
+                ...state,
+                loadActo:false,
+                loadClass:''
             }
 
         default:
