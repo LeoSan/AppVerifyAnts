@@ -195,3 +195,5 @@ Use mongoose.model(name, schema)
 [2021-10-07T10:27:53.879] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: acto is not defined 
 [2021-10-07T10:28:28.144] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: acto is not defined 
 [2021-10-07T10:28:32.764] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: acto is not defined 
+[2021-10-14T14:29:18.254] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-10-14T14:29:19.851] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 

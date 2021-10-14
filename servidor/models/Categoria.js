@@ -36,7 +36,12 @@ const categoriaSchema = new Schema({
 	registro:{
 		type:Date, 
 		default:Date.now()
-	}
+	},
+	color:{
+		type: String,
+		default:	1,
+		trim:true,
+	 },
 	
 });
 //Esta  sentencia nos  permite eportar nuestro modelo  como vemos se pasa como parametros (NombreModelo, EstructuraModelo ) -> definidos previamente.
