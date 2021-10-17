@@ -17,6 +17,7 @@ import CategoriaContext from '../../context/categoria/categoriaContext';
 import Alerta from '../../components/ui/Alerta';
 import Error from '../../components/ui/Error';
 import Load from '../../components/ui/Load';
+import Filtros from '../../components/ui/Filtros';
 
 
 const ActoEstadistica = ({ view }) => {
@@ -27,14 +28,25 @@ const ActoEstadistica = ({ view }) => {
 
     //Acceder el stateContext  de Categoria 
     const valorContext = useContext(CategoriaContext);
-    const { categoria = null } = valorContext;
+    const { categoriaActos = null } = valorContext;
 
     //Acceder el stateContext de ActoContext 
     const valorActoContext = useContext(ActoContext);
-    const { loadActo } = valorActoContext;
+    const { loadActo, listMeses, listSemana,  Meses, Semana } = valorActoContext;
 
+    //Declaración de variables 
     let fechaAtual = moment().format('MMMM Do YYYY');
     let semanaActual = moment().week();
+
+    //Declaro UseEffect   
+    useEffect(() => {
+         listMeses();
+         listSemana();
+    }, []);
+    
+    
+
+    
 
 
 
@@ -51,7 +63,7 @@ const ActoEstadistica = ({ view }) => {
         title: 'Medición de Actos por categoria',
         chartArea: { width: '60%', height: "60%" },
         hAxis: {
-            title: 'Tiempo (min)',
+            title: 'Tiempo (minutos)',
             minValue: 0,
         },
         vAxis: {
@@ -99,62 +111,8 @@ const ActoEstadistica = ({ view }) => {
                                 </svg>
                             </div>
                         </div>                        
-                        
-                        <div className="flex space-x-4">
 
-                            <div className="flex-grow h-10 rounded-md bg-green-500 text-white font-extrabold flex items-center justify-center">
-                                <svg className="h-5 w-14" fill="none">
-                                    <AdjustmentsIcon className="w-6" />
-                                </svg>
-
-                                <select
-                                    id="categoriaBarra"
-                                    name="categoriaBarra"
-                                    className="rounded-md text-gray-700 text-center capitalize"
-                                >
-                                    <option value="0" selected> Categorias </option>
-                                </select>
-                                <svg className="h-5 w-14" fill="none">
-                                    <AdjustmentsIcon className="w-6" />
-                                </svg>
-
-                                <select
-                                    id="mesBarra"
-                                    name="mesBarra"
-                                    className="rounded-md text-gray-700 text-center capitalize"
-                                >
-                                    <option value="0" selected> Mes </option>
-                                </select>
-                                <svg className="h-5 w-14" fill="none">
-                                    <AdjustmentsIcon className="w-6" />
-                                </svg>
-
-                                <select
-                                    id="anioBarra"
-                                    name="anioBarra"
-                                    className="rounded-md text-gray-700 text-center capitalize"
-                                >
-                                    <option value="0" selected> Año </option>
-                                </select>                                
-                                
-                                <svg className="h-5 w-14" fill="none">
-                                    <AdjustmentsIcon className="w-6" />
-                                </svg>
-
-                                <select
-                                    id="semanaBarra"
-                                    name="semanaBarra"
-                                    className="rounded-md text-gray-700 text-center capitalize"
-                                >
-                                    <option value="0" selected> Semana </option>
-                                </select>
-
-                            </div>
-
-                        </div>
-
-
-
+                        <Filtros categoria={categoriaActos} semana={Semana} meses={Meses} idCate={'cateBarra'} idMes={'anioBarra'} idAnio={'anioBarra'} idSemana={'semBarra'} />
 
                         <Chart
                             chartType="BarChart"

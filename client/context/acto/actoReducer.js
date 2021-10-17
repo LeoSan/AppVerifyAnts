@@ -12,6 +12,8 @@ import {
     LISTAR_ACTO_ERROR_SEMANA,
     CAMBIO_LOADING,
     CAMBIO_LOADING_OFF,
+    LISTA_MESES,
+    LISTA_SEMANA,
 } from '../../types';
 
 
@@ -84,6 +86,16 @@ const actoReducer = (state, action) => {
                 ...state,
                 loadActo:false,
                 loadClass:''
+            }        
+        case LISTA_MESES:
+            return {
+                ...state,
+                Meses: action.payload,
+            }
+        case LISTA_SEMANA:
+            return {
+                ...state,
+                Semana: action.payload,
             }
 
         default:

@@ -12,10 +12,12 @@ import {
     ELIMINAR_ACTO_EXITO,
     MUTAR_ACTO_ERROR,
     MUTAR_ACTO_EXITO,
-    LISTAR_ACTO_SEMANA, 
+    LISTAR_ACTO_SEMANA,
     LISTAR_ACTO_ERROR_SEMANA,
     CAMBIO_LOADING,
     CAMBIO_LOADING_OFF,
+    LISTA_MESES,
+    LISTA_SEMANA,
 } from '../../types';
 
 //Importo nuetsra libreria axios para conectar con el servidor 
@@ -38,7 +40,9 @@ const ActoState = ({ children }) => {
         msgDeleteActo: null,
         mutaActo: null,
         elimiActo: null,
-        loadActo:false
+        loadActo: false,
+        ListMeses: null,
+        Semana:null
     }
 
     // Definimos Reducer 
@@ -106,7 +110,7 @@ const ActoState = ({ children }) => {
             const data = {
                 autor: datos.nickID,
                 semana: datos.semana,
-                categoria:datos.categoria,
+                categoria: datos.categoria,
                 tipo: datos.tipo
             }
 
@@ -167,8 +171,8 @@ const ActoState = ({ children }) => {
                             type: MUTAR_ACTO_EXITO, //Es la accion a ejecutar
                             payload: response.data.msg  //Son los datos que modifica el state 
                         });
-                        
-                         alerta.deploySucces();
+
+                        alerta.deploySucces();
 
                     } else {
 
@@ -191,47 +195,47 @@ const ActoState = ({ children }) => {
     }//fin del metodo 
 
     //Metodo: Permite eliminar el registro de una SubCategoria
-    const deleteActo = async (id, nombre)=>{
-    
+    const deleteActo = async (id, nombre) => {
+
         try {
 
             const token = localStorage.getItem('token');
-            
-            if (token){
+
+            if (token) {
                 //funcion para enviar el token por header 
                 tokenAuth(token);
             }
-            const data = { 
-                id:id, 
-                nomActo:nombre
+            const data = {
+                id: id,
+                nomActo: nombre
             }
 
             const respuesta = await clienteAxios.post('/api/acto/del-acto', data)
                 .then((response) => {
 
-                    if( response.data.success == true ){
+                    if (response.data.success == true) {
                         dispatch({
                             type: ELIMINAR_ACTO_EXITO, //Es la accion a ejecutar
                             payload: response.data.msg  //Son los datos que modifica el state 
-                        }); 
+                        });
 
                         alerta.deploySucces();
-                    }else{
+                    } else {
 
                         dispatch({
                             type: ELIMINAR_ACTO_ERROR, //Es la accion a ejecutar
                             payload: response.data.msg  //Son los datos que modifica el state 
-                        });   
+                        });
                         alerta.deployFault();
                     }
-            });   
+                });
 
-         
+
         } catch (error) {
             dispatch({
                 type: ELIMINAR_ACTO_ERROR, //Es la accion a ejecutar
                 payload: `Hubo un problema con el servidor ${error}`  //Son los datos que modifica el state 
-            }); 
+            });
 
             alerta.deployFault();
         }
@@ -239,49 +243,49 @@ const ActoState = ({ children }) => {
     }//fin del metodo 
 
     //Metodo: Permite eliminar el registro de una SubCategoria
-    const editActo = async (datos)=>{
-    
+    const editActo = async (datos) => {
+
         try {
 
             const token = localStorage.getItem('token');
-            
-            if (token){
+
+            if (token) {
                 //funcion para enviar el token por header 
                 tokenAuth(token);
             }
-            const data = { 
-                id:datos.id, 
-                nomActo:datos.nomActo,
-                desActo:datos.desActo,
-                categoria:datos.categoria
+            const data = {
+                id: datos.id,
+                nomActo: datos.nomActo,
+                desActo: datos.desActo,
+                categoria: datos.categoria
             }
 
             const respuesta = await clienteAxios.post('/api/acto/edit-acto', data)
                 .then((response) => {
 
-                    if( response.data.success == true ){
+                    if (response.data.success == true) {
                         dispatch({
                             type: MUTAR_ACTO_EXITO, //Es la accion a ejecutar
                             payload: response.data.msg  //Son los datos que modifica el state 
-                        }); 
+                        });
 
                         alerta.deploySucces();
-                    }else{
+                    } else {
 
                         dispatch({
                             type: MUTAR_ACTO_ERROR, //Es la accion a ejecutar
                             payload: response.data.msg  //Son los datos que modifica el state 
-                        });   
+                        });
                         alerta.deployFault();
                     }
-            });   
+                });
 
-         
+
         } catch (error) {
             dispatch({
                 type: MUTAR_ACTO_ERROR, //Es la accion a ejecutar
                 payload: `Hubo un problema con el servidor ${error}`  //Son los datos que modifica el state 
-            }); 
+            });
 
             alerta.deployFault();
         }
@@ -308,8 +312,8 @@ const ActoState = ({ children }) => {
                             type: MUTAR_ACTO_EXITO, //Es la accion a ejecutar
                             payload: response.data.msg  //Son los datos que modifica el state 
                         });
-                        
-                         alerta.deploySucces();
+
+                        alerta.deploySucces();
 
                     } else {
 
@@ -344,22 +348,107 @@ const ActoState = ({ children }) => {
             type: CAMBIO_LOADING_OFF, //Es la accion a ejecutar
             payload: true  //Son los datos que modifica el state 
         });
+    }//fin del metodo 
 
+
+    //Metodos Estadisticos
+    const listMeses = () => {
+        dispatch({
+            type: LISTA_MESES, //Es la accion a ejecutar
+            payload: [
+                  { id: 1, mes: "Enero" }
+                , { id: 2, mes: "Febrero"}
+                , { id: 3, mes: "Marzo" }
+                , { id: 4, mes: "Abril" }
+                , { id: 5, mes: "Mayo" }
+                , { id: 6, mes: "Junio" }
+                , { id: 7, mes: "Julio" }
+                , { id: 8, mes: "Agosto" }
+                , { id: 9, mes: "Septiembre" }
+                , { id: 10, mes: "Octubre" }
+                , { id: 11, mes: "Noviembre" }
+                , { id: 12, mes: "Diciembre" }
+            ]
+        });
+    }//fin del metodo 
+
+    //Metodos Estadisticos
+    const listSemana = () => {
+        dispatch({
+            type: LISTA_SEMANA, //Es la accion a ejecutar
+            payload: [
+                  { id: 1, semana: "Semana #1" }
+                , { id: 2, semana: "Semana #2"}
+                , { id: 3, semana: "Semana #3" }
+                , { id: 4, semana: "Semana #4" }
+                , { id: 5, semana: "Semana #5" }
+                , { id: 6, semana: "Semana #6" }
+                , { id: 7, semana: "Semana #7" }
+                , { id: 8, semana: "Semana #8" }
+                , { id: 9, semana: "Semana #9" }
+                , { id: 10, semana: "Semana #10" }
+                , { id: 11, semana: "Semana #11" }
+                , { id: 12, semana: "Semana #12" }
+                , { id: 13, semana: "Semana #13" }
+                , { id: 14, semana: "Semana #14" }
+                , { id: 15, semana: "Semana #15" }
+                , { id: 16, semana: "Semana #16" }
+                , { id: 17, semana: "Semana #17" }
+                , { id: 18, semana: "Semana #18" }
+                , { id: 19, semana: "Semana #19" }
+                , { id: 20, semana: "Semana #20" }
+                , { id: 21, semana: "Semana #21" }
+                , { id: 22, semana: "Semana #22" }
+                , { id: 23, semana: "Semana #23" }
+                , { id: 24, semana: "Semana #24" }
+                , { id: 25, semana: "Semana #25" }
+                , { id: 26, semana: "Semana #26" }
+                , { id: 27, semana: "Semana #27" }
+                , { id: 28, semana: "Semana #28" }
+                , { id: 29, semana: "Semana #29" }
+                , { id: 30, semana: "Semana #30" }
+                , { id: 31, semana: "Semana #31" }
+                , { id: 32, semana: "Semana #32" }
+                , { id: 33, semana: "Semana #33" }
+                , { id: 34, semana: "Semana #34" }
+                , { id: 35, semana: "Semana #35" }
+                , { id: 36, semana: "Semana #36" }
+                , { id: 37, semana: "Semana #37" }
+                , { id: 38, semana: "Semana #38" }
+                , { id: 39, semana: "Semana #39" }
+                , { id: 40, semana: "Semana #40" }
+                , { id: 41, semana: "Semana #41" }
+                , { id: 42, semana: "Semana #42" }
+                , { id: 43, semana: "Semana #43" }
+                , { id: 44, semana: "Semana #44" }
+                , { id: 45, semana: "Semana #45" }
+                , { id: 46, semana: "Semana #46" }
+                , { id: 47, semana: "Semana #47" }
+                , { id: 48, semana: "Semana #48" }
+                , { id: 49, semana: "Semana #49" }
+                , { id: 50, semana: "Semana #50" }
+                , { id: 51, semana: "Semana #51" }
+                , { id: 52, semana: "Semana #52" }
+                , { id: 53, semana: "Semana #53" }
+                , { id: 54, semana: "Semana #54" }
+            ]
+        });
     }//fin del metodo     
-
 
     return (
         <ActoContext.Provider
             value={{
                 msgListActo: state.msgListActo,
                 acto: state.acto,
-                actoSemana:  state.actoSemana,
+                actoSemana: state.actoSemana,
                 msgMutaActo: state.msgMutaActo,
                 msgDeleteActo: state.msgDeleteActo,
-                mutaActo:  state.mutaActo,
+                mutaActo: state.mutaActo,
                 elimiActo: state.elimiActo,
                 loadActo: state.loadActo,
                 loadClass: state.loadClass,
+                Meses: state.Meses,
+                Semana: state.Semana,
                 listarActo,
                 crearActo,
                 deleteActo,
@@ -367,7 +456,10 @@ const ActoState = ({ children }) => {
                 crearActoRegistroSemanal,
                 listarActoSemana,
                 cambioLoad,
-                cambioLoadOFF
+                cambioLoadOFF,
+                listMeses,
+                listSemana
+
             }}
         >
             {children}

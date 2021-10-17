@@ -24,7 +24,7 @@ const ActoSemana = ({ view }) => {
 
    //Acceder el stateContext  de Categoria 
    const valorContext = useContext(CategoriaContext);
-   const { categoria = null } = valorContext;
+   const { categoriaActos = null } = valorContext;
 
     //Acceder el stateContext de ActoContext 
     const valorActoContext = useContext(ActoContext);
@@ -173,7 +173,7 @@ const ActoSemana = ({ view }) => {
                             <option value="0" selected> Categorias </option>
                             
                             {
-                                !categoria ? null : categoria.map((list) => (
+                                !categoriaActos ? null : categoriaActos.map((list) => (
                                     <option key={list._id} value={list._id} > {list.nomCate} </option>
                                  ))
                                  

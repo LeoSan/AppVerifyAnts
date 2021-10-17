@@ -72,6 +72,8 @@ export const LISTAR_ACTO_SEMANA          = 'LISTAR_ACTO_SEMANA';
 export const LISTAR_ACTO_ERROR_SEMANA    = 'LISTAR_ACTO_ERROR_SEMANA';
 export const CAMBIO_LOADING              = 'CAMBIO_LOADING';
 export const CAMBIO_LOADING_OFF          = 'CAMBIO_LOADING_OFF';
+export const LISTA_MESES          = 'LISTA_MESES';
+export const LISTA_SEMANA          = 'LISTA_SEMANA';
 
 
 
