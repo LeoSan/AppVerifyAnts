@@ -197,3 +197,11 @@ Use mongoose.model(name, schema)
 [2021-10-07T10:28:32.764] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: acto is not defined 
 [2021-10-14T14:29:18.254] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
 [2021-10-14T14:29:19.851] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-10-15T14:05:08.448] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-10-15T14:05:17.020] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-10-18T11:44:12.097] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-10-18T11:44:12.920] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-10-18T11:44:40.869] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-10-18T11:44:48.640] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-10-21T18:46:25.490] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot destructure property 'nickID' of 'req.body' as it is undefined. 
+[2021-10-21T18:46:35.708] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot destructure property 'nickID' of 'req.body' as it is undefined. 

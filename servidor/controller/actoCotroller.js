@@ -269,3 +269,54 @@ const getActoSemanaDia = async (autor, acto, dia, semana) => {
 }
 
 
+//Obtener Acto - Estadistico 
+exports.getActoEstadisticos = async (req, res = reponse) => {
+
+    try {
+        const {tipo} = req.body;
+        let data = null; 
+
+        //Datos para Estadistica Barra
+        if ( tipo == 'datosBarra'){
+            
+            data = obtenerDatosBarras( req );
+           
+        }
+
+        
+        
+        res.status(200).json({  data: data });
+
+    } catch (error) {
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
+        res.status(200).json({ msg: `Hubo un error en la comunicación !! `, success: false });
+    }
+}
+
+//Metodo independientes: Estadisticos 
+
+const obtenerDatosBarras=(req)=>{
+    let data = true;
+    const {nickID, cateBarra, mesBarra, anioBarra, semBarra, tipo} = req.body;
+    
+    console.log('Estoy en el metodo Barra',tipo);
+
+
+    return data; 
+}
+
+
+const obtenerDatosLine=(req)=>{
+    const {nickID, cateBarra, mesBarra, anioBarra, semBarra, tipo} = req.body;
+    console.log('Estoy en el metodo Line',tipo);
+}
+
+
+const obtenerDatosPie=(req)=>{
+    const {nickID, cateBarra, mesBarra, anioBarra, semBarra, tipo} = req.body;
+    console.log('Estoy en el metodo Pie',tipo);
+}
+
+
+
+
