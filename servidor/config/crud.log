@@ -187,3 +187,43 @@ Use mongoose.model(name, schema)
 [2021-09-29T15:08:26.248] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: consonle is not defined 
 [2021-10-01T11:01:44.405] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: index is not defined 
 [2021-10-01T11:04:45.091] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: index is not defined 
+[2021-10-07T10:24:45.053] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: acto is not defined 
+[2021-10-07T10:25:15.103] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: acto is not defined 
+[2021-10-07T10:25:20.541] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: acto is not defined 
+[2021-10-07T10:25:32.113] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: acto is not defined 
+[2021-10-07T10:26:31.018] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: acto is not defined 
+[2021-10-07T10:27:53.879] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: acto is not defined 
+[2021-10-07T10:28:28.144] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: acto is not defined 
+[2021-10-07T10:28:32.764] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: acto is not defined 
+[2021-10-14T14:29:18.254] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-10-14T14:29:19.851] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-10-15T14:05:08.448] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-10-15T14:05:17.020] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-10-18T11:44:12.097] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-10-18T11:44:12.920] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-10-18T11:44:40.869] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-10-18T11:44:48.640] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-10-21T18:46:25.490] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot destructure property 'nickID' of 'req.body' as it is undefined. 
+[2021-10-21T18:46:35.708] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot destructure property 'nickID' of 'req.body' as it is undefined. 
+[2021-10-25T20:48:55.619] [ERROR] crud - Hubo un error en la comunicación !! -> Error: Can't use $and with Date. 
+[2021-10-25T20:51:53.195] [ERROR] crud - Hubo un error en la comunicación !! -> Error: Can't use $and with Date. 
+[2021-10-25T21:02:30.070] [ERROR] crud - Hubo un error en la comunicación !! -> Error: Can't use $and with Date. 
+[2021-10-25T21:06:28.061] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: Unrecognized expression '$registro' 
+[2021-10-25T21:07:18.811] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: Expression $eq takes exactly 2 arguments. 1 were passed in. 
+[2021-10-25T21:08:10.339] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: Unrecognized expression '$registro' 
+[2021-10-25T21:11:48.757] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: Failed to optimize expression :: caused by :: Failed to optimize expression :: caused by :: can't convert from BSON type int to Date 
+[2021-10-26T00:08:21.404] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: #<Object> is not a function 
+[2021-10-26T00:12:26.652] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: semana is not defined 
+[2021-10-26T00:13:10.314] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: semana is not defined 
+[2021-10-26T00:13:34.110] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: semana is not defined 
+[2021-10-26T00:13:55.555] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: semana is not defined 
+[2021-10-26T00:14:28.202] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: semana is not defined 
+[2021-10-26T18:17:54.952] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: FieldPath cannot be constructed with empty string 
+[2021-10-26T18:18:00.846] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: FieldPath cannot be constructed with empty string 
+[2021-10-27T17:08:28.255] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Actoregistro.find(...).aggregate is not a function 
+[2021-10-27T17:10:33.395] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Actoregistro.find(...).aggregate is not a function 
+[2021-10-27T17:15:45.739] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: The field 'semana' must be an accumulator object 
+[2021-10-27T17:20:06.683] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: The field 'categoria_id' must be an accumulator object 
+[2021-10-27T17:39:47.569] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: ObjectId is not defined 
+[2021-10-27T17:51:28.719] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: FieldPath field names may not start with '$'. 
+[2021-10-27T17:52:15.639] [ERROR] crud - Hubo un error en la comunicación !! -> MongoError: FieldPath field names may not start with '$'. 

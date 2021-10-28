@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "apeUsu": "cuenca",
+  "sexo": "femenino",
+  "pais": "colombia",
+  "fechaNac": {
+    "$date": "2021-07-26T00:00:00Z"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-07-27T00:18:24.734Z"
+  },
+  "nomUsu": "leonard",
+  "emailUsu": "cuenca623@gmail.com",
+  "password": "$2b$10$jPxO7AJQuBYsDQG79X1hmu4dE.M7C5WcpRFzJ0QXsCv6iF8/vyowu",
+  "__v": 0
+}]

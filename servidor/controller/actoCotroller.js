@@ -51,7 +51,7 @@ exports.getActo = async (req, res = reponse) => {
 exports.getActoCheckSemanal = async (req, res = reponse) => {
     //Extraer proyecto 
 
-    /*  //Lo sque para ver si mejora la carga tarda mucho 
+    /*  //Campos que saque, para  ver si mejora la carga tarda mucho  
         activo: filas.activo,
         registro: filas.registro,
         autor: filas.autor,
@@ -59,22 +59,34 @@ exports.getActoCheckSemanal = async (req, res = reponse) => {
 
     try {
         //Distroccion 
-        const { autor, tipo, semana } = req.body; //->Asi se usa cuando es un objeto 
+        const { autor, tipo, semana, categoria } = req.body; //->Asi se usa cuando es un objeto 
 
+        //Declaro Variables 
+        let acto = null;
+        let ObjActo = {}
+        let index = 0;
+
+        //Condiciono Consulta 
         if (tipo === "1-M") {
-            //Obtener 1-M
-            const acto = await Acto.find({ autor }).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate' }).sort({ categoria: -1 });
-            let ObjActo = {}
-            let index = 0;
-            /**INI**/
+            //Obtener 1-M Por autor
+             acto = await Acto.find({ autor }).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate' }).sort({ categoria: -1 });
+        }  
+        if (tipo === "1-MC") {
+            //Obtener 1-MC Por autor y categoria
+             acto = await Acto.find({ autor, categoria }).populate({ path: 'categoria', model: 'Categoria' }).sort({ categoria: -1 });
+        }  
+           
+        //Itero La consulta para     
             //Nota:Recuerda Leonard que cada asyn await son promesas y cuando usas 
-            //foreach estas no las captura hay que usarlo de esta manera para poder consultar await iterativos 
+            //foreach estas no las captura hay que usarlo de esta manera para poder consultar await iterativos con el (for of ) 
+            
             for (const filas of acto) {
 
                 ObjActo[index] = {
                     _id: filas._id,
                     nomActo: filas.nomActo,
-                    categoria: filas.categoria,
+                    categoria: filas.categoria.nomCate,
+                    categoriaid: filas.categoria._id,
                     checkVals: {
                         'lunes': await getActoSemanaDia(autor, filas._id, 'Lunes', semana)
                         , 'martes': await getActoSemanaDia(autor, filas._id, 'martes', semana)
@@ -86,12 +98,11 @@ exports.getActoCheckSemanal = async (req, res = reponse) => {
                 }
 
                 index += 1;
-
-            }
-            /**FIN**/
-
+            }//fin del for 
+            
+            //Envio respuesta 
             res.status(200).json({ ObjActo, success: true });
-        }
+       
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
         res.status(200).json({ msg: `Hubo un error en la comunicación !! ${error}`, success: false });
@@ -245,7 +256,7 @@ exports.getActoSemana = async (req, res = reponse) => {
 const getActoSemanaDia = async (autor, acto, dia, semana) => {
 
     try {
-
+        //Nota debo filtrar por año 
         let objActoregistro = await Actoregistro.find({ 'autor': autor, acto: acto, 'dia': dia, 'semana': semana, 'dia': dia, 'semana': semana });
         if (objActoregistro.length > 0) {
             return true;
@@ -257,5 +268,120 @@ const getActoSemanaDia = async (autor, acto, dia, semana) => {
         return false;
     }
 }
+
+
+//Obtener Acto - Estadistico 
+exports.getActoEstadisticos = async (req, res = reponse) => {
+
+    try {
+        const {tipo} = req.body;
+        let data = null; 
+
+        //Datos para Estadistica Barra
+        if ( tipo == 'datosBarra'){
+            
+            data = await obtenerDatosBarras( req );
+           
+        }
+        
+        res.status(200).json({  data: data,  success: true });
+
+    } catch (error) {
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
+        res.status(401).json({ msg: `Hubo un error en la comunicación !! `, success: false });
+    }
+}
+
+//Metodo independientes: Estadisticos 
+
+const obtenerDatosBarras = async(req)=>{
+    
+
+    let objActoregistro = null; 
+    const query = filtrosQuery(req);
+   
+    //Consulta valor del  Modelo 
+    objActoregistro = await Actoregistro.find(query).populate({ path: 'acto', model: 'Acto', select: 'nomActo categoria' });
+/*
+ let valGroup = { 
+     _id:{categoria:"$categoria"},
+     duracion: {$sum:'$duracion'}
+ } 
+
+    objActoregistro = await Actoregistro.aggregate([
+                                                     { $match: query }
+                                                     { $group: valGroup }
+                                                    ]);
+
+*/
+    return objActoregistro; 
+}
+
+//helpers Filtros 
+
+const filtrosQuery = (req)=>{
+    
+    const {nickID, anioBarra, mesBarra, semBarra, cateBarra} = req.body;
+    let query = {
+        'autor': nickID,
+        "activo": 1,
+    };
+
+    //Filtro Año
+    if (anioBarra){
+        query = filtroCategoria(cateBarra);
+        query = {
+            ...query, 
+            "$expr": {
+                "$and": [
+                  { $eq: [{ $year: "$registro" }, { $year: new Date(anioBarra+'-01-01') }]},
+               ]
+              }        
+          }        
+    }    
+    //Filtro -> Mes Obligatorio(Año)
+    if (mesBarra){
+        query = filtroCategoria(cateBarra);
+        query = {
+            ...query, 
+            "$expr": {
+                "$and": [
+                  { $eq: [{ $year: "$registro" }, { $year: new Date(anioBarra+'-01-01') }]},
+                  { $eq: [{ $month: "$registro" }, { $month: new Date(anioBarra + '-'+ mesBarra + '-01') }]},
+               ]
+              }        
+          } 
+    }    
+    
+    //Filtro Semana  -> Obligatorio(Año)
+    if (semBarra){
+        query = filtroCategoria(cateBarra);
+        query = {
+            ...query, 
+            "semana":semBarra,
+            "$expr": {
+                "$and": [
+                  { $eq: [{ $year: "$registro" }, { $year: new Date(anioBarra+'-01-01') }]},
+               ]
+              }        
+          }         
+    }    
+    
+    return query; 
+}
+
+const filtroCategoria = (cateBarra)=>{
+    let query = '';
+    if (cateBarra){
+        query = {
+            ...query, 
+            'categoria':cateBarra
+          }
+    } 
+
+    return query; 
+}
+
+
 
 

@@ -15,7 +15,7 @@ import {
     ELIMINAR_CATEGORIA_ERROR,
     ELIMINAR_CATEGORIA_EXITO,
     EDITAR_CATEGORIA_ERROR,
-    EDITAR_CATEGORIA_EXITO
+    EDITAR_CATEGORIA_EXITO,
 } from '../../types';
 
 
@@ -37,6 +37,8 @@ const CategoriaState = ({children}) => {
         msgCrearCat:null,  
         msgDeleteCat:null, 
         categoria:null,
+        categoriaActos:null,
+        categoriaGastos:null,
         editaCat:false,
         crearCat:false,
         elimiCat:false
@@ -273,6 +275,8 @@ const CategoriaState = ({children}) => {
                 msgCrearCat:state.msgCrearCat,
                 msgDeleteCat:state.msgDeleteCat,
                 categoria:state.categoria,
+                categoriaActos:state.categoriaActos,
+                categoriaGastos:state.categoriaGastos,
                 editaCat:state.editado,
                 crearCat:state.crearCat,
                 elimiCat:state.elimiCat,

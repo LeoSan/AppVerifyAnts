@@ -1,0 +1,409 @@
+[{
+  "_id": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-09-04T07:55:31.136Z"
+  },
+  "nomActo": "duolingo",
+  "desActo": "practicar con duolingo",
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-09-04T07:55:31.136Z"
+  },
+  "nomActo": "writing/1000word",
+  "desActo": "mejorar la escritura",
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6149f98ec1aa3f304ca1a59c"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-09-21T15:19:01.142Z"
+  },
+  "nomActo": "listening",
+  "desActo": "practicas de ingles pero en el oído",
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ce3e83735a650a8818a72"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-05T23:35:38.676Z"
+  },
+  "nomActo": "reading",
+  "desActo": "habito de lectura leer un libro en ingles",
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-05T23:35:38.676Z"
+  },
+  "nomActo": "clases  platzi",
+  "desActo": "clases para mejorar en el idioma ingles",
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-05T23:35:38.676Z"
+  },
+  "nomActo": "estudiar react/ nodejs",
+  "desActo": "mejorar mi lenguaje js",
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ce56f3735a650a8818a76"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-05T23:35:38.676Z"
+  },
+  "nomActo": "estudiar react native",
+  "desActo": "mejorar mi lenguaje js para mobil",
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ce5893735a650a8818a77"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-05T23:35:38.676Z"
+  },
+  "nomActo": "estudiar laravel 8",
+  "desActo": "mejorar mi lenguaje php en framework laravel",
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ce5b23735a650a8818a78"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-05T23:35:38.676Z"
+  },
+  "nomActo": "estudiar fundamentos programación",
+  "desActo": "mejorar mi habilidad lógica con nuevos lenguajes",
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-06T00:04:47.807Z"
+  },
+  "nomActo": "clases de bitcoin",
+  "desActo": "curso para mejorar en el uso de bitcoin",
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ce9274f026f215495e9e2"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-06T00:04:47.807Z"
+  },
+  "nomActo": "leer articulos de criptocositas",
+  "desActo": "leer articulos de criptocositas",
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-06T00:04:47.807Z"
+  },
+  "nomActo": "play-to-ear axies",
+  "desActo": "practicar y mejorar en el uso de token de juegos",
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ce9514f026f215495e9e4"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-06T00:04:47.807Z"
+  },
+  "nomActo": "invertir en tokens",
+  "desActo": "invertir en tokens",
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-06T17:29:34.865Z"
+  },
+  "nomActo": "tomar 2 litros de agua",
+  "desActo": "como parte de salud tomar mucha agua",
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615de013070ead39d4bda9b5"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-06T17:29:34.865Z"
+  },
+  "nomActo": "meditar 10 min",
+  "desActo": "como parte de salud meditar 10 min",
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-06T17:29:34.865Z"
+  },
+  "nomActo": "tomar té verde/negro",
+  "desActo": "como parte de salud tomar te",
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615de04d070ead39d4bda9b7"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-06T17:29:34.865Z"
+  },
+  "nomActo": "ejercicio pierna",
+  "desActo": "como  mejora física",
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615de056070ead39d4bda9b8"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-06T17:29:34.865Z"
+  },
+  "nomActo": "corren 10 min",
+  "desActo": "como  mejora física",
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615de067070ead39d4bda9b9"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-06T17:29:34.865Z"
+  },
+  "nomActo": "entrenar pecho y espalda",
+  "desActo": "como  mejora física",
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615de092070ead39d4bda9ba"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-06T17:29:34.865Z"
+  },
+  "nomActo": "bic/trip",
+  "desActo": "ejercicio especifico solo para brazos",
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-06T17:29:34.865Z"
+  },
+  "nomActo": "play-to-earn plantvsundead",
+  "desActo": "medir cuanto tiempo invierto en esto",
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-14T17:48:35.170Z"
+  },
+  "nomActo": "dev antverify",
+  "desActo": "desarrollo de esta app para medir gastos y actividades",
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-14T17:48:35.170Z"
+  },
+  "nomActo": "habito de lectura",
+  "desActo": "leer cualquier libro de los que tengo en la mano",
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61774515c588ee46dca774a9"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-25T18:30:16.589Z"
+  },
+  "nomActo": "abdominales",
+  "desActo": "separo este ejercicio para medirlo mas especificamente",
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0
+}]

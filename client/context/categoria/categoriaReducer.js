@@ -9,7 +9,7 @@ import {
     ELIMINAR_CATEGORIA_ERROR,
     ELIMINAR_CATEGORIA_EXITO,
     EDITAR_CATEGORIA_ERROR,
-    EDITAR_CATEGORIA_EXITO
+    EDITAR_CATEGORIA_EXITO,
 } from '../../types';
 
 
@@ -26,9 +26,19 @@ const categoriaReducer = (state, action) => {
                 msgCrearCat: null,
                 msgDeleteCat:null, 
                 elimiCat:false,
-                crearCat: false
-            }
+                crearCat: false,
+                categoriaActos: action.payload.filter(producto =>{
+                    return(
+                      producto.actividad._id.includes('60ae92dc3cb1ca2e14baeb8b')
+                    )
+                  }),
+                categoriaGastos: action.payload.filter(producto =>{
+                    return(
+                      producto.actividad._id.includes('6095819506be383f7cf49ce6')
+                    )
+                  }),                  
 
+            }       
         case LISTAR_CATEGORIA_ERROR:
             return {
                 ...state,

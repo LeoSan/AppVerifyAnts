@@ -114,7 +114,7 @@ const SideBar = () => {
                                                         <HeartIcon className="h-5 w-5 text-white" />
                                                  </div>
                                                  <div className=" px-1 py-1  text-white mr-2" onClick={ (e)=>{ listarActos() } }>
-                                                        Acto
+                                                        Habitos
                                                  </div>
                                           </div>
                                           <div className="flex flex-nowrap hover:bg-yellow-500 hover:cursor-pointer">

@@ -50,20 +50,6 @@ router.post('/get-acto-check-semanal',
       actoCotroller.getActoCheckSemanal
 );
 
-
-//End-Point - Consultar Acto  por fecha 
-/*router.get('/a-between-fecha',
-      auth,  
-      [
-            check('fechaInicio',     'El campo fecha Inicio es obligatorio.').not().isEmpty(), //Valida vacio
-            check('fechaFin',        'El campo fecha Fin es obligatorio.').not().isEmpty(), //Valida vacio
-            check('activo',          'El campo activo es obligatorio.').not().isEmpty(), //Valida vacio
-            check('tipo',            'El campo tipo es obligatorio.').not().isEmpty(), //Valida vacio
-      ] ,      
-      actoCotroller.getAccionBetweenFecha
-);
-*/
-
 //End-Point - Editar Acto
 router.post('/edit-acto',
       auth,
@@ -111,6 +97,22 @@ router.post('/get-semana',
       ],
       actoCotroller.getActoSemana
 );
+
+
+//End-Point - Consultar Acto  por fecha 
+router.post('/get-act-statistics',
+      //auth,  
+      [
+            check('nickID',      'Id Usuario.').not().isEmpty(), //Valida vacio
+            check('cateBarra',   'Filtro categoria.').not().isEmpty(), //Valida vacio
+            check('mesBarra',    'Filtro Mes .').not().isEmpty(), //Valida vacio
+            check('anioBarra',   'Filtro Años.').not().isEmpty(), //Valida vacio
+            check('semBarra',    'Filtro Semana.').not().isEmpty(), //Valida vacio
+            check('tipo',        'Filtro Tipo.').not().isEmpty(), //Valida vacio
+      ] ,      
+      actoCotroller.getActoEstadisticos
+);
+
 
 
 

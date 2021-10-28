@@ -10,6 +10,11 @@ import {
     MUTAR_ACTO_EXITO, 
     LISTAR_ACTO_SEMANA, 
     LISTAR_ACTO_ERROR_SEMANA,
+    CAMBIO_LOADING,
+    CAMBIO_LOADING_OFF,
+    LISTA_MESES,
+    LISTA_SEMANA,
+    CONSULTA_DATA_BARRA,
 } from '../../types';
 
 
@@ -36,6 +41,8 @@ const actoReducer = (state, action) => {
                 msgDeleteActo: null,
                 mutaActo: false,
                 elimiActo:false,
+                loadActo:false,
+                loadClass:''
             }
 
         case LISTAR_ACTO_ERROR:
@@ -68,6 +75,33 @@ const actoReducer = (state, action) => {
                 ...state,
                 msgDeleteActo: action.payload,
                 elimiActo: true
+            }        
+        case CAMBIO_LOADING:
+            return {
+                ...state,
+                loadActo: true,
+                loadClass:'animate-pulse'
+            }        
+        case CAMBIO_LOADING_OFF:
+            return {
+                ...state,
+                loadActo:false,
+                loadClass:''
+            }        
+        case LISTA_MESES:
+            return {
+                ...state,
+                Meses: action.payload,
+            }
+        case LISTA_SEMANA:
+            return {
+                ...state,
+                Semana: action.payload,
+            }        
+        case CONSULTA_DATA_BARRA:
+            return {
+                ...state,
+                dataBarra: action.payload,
             }
 
         default:

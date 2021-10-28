@@ -41,7 +41,7 @@ const Actoform = ({ view }) => {
   //Declaro Hooks -> UseContext para usar el state 
   //Acceder el stateContext  de Categoria 
   const valorContext = useContext(CategoriaContext);
-  const { categoria  } = valorContext;
+  const { categoria, categoriaActos  } = valorContext;
 
   //Acceder el stateContext de auth 
   const valorAuthContext = useContext(AuthContext);
@@ -149,7 +149,7 @@ const Actoform = ({ view }) => {
   return (
     <form className="mb-8 px-8" onSubmit={formik.handleSubmit}>
       <label
-        className="text-2xl font-bold text-yellow-500 " >{titulo} Acto </label>
+        className="text-2xl font-bold text-yellow-500 " >{titulo} Habitos </label>
 
 
       <div className="mb-4">
@@ -166,7 +166,7 @@ const Actoform = ({ view }) => {
 
           {
 
-            !categoria ? null : categoria.map((list) => (
+            !categoriaActos ? null : categoriaActos.map((list) => (
               <option key={list._id} value={list._id} > {list.nomCate} </option>
             ))
 

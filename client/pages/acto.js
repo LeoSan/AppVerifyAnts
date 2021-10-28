@@ -93,24 +93,24 @@ const Acto = () => {
                         <div className="w-full  pl-3 pr-3 rounded-lg pt-3 bg-white mb-5 overflow-hidden shadow-lg">
 
                             <div className="flex flex-col">
-                                <label className="text-2xl font-bold text-yellow-500 " >Tus Actos </label>
-                                <label className="text-xs font-bold text-gray-500 " >Un acto es una acción u obra que tu realizas, una forma facil y unica de alcanzar lo que deseas.</label>
-                                <label className="text-xs font-bold text-gray-500 " >Los Actos te ayudan a mejorar, es mejor un paso firme a la vez, que correr sin rumbo, recuerda lo que puedes medir lo puedes mejorar</label>
+                                <label className="text-2xl font-bold text-yellow-500 " >Tus Habitos </label>
+                                <label className="text-xs font-bold text-gray-500 " >Un Habito es una acción u obra que tu realizas, una forma facil y unica de alcanzar lo que deseas.</label>
+                                <label className="text-xs font-bold text-gray-500 " >Los Habitos te ayudan a mejorar, es mejor un paso firme a la vez, que correr sin rumbo, recuerda lo que puedes medir lo puedes mejorar.</label>
                             </div>
 
 
                             <div className="flex flex-row justify-around">
                                 <button title="Ver Listado de Actos" className="btn-yellow cursor-pointer w-full  text-center font-extrabold flex  rounded-full" onClick={() => { clickList(contView) }}>
-                                    <ViewListIcon className="w-6 " /> Lista tus actos
+                                    <ViewListIcon className="w-6 " /> Lista tus Habitos
                                 </button>
                                 <button title="Ver talero de semana Actual" className="btn-yellow cursor-pointer  w-full  text-center font-extrabold flex  rounded-full" onClick={() => { clickForm(contView) }}>
-                                    <PlusCircleIcon className="w-6 " /> Crea tus actos
+                                    <PlusCircleIcon className="w-6 " /> Crea tus Habitos
                                 </button>
                                 <button title="Ver talero de semana Actual" className="btn-yellow cursor-pointer  w-full  text-center font-extrabold flex  rounded-full" onClick={() => { clickSemana(contView) }}>
-                                    <CheckCircleIcon className="w-6" /> Actos por Semana
+                                    <CheckCircleIcon className="w-6" /> Habitos por Semana
                                 </button>
                                 <button title="Ver estadísticas" className="btn-yellow cursor-pointer  w-full  text-center font-extrabold flex  rounded-full" onClick={() => { clickEstadisticas(contView) }}>
-                                    <ClipboardCheckIcon className="w-6 " /> Evalua tus actos
+                                    <ClipboardCheckIcon className="w-6 " /> Evalua tus Habitos
                                 </button>
 
                             </div>

@@ -42,6 +42,11 @@ const ActoregistroSchema = new Schema({
 		type: Number,
 		required:true,
 	},
+	categoria:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Categoria',
+        required:true,
+	},
 	
 });
 

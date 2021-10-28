@@ -1,0 +1,154 @@
+[{
+  "_id": {
+    "$oid": "6095d39a949d6d23a4d6a095"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-05-07T23:54:00.981Z"
+  },
+  "nomCate": "ahorro",
+  "desCate": "representa todos los ingresos tipo ahorro 001",
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "actividad": {
+    "$oid": "6095819506be383f7cf49ce6"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60ad2e0c49bf5808bc5784c2"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-05-25T17:00:57.196Z"
+  },
+  "nomCate": "gastos en citas",
+  "desCate": "son los gastos realizados en citas",
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "actividad": {
+    "$oid": "6095819506be383f7cf49ce6"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-05-26T18:20:41.537Z"
+  },
+  "nomCate": "estudiar ingles",
+  "desCate": "son esas actividades relacionada con el estudio del ingles",
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "actividad": {
+    "$oid": "60ae92dc3cb1ca2e14baeb8b"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61116843b37c253aa8c037f6"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-08-09T17:36:47.836Z"
+  },
+  "nomCate": "gastos supermercado",
+  "desCate": "representa todos los ingresos tipo ahorro 001",
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "actividad": {
+    "$oid": "6095819506be383f7cf49ce6"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-09-12T05:48:34.476Z"
+  },
+  "nomCate": "training fit",
+  "desCate": "actos para mejorar el físico estilo fit",
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "actividad": {
+    "$oid": "60ae92dc3cb1ca2e14baeb8b"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-05T23:35:42.769Z"
+  },
+  "nomCate": "profesional",
+  "desCate": "actividades que permite mejorar el crecimiento profesional",
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "actividad": {
+    "$oid": "60ae92dc3cb1ca2e14baeb8b"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-05T23:35:42.769Z"
+  },
+  "nomCate": "criptomonedas/blockchain",
+  "desCate": "actos para mejorar en el tema de bitcoin",
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "actividad": {
+    "$oid": "60ae92dc3cb1ca2e14baeb8b"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-05T23:35:42.769Z"
+  },
+  "nomCate": "alma + mente",
+  "desCate": "actos para mejorar estado espiritual y mente",
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "actividad": {
+    "$oid": "60ae92dc3cb1ca2e14baeb8b"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-06T00:04:48.521Z"
+  },
+  "nomCate": "proyectos",
+  "desCate": "actos para medir que tiempo invierto en proyectos personales",
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "actividad": {
+    "$oid": "60ae92dc3cb1ca2e14baeb8b"
+  },
+  "__v": 0
+}]
