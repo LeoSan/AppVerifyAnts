@@ -1,0 +1,4929 @@
+[{
+  "_id": {
+    "$oid": "61788737712eb935a4cc2aa3"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "lunes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61788756712eb935a4cc2aa4"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "martes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6178875e712eb935a4cc2aa5"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "lunes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61788765712eb935a4cc2aa6"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "martes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6178876b712eb935a4cc2aa7"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "lunes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61788772712eb935a4cc2aa8"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "martes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617887a1712eb935a4cc2aa9"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de04d070ead39d4bda9b7"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "lunes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617887ae712eb935a4cc2aaa"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de056070ead39d4bda9b8"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "lunes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617887c7712eb935a4cc2aac"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de056070ead39d4bda9b8"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "martes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617887d5712eb935a4cc2aad"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de067070ead39d4bda9b9"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "martes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617887e2712eb935a4cc2aae"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61774515c588ee46dca774a9"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "lunes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61788808712eb935a4cc2aaf"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61774515c588ee46dca774a9"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "martes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6178881c712eb935a4cc2ab0"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "lunes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61788823712eb935a4cc2ab1"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5893735a650a8818a77"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "lunes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61788841712eb935a4cc2ab2"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "lunes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61788857712eb935a4cc2ab3"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "martes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6178885f712eb935a4cc2ab4"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "lunes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61788866712eb935a4cc2ab5"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "martes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6178887e712eb935a4cc2ab6"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "lunes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61788886712eb935a4cc2ab7"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "martes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61788898712eb935a4cc2ab8"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "lunes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617888a4712eb935a4cc2ab9"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "seguimos avanzando",
+  "dia": "martes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617888c9712eb935a4cc2aba"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "nota": "estamos leyendo el libro el juego de la vida",
+  "dia": "martes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617888ea712eb935a4cc2abb"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "nota": "estudiar como filtrar datos en mongodb",
+  "dia": "lunes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6178890e712eb935a4cc2abc"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-26T22:27:23.630Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "nota": "organizar el modelo de acto registro ingresar categoria para un mejor filtrado",
+  "dia": "martes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e2f216652d4a605a0171"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando",
+  "dia": "lunes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e2fa16652d4a605a0172"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando",
+  "dia": "martes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e30016652d4a605a0173"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando",
+  "dia": "miercoles",
+  "semana": 43,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e30b16652d4a605a0174"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando",
+  "dia": "jueves",
+  "semana": 43,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e31416652d4a605a0175"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo avanzando",
+  "dia": "lunes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e31b16652d4a605a0176"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo avanzando",
+  "dia": "martes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e32316652d4a605a0177"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo avanzando",
+  "dia": "miercoles",
+  "semana": 43,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e32b16652d4a605a0178"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo avanzando",
+  "dia": "jueves",
+  "semana": 43,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e33616652d4a605a0179"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6149f98ec1aa3f304ca1a59c"
+  },
+  "nota": "sigo avanzando",
+  "dia": "lunes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e33d16652d4a605a017a"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6149f98ec1aa3f304ca1a59c"
+  },
+  "nota": "sigo avanzando",
+  "dia": "martes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e34416652d4a605a017b"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6149f98ec1aa3f304ca1a59c"
+  },
+  "nota": "sigo avanzando",
+  "dia": "miercoles",
+  "semana": 43,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e34b16652d4a605a017c"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6149f98ec1aa3f304ca1a59c"
+  },
+  "nota": "sigo avanzando",
+  "dia": "jueves",
+  "semana": 43,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e35216652d4a605a017d"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "sigo avanzando",
+  "dia": "lunes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e35816652d4a605a017e"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "sigo avanzando",
+  "dia": "martes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e35f16652d4a605a017f"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "sigo avanzando",
+  "dia": "miercoles",
+  "semana": 43,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e36716652d4a605a0180"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "sigo avanzando",
+  "dia": "jueves",
+  "semana": 43,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e3b216652d4a605a0181"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de04d070ead39d4bda9b7"
+  },
+  "nota": "sigo avanzando",
+  "dia": "lunes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e3be16652d4a605a0182"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de04d070ead39d4bda9b7"
+  },
+  "nota": "sigo avanzando",
+  "dia": "viernes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e3c916652d4a605a0183"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de056070ead39d4bda9b8"
+  },
+  "nota": "sigo avanzando",
+  "dia": "lunes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e3d416652d4a605a0184"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de056070ead39d4bda9b8"
+  },
+  "nota": "sigo avanzando",
+  "dia": "miercoles",
+  "semana": 43,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e3e216652d4a605a0185"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de067070ead39d4bda9b9"
+  },
+  "nota": "sigo avanzando",
+  "dia": "martes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e3ee16652d4a605a0186"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de092070ead39d4bda9ba"
+  },
+  "nota": "sigo avanzando",
+  "dia": "miercoles",
+  "semana": 43,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e3f916652d4a605a0187"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61774515c588ee46dca774a9"
+  },
+  "nota": "sigo avanzando",
+  "dia": "lunes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e40516652d4a605a0188"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61774515c588ee46dca774a9"
+  },
+  "nota": "sigo avanzando",
+  "dia": "martes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e41116652d4a605a0189"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61774515c588ee46dca774a9"
+  },
+  "nota": "sigo avanzando",
+  "dia": "viernes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e43b16652d4a605a018a"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "nota": "sigo avanzando",
+  "dia": "lunes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e44516652d4a605a018b"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "nota": "sigo avanzando",
+  "dia": "martes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e45016652d4a605a018c"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "nota": "sigo avanzando",
+  "dia": "miercoles",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e45a16652d4a605a018d"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "nota": "sigo avanzando",
+  "dia": "jueves",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e46716652d4a605a018e"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5893735a650a8818a77"
+  },
+  "nota": "sigo avanzando",
+  "dia": "martes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e47116652d4a605a018f"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5893735a650a8818a77"
+  },
+  "nota": "sigo avanzando",
+  "dia": "miercoles",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e47b16652d4a605a0190"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5893735a650a8818a77"
+  },
+  "nota": "sigo avanzando",
+  "dia": "jueves",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e48d16652d4a605a0191"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "nota": "sigo avanzando",
+  "dia": "lunes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e49816652d4a605a0192"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "nota": "sigo avanzando",
+  "dia": "martes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e4a216652d4a605a0193"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "nota": "sigo avanzando",
+  "dia": "miercoles",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e4ad16652d4a605a0194"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "nota": "sigo avanzando",
+  "dia": "sabado",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e4b916652d4a605a0195"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "sigo avanzando",
+  "dia": "lunes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e4c416652d4a605a0196"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "sigo avanzando",
+  "dia": "martes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e4cf16652d4a605a0197"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "sigo avanzando",
+  "dia": "miercoles",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e4db16652d4a605a0198"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "sigo avanzando",
+  "dia": "jueves",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e4e616652d4a605a0199"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "sigo avanzando",
+  "dia": "viernes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e4f216652d4a605a019a"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "sigo avanzando",
+  "dia": "sabado",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e50116652d4a605a019b"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "sigo avanzando pvu",
+  "dia": "lunes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e50c16652d4a605a019c"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "sigo avanzando pvu",
+  "dia": "martes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e51716652d4a605a019d"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "sigo avanzando pvu",
+  "dia": "miercoles",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e52416652d4a605a019e"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "sigo avanzando pvu",
+  "dia": "jueves",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e53016652d4a605a019f"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "sigo avanzando pvu",
+  "dia": "viernes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e53a16652d4a605a01a0"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "sigo avanzando pvu",
+  "dia": "sabado",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e55416652d4a605a01a1"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "sigo avanzando en agua",
+  "dia": "lunes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e56116652d4a605a01a2"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "sigo avanzando en agua",
+  "dia": "martes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e57616652d4a605a01a3"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "sigo avanzando en agua",
+  "dia": "jueves",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e58316652d4a605a01a4"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "sigo avanzando en agua",
+  "dia": "viernes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e59916652d4a605a01a5"
+  },
+  "duracion": 25,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "nota": "sigo avanzando en lectura",
+  "dia": "lunes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e5a416652d4a605a01a6"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "nota": "sigo avanzando en lectura",
+  "dia": "sabado",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e5b916652d4a605a01a7"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "sigo avanzando en te/verde",
+  "dia": "lunes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e5c416652d4a605a01a8"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "sigo avanzando en te/verde",
+  "dia": "martes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e5ce16652d4a605a01a9"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "sigo avanzando en te/verde",
+  "dia": "miercoles",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e5d916652d4a605a01aa"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "sigo avanzando en te/verde",
+  "dia": "jueves",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e5e516652d4a605a01ab"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "sigo avanzando en te/verde",
+  "dia": "viernes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e5fb16652d4a605a01ac"
+  },
+  "duracion": null,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "nota": "sigo avanzando en antverify",
+  "dia": "lunes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e60316652d4a605a01ad"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "nota": "sigo avanzando en antverify",
+  "dia": "martes",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e71616652d4a605a01ae"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "sigo avanzando en agua",
+  "dia": "miercoles",
+  "semana": 43,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e78a16652d4a605a01af"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "nota": "ajuste semana 43 - desarrollo final filtro",
+  "dia": "miercoles",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e7aa16652d4a605a01b0"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "se esta completando la meta litro en el día otro litro en la noche",
+  "dia": "miercoles",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e7cd16652d4a605a01b1"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "se esta combinando con menta, la menta de verdad es dulce",
+  "dia": "miercoles",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e7f116652d4a605a01b2"
+  },
+  "duracion": 30,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "complete los 75 slp",
+  "dia": "miercoles",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e80216652d4a605a01b3"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "se llego a 9k le",
+  "dia": "miercoles",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e82116652d4a605a01b4"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "nota": "estudie en la noche en la cama.",
+  "dia": "martes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e82816652d4a605a01b5"
+  },
+  "duracion": 30,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5893735a650a8818a77"
+  },
+  "nota": "estudie en la noche en la cama.",
+  "dia": "martes",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e85716652d4a605a01b6"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando",
+  "dia": "miercoles",
+  "semana": 44,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179e86816652d4a605a01b7"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-27T23:24:59.654Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo aprendiendo palabras",
+  "dia": "miercoles",
+  "semana": 44,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b22c05123ae1fbc927546"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando",
+  "dia": "lunes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b22c85123ae1fbc927547"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando",
+  "dia": "martes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b22d15123ae1fbc927548"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo avanzando",
+  "dia": "lunes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b22d75123ae1fbc927549"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo avanzando",
+  "dia": "martes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b22e15123ae1fbc92754a"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando",
+  "dia": "miercoles",
+  "semana": 42,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b22ed5123ae1fbc92754b"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo avanzando",
+  "dia": "miercoles",
+  "semana": 42,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b22f65123ae1fbc92754c"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando",
+  "dia": "viernes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b22fd5123ae1fbc92754d"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo avanzando",
+  "dia": "viernes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b23045123ae1fbc92754e"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando",
+  "dia": "sabado",
+  "semana": 42,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b230d5123ae1fbc92754f"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo avanzando",
+  "dia": "sabado",
+  "semana": 42,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b23245123ae1fbc927550"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "sigo avanzando",
+  "dia": "lunes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b232b5123ae1fbc927551"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "sigo avanzando",
+  "dia": "martes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b23365123ae1fbc927552"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "sigo avanzando",
+  "dia": "sabado",
+  "semana": 42,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b23565123ae1fbc927553"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de04d070ead39d4bda9b7"
+  },
+  "nota": "sigo avanzando training",
+  "dia": "lunes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b23625123ae1fbc927554"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de056070ead39d4bda9b8"
+  },
+  "nota": "sigo avanzando training",
+  "dia": "lunes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b23725123ae1fbc927555"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de067070ead39d4bda9b9"
+  },
+  "nota": "sigo avanzando training",
+  "dia": "martes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b237e5123ae1fbc927556"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de067070ead39d4bda9b9"
+  },
+  "nota": "sigo avanzando training",
+  "dia": "sabado",
+  "semana": 42,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b238f5123ae1fbc927557"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de092070ead39d4bda9ba"
+  },
+  "nota": "sigo avanzando training",
+  "dia": "jueves",
+  "semana": 42,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b23b15123ae1fbc927558"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "nota": "sigo avanzando nodejs",
+  "dia": "lunes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b23b75123ae1fbc927559"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "nota": "sigo avanzando nodejs",
+  "dia": "martes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b23bf5123ae1fbc92755a"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "nota": "sigo avanzando nodejs",
+  "dia": "miercoles",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b23f85123ae1fbc92755b"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "nota": "sigo avanzando cripto",
+  "dia": "lunes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b23ff5123ae1fbc92755c"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "nota": "sigo avanzando cripto",
+  "dia": "martes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b24075123ae1fbc92755d"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "nota": "sigo avanzando cripto",
+  "dia": "miercoles",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b240e5123ae1fbc92755e"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "nota": "sigo avanzando cripto",
+  "dia": "jueves",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b24175123ae1fbc92755f"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "nota": "sigo avanzando cripto",
+  "dia": "sabado",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b24415123ae1fbc927560"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9274f026f215495e9e2"
+  },
+  "nota": "se alcanzó pagar a luis carlos",
+  "dia": "lunes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b244a5123ae1fbc927561"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9274f026f215495e9e2"
+  },
+  "nota": "se alcanzó pagar a luis carlos",
+  "dia": "martes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b24515123ae1fbc927562"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9274f026f215495e9e2"
+  },
+  "nota": "se alcanzó pagar a luis carlos",
+  "dia": "miercoles",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b24a95123ae1fbc927563"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "se alcanzó pagar a luis carlos",
+  "dia": "lunes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b24b05123ae1fbc927564"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "se alcanzó pagar a luis carlos",
+  "dia": "martes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b24ba5123ae1fbc927565"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "se alcanzó pagar a luis carlos",
+  "dia": "miercoles",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b24c25123ae1fbc927566"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "se alcanzó pagar a luis carlos",
+  "dia": "jueves",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b24d25123ae1fbc927567"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "se alcanzó pagar a luis carlos",
+  "dia": "viernes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b24da5123ae1fbc927568"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "se alcanzó pagar a luis carlos",
+  "dia": "sabado",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b24f15123ae1fbc927569"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "pues se saco 4 plantas y un arbol",
+  "dia": "lunes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b24f85123ae1fbc92756a"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "pues se saco 4 plantas y un arbol",
+  "dia": "martes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b25025123ae1fbc92756b"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "pues se saco 4 plantas y un arbol",
+  "dia": "miercoles",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b250b5123ae1fbc92756c"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "pues se saco 4 plantas y un arbol",
+  "dia": "jueves",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b25125123ae1fbc92756d"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "pues se saco 4 plantas y un arbol",
+  "dia": "viernes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b25195123ae1fbc92756e"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "pues se saco 4 plantas y un arbol",
+  "dia": "sabado",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b25e45123ae1fbc92756f"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "lunes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b25eb5123ae1fbc927570"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "martes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b25f45123ae1fbc927571"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "miercoles",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b25fb5123ae1fbc927572"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "jueves",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b26045123ae1fbc927573"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "viernes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b260d5123ae1fbc927574"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "sabado",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b261c5123ae1fbc927575"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "lunes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b26245123ae1fbc927576"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "martes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b262a5123ae1fbc927577"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "miercoles",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b26315123ae1fbc927578"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "jueves",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b26385123ae1fbc927579"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "viernes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b263f5123ae1fbc92757a"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "sabado",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b26675123ae1fbc92757b"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "lunes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b26705123ae1fbc92757c"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "jueves",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b267a5123ae1fbc92757d"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "viernes",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b26855123ae1fbc92757e"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "sabado",
+  "semana": 42,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b26965123ae1fbc92757f"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "lunes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b26ba5123ae1fbc927580"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "martes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b26c05123ae1fbc927581"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "miercoles",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b26c55123ae1fbc927582"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "jueves",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b26cc5123ae1fbc927583"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "nota": "seguimos avanzando.",
+  "dia": "viernes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b27035123ae1fbc927584"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "seguimos avanzando tomando agua a diario",
+  "dia": "lunes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b27095123ae1fbc927585"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "seguimos avanzando tomando agua a diario",
+  "dia": "martes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b27105123ae1fbc927586"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "seguimos avanzando tomando agua a diario",
+  "dia": "miercoles",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b27185123ae1fbc927587"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "seguimos avanzando tomando agua a diario",
+  "dia": "jueves",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b271f5123ae1fbc927588"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "seguimos avanzando tomando agua a diario",
+  "dia": "viernes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b274b5123ae1fbc927589"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "seguimos avanzando tomando te verde",
+  "dia": "lunes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b27525123ae1fbc92758a"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "seguimos avanzando tomando te verde",
+  "dia": "martes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b275f5123ae1fbc92758b"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "seguimos avanzando tomando te verde",
+  "dia": "miercoles",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b27685123ae1fbc92758c"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "seguimos avanzando tomando te verde",
+  "dia": "jueves",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b27705123ae1fbc92758d"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "seguimos avanzando tomando te verde",
+  "dia": "viernes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b27905123ae1fbc92758e"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "nota": "sigo avanzando clases de bitcoin",
+  "dia": "jueves",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b27a75123ae1fbc92758f"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9274f026f215495e9e2"
+  },
+  "nota": "puesta al día en grupo",
+  "dia": "lunes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b27c65123ae1fbc927590"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "sigo avanzando axies",
+  "dia": "lunes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b27d25123ae1fbc927591"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "sigo avanzando axies",
+  "dia": "martes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b27db5123ae1fbc927592"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "sigo avanzando axies",
+  "dia": "miercoles",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b27e35123ae1fbc927593"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "sigo avanzando axies",
+  "dia": "jueves",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b28065123ae1fbc927594"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "sigo avanzando plantvsundead",
+  "dia": "lunes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b280f5123ae1fbc927595"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "sigo avanzando plantvsundead",
+  "dia": "martes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b28155123ae1fbc927596"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "sigo avanzando plantvsundead",
+  "dia": "miercoles",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b281f5123ae1fbc927597"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "sigo avanzando plantvsundead",
+  "dia": "jueves",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b28275123ae1fbc927598"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "sigo avanzando plantvsundead",
+  "dia": "viernes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b282e5123ae1fbc927599"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "sigo avanzando plantvsundead",
+  "dia": "sabado",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b284d5123ae1fbc92759a"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "nota": "sigo avanzando nodejs",
+  "dia": "lunes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b28535123ae1fbc92759b"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "nota": "sigo avanzando nodejs",
+  "dia": "martes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b28595123ae1fbc92759c"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "nota": "sigo avanzando nodejs",
+  "dia": "miercoles",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b28685123ae1fbc92759d"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5893735a650a8818a77"
+  },
+  "nota": "sigo avanzando laravel8",
+  "dia": "miercoles",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b28815123ae1fbc92759e"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5b23735a650a8818a78"
+  },
+  "nota": "sigo avanzando fundamentos",
+  "dia": "lunes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b288a5123ae1fbc92759f"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5b23735a650a8818a78"
+  },
+  "nota": "sigo avanzando fundamentos",
+  "dia": "martes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b28915123ae1fbc9275a0"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5b23735a650a8818a78"
+  },
+  "nota": "sigo avanzando fundamentos",
+  "dia": "miercoles",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b28975123ae1fbc9275a1"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5b23735a650a8818a78"
+  },
+  "nota": "sigo avanzando fundamentos",
+  "dia": "jueves",
+  "semana": 41,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b28b75123ae1fbc9275a2"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de04d070ead39d4bda9b7"
+  },
+  "nota": "sigo avanzando piernas",
+  "dia": "lunes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b28c65123ae1fbc9275a3"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de067070ead39d4bda9b9"
+  },
+  "nota": "sigo avanzando pecho",
+  "dia": "martes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b28d55123ae1fbc9275a4"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de092070ead39d4bda9ba"
+  },
+  "nota": "sigo avanzando trip/bic",
+  "dia": "jueves",
+  "semana": 41,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b29165123ae1fbc9275a5"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando duo",
+  "dia": "lunes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b291c5123ae1fbc9275a6"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando duo",
+  "dia": "martes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b29235123ae1fbc9275a7"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando duo",
+  "dia": "miercoles",
+  "semana": 41,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b292d5123ae1fbc9275a8"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando duo",
+  "dia": "jueves",
+  "semana": 41,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b293c5123ae1fbc9275a9"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo avanzando word",
+  "dia": "lunes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b29435123ae1fbc9275aa"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo avanzando word",
+  "dia": "martes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b29495123ae1fbc9275ab"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo avanzando word",
+  "dia": "miercoles",
+  "semana": 41,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b29505123ae1fbc9275ac"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo avanzando word",
+  "dia": "jueves",
+  "semana": 41,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b29745123ae1fbc9275ad"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6149f98ec1aa3f304ca1a59c"
+  },
+  "nota": "podcasts platzi",
+  "dia": "martes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b297f5123ae1fbc9275ae"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6149f98ec1aa3f304ca1a59c"
+  },
+  "nota": "podcasts platzi",
+  "dia": "jueves",
+  "semana": 41,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b29995123ae1fbc9275af"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "sigo avanzando",
+  "dia": "lunes",
+  "semana": 41,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b29a05123ae1fbc9275b0"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "sigo avanzando",
+  "dia": "miercoles",
+  "semana": 41,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b29a75123ae1fbc9275b1"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "sigo avanzando",
+  "dia": "jueves",
+  "semana": 41,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b29c85123ae1fbc9275b2"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando duo",
+  "dia": "lunes",
+  "semana": 40,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b29d05123ae1fbc9275b3"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando duo",
+  "dia": "martes",
+  "semana": 40,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b29d65123ae1fbc9275b4"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando duo",
+  "dia": "miercoles",
+  "semana": 40,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b29dd5123ae1fbc9275b5"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando duo",
+  "dia": "jueves",
+  "semana": 40,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b29e45123ae1fbc9275b6"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando duo",
+  "dia": "viernes",
+  "semana": 40,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b29ee5123ae1fbc9275b7"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo avanzando word",
+  "dia": "lunes",
+  "semana": 40,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b29f55123ae1fbc9275b8"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo avanzando word",
+  "dia": "martes",
+  "semana": 40,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b29fb5123ae1fbc9275b9"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo avanzando word",
+  "dia": "miercoles",
+  "semana": 40,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b2a025123ae1fbc9275ba"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo avanzando word",
+  "dia": "jueves",
+  "semana": 40,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b2a095123ae1fbc9275bb"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo avanzando word",
+  "dia": "viernes",
+  "semana": 40,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b2a305123ae1fbc9275bc"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "sigo avanzando duo",
+  "dia": "jueves",
+  "semana": 44,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b2a385123ae1fbc9275bd"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "sigo avanzando word",
+  "dia": "jueves",
+  "semana": 44,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b2a5f5123ae1fbc9275be"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "escribí y pronuncie texto en ingles de hábitos diarios",
+  "dia": "jueves",
+  "semana": 44,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b2a7d5123ae1fbc9275bf"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "nota": "sigo avanzando clase 215",
+  "dia": "miercoles",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b2a905123ae1fbc9275c0"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5893735a650a8818a77"
+  },
+  "nota": "discusión de los log de laravel",
+  "dia": "miercoles",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b2ab75123ae1fbc9275c1"
+  },
+  "duracion": 30,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "nota": "me dedicare esta semana para ajustar la bd con data las primeras 4 semanas de un primer mes",
+  "dia": "jueves",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b2ad05123ae1fbc9275c2"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "conseguir los 75 slp",
+  "dia": "jueves",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b2aec5123ae1fbc9275c3"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "llegamos a la meta de 10le pero esta en 731 le = 1pvu",
+  "dia": "jueves",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b2b085123ae1fbc9275c4"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "beber te del oxxo no es sano pero es te verde xd",
+  "dia": "jueves",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617b2b285123ae1fbc9275c5"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-10-28T22:18:21.833Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "conseguir la meta no he bebido agua en toda la mañana, espero ir al gym y ahi completo la meta",
+  "dia": "jueves",
+  "semana": 44,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+}]

@@ -73,7 +73,7 @@ exports.getActoCheckSemanal = async (req, res = reponse) => {
         }  
         if (tipo === "1-MC") {
             //Obtener 1-MC Por autor y categoria
-             acto = await Acto.find({ autor, categoria }).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate' }).sort({ categoria: -1 });
+             acto = await Acto.find({ autor, categoria }).populate({ path: 'categoria', model: 'Categoria' }).sort({ categoria: -1 });
         }  
            
         //Itero La consulta para     
@@ -85,7 +85,8 @@ exports.getActoCheckSemanal = async (req, res = reponse) => {
                 ObjActo[index] = {
                     _id: filas._id,
                     nomActo: filas.nomActo,
-                    categoria: filas.categoria,
+                    categoria: filas.categoria.nomCate,
+                    categoriaid: filas.categoria._id,
                     checkVals: {
                         'lunes': await getActoSemanaDia(autor, filas._id, 'Lunes', semana)
                         , 'martes': await getActoSemanaDia(autor, filas._id, 'martes', semana)
@@ -255,7 +256,7 @@ exports.getActoSemana = async (req, res = reponse) => {
 const getActoSemanaDia = async (autor, acto, dia, semana) => {
 
     try {
-
+        //Nota debo filtrar por año 
         let objActoregistro = await Actoregistro.find({ 'autor': autor, acto: acto, 'dia': dia, 'semana': semana, 'dia': dia, 'semana': semana });
         if (objActoregistro.length > 0) {
             return true;
@@ -279,42 +280,106 @@ exports.getActoEstadisticos = async (req, res = reponse) => {
         //Datos para Estadistica Barra
         if ( tipo == 'datosBarra'){
             
-            data = obtenerDatosBarras( req );
+            data = await obtenerDatosBarras( req );
            
         }
-
         
-        
-        res.status(200).json({  data: data });
+        res.status(200).json({  data: data,  success: true });
 
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(200).json({ msg: `Hubo un error en la comunicación !! `, success: false });
+        res.status(401).json({ msg: `Hubo un error en la comunicación !! `, success: false });
     }
 }
 
 //Metodo independientes: Estadisticos 
 
-const obtenerDatosBarras=(req)=>{
-    let data = true;
-    const {nickID, cateBarra, mesBarra, anioBarra, semBarra, tipo} = req.body;
+const obtenerDatosBarras = async(req)=>{
     
-    console.log('Estoy en el metodo Barra',tipo);
 
+    let objActoregistro = null; 
+    const query = filtrosQuery(req);
+   
+    //Consulta valor del  Modelo 
+    objActoregistro = await Actoregistro.find(query).populate({ path: 'acto', model: 'Acto', select: 'nomActo categoria' });
+/*
+ let valGroup = { 
+     _id:{categoria:"$categoria"},
+     duracion: {$sum:'$duracion'}
+ } 
 
-    return data; 
+    objActoregistro = await Actoregistro.aggregate([
+                                                     { $match: query }
+                                                     { $group: valGroup }
+                                                    ]);
+
+*/
+    return objActoregistro; 
 }
 
+//helpers Filtros 
 
-const obtenerDatosLine=(req)=>{
-    const {nickID, cateBarra, mesBarra, anioBarra, semBarra, tipo} = req.body;
-    console.log('Estoy en el metodo Line',tipo);
+const filtrosQuery = (req)=>{
+    
+    const {nickID, anioBarra, mesBarra, semBarra, cateBarra} = req.body;
+    let query = {
+        'autor': nickID,
+        "activo": 1,
+    };
+
+    //Filtro Año
+    if (anioBarra){
+        query = filtroCategoria(cateBarra);
+        query = {
+            ...query, 
+            "$expr": {
+                "$and": [
+                  { $eq: [{ $year: "$registro" }, { $year: new Date(anioBarra+'-01-01') }]},
+               ]
+              }        
+          }        
+    }    
+    //Filtro -> Mes Obligatorio(Año)
+    if (mesBarra){
+        query = filtroCategoria(cateBarra);
+        query = {
+            ...query, 
+            "$expr": {
+                "$and": [
+                  { $eq: [{ $year: "$registro" }, { $year: new Date(anioBarra+'-01-01') }]},
+                  { $eq: [{ $month: "$registro" }, { $month: new Date(anioBarra + '-'+ mesBarra + '-01') }]},
+               ]
+              }        
+          } 
+    }    
+    
+    //Filtro Semana  -> Obligatorio(Año)
+    if (semBarra){
+        query = filtroCategoria(cateBarra);
+        query = {
+            ...query, 
+            "semana":semBarra,
+            "$expr": {
+                "$and": [
+                  { $eq: [{ $year: "$registro" }, { $year: new Date(anioBarra+'-01-01') }]},
+               ]
+              }        
+          }         
+    }    
+    
+    return query; 
 }
 
+const filtroCategoria = (cateBarra)=>{
+    let query = '';
+    if (cateBarra){
+        query = {
+            ...query, 
+            'categoria':cateBarra
+          }
+    } 
 
-const obtenerDatosPie=(req)=>{
-    const {nickID, cateBarra, mesBarra, anioBarra, semBarra, tipo} = req.body;
-    console.log('Estoy en el metodo Pie',tipo);
+    return query; 
 }
 
 

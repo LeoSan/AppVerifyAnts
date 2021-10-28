@@ -49,7 +49,7 @@ const ActoSemana = ({ view }) => {
 
     //Declaración de Metodos Funcionales
     //Metodo: Ventana Modal Check 
-    const dialogCheck = async (acto, dia, checkedId, auxSemana) => {
+    const dialogCheck = async (acto, dia, checkedId, auxSemana, categoriaid) => {
         cambioLoad();
         let formValues = undefined;
         let checked = false;
@@ -79,7 +79,7 @@ const ActoSemana = ({ view }) => {
         }
 
         if (valCancel !=true){//Solo entra si no le dio al boton cancelar 
-            const data = {autor: nickID,acto: acto,duracion: duracion,nota: nota,dia: dia,semana: auxSemana,checked: checked }
+            const data = {autor: nickID,acto: acto,duracion: duracion,nota: nota,dia: dia,semana: auxSemana,checked: checked, categoria:categoriaid }
 
             //Guardo Datos
             crearActoRegistroSemanal(data);
@@ -251,27 +251,27 @@ const ActoSemana = ({ view }) => {
 
                                             <tr key={actoSemana[key]._id} className="text-left hover:bg-yellow-100">
                                                 <td className="px-6 py-4 whitespace-nowrap capitalize text-sm" >
-                                                    <span className="bg-yellow-200 font-bold rounded-md px-2">  {actoSemana[key].categoria.nomCate} </span>
+                                                    <span className="bg-yellow-200 font-bold rounded-md px-2">  {actoSemana[key].categoria} </span>
                                                     &nbsp;&nbsp;
                                                     {actoSemana[key].nomActo}
                                                 </td>
                                                 <td className="px-6 py-4 text-center">
-                                                    <input type="checkbox" id={actoSemana[key]._id + "Lun"} onClick={() => dialogCheck(actoSemana[key]._id, 'Lunes', actoSemana[key]._id + "Lun", auxSemana)} checked={actoSemana[key].checkVals.lunes} onChange={e => { }} />
+                                                    <input type="checkbox" id={actoSemana[key]._id + "Lun"} onClick={() => dialogCheck(actoSemana[key]._id, 'Lunes', actoSemana[key]._id + "Lun", auxSemana, actoSemana[key].categoriaid  )} checked={actoSemana[key].checkVals.lunes} onChange={e => { }} />
                                                 </td>
                                                 <td className="px-6 py-4 text-center">
-                                                    <input type="checkbox" id={actoSemana[key]._id + "Mar"} onClick={() => dialogCheck(actoSemana[key]._id, 'Martes', actoSemana[key]._id + "Mar", auxSemana)} checked={actoSemana[key].checkVals.martes} onChange={e => { }} />
+                                                    <input type="checkbox" id={actoSemana[key]._id + "Mar"} onClick={() => dialogCheck(actoSemana[key]._id, 'Martes', actoSemana[key]._id + "Mar", auxSemana, actoSemana[key].categoriaid )} checked={actoSemana[key].checkVals.martes} onChange={e => { }} />
                                                 </td>
                                                 <td className="px-6 py-4 text-center">
-                                                    <input type="checkbox" id={actoSemana[key]._id + "Mier"} onClick={() => dialogCheck(actoSemana[key]._id, 'Miercoles', actoSemana[key]._id + "Mier", auxSemana)} checked={actoSemana[key].checkVals.miercoles} onChange={e => { }} />
+                                                    <input type="checkbox" id={actoSemana[key]._id + "Mier"} onClick={() => dialogCheck(actoSemana[key]._id, 'Miercoles', actoSemana[key]._id + "Mier", auxSemana, actoSemana[key].categoriaid )} checked={actoSemana[key].checkVals.miercoles} onChange={e => { }} />
                                                 </td>
                                                 <td className="px-6 py-4 text-center">
-                                                    <input type="checkbox" id={actoSemana[key]._id + "Jue"} onClick={() => dialogCheck(actoSemana[key]._id, 'Jueves', actoSemana[key]._id + "Jue", auxSemana)} checked={actoSemana[key].checkVals.jueves} onChange={e => { }} />
+                                                    <input type="checkbox" id={actoSemana[key]._id + "Jue"} onClick={() => dialogCheck(actoSemana[key]._id, 'Jueves', actoSemana[key]._id + "Jue", auxSemana, actoSemana[key].categoriaid )} checked={actoSemana[key].checkVals.jueves} onChange={e => { }} />
                                                 </td>
                                                 <td className="px-6 py-4 text-center">
-                                                    <input type="checkbox" id={actoSemana[key]._id + "Vie"} onClick={() => dialogCheck(actoSemana[key]._id, 'Viernes', actoSemana[key]._id + "Vie", auxSemana)} checked={actoSemana[key].checkVals.viernes} onChange={e => { }} />
+                                                    <input type="checkbox" id={actoSemana[key]._id + "Vie"} onClick={() => dialogCheck(actoSemana[key]._id, 'Viernes', actoSemana[key]._id + "Vie", auxSemana, actoSemana[key].categoriaid )} checked={actoSemana[key].checkVals.viernes} onChange={e => { }} />
                                                 </td>
                                                 <td className="px-6 py-4 text-center">
-                                                    <input type="checkbox" id={actoSemana[key]._id + "Sab"} onClick={() => dialogCheck(actoSemana[key]._id, 'Sabado', actoSemana[key]._id + "Sab", auxSemana)} checked={actoSemana[key].checkVals.sabado} onChange={e => { }} />
+                                                    <input type="checkbox" id={actoSemana[key]._id + "Sab"} onClick={() => dialogCheck(actoSemana[key]._id, 'Sabado', actoSemana[key]._id + "Sab", auxSemana, actoSemana[key].categoriaid )} checked={actoSemana[key].checkVals.sabado} onChange={e => { }} />
                                                 </td>
                                             </tr>
                                         ))}

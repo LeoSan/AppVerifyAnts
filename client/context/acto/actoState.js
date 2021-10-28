@@ -18,6 +18,7 @@ import {
     CAMBIO_LOADING_OFF,
     LISTA_MESES,
     LISTA_SEMANA,
+    CONSULTA_DATA_BARRA
 } from '../../types';
 
 //Importo nuetsra libreria axios para conectar con el servidor 
@@ -42,7 +43,8 @@ const ActoState = ({ children }) => {
         elimiActo: null,
         loadActo: false,
         ListMeses: null,
-        Semana:null
+        Semana:null,
+        dataBarra:null
     }
 
     // Definimos Reducer 
@@ -351,6 +353,7 @@ const ActoState = ({ children }) => {
     }//fin del metodo 
 
 
+    //**************************************************************** */
     //Metodos Estadisticos
     const listMeses = () => {
         dispatch({
@@ -435,6 +438,51 @@ const ActoState = ({ children }) => {
         });
     }//fin del metodo     
 
+
+    const filtroDatoBarra = async (datos)=>{
+
+        try {
+
+            const token = localStorage.getItem('token');
+            if (token) {
+                //funcion para enviar el token por header 
+                tokenAuth(token);
+            }
+
+
+            console.log("entro al state",datos);
+           
+            //console.log("Desde cliente ->", data);
+
+        /*    const respuesta = await clienteAxios.post('/api/acto/get-acto', data)
+                .then((response) => {
+
+                    if (response.data.success == true) {
+                        dispatch({
+                            type: CONSULTA_DATA_BARRA, //Es la accion a ejecutar
+                            payload: response.data.acto  //Son los datos que modifica el state 
+                        });
+
+                    } else {
+
+                        dispatch({
+                            type: LISTAR_ACTO_ERROR, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        });
+                    }
+                }); //Fin de la async 
+        */
+
+        } catch (error) {
+            dispatch({
+                type: LISTAR_ACTO_ERROR, //Es la accion a ejecutar
+                payload: "Hubo un problema con el servidor"  //Son los datos que modifica el state 
+            });
+        }
+
+    }
+
+
     return (
         <ActoContext.Provider
             value={{
@@ -449,6 +497,7 @@ const ActoState = ({ children }) => {
                 loadClass: state.loadClass,
                 Meses: state.Meses,
                 Semana: state.Semana,
+                dataBarra: state.dataBarra,
                 listarActo,
                 crearActo,
                 deleteActo,
@@ -458,7 +507,8 @@ const ActoState = ({ children }) => {
                 cambioLoad,
                 cambioLoadOFF,
                 listMeses,
-                listSemana
+                listSemana,
+                filtroDatoBarra
 
             }}
         >

@@ -14,6 +14,7 @@ import {
     CAMBIO_LOADING_OFF,
     LISTA_MESES,
     LISTA_SEMANA,
+    CONSULTA_DATA_BARRA,
 } from '../../types';
 
 
@@ -96,6 +97,11 @@ const actoReducer = (state, action) => {
             return {
                 ...state,
                 Semana: action.payload,
+            }        
+        case CONSULTA_DATA_BARRA:
+            return {
+                ...state,
+                dataBarra: action.payload,
             }
 
         default:

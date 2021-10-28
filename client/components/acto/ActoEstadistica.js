@@ -43,8 +43,8 @@ const ActoEstadistica = ({ view }) => {
          listMeses();
          listSemana();
     }, []);
-    
-    
+
+    //Modulo de Eventos
 
     
 
@@ -112,7 +112,7 @@ const ActoEstadistica = ({ view }) => {
                             </div>
                         </div>                        
 
-                        <Filtros categoria={categoriaActos} semana={Semana} meses={Meses} idCate={'cateBarra'} idMes={'anioBarra'} idAnio={'anioBarra'} idSemana={'semBarra'} />
+                        <Filtros categoria={categoriaActos} semana={Semana} meses={Meses} idCate={'cateBarra'} idMes={'mesBarra'} idAnio={'anioBarra'} idSemana={'semBarra'} tipoEvento={'datosBarra'} />
 
                         <Chart
                             chartType="BarChart"

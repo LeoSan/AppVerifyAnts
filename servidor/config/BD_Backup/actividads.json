@@ -1,0 +1,23 @@
+[{
+  "_id": {
+    "$oid": "6095819506be383f7cf49ce6"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-05-07T18:06:08.404Z"
+  },
+  "nomActi": "AntVerify",
+  "desActi": "Tipo de Actividad para medir los gastos.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60ae92dc3cb1ca2e14baeb8b"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-05-26T18:20:41.395Z"
+  },
+  "nomActi": "ActivityVerify",
+  "desActi": "Tipo de Actividad para medir metas.",
+  "__v": 0
+}]

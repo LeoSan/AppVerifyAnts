@@ -72,49 +72,6 @@ const Actoform = () => {
 
 
 
-    //Metodos Funcionales Generales 
-
-    //Función: Esquema de validaciones 
-    const formik = useFormik({
-        initialValues: {
-            nomActo: '',
-            desActo: '',
-            categoria: '',
-            autor: nickID
-        },
-        validationSchema: Yup.object({
-            nomActo: Yup.string()
-                .min(5, "Nombre debe tener al menos 5 caracteres.")
-                .required('El campo nombre es obligatorio.'),
-            desActo: Yup.string()
-                .min(10, "Descripción debe tener al menos 10 caracteres.")
-                .required('El campo descripción es obligatorio.'),
-            categoria: Yup.string()
-                .required('El campo tipo categoria es obligatorio.'),
-        }),
-
-        onSubmit: formData => {
-            try {
-
-                if (id) {
-                    //state para Editar 
-                    formData.id = id;
-                     editActo(formData);
-
-                } else {
-                    //Envio valores al state 
-                    crearActo(formData);
-                    listarActo(datos);
-
-                }
-
-
-            } catch (error) {
-                console.log(error);
-            }
-        }
-    });
-
     return (
         <Layout>
             <div className="md:flex flex min-h-screen">

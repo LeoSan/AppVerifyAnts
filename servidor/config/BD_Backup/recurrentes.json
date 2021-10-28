@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "609c120f478a4721681bf319"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-05-12T17:35:38.921Z"
+  },
+  "nomRecu": "tipo pago semanal",
+  "desRecu": "permite establecer un gasto y este se repita semanalmente, es efectivo para los gastos de matricula universitaria",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "609c1216478a4721681bf31a"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-05-12T17:35:38.921Z"
+  },
+  "nomRecu": "tipo pago mensual",
+  "desRecu": "permite establecer un gasto y este se repita mensualmente, es efectivo para los gastos de matricula universitaria",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60ae9635a99bed40e4d1be78"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-05-26T18:35:28.837Z"
+  },
+  "nomRecu": "no recurrente",
+  "desRecu": "Debido a un problema de las relaciones creare este punto para aquellas tareas o montos que no necesiten ser recurrentes",
+  "__v": 0
+}]
