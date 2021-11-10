@@ -14,7 +14,7 @@ const Filtros = ({ categoria, semana, meses, idCate, idMes, idAnio, idSemana, ti
 
   //Acceder el stateContext de ActoContext 
   const valorActoContext = useContext(ActoContext);
-  const { filtroDatoBarra } = valorActoContext;
+  const { filtroDatoBarra, msgListActo, dataBarra } = valorActoContext;
 
 
 
@@ -30,8 +30,10 @@ const Filtros = ({ categoria, semana, meses, idCate, idMes, idAnio, idSemana, ti
         const anioBarra = document.getElementById("anioBarra").value;
         const semBarra = document.getElementById("semBarra").value;
         let datos = { nickID, cateBarra, mesBarra, anioBarra, semBarra, tipo: "datosBarra" }
-
+        
         filtroDatoBarra(datos);
+        console.log("Resultado", dataBarra);
+
 
         break;
       case 'datosLinea':

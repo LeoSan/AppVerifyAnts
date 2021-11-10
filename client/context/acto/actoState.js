@@ -449,18 +449,19 @@ const ActoState = ({ children }) => {
                 tokenAuth(token);
             }
 
-
-            console.log("entro al state",datos);
+            console.log("entro al state", datos);
            
-            //console.log("Desde cliente ->", data);
 
-        /*    const respuesta = await clienteAxios.post('/api/acto/get-acto', data)
+
+            const respuesta = await clienteAxios.post('/api/acto/get-act-statistics', datos)
                 .then((response) => {
 
+                    console.log("Desde cliente ->", response);
+                    
                     if (response.data.success == true) {
                         dispatch({
                             type: CONSULTA_DATA_BARRA, //Es la accion a ejecutar
-                            payload: response.data.acto  //Son los datos que modifica el state 
+                            payload: response.data  //Son los datos que modifica el state 
                         });
 
                     } else {
@@ -471,12 +472,12 @@ const ActoState = ({ children }) => {
                         });
                     }
                 }); //Fin de la async 
-        */
+        
 
         } catch (error) {
             dispatch({
                 type: LISTAR_ACTO_ERROR, //Es la accion a ejecutar
-                payload: "Hubo un problema con el servidor"  //Son los datos que modifica el state 
+                payload: `Hubo un problema con el servidor ${error}`   //Son los datos que modifica el state 
             });
         }
 

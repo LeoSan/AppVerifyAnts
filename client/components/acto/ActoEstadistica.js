@@ -32,7 +32,7 @@ const ActoEstadistica = ({ view }) => {
 
     //Acceder el stateContext de ActoContext 
     const valorActoContext = useContext(ActoContext);
-    const { loadActo, listMeses, listSemana,  Meses, Semana } = valorActoContext;
+    const { loadActo, listMeses, listSemana,  Meses, Semana, dataBarra } = valorActoContext;
 
     //Declaración de variables 
     let fechaAtual = moment().format('MMMM Do YYYY');
@@ -47,7 +47,7 @@ const ActoEstadistica = ({ view }) => {
     //Modulo de Eventos
 
     
-
+    console.log("dataBarra",dataBarra );
 
 
     const dataBrra = [

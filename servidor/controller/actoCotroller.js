@@ -284,7 +284,7 @@ exports.getActoEstadisticos = async (req, res = reponse) => {
            
         }
         
-        res.status(200).json({  data: data,  success: true });
+        res.status(200).json({ data,  success: true });
 
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
@@ -296,7 +296,6 @@ exports.getActoEstadisticos = async (req, res = reponse) => {
 
 const obtenerDatosBarras = async(req)=>{
     
-
     let objActoregistro = null; 
     const query = filtrosQuery(req);
    
@@ -321,6 +320,7 @@ const obtenerDatosBarras = async(req)=>{
 
 const filtrosQuery = (req)=>{
     
+
     const {nickID, anioBarra, mesBarra, semBarra, cateBarra} = req.body;
     let query = {
         'autor': nickID,
@@ -328,7 +328,7 @@ const filtrosQuery = (req)=>{
     };
 
     //Filtro Año
-    if (anioBarra){
+    if (anioBarra > 0 ){
         query = filtroCategoria(cateBarra);
         query = {
             ...query, 
@@ -340,7 +340,7 @@ const filtrosQuery = (req)=>{
           }        
     }    
     //Filtro -> Mes Obligatorio(Año)
-    if (mesBarra){
+    if (mesBarra > 0){
         query = filtroCategoria(cateBarra);
         query = {
             ...query, 
@@ -354,7 +354,7 @@ const filtrosQuery = (req)=>{
     }    
     
     //Filtro Semana  -> Obligatorio(Año)
-    if (semBarra){
+    if (semBarra > 0){
         query = filtroCategoria(cateBarra);
         query = {
             ...query, 
@@ -372,7 +372,7 @@ const filtrosQuery = (req)=>{
 
 const filtroCategoria = (cateBarra)=>{
     let query = '';
-    if (cateBarra){
+    if (cateBarra > 0){
         query = {
             ...query, 
             'categoria':cateBarra

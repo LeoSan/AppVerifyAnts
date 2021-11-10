@@ -97,11 +97,13 @@ const actoReducer = (state, action) => {
             return {
                 ...state,
                 Semana: action.payload,
+                msgListActo: null,
             }        
         case CONSULTA_DATA_BARRA:
             return {
                 ...state,
                 dataBarra: action.payload,
+                msgListActo: null,
             }
 
         default:
