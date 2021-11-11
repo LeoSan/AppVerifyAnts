@@ -102,7 +102,7 @@ import AuthState from '../context/auth/authState';
 
 # Recordatorios Importantes
 
-- [ ]Recordario 001: Recuerda que si deseas usar archivos en tu codigo fuente debes crear en public una carptea `static` ya que asi internamente lo renoce para referenciar Ejemplo-> 
+- [x] Recordario 001: Recuerda que si deseas usar archivos en tu codigo fuente debes crear en public una carptea `static` ya que asi internamente lo renoce para referenciar Ejemplo-> 
 ```
 //Para este ejemplo es para reproducir un audio 
 //Audio 
