@@ -98,10 +98,12 @@ import AuthState from '../context/auth/authState';
 - `npm run dev` -> inicamos el front!!  
 
 #### Desarrollo Front  Mobil
+- Proximamente 
+- Seguimosen Modo Escritorio
 
+# Recordatorios Importantes 
 
-# Recordatorios Importantes
-
+## **Next** - Cliente
 - [x] Recordario 001: Recuerda que si deseas usar archivos en tu codigo fuente debes crear en public una carptea `static` ya que asi internamente lo renoce para referenciar Ejemplo-> 
 ```
 //Para este ejemplo es para reproducir un audio 
