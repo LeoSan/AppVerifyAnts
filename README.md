@@ -84,7 +84,7 @@ import './public/assets/main.css';
 
 >Nota 2: Iniciamos en crear nuestra estrcutura ./context/nombreContext.js , nombreReducer.js , nombreState.js y nuestros ./type/index.js en raiz
 
->Nota 3: Recuerda que si vas ausar recudecer y context debes tambien hacer el ajuste en el archivo raiz iniciador para Next es _app.js, importas tu cantidad de state y lo incoporas como un componente en el return.  Ejemplo 
+>Nota 3: Recuerda que si vas ausar reducer y context debes tambien hacer el ajuste en el archivo raiz iniciador para Next es _app.js, importas tu cantidad de state y lo incoporas como un componente en el return.  Ejemplo 
 ```javascript
 import AuthState from '../context/auth/authState';
 
@@ -96,6 +96,7 @@ import AuthState from '../context/auth/authState';
 ```
 - `npm list --depth=0`
 - `npm run dev` -> inicamos el front!!  
+- `npm i react-google-charts` -> https://react-google-charts.com/ 
 
 #### Desarrollo Front  Mobil
 - Proximamente 
