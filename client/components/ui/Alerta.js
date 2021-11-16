@@ -13,6 +13,16 @@ class Alert {
         
     }
 
+    modalAlertError(mensaje){
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: mensaje,
+        showConfirmButton: false,
+        timer: 5000
+      })
+    }    
+
     deploySucces(){
       Swal.fire({
         position: 'center',
@@ -54,8 +64,6 @@ class Alert {
       });
 
       return formValues;
-
-
     }    
 
 }

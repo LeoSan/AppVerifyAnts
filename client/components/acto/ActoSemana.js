@@ -28,7 +28,7 @@ const ActoSemana = ({ view }) => {
 
     //Acceder el stateContext de ActoContext 
     const valorActoContext = useContext(ActoContext);
-    const { listarActo, listarActoSemana, crearActoRegistroSemanal, cambioLoad, acto, actoSemana, msgMutaActo, mutaActo, loadActo, loadClass, cambioLoadOFF } = valorActoContext;
+    const { listarActo, listarActoSemana, crearActoRegistroSemanal, cambioLoad, cambioLoadOFF, acto, actoSemana, msgMutaActo, mutaActo, loadActo, loadClass } = valorActoContext;
 
     //Declaro Variable del Entorno 
     const alerta = new Alerta();
@@ -51,6 +51,9 @@ const ActoSemana = ({ view }) => {
     //Metodo: Ventana Modal Check 
     const dialogCheck = async (acto, dia, checkedId, auxSemana, categoriaid) => {
         cambioLoad();
+
+
+
         let formValues = undefined;
         let checked = false;
         let duracion = null;
@@ -87,6 +90,11 @@ const ActoSemana = ({ view }) => {
             //Recargo Listado 
             datos = { nickID, semana: auxSemana,categoria:valorSelect, tipo: (valorSelect == 0)?"1-M":"1-MC"} //Debo ir al state y cambiar semana 
             listarActoSemana(datos);
+
+            //Audio 
+            //var audio = new Audio('https://assets.coderrocketfuel.com/pomodoro-times-up.mp3');
+            var audio = new Audio('/static/audio/new-ticket.mp3');
+            audio.play();
         }
 
         
@@ -121,7 +129,7 @@ const ActoSemana = ({ view }) => {
 
         datos = { nickID, semana: auxSemana, categoria: select.value, tipo: (select.value == 0)?"1-M":"1-MC" }
         //Listado         
-        console.log(datos);
+        //console.log(datos);
         listarActoSemana(datos);
 
     }
@@ -280,7 +288,6 @@ const ActoSemana = ({ view }) => {
                         }
                     </table>            
             </div>
-
         </div>
     );
 }

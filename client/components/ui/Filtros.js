@@ -1,12 +1,20 @@
 import React, { useContext, useEffect, useState, Fragment } from 'react';
-import { AdjustmentsIcon, SearchIcon } from '@heroicons/react/solid';
+import { AdjustmentsIcon, SearchIcon, FilterIcon } from '@heroicons/react/solid';
 
 import AuthContext from '../../context/auth/AuthContext';
 import ActoContext from '../../context/acto/ActoContext';
 
+import Alerta from '../ui/Alerta';
+import Load from '../ui/Load';
+
+
 
 
 const Filtros = ({ categoria, semana, meses, idCate, idMes, idAnio, idSemana, tipoEvento }) => {
+
+  //Declaración Variables o Instancias de clases 
+  const alerta = new Alerta();
+
 
   //Acceder el stateContext de auth 
   const valorAuthContext = useContext(AuthContext);
@@ -14,26 +22,54 @@ const Filtros = ({ categoria, semana, meses, idCate, idMes, idAnio, idSemana, ti
 
   //Acceder el stateContext de ActoContext 
   const valorActoContext = useContext(ActoContext);
-  const { filtroDatoBarra, msgListActo, dataBarra } = valorActoContext;
+  const { filtroDatoBarra, cambioLoad, cambioLoadOFF, msgListActo, dataBarra } = valorActoContext;
 
 
 
   const tipo = tipoEvento;
 
+  const validaFiltros = (datos) =>{
+    
+    if ( datos.anioBarra == 0 && datos.mesBarra == 0 && datos.semBarra == 0 && datos.cateBarra == 0 ){
+        alerta.modalAlertError('¡Debes seleccionar un filtro, por favor!');
+        return false;
+    }
+
+    if ( datos.anioBarra == 0 && (datos.mesBarra > 0 || datos.semBarra > 0)  ){
+        alerta.modalAlertError('¡Debes seleccionar el filtro año, por favor!');
+        return false;
+    }    
+    
+    if ( datos.cateBarra > 0 ){
+
+      if ( datos.mesBarra > 0 || datos.semBarra > 0 && datos.anioBarra == 0  ){
+        alerta.modalAlertError('¡Debes seleccionar el filtro año, por favor!');
+        return false;
+      }
+      return true;
+    }
+    return true; 
+  }
+
+
   const filtrarData = (e) => {
     e.preventDefault();
 
-    switch (tipo) {
-      case 'datosBarra':
         const cateBarra = document.getElementById("cateBarra").value;
         const mesBarra = document.getElementById("mesBarra").value;
         const anioBarra = document.getElementById("anioBarra").value;
         const semBarra = document.getElementById("semBarra").value;
         let datos = { nickID, cateBarra, mesBarra, anioBarra, semBarra, tipo: "datosBarra" }
-        
-        filtroDatoBarra(datos);
-        console.log("Resultado", dataBarra);
 
+    switch (tipo) {
+      case 'datosBarra':
+        
+        if ( validaFiltros(datos) ){
+          cambioLoad();
+          filtroDatoBarra(datos);
+        }
+
+        cambioLoadOFF();
 
         break;
       case 'datosLinea':
@@ -57,7 +93,7 @@ const Filtros = ({ categoria, semana, meses, idCate, idMes, idAnio, idSemana, ti
 
         <div className="flex-grow h-10 rounded-md bg-green-500 text-white font-extrabold flex items-center justify-center">
           <svg className="h-5 w-14" fill="none">
-            <AdjustmentsIcon className="w-6" />
+            <FilterIcon className="w-6" />
           </svg>
 
           <select
@@ -71,7 +107,7 @@ const Filtros = ({ categoria, semana, meses, idCate, idMes, idAnio, idSemana, ti
             <option value="2022" > 2022 </option>
           </select>
           <svg className="h-5 w-14" fill="none">
-            <AdjustmentsIcon className="w-6" />
+            <FilterIcon className="w-6" />
           </svg>
 
           <select
@@ -92,7 +128,7 @@ const Filtros = ({ categoria, semana, meses, idCate, idMes, idAnio, idSemana, ti
 
 
           <svg className="h-5 w-14" fill="none">
-            <AdjustmentsIcon className="w-6" />
+            <FilterIcon className="w-6" />
           </svg>
 
           <select
@@ -108,7 +144,7 @@ const Filtros = ({ categoria, semana, meses, idCate, idMes, idAnio, idSemana, ti
             }
           </select>
           <svg className="h-5 w-14" fill="none">
-            <AdjustmentsIcon className="w-6" />
+            <FilterIcon className="w-6" />
           </svg>
 
           <select

@@ -9,6 +9,8 @@ const Index = () => {
 
   return ( 
       <Layout>
+      
+
             <Body/>
       </Layout>
    );

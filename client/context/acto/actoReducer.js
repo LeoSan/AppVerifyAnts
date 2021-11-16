@@ -102,7 +102,7 @@ const actoReducer = (state, action) => {
         case CONSULTA_DATA_BARRA:
             return {
                 ...state,
-                dataBarra: action.payload,
+                estadistica: action.payload,
                 msgListActo: null,
             }
 

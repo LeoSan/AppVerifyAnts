@@ -44,7 +44,7 @@ const ActoState = ({ children }) => {
         loadActo: false,
         ListMeses: null,
         Semana:null,
-        dataBarra:null
+        estadistica:null
     }
 
     // Definimos Reducer 
@@ -166,7 +166,6 @@ const ActoState = ({ children }) => {
             const respuesta = await clienteAxios.post('/api/acto/create-acto', data)
                 .then((response) => {
 
-                    console.log(response.data);
 
                     if (response.data.success == true) {
                         dispatch({
@@ -317,6 +316,7 @@ const ActoState = ({ children }) => {
 
                         alerta.deploySucces();
 
+
                     } else {
 
                         dispatch({
@@ -330,7 +330,7 @@ const ActoState = ({ children }) => {
         } catch (error) {
             dispatch({
                 type: MUTAR_ACTO_ERROR, //Es la accion a ejecutar
-                payload: "Hubo un problema con el servido666r"  //Son los datos que modifica el state 
+                payload: `Hubo un problema con el servidor ${error}`   //Son los datos que modifica el state 
             });
             alerta.deployFault();
         }
@@ -449,15 +449,10 @@ const ActoState = ({ children }) => {
                 tokenAuth(token);
             }
 
-            console.log("entro al state", datos);
-           
-
-
+            //console.log("entro al state", datos);
             const respuesta = await clienteAxios.post('/api/acto/get-act-statistics', datos)
                 .then((response) => {
 
-                    console.log("Desde cliente ->", response);
-                    
                     if (response.data.success == true) {
                         dispatch({
                             type: CONSULTA_DATA_BARRA, //Es la accion a ejecutar
@@ -498,7 +493,7 @@ const ActoState = ({ children }) => {
                 loadClass: state.loadClass,
                 Meses: state.Meses,
                 Semana: state.Semana,
-                dataBarra: state.dataBarra,
+                estadistica: state.estadistica,
                 listarActo,
                 crearActo,
                 deleteActo,

@@ -10,6 +10,8 @@ const Acto = require('../models/Acto');
 //importo librerias 
 const { validationResult }  = require('express-validator');
 
+//////Helpers Validadores 
+
 const validarCaptcha = async (req)=>{
         //Revisar si envio captcha
         if (!req.body.captcha)
@@ -82,11 +84,19 @@ const validarActo = async(req, res, next)=>{
     if (!existeVal) return res.status(200).json({msg:'No autorizado', success:false});
 }
 
+
+//////Helpers Visuales 
+
+const strLetterUper =(str)=> {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
 module.exports = {
     validarActo,
     validarCaptcha,
     validaCampos,
     isUserId,
     notIsUserId,
+    strLetterUper,
     
 }

@@ -3,9 +3,14 @@ const { reponse } = require('express')
 const moment = require('moment');
 //Modelos 
 const Acto = require('../models/Acto');
+const Categoria = require('../models/Categoria');
 const Actoregistro = require('../models/Actoregistro');
 //Controladores 
 const logsCotroller = require('./logsController');
+
+//importamos helper 
+const {  strLetterUper } = require('../middleware/helpers');
+
 
 //Crear  Acto 
 exports.newActo = async (req, res = reponse) => {
@@ -115,7 +120,7 @@ exports.deleteActo = async (req, res = reponse) => {
     try {
         //Extraer proyecto y comprobar si existe
         const { id, nomActo } = req.body;// Asi es cuando se pasa un objeto  es decir un json 
-        console.log("body", req.body);
+        //console.log("body", req.body);
         //const {acto} = req.query;// Asi es cuando se pasa parametros 
 
         //Si la tarea existe o no
@@ -275,16 +280,38 @@ exports.getActoEstadisticos = async (req, res = reponse) => {
 
     try {
         const {tipo} = req.body;
-        let data = null; 
+        let datoBarra = null; 
+        let datoPie = null; 
+        let datoLinealAnio = [
+            ['Años', 'ingles', 'proyecto', 'alma', 'cripto'],
+            [0, 0, 0, 0, 0],
+            [2020, 10, 5, 0, 0],
+            [2021, 20, 15, 0, 0],
+            [2022, 30, 9, 0, 0],
 
-        //Datos para Estadistica Barra
-        if ( tipo == 'datosBarra'){
-            
-            data = await obtenerDatosBarras( req );
-           
-        }
+        ]; 
+        let datoLinealMes = [
+            ['Mes', 'ingles', 'proyecto', 'alma', 'cripto'],
+            [0, 0, 0, 0, 0],
+            [1, 10, 5, 0, 0],
+            [2, 20, 15, 0, 0],
+            [3, 30, 9, 0, 0],
+            [4, 40, 10, 0, 0],
+            [5, 50, 5, 0, 0],
+            [6, 20, 3, 0, 0],
+            [7, 27, 19, 0, 0],
+            [8, 27, 19, 0, 0],
+            [9, 27, 19, 0, 0],
+            [10, 27, 19, 0, 0],
+            [11, 27, 19, 0, 0],
+            [12, 27, 19, 0, 0],
+        ]; 
+
+        //Datos para Estadisticos 
+            datoBarra = await obtenerDatosBarras( req );
+            datoPie = datoBarra;  
         
-        res.status(200).json({ data,  success: true });
+        res.status(200).json({ datoBarra, datoPie, datoLinealAnio, datoLinealMes, success: true });
 
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
@@ -298,11 +325,32 @@ const obtenerDatosBarras = async(req)=>{
     
     let objActoregistro = null; 
     const query = filtrosQuery(req);
+    const {nickID} = req.body;
    
     //Consulta valor del  Modelo 
     objActoregistro = await Actoregistro.find(query).populate({ path: 'acto', model: 'Acto', select: 'nomActo categoria' });
-/*
- let valGroup = { 
+    
+    //Consulta el modelo Categoria
+    let listCategoria = await Categoria.find({ autor:nickID, actividad:'60ae92dc3cb1ca2e14baeb8b' }); 
+
+    //Realizo Calculo 
+    let sum = 0; 
+    let dataBarra = [ ["Categoria", "Tiempo(min)", { role: "style" }] ];
+    //Itero por categoria para validar 
+    for (const filas of listCategoria) {
+
+        objActoregistro.forEach(element => {
+            //console.log(element.categoria +" ====  "+ filas._id);
+            if ( element.categoria.toString() == filas._id.toString() ){
+                sum = sum  +  element.duracion; 
+            }
+        });
+        dataBarra.push( [ strLetterUper(filas.nomCate), sum, `color: ${filas.color}`] );
+    }//Fin del for de Categorias 
+
+    /*
+//Esto era mi intento de hacerlo con groupby pero me falta nivel 
+    let valGroup = { 
      _id:{categoria:"$categoria"},
      duracion: {$sum:'$duracion'}
  } 
@@ -313,7 +361,7 @@ const obtenerDatosBarras = async(req)=>{
                                                     ]);
 
 */
-    return objActoregistro; 
+    return dataBarra; 
 }
 
 //helpers Filtros 
@@ -371,8 +419,11 @@ const filtrosQuery = (req)=>{
 }
 
 const filtroCategoria = (cateBarra)=>{
+    
+    
     let query = '';
-    if (cateBarra > 0){
+    if ( cateBarra != null && cateBarra > 0   ){
+       // console.log("cateBarra", cateBarra);
         query = {
             ...query, 
             'categoria':cateBarra
