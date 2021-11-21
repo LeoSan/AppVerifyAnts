@@ -281,37 +281,17 @@ exports.getActoEstadisticos = async (req, res = reponse) => {
     try {
         const {tipo} = req.body;
         let datoBarra = null; 
+        let prueba = null; 
         let datoPie = null; 
-        let datoLinealAnio = [
-            ['Años', 'ingles', 'proyecto', 'alma', 'cripto'],
-            [0, 0, 0, 0, 0],
-            [2020, 10, 5, 0, 0],
-            [2021, 20, 15, 0, 0],
-            [2022, 30, 9, 0, 0],
-
-        ]; 
-        let datoLinealMes = [
-            ['Mes', 'ingles', 'proyecto', 'alma', 'cripto'],
-            [0, 0, 0, 0, 0],
-            [1, 10, 5, 0, 0],
-            [2, 20, 15, 0, 0],
-            [3, 30, 9, 0, 0],
-            [4, 40, 10, 0, 0],
-            [5, 50, 5, 0, 0],
-            [6, 20, 3, 0, 0],
-            [7, 27, 19, 0, 0],
-            [8, 27, 19, 0, 0],
-            [9, 27, 19, 0, 0],
-            [10, 27, 19, 0, 0],
-            [11, 27, 19, 0, 0],
-            [12, 27, 19, 0, 0],
-        ]; 
-
+        let datoLinealAnio = null; 
         //Datos para Estadisticos 
             datoBarra = await obtenerDatosBarras( req );
-            datoPie = datoBarra;  
+            datoLinealAnio = await obtenerDatosLinealAnios( req );
+            datoLinealMes = await obtenerDatosLinealMes( req );
+            datoPie   = datoBarra;  
         
         res.status(200).json({ datoBarra, datoPie, datoLinealAnio, datoLinealMes, success: true });
+        //res.status(200).json({ datoLinealAnio, success: true });
 
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
@@ -362,6 +342,121 @@ const obtenerDatosBarras = async(req)=>{
 
 */
     return dataBarra; 
+}
+
+const obtenerDatosLinealAnios = async(req)=>{
+
+    let objActoregistro = null; 
+    const {nickID} = req.body;
+    let arrayHead=["Años"];
+    let dataLineal=[];
+    let listAnio=[2020, 2021, 2022, 2023];
+
+   
+    //Consulta valor del  Modelo 
+    objActoregistro = await Actoregistro.find({autor:nickID}).populate({ path: 'acto', model: 'Acto', select: 'nomActo categoria' });
+    
+    //Consulta el modelo Categoria
+    let listCategoria = await Categoria.find({ autor:nickID, actividad:'60ae92dc3cb1ca2e14baeb8b' });
+   
+    //Genero mi encabezado de la grafica Lineal ["Años", "Categoria 1","Categoria 2","Categoria 3"]
+    for (const filas of listCategoria) {
+        arrayHead.push( filas.nomCate ); 
+    }
+
+    // Inicio la estructura para la grafica Linea [0, Sum1, sum2, sum3] Por año 
+            //Inicio suma 
+            dataLineal.push(arrayHead); //Genero el encabezado de la grafica 
+
+            for (var i = 0; i<listAnio.length; i++) { //Ciclo De años 
+
+                arraySumTotalAnio = new Array();//Esta es la clave necesitaba volver instanciar el arreglo por cada ciclo anual 
+
+                for (const filas of listCategoria) {//Ciclo de Categoria 
+                    let sum = 0;
+
+                    objActoregistro.forEach(element => {//Ciclo de la data para filtrar Categoria y Año por cada ciclo 
+                    
+                        var fechaRegistro = new Date( element.registro);
+                        //'mes': ((fechaRegistro.getMonth() + 1) < 10 ? '0' : '') + (fechaRegistro.getMonth() + 1),
+                        if ( element.categoria.toString() == filas._id.toString()  && fechaRegistro.getFullYear() == listAnio[i] ){
+                            sum = sum + element.duracion;    
+                        }
+    
+                    });//Fin del for de datos. 
+
+                    //Necesito que tenga un 0 como valor inicial es requisito de la grafica 
+                    if (arraySumTotalAnio.length == 0){
+                        arraySumTotalAnio.push(0); 
+                    }
+                    //al final de la suma obtengo categoria por año y pusheo en el arreglo 
+                    arraySumTotalAnio.push(sum); 
+                
+               }//fin del for de categoria
+
+               dataLineal.push(arraySumTotalAnio);
+
+            }//fin del for de anio 
+
+    return dataLineal; 
+}
+
+const obtenerDatosLinealMes = async(req)=>{
+
+    let objActoregistro = null; 
+    const {nickID, anioBarra } = req.body;
+    let arrayHead=["Mes"];
+    let dataLineal=[];
+    let listMes=["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+
+   
+    //Consulta valor del  Modelo 
+    objActoregistro = await Actoregistro.find({autor:nickID}).populate({ path: 'acto', model: 'Acto', select: 'nomActo categoria' });
+    
+    //Consulta el modelo Categoria
+    let listCategoria = await Categoria.find({ autor:nickID, actividad:'60ae92dc3cb1ca2e14baeb8b' });
+   
+    //Genero mi encabezado de la grafica Lineal ["Años", "Categoria 1","Categoria 2","Categoria 3"]
+    for (const filas of listCategoria) {
+        arrayHead.push( filas.nomCate ); 
+    }
+
+    // Inicio la estructura para la grafica Linea [0, Sum1, sum2, sum3] Por año 
+            //Inicio suma 
+            dataLineal.push(arrayHead); //Genero el encabezado de la grafica 
+            dataLineal.push([0,0,0,0,0,0,0]);
+
+            for (var i = 0; i<listMes.length; i++) { //Ciclo De años 
+
+                arraySumTotalMes = new Array();//Esta es la clave necesitaba volver instanciar el arreglo por cada ciclo anual 
+
+                for (const filas of listCategoria) {//Ciclo de Categoria 
+                    let sum = 0;
+
+                    objActoregistro.forEach(element => {//Ciclo de la data para filtrar Categoria y Año por cada ciclo 
+                    
+                        var fechaRegistro = new Date( element.registro );
+                        var mes = ((fechaRegistro.getMonth() + 1) < 10 ? '0' : '') + (fechaRegistro.getMonth() + 1);
+                        if ( element.categoria.toString() == filas._id.toString()  && fechaRegistro.getFullYear() == anioBarra && mes == listMes[i] ){
+                            sum = sum + element.duracion;    
+                        }
+    
+                    });//Fin del for de datos. 
+
+                    //Necesito que tenga un 0 como valor inicial es requisito de la grafica 
+                    if (arraySumTotalMes.length == 0){
+                        arraySumTotalMes.push( parseInt(listMes[i]) ); 
+                    }
+                    //al final de la suma obtengo categoria por año y pusheo en el arreglo 
+                    arraySumTotalMes.push(sum); 
+                
+               }//fin del for de categoria
+
+               dataLineal.push(arraySumTotalMes);
+
+            }//fin del for de anio 
+
+    return dataLineal; 
 }
 
 //helpers Filtros 

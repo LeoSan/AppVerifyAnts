@@ -263,3 +263,13 @@ Use mongoose.model(name, schema)
 [2021-11-16T14:00:51.732] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
 [2021-11-16T14:00:53.277] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
 [2021-11-16T14:01:11.385] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-11-16T16:51:16.670] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: dataBarra is not defined 
+[2021-11-16T17:08:26.467] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: element is not defined 
+[2021-11-16T17:42:27.793] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: year is not defined 
+[2021-11-21T00:37:19.537] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: element is not defined 
+[2021-11-21T00:43:13.984] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: arraySumTotalAnio[i].push is not a function 
+[2021-11-21T00:43:18.569] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: arraySumTotalAnio[i].push is not a function 
+[2021-11-21T00:44:05.511] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: arraySumTotalAnio[i].push is not a function 
+[2021-11-21T01:38:52.820] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: mes is not defined 
+[2021-11-21T01:39:29.374] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: mes is not defined 
+[2021-11-21T01:39:35.224] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: mes is not defined 

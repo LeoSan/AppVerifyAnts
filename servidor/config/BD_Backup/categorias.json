@@ -14,7 +14,8 @@
   "actividad": {
     "$oid": "6095819506be383f7cf49ce6"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "null"
 },{
   "_id": {
     "$oid": "60ad2e0c49bf5808bc5784c2"
@@ -48,7 +49,8 @@
   "actividad": {
     "$oid": "60ae92dc3cb1ca2e14baeb8b"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#76A7FA"
 },{
   "_id": {
     "$oid": "61116843b37c253aa8c037f6"
@@ -82,7 +84,8 @@
   "actividad": {
     "$oid": "60ae92dc3cb1ca2e14baeb8b"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#96C7C1"
 },{
   "_id": {
     "$oid": "615ce4e73735a650a8818a74"
@@ -99,7 +102,8 @@
   "actividad": {
     "$oid": "60ae92dc3cb1ca2e14baeb8b"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#3E00FF"
 },{
   "_id": {
     "$oid": "615ce7763735a650a8818a79"
@@ -116,7 +120,8 @@
   "actividad": {
     "$oid": "60ae92dc3cb1ca2e14baeb8b"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#F7FD04"
 },{
   "_id": {
     "$oid": "615ce7b13735a650a8818a7a"
@@ -133,7 +138,8 @@
   "actividad": {
     "$oid": "60ae92dc3cb1ca2e14baeb8b"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#9EDE73"
 },{
   "_id": {
     "$oid": "615ce8f04f026f215495e9e0"
@@ -150,5 +156,6 @@
   "actividad": {
     "$oid": "60ae92dc3cb1ca2e14baeb8b"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#F37121"
 }]
