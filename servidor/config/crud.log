@@ -273,3 +273,22 @@ Use mongoose.model(name, schema)
 [2021-11-21T01:38:52.820] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: mes is not defined 
 [2021-11-21T01:39:29.374] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: mes is not defined 
 [2021-11-21T01:39:35.224] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: mes is not defined 
+[2021-11-23T18:38:39.485] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "0" at path "categoria" for model "Acto" 
+[2021-11-23T18:38:47.700] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "0" at path "categoria" for model "Acto" 
+[2021-11-23T18:40:07.567] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "0" at path "categoria" for model "Acto" 
+[2021-11-23T18:41:07.686] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "0" at path "categoria" for model "Acto" 
+[2021-11-23T19:25:59.711] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: cateBarram is not defined 
+[2021-11-23T19:26:02.046] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: cateBarram is not defined 
+[2021-11-23T20:24:03.566] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "0" at path "categoria" for model "Actoregistro" 
+[2021-11-23T20:25:35.723] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2021-11-23T20:25:51.161] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "0" at path "categoria" for model "Actoregistro" 
+[2021-11-23T20:27:03.160] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "0" at path "categoria" for model "Actoregistro" 
+[2021-11-23T20:33:58.223] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "0" at path "categoria" for model "Actoregistro" 
+[2021-11-23T22:14:07.326] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "0" at path "categoria" for model "Actoregistro" 
+[2021-11-23T22:16:57.769] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "0" at path "categoria" for model "Actoregistro" 
+[2021-11-23T22:17:22.111] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "0" at path "categoria" for model "Actoregistro" 
+[2021-11-23T22:17:28.663] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "0" at path "categoria" for model "Actoregistro" 
+[2021-11-23T22:17:53.792] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "0" at path "categoria" for model "Actoregistro" 
+[2021-11-23T22:22:01.663] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "0" at path "categoria" for model "Actoregistro" 
+[2021-11-23T22:22:35.153] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "0" at path "categoria" for model "Actoregistro" 
+[2021-11-23T22:23:35.166] [ERROR] crud - Hubo un error en la comunicación !! -> CastError: Cast to ObjectId failed for value "null" at path "categoria" for model "Actoregistro" 

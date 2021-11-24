@@ -36,7 +36,12 @@ const ActoSchema = new Schema({
 	registro:{
 		type:Date, 
 		default:Date.now()
-	}
+	},
+	color:{
+		type: String,
+		default:null,
+		trim:true,
+	 },
 	
 });
 

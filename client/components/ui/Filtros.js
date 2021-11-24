@@ -30,7 +30,7 @@ const Filtros = ({ categoria, semana, meses, idCate, idMes, idAnio, idSemana, ti
 
   const validaFiltros = (datos) =>{
     
-    if ( datos.anioBarra == 0 && datos.mesBarra == 0 && datos.semBarra == 0 && datos.cateBarra == 0 ){
+    if ( datos.anioBarra == 0 && datos.mesBarra == 0 && datos.semBarra == 0 && datos.cateBarra == null ){
         alerta.modalAlertError('¡Debes seleccionar un filtro, por favor!');
         return false;
     }
@@ -40,7 +40,7 @@ const Filtros = ({ categoria, semana, meses, idCate, idMes, idAnio, idSemana, ti
         return false;
     }    
     
-    if ( datos.cateBarra > 0 ){
+    if ( datos.cateBarra  != null ){
 
       if ( datos.mesBarra > 0 || datos.semBarra > 0 && datos.anioBarra == 0  ){
         alerta.modalAlertError('¡Debes seleccionar el filtro año, por favor!');
@@ -55,7 +55,7 @@ const Filtros = ({ categoria, semana, meses, idCate, idMes, idAnio, idSemana, ti
   const filtrarData = (e) => {
     e.preventDefault();
 
-        const cateBarra = document.getElementById("cateBarra").value;
+        const cateBarra = (document.getElementById("cateBarra").value == 0 ? null: document.getElementById("cateBarra").value );
         const mesBarra = document.getElementById("mesBarra").value;
         const anioBarra = document.getElementById("anioBarra").value;
         const semBarra = document.getElementById("semBarra").value;
@@ -143,6 +143,7 @@ const Filtros = ({ categoria, semana, meses, idCate, idMes, idAnio, idSemana, ti
               ))
             }
           </select>
+         
           <svg className="h-5 w-14" fill="none">
             <FilterIcon className="w-6" />
           </svg>

@@ -1,15 +1,13 @@
 //Libreria
 
+const { response,  request } = require('express');
 const bcrypt               = require('bcrypt');
 const jwt                  = require('jsonwebtoken');
 
 require('dotenv').config({path: '../config/variables.env'});  //LINEA IMPORTANTE
+
 //Modelos
-const Usuario    = require('../models/Usuario');
-const Ingreso    = require('../models/Ingreso');
-const Gasto      = require('../models/Gasto');
-const Patrimonio = require('../models/Patrimonio');
-const Categoria  = require('../models/Categoria');
+const {Usuario, Ingreso, Gasto, Patrimonio,Categoria }  = require('../models');
 
 //Controlador
 const mailCotroller = require('../controller/mailCotroller'); 
@@ -20,7 +18,7 @@ const { mailCambioClave, mailRegistroUsuario } = require('../template/PlantillaM
 const { validarCaptcha }       = require('../middleware/helpers');
 
 //Crear usuario 
-exports.nuevoUsuario = async(req, res)=>{
+exports.nuevoUsuario = async(req=request, res=response)=>{
     
     //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
    // console.log(req.body);
@@ -73,7 +71,7 @@ exports.nuevoUsuario = async(req, res)=>{
 }
 
 //Udadate Usuario  
-exports.updateUsuario = async (req, res)=>{
+exports.updateUsuario = async(req=request, res=response)=>{
     
   //Extraer informacion para validacion 
   try {
@@ -104,7 +102,7 @@ exports.updateUsuario = async (req, res)=>{
 }
 
 //Delete Usuario
-exports.deleteUsuario = async (req, res)=>{
+exports.deleteUsuario = async(req=request, res=response)=>{
 
     try {
         const {id, emailUsu} = req.body;// Asi es cuando se pasa un objeto  es decir un json tienes param, query, body
@@ -129,7 +127,7 @@ exports.deleteUsuario = async (req, res)=>{
 }
 
 //Udadate -> Cambio Clave Usuario  
-exports.cambioClaveUsuario = async (req, res)=>{
+exports.cambioClaveUsuario = async(req=request, res=response)=>{
     
   //Extraer informacion para validacion 
   try {

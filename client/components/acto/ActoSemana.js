@@ -22,9 +22,9 @@ const ActoSemana = ({ view }) => {
     const valorAuthContext = useContext(AuthContext);
     const { nickID } = valorAuthContext;
 
-   //Acceder el stateContext  de Categoria 
-   const valorContext = useContext(CategoriaContext);
-   const { categoriaActos = null } = valorContext;
+    //Acceder el stateContext  de Categoria 
+    const valorContext = useContext(CategoriaContext);
+    const { categoriaActos = null } = valorContext;
 
     //Acceder el stateContext de ActoContext 
     const valorActoContext = useContext(ActoContext);
@@ -36,11 +36,11 @@ const ActoSemana = ({ view }) => {
     //let   semaSig    = moment().add(1, 'w').week();
     //let   semAtras  = moment().subtract(1, 'w').week();    
     let fechaAtual = moment().format('MMMM Do YYYY');
-    let datos = { nickID, semana: semanaActual, categoria:null,  tipo: "1-M" }
-    
+    let datos = { nickID, semana: semanaActual, categoria: null, tipo: "1-M" }
+
     const [auxSemana, setAuxSemana] = useState(semanaActual);
     const [valorSelect, setvalorSelect] = useState(0);
-    
+
     //Declaro UseEffect   
     useEffect(() => {
         cambioLoad();
@@ -64,15 +64,15 @@ const ActoSemana = ({ view }) => {
             checked = true;
             document.getElementById(checkedId).checked = true;
             formValues = await alerta.deployModal();
-            valCancel = false; 
+            valCancel = false;
             if (formValues == undefined) {
-                valCancel = true; 
+                valCancel = true;
                 cambioLoadOFF();
             }
-            
+
         } else {
             document.getElementById(checkedId).checked = false;
-            valCancel = false; 
+            valCancel = false;
         }
 
         //Capturo valores desde el Modal 
@@ -81,14 +81,14 @@ const ActoSemana = ({ view }) => {
             nota = formValues[1];
         }
 
-        if (valCancel !=true){//Solo entra si no le dio al boton cancelar 
-            const data = {autor: nickID,acto: acto,duracion: duracion,nota: nota,dia: dia,semana: auxSemana,checked: checked, categoria:categoriaid }
+        if (valCancel != true) {//Solo entra si no le dio al boton cancelar 
+            const data = { autor: nickID, acto: acto, duracion: duracion, nota: nota, dia: dia, semana: auxSemana, checked: checked, categoria: categoriaid }
 
             //Guardo Datos
             crearActoRegistroSemanal(data);
-    
+
             //Recargo Listado 
-            datos = { nickID, semana: auxSemana,categoria:valorSelect, tipo: (valorSelect == 0)?"1-M":"1-MC"} //Debo ir al state y cambiar semana 
+            datos = { nickID, semana: auxSemana, categoria: valorSelect, tipo: (valorSelect == 0) ? "1-M" : "1-MC" } //Debo ir al state y cambiar semana 
             listarActoSemana(datos);
 
             //Audio 
@@ -97,15 +97,15 @@ const ActoSemana = ({ view }) => {
             audio.play();
         }
 
-        
+
     }
 
     //Metodo: Consulta atras dias de la semana
     const consultaSemanaAtras = (e, semana) => {
         e.preventDefault();
         cambioLoad();
-        setAuxSemana(eval( semana - 1 ));
-        datos = { nickID, semana: semana - 1, categoria:valorSelect, tipo: (valorSelect == 0)?"1-M":"1-MC" }
+        setAuxSemana(eval(semana - 1));
+        datos = { nickID, semana: semana - 1, categoria: valorSelect, tipo: (valorSelect == 0) ? "1-M" : "1-MC" }
         //Listado 
         listarActoSemana(datos);
     }
@@ -114,20 +114,20 @@ const ActoSemana = ({ view }) => {
     const consultaSemanaSig = (e, semana) => {
         e.preventDefault();
         cambioLoad();
-        setAuxSemana(eval( semana + 1 ));
-        datos = { nickID, semana: semana + 1, categoria:valorSelect, tipo: (valorSelect == 0)?"1-M":"1-MC" }
+        setAuxSemana(eval(semana + 1));
+        datos = { nickID, semana: semana + 1, categoria: valorSelect, tipo: (valorSelect == 0) ? "1-M" : "1-MC" }
         //Listado         
         listarActoSemana(datos);
 
     }
 
-    const filtrarCategoria = (e)=>{
+    const filtrarCategoria = (e) => {
         e.preventDefault();
         cambioLoad();
         let select = document.getElementById("categoria");
         setvalorSelect(select.value);
 
-        datos = { nickID, semana: auxSemana, categoria: select.value, tipo: (select.value == 0)?"1-M":"1-MC" }
+        datos = { nickID, semana: auxSemana, categoria: select.value, tipo: (select.value == 0) ? "1-M" : "1-MC" }
         //Listado         
         //console.log(datos);
         listarActoSemana(datos);
@@ -142,70 +142,75 @@ const ActoSemana = ({ view }) => {
 
             {msgMutaActo != null && mutaActo == false ? (
                 <Error mensaje={msgMutaActo} ></Error>
-            ) : null}            
-            
+            ) : null}
+
 
             {loadActo == true ? (
                 <Load></Load>
-            ) : null  }
-
-            <div className="rounded-t-xl p-2 bg-gradient-to-r from-gray-50 to-gray-200">
-                <div className="flex space-x-4">
-
-                    <div className="flex-none w-16 h-10 rounded-md bg-green-500 text-white text-2xl font-extrabold flex items-center justify-center cursor-pointer shadow-sm" onClick={(e) => { consultaSemanaAtras(e, auxSemana) }}>
-                        <svg className="w-5 h-5" fill="none">
-                            <ArrowSmLeftIcon className="w-6" />
-                        </svg>
-                    </div>
-                    <div className="flex-grow h-10 rounded-md bg-green-500 text-white font-extrabold flex items-center justify-center">
-                        <svg className="h-5 w-14" fill="none">
-                            <CalendarIcon className="w-6" />
-                        </svg>
-                        Fecha : &nbsp; <span className="text-gray-100"> {fechaAtual}</span>
-                        <svg className="h-5 w-14" fill="none">
-                            <CalendarIcon className="w-6" />
-                        </svg>
-                        Semana: &nbsp;<span className="text-gray-200"> {auxSemana} </span>
-                        <svg className="h-5 w-14" fill="none">
-                            <BookOpenIcon className="w-6" />
-                        </svg>
-
-                        <select
-                            id="categoria"
-                            name="categoria"
-                            className="rounded-md text-gray-700 text-center capitalize"
-                            value={valorSelect}
-                            onChange={ e => { filtrarCategoria(e)} }
-
-                        >
-                            <option value="0" selected> Categorias </option>
-                            
-                            {
-                                !categoriaActos ? null : categoriaActos.map((list) => (
-                                    <option key={list._id} value={list._id} > {list.nomCate} </option>
-                                 ))
-                                 
-                            }
-                            <option value="0" className="bg-yellow-400"> Todos </option>                            
-                        </select>
+            ) : null}
 
 
-                    </div>
-                    <div className="flex-none w-16 h-10 rounded-md bg-green-500 text-white text-2xl font-extrabold flex items-center justify-center cursor-pointer shadow-sm" onClick={(e) => { consultaSemanaSig(e, auxSemana) }}>
-                        <svg className="w-5 h-5" fill="none">
-                            <ArrowSmRightIcon className="w-6" />
-                        </svg>
+            <div class="relative overflow-hidden mx-5">
+
+                <div class="rounded-xl overflow-hidden bg-gradient-to-r from-yellow-200 to-yellow-300 p-4 my-5">
+                    <div className="flex space-x-4">
+
+                        <div className="flex-none w-16 h-10 rounded-md bg-green-500 text-white text-2xl font-extrabold flex items-center justify-center cursor-pointer shadow-sm" onClick={(e) => { consultaSemanaAtras(e, auxSemana) }}>
+                            <svg className="w-5 h-5" fill="none">
+                                <ArrowSmLeftIcon className="w-6" />
+                            </svg>
+                        </div>
+                        <div className="flex-grow h-10 rounded-md bg-green-500 text-white font-extrabold flex items-center justify-center">
+                            <svg className="h-5 w-14" fill="none">
+                                <CalendarIcon className="w-6" />
+                            </svg>
+                            Fecha : &nbsp; <span className="text-gray-100"> {fechaAtual}</span>
+                            <svg className="h-5 w-14" fill="none">
+                                <CalendarIcon className="w-6" />
+                            </svg>
+                            Semana: &nbsp;<span className="text-gray-200"> {auxSemana} </span>
+                            <svg className="h-5 w-14" fill="none">
+                                <BookOpenIcon className="w-6" />
+                            </svg>
+
+                            <select
+                                id="categoria"
+                                name="categoria"
+                                className="rounded-md text-gray-700 text-center capitalize"
+                                value={valorSelect}
+                                onChange={e => { filtrarCategoria(e) }}
+
+                            >
+                                <option value="0" selected> Categorias </option>
+
+                                {
+                                    !categoriaActos ? null : categoriaActos.map((list) => (
+                                        <option key={list._id} value={list._id} > {list.nomCate} </option>
+                                    ))
+
+                                }
+                                <option value="0" className="bg-yellow-400"> Todos </option>
+                            </select>
+
+
+                        </div>
+                        <div className="flex-none w-16 h-10 rounded-md bg-green-500 text-white text-2xl font-extrabold flex items-center justify-center cursor-pointer shadow-sm" onClick={(e) => { consultaSemanaSig(e, auxSemana) }}>
+                            <svg className="w-5 h-5" fill="none">
+                                <ArrowSmRightIcon className="w-6" />
+                            </svg>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div className={loadClass}>
-                    <table className="min-w-full divide-y divide-gray-200" >
+                <div className={loadClass} >
+                
+                <div className="rounded-xl overflow-hidden bg-gradient-to-r from-yellow-200 to-yellow-300 p-4 my-5" >
+                    <table className="min-w-full divide-y divide-gray-200 " >
                         <thead className="bg-gray-50">
                             <tr>
                                 <th
                                     scope="col"
-                                    className="px-6 py-3 bg-yellow-200 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                    className="px-6 py-3 bg-green-500 text-center text-xs  text-white font-bold uppercase tracking-wider"
                                 >
                                     Actos
                                 </th>
@@ -264,37 +269,42 @@ const ActoSemana = ({ view }) => {
                                                     {actoSemana[key].nomActo}
                                                 </td>
                                                 <td className="px-6 py-4 text-center">
-                                                    <input type="checkbox" id={actoSemana[key]._id + "Lun"} onClick={() => dialogCheck(actoSemana[key]._id, 'Lunes', actoSemana[key]._id + "Lun", auxSemana, actoSemana[key].categoriaid  )} checked={actoSemana[key].checkVals.lunes} onChange={e => { }} />
+                                                    <input type="checkbox" id={actoSemana[key]._id + "Lun"} onClick={() => dialogCheck(actoSemana[key]._id, 'Lunes', actoSemana[key]._id + "Lun", auxSemana, actoSemana[key].categoriaid)} checked={actoSemana[key].checkVals.lunes} onChange={e => { }} />
                                                 </td>
                                                 <td className="px-6 py-4 text-center">
-                                                    <input type="checkbox" id={actoSemana[key]._id + "Mar"} onClick={() => dialogCheck(actoSemana[key]._id, 'Martes', actoSemana[key]._id + "Mar", auxSemana, actoSemana[key].categoriaid )} checked={actoSemana[key].checkVals.martes} onChange={e => { }} />
+                                                    <input type="checkbox" id={actoSemana[key]._id + "Mar"} onClick={() => dialogCheck(actoSemana[key]._id, 'Martes', actoSemana[key]._id + "Mar", auxSemana, actoSemana[key].categoriaid)} checked={actoSemana[key].checkVals.martes} onChange={e => { }} />
                                                 </td>
                                                 <td className="px-6 py-4 text-center">
-                                                    <input type="checkbox" id={actoSemana[key]._id + "Mier"} onClick={() => dialogCheck(actoSemana[key]._id, 'Miercoles', actoSemana[key]._id + "Mier", auxSemana, actoSemana[key].categoriaid )} checked={actoSemana[key].checkVals.miercoles} onChange={e => { }} />
+                                                    <input type="checkbox" id={actoSemana[key]._id + "Mier"} onClick={() => dialogCheck(actoSemana[key]._id, 'Miercoles', actoSemana[key]._id + "Mier", auxSemana, actoSemana[key].categoriaid)} checked={actoSemana[key].checkVals.miercoles} onChange={e => { }} />
                                                 </td>
                                                 <td className="px-6 py-4 text-center">
-                                                    <input type="checkbox" id={actoSemana[key]._id + "Jue"} onClick={() => dialogCheck(actoSemana[key]._id, 'Jueves', actoSemana[key]._id + "Jue", auxSemana, actoSemana[key].categoriaid )} checked={actoSemana[key].checkVals.jueves} onChange={e => { }} />
+                                                    <input type="checkbox" id={actoSemana[key]._id + "Jue"} onClick={() => dialogCheck(actoSemana[key]._id, 'Jueves', actoSemana[key]._id + "Jue", auxSemana, actoSemana[key].categoriaid)} checked={actoSemana[key].checkVals.jueves} onChange={e => { }} />
                                                 </td>
                                                 <td className="px-6 py-4 text-center">
-                                                    <input type="checkbox" id={actoSemana[key]._id + "Vie"} onClick={() => dialogCheck(actoSemana[key]._id, 'Viernes', actoSemana[key]._id + "Vie", auxSemana, actoSemana[key].categoriaid )} checked={actoSemana[key].checkVals.viernes} onChange={e => { }} />
+                                                    <input type="checkbox" id={actoSemana[key]._id + "Vie"} onClick={() => dialogCheck(actoSemana[key]._id, 'Viernes', actoSemana[key]._id + "Vie", auxSemana, actoSemana[key].categoriaid)} checked={actoSemana[key].checkVals.viernes} onChange={e => { }} />
                                                 </td>
                                                 <td className="px-6 py-4 text-center">
-                                                    <input type="checkbox" id={actoSemana[key]._id + "Sab"} onClick={() => dialogCheck(actoSemana[key]._id, 'Sabado', actoSemana[key]._id + "Sab", auxSemana, actoSemana[key].categoriaid )} checked={actoSemana[key].checkVals.sabado} onChange={e => { }} />
+                                                    <input type="checkbox" id={actoSemana[key]._id + "Sab"} onClick={() => dialogCheck(actoSemana[key]._id, 'Sabado', actoSemana[key]._id + "Sab", auxSemana, actoSemana[key].categoriaid)} checked={actoSemana[key].checkVals.sabado} onChange={e => { }} />
                                                 </td>
                                             </tr>
                                         ))}
                                 </tbody>
                             ) : null
                         }
-                    </table>            
+                    </table>
+                </div>
+                </div>
             </div>
         </div>
     );
 }
 
 ActoSemana.propTypes = {
-    /*  listarCategoria: PropTypes.func,
-      mensajeList: PropTypes.string,
+    dialogCheck: PropTypes.func,
+    consultaSemanaAtras: PropTypes.func,
+    consultaSemanaSig: PropTypes.func,
+    filtrarCategoria: PropTypes.func,
+    /*  mensajeList: PropTypes.string,
       nickEmail: PropTypes.string,
       nickID: PropTypes.string,
       categoria: PropTypes.object,

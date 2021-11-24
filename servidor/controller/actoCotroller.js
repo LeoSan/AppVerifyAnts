@@ -1,5 +1,5 @@
 //Librerias 
-const { reponse } = require('express')
+const { reponse, request } = require('express')
 const moment = require('moment');
 //Modelos 
 const Acto = require('../models/Acto');
@@ -279,18 +279,20 @@ const getActoSemanaDia = async (autor, acto, dia, semana) => {
 exports.getActoEstadisticos = async (req, res = reponse) => {
 
     try {
-        const {tipo} = req.body;
+        const { cateBarra } = req.body;
+        //Hola leo del futuro pensandolo bien vamos hacer otra grafica solo de barra cuando seleccione categoria 
         let datoBarra = null; 
-        let prueba = null; 
         let datoPie = null; 
         let datoLinealAnio = null; 
+        let datoBarraByCate = null; 
         //Datos para Estadisticos 
             datoBarra = await obtenerDatosBarras( req );
             datoLinealAnio = await obtenerDatosLinealAnios( req );
             datoLinealMes = await obtenerDatosLinealMes( req );
+            datoBarraByCate = await obtenerDatosBarrasPorCategoria( req );
             datoPie   = datoBarra;  
         
-        res.status(200).json({ datoBarra, datoPie, datoLinealAnio, datoLinealMes, success: true });
+        res.status(200).json({ datoBarra, datoPie, datoLinealAnio, datoLinealMes, datoBarraByCate, success: true });
         //res.status(200).json({ datoLinealAnio, success: true });
 
     } catch (error) {
@@ -314,11 +316,11 @@ const obtenerDatosBarras = async(req)=>{
     let listCategoria = await Categoria.find({ autor:nickID, actividad:'60ae92dc3cb1ca2e14baeb8b' }); 
 
     //Realizo Calculo 
-    let sum = 0; 
+    
     let dataBarra = [ ["Categoria", "Tiempo(min)", { role: "style" }] ];
     //Itero por categoria para validar 
     for (const filas of listCategoria) {
-
+        let sum = 0; 
         objActoregistro.forEach(element => {
             //console.log(element.categoria +" ====  "+ filas._id);
             if ( element.categoria.toString() == filas._id.toString() ){
@@ -459,6 +461,41 @@ const obtenerDatosLinealMes = async(req)=>{
     return dataLineal; 
 }
 
+const obtenerDatosBarrasPorCategoria = async(req)=>{
+    
+    let dataBarra = null
+    let objActoregistro = null; 
+    const query = filtrosQuery(req);
+    const {nickID, cateBarra} = req.body;
+
+    if (cateBarra != null  ){
+            //Consulta valor del  Modelo 
+            //objActoregistro = await Actoregistro.find(query).populate({ path: 'acto', model: 'Acto', select: 'nomActo categoria' });
+            objActoregistro = await Actoregistro.find(query);
+            
+            //Consulta el modelo Categoria
+            let listActo = await Acto.find({ autor:nickID, categoria:cateBarra }); 
+
+            //Realizo Calculo 
+
+            dataBarra = [ ["Habitos", "Tiempo(min)", { role: "style" }] ];
+            //Itero por categoria para validar 
+            for (const filas of listActo) {
+                let sum = 0; 
+                objActoregistro.forEach(element => {
+                    //console.log(element.categoria +" ====  "+ filas._id);
+                    if ( element.acto.toString() == filas._id.toString() ){
+                        sum = sum  +  element.duracion; 
+                    }
+                });
+                dataBarra.push( [ strLetterUper(filas.nomActo), sum, `color: ${filas.color}`] );
+            
+            }//Fin del for de Categorias    
+    }
+    return dataBarra; 
+}
+
+
 //helpers Filtros 
 
 const filtrosQuery = (req)=>{
@@ -472,7 +509,7 @@ const filtrosQuery = (req)=>{
 
     //Filtro Año
     if (anioBarra > 0 ){
-        query = filtroCategoria(cateBarra);
+        query = filtroCategoria(cateBarra, query);
         query = {
             ...query, 
             "$expr": {
@@ -484,7 +521,7 @@ const filtrosQuery = (req)=>{
     }    
     //Filtro -> Mes Obligatorio(Año)
     if (mesBarra > 0){
-        query = filtroCategoria(cateBarra);
+        query = filtroCategoria(cateBarra, query);
         query = {
             ...query, 
             "$expr": {
@@ -498,7 +535,7 @@ const filtrosQuery = (req)=>{
     
     //Filtro Semana  -> Obligatorio(Año)
     if (semBarra > 0){
-        query = filtroCategoria(cateBarra);
+        query = filtroCategoria(cateBarra, query);
         query = {
             ...query, 
             "semana":semBarra,
@@ -513,19 +550,20 @@ const filtrosQuery = (req)=>{
     return query; 
 }
 
-const filtroCategoria = (cateBarra)=>{
+const filtroCategoria = (cateBarra, query)=>{
     
     
-    let query = '';
-    if ( cateBarra != null && cateBarra > 0   ){
+    let queryFiltro = '';
+    if ( cateBarra != null ){
        // console.log("cateBarra", cateBarra);
-        query = {
+       queryFiltro = {
             ...query, 
             'categoria':cateBarra
           }
+          return queryFiltro; 
+    }else{
+        return query;
     } 
-
-    return query; 
 }
 
 

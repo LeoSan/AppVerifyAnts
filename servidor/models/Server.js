@@ -6,6 +6,9 @@ const cors        = require('cors');
 //Configuro variables de entornos
 require('dotenv').config({ path :'config/variables.env'});
 
+const logsCotroller = require('../controller/logsController');
+
+
 class Server{
 
     constructor(){
@@ -98,8 +101,15 @@ class Server{
     }
 
     async conexMongoDB(){
-		// ejecutamos la función para conectar a la base de datos
-		await connectarDB(); // Debes crear la conexion antes
+		try {
+			// ejecutamos la función para conectar a la base de datos
+			await connectarDB(); // Debes crear la conexion antes
+			
+		} catch (error) {
+			alert("Error BD");
+			logsCotroller.logsCRUD(`Hubo Base Datos:: -> ${error} `);
+			throw new Error(error);			
+		}
 	
 	}	
 

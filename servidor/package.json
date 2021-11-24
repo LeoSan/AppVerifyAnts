@@ -4,7 +4,7 @@
   "description": "Inicio de practicas para seguir aprendiendo node.js express mongoose usando modelos de datos proyecto gastos hormigas poder iniciarlo y culminarlo antes finalizar el 2021",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./index.js",
+    "dev": "nodemon -e js ./index.js node index.js",
     "start": "node ./index.js"
   },
   "author": "Leonard Jose Cuenca Roa",

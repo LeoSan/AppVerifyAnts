@@ -12,10 +12,7 @@ import AuthContext from '../../context/auth/AuthContext';
 import ActoContext from '../../context/acto/ActoContext';
 import CategoriaContext from '../../context/categoria/categoriaContext';
 
-
 //Importar UI 
-import Alerta from '../../components/ui/Alerta';
-import Error from '../../components/ui/Error';
 import Load from '../../components/ui/Load';
 import Filtros from '../../components/ui/Filtros';
 
@@ -40,19 +37,16 @@ const ActoEstadistica = ({ view }) => {
 
     //Declaro UseEffect   
     useEffect(() => {
-
         listMeses();
         listSemana();
     }, []);
 
     //Modulo de Eventos
 
-
-
     //Instancias para las graficas 
     //Grafica de Barra -> 
     const optionBarra = {
-        title: 'Medición de Actos por categoria',
+        title: 'Medición de Habitos por Categoria',
 
         hAxis: {
             title: 'Tiempo (minutos)',
@@ -114,7 +108,7 @@ const ActoEstadistica = ({ view }) => {
                                     width={'900px'}
                                     height={'400px'}
                                     data={estadistica.datoBarra}
-                                    loader={<div>Loading Chart</div>}
+                                    loader={<div>Caragando Grafica</div>}
                                     options={optionBarra}
                                 />
 
@@ -124,6 +118,37 @@ const ActoEstadistica = ({ view }) => {
 
                     </div>
                 </div>
+
+
+                <div class="rounded-xl overflow-hidden bg-gradient-to-r from-yellow-200 to-yellow-300 p-4 my-5">
+                    <div class="flex flex-col space-y-4">
+                        <div className="flex space-x-4">
+
+                            <div className="flex-grow h-10 rounded-md bg-green-500 text-white font-extrabold flex items-center justify-center">
+                                <svg className="h-5 w-14" fill="none">
+                                    <DocumentReportIcon className="w-6" />
+                                </svg>
+                                Grafica de barra filtrado por Habitos 
+                                
+                            </div>
+                        </div>
+
+                        {estadistica != null ? (
+                            <div class=" flex items-center justify-center">
+
+                            <Chart
+                            chartType="BarChart"
+                            width={'900px'}
+                            height={'400px'}
+                            data={estadistica.datoBarraByCate}
+                            loader={<div>Loading Chart</div>}
+                            options={optionBarra}
+                            />
+                            </div>
+
+                        ) : null}
+                    </div>
+                </div>     
 
                 <div class="rounded-xl overflow-hidden bg-gradient-to-r from-yellow-200 to-yellow-300 p-4 my-5">
                     <div class="flex flex-col space-y-4">
@@ -145,23 +170,18 @@ const ActoEstadistica = ({ view }) => {
                                     width={'500px'}
                                     height={'300px'}
                                     chartType="PieChart"
-                                    loader={<div>Loading Chart</div>}
+                                    loader={<div>Caragando Grafica</div>}
                                     data={estadistica.datoPie}
                                     options={{
                                         title: 'Mis Habitos',
                                     }}
                                     rootProps={{ 'data-testid': '1' }}
                                 />
-
-
                             </div>
 
                         ) : null}
-
-
                     </div>
                 </div>
-
 
                 <div class="rounded-xl overflow-hidden bg-gradient-to-r from-yellow-200 to-yellow-300 p-4 my-5">
                     <div class="flex flex-col space-y-4">
@@ -176,13 +196,42 @@ const ActoEstadistica = ({ view }) => {
                     </div>
                 </div>                    
 
+
+                {estadistica != null ? (
+                    <div class=" flex items-center justify-center">
+
+                        <Chart
+                            width={'700px'}
+                            height={'400px'}
+                            chartType="LineChart"
+                            loader={<div>Caragando Grafica</div>}
+                            data={estadistica.datoLinealMes}
+                            options={{
+                                title: 'Medición Mensuales',
+                                hAxis: {
+                                    title: 'Tiempo',
+                                },
+                                vAxis: {
+                                    title: 'Categorías',
+                                },
+                                series: {
+                                    1: { curveType: 'function' },
+                                },
+                            }}
+                            rootProps={{ 'data-testid': '2' }}
+                        />
+
+                    </div>
+
+                ) : null}
+
                         {estadistica != null ? (
                             <div class=" flex items-center justify-center">
                                 <Chart
                                     width={'700px'}
                                     height={'400px'}
                                     chartType="LineChart"
-                                    loader={<div>Loading Chart</div>}
+                                    loader={<div>Caragando Grafica</div>}
                                     data={estadistica.datoLinealAnio}
                                     options={{
                                         title: 'Medición Anuales',
@@ -202,45 +251,10 @@ const ActoEstadistica = ({ view }) => {
 
                         ) : null}
 
-
-
-                        {estadistica != null ? (
-                            <div class=" flex items-center justify-center">
-
-                                <Chart
-                                    width={'700px'}
-                                    height={'400px'}
-                                    chartType="LineChart"
-                                    loader={<div>Loading Chart</div>}
-                                    data={estadistica.datoLinealMes}
-                                    options={{
-                                        title: 'Medición Mensuales',
-                                        hAxis: {
-                                            title: 'Tiempo',
-                                        },
-                                        vAxis: {
-                                            title: 'Categorías',
-                                        },
-                                        series: {
-                                            1: { curveType: 'function' },
-                                        },
-                                    }}
-                                    rootProps={{ 'data-testid': '2' }}
-                                />
-
-
-                            </div>
-
-                        ) : null}
-
-
                     </div>
                 </div>
-
             </div>
         </div>
-
-
     );
 }
 
