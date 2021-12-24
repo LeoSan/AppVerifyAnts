@@ -1,12 +1,13 @@
 //Librerias
 const {validationResult} = require('express-validator');
+const { response,  request } = require('express');
 //Modelos 
 const Categoria = require('../models/Categoria');
 //Controladores 
 const logsCotroller = require('../controller/logsController'); 
 
 //Crear Categoria  
-exports.newCategoria = async(req, res)=>{
+exports.newCategoria = async(req = request, res = response)=>{
     const {nomCate} = req.body; 
     try {
         // Anexo  Vaidación 
@@ -26,7 +27,7 @@ exports.newCategoria = async(req, res)=>{
 }
 
 //Obtener Categoria  
-exports.getCategoria = async (req, res) =>{
+exports.getCategoria = async (req = request, res = response) =>{
     //Extraer proyecto 
     try {
         //Distroccion 
@@ -60,7 +61,7 @@ exports.getCategoria = async (req, res) =>{
 }
 
 //Udadate Categoria 
-exports.updateCategoria = async (req, res)=>{
+exports.updateCategoria = async (req = request, res =  response)=>{
     
  
   //Extraer informacion para validacion 
@@ -92,7 +93,7 @@ exports.updateCategoria = async (req, res)=>{
 }
 
 //Delete Categoria
-exports.deleteCategoria = async (req, res)=>{
+exports.deleteCategoria = async (req = request, res = response)=>{
     //Extraer informacion del proyecto 
     try {
         const {id, nomCate} = req.body;// Asi es cuando se pasa un objeto  es decir un json 

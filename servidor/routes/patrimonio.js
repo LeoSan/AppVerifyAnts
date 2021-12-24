@@ -13,7 +13,7 @@ const router  = express.Router();
 const auth  = require('../middleware/auth');
 
 //End-Point - Crear Patrimonio
-router.post('/',
+router.post('/create-patrimonio',
         auth,
         [
             check('nomPatrimonio',   'El nombre del patrimonio es obligatorio.').not().isEmpty(), //Valida vacio

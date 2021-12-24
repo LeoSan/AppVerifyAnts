@@ -22,7 +22,7 @@ const Filtros = ({ categoria, semana, meses, idCate, idMes, idAnio, idSemana, ti
 
   //Acceder el stateContext de ActoContext 
   const valorActoContext = useContext(ActoContext);
-  const { filtroDatoBarra, cambioLoad, cambioLoadOFF, msgListActo, dataBarra } = valorActoContext;
+  const { filtroDatoBarra, cambioLoad, cambioLoadOFF, msgListActo, dataBarra, loadActo } = valorActoContext;
 
 
 
@@ -42,7 +42,7 @@ const Filtros = ({ categoria, semana, meses, idCate, idMes, idAnio, idSemana, ti
     
     if ( datos.cateBarra  != null ){
 
-      if ( datos.mesBarra > 0 || datos.semBarra > 0 && datos.anioBarra == 0  ){
+      if ( (datos.mesBarra > 0 || datos.semBarra > 0) && datos.anioBarra == 0  ){
         alerta.modalAlertError('¡Debes seleccionar el filtro año, por favor!');
         return false;
       }
@@ -54,41 +54,28 @@ const Filtros = ({ categoria, semana, meses, idCate, idMes, idAnio, idSemana, ti
 
   const filtrarData = (e) => {
     e.preventDefault();
-
+       
         const cateBarra = (document.getElementById("cateBarra").value == 0 ? null: document.getElementById("cateBarra").value );
         const mesBarra = document.getElementById("mesBarra").value;
         const anioBarra = document.getElementById("anioBarra").value;
         const semBarra = document.getElementById("semBarra").value;
-        let datos = { nickID, cateBarra, mesBarra, anioBarra, semBarra, tipo: "datosBarra" }
+        let datos = { nickID, cateBarra, mesBarra, anioBarra, semBarra }
 
-    switch (tipo) {
-      case 'datosBarra':
-        
         if ( validaFiltros(datos) ){
           cambioLoad();
           filtroDatoBarra(datos);
         }
 
-        cambioLoadOFF();
-
-        break;
-      case 'datosLinea':
-        alert('Entro a Linea');
-        break;
-      case 'datosPie':
-        alert('Entro a Pie');
-        break;
-
-      default:
-        break;
-    }
-
+        setTimeout(() => {
+          cambioLoadOFF();
+        }, 4000);
 
   }
 
   return (
 
     <Fragment>
+
       <div className="flex space-x-4">
 
         <div className="flex-grow h-10 rounded-md bg-green-500 text-white font-extrabold flex items-center justify-center">

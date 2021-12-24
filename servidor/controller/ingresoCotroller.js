@@ -1,5 +1,6 @@
 //Libreria
 const {validationResult} = require('express-validator');
+const { response,  request } = require('express');
 const moment = require('moment');  
 //Modelo 
 const Ingreso = require('../models/Ingreso');
@@ -7,7 +8,7 @@ const Ingreso = require('../models/Ingreso');
 const logsCotroller = require('../controller/logsController'); 
 
 //Crear Ingreso
-exports.newIngreso = async(req, res)=>{
+exports.newIngreso = async(req = request, res = response)=>{
     //Mostrar mensaje de error de express-validator 
     const errores  = validationResult(req); 
 
@@ -35,7 +36,7 @@ exports.newIngreso = async(req, res)=>{
 }
 
 //Obtener Ingresos
-exports.getIngreso = async (req, res) =>{
+exports.getIngreso = async (req = request, res = response) =>{
     try {
         //Distroccion 
         const { nomIngreso, usuario, categoria, activo, tipo } = req.body; //->Asi se usa cuando es un objeto 
@@ -68,7 +69,7 @@ exports.getIngreso = async (req, res) =>{
 }
 
 //Obtener Ingreso   
-exports.getIngresoByFecha = async (req, res) =>{
+exports.getIngresoByFecha = async (req = request, res = response) =>{
     
     const errores  = validationResult(req); 
 
@@ -107,7 +108,7 @@ exports.getIngresoByFecha = async (req, res) =>{
 }
 
 //Obtener Ingreso Suma por Fecha    
-exports.getIngresoSumaByFecha = async (req, res) =>{
+exports.getIngresoSumaByFecha = async (req = request, res = response) =>{
     
     const errores  = validationResult(req); 
 
@@ -151,7 +152,7 @@ exports.getIngresoSumaByFecha = async (req, res) =>{
 }
 
 //Obtener Ingreso entre fechas Inicio y fin  
-exports.getIngresoBetweenFecha = async (req, res) =>{
+exports.getIngresoBetweenFecha = async (req = request, res = response) =>{
     
     const errores  = validationResult(req); 
 
@@ -188,9 +189,8 @@ exports.getIngresoBetweenFecha = async (req, res) =>{
     }
 }
 
-
 //Udadate Ingreso 
-exports.updateIngreso = async (req, res)=>{
+exports.updateIngreso = async (req = request, res = response)=>{
     
     //Revisar que que cumple con las reglas de validaciòn del routes 
     const errors = validationResult(req);
@@ -229,7 +229,7 @@ exports.updateIngreso = async (req, res)=>{
 }
 
 //Delete Ingreso
-exports.deleteIngreso = async (req, res)=>{
+exports.deleteIngreso = async (req = request, res = response)=>{
     try {
         const {id, nomIngreso} = req.body;// Asi es cuando se pasa un objeto  es decir un json tienes param, query, body
         //Valido Ingreso 

@@ -1,5 +1,5 @@
 //Librerias 
-const { reponse, request } = require('express')
+const { reponse, request } = require('express');
 const moment = require('moment');
 //Modelos 
 const Acto = require('../models/Acto');
@@ -13,7 +13,7 @@ const {  strLetterUper } = require('../middleware/helpers');
 
 
 //Crear  Acto 
-exports.newActo = async (req, res = reponse) => {
+exports.newActo = async (req = request, res = reponse) => {
     const { nomActo } = req.body;
     try {
         //Vaidación 
@@ -30,7 +30,7 @@ exports.newActo = async (req, res = reponse) => {
 }
 
 //Obtener Acto  
-exports.getActo = async (req, res = reponse) => {
+exports.getActo = async (req = request, res = reponse) => {
     //Extraer proyecto 
     try {
         //Distroccion 
@@ -53,7 +53,7 @@ exports.getActo = async (req, res = reponse) => {
 
 
 //Obtener Acto Check Semanal  
-exports.getActoCheckSemanal = async (req, res = reponse) => {
+exports.getActoCheckSemanal = async (req = request, res = reponse) => {
     //Extraer proyecto 
 
     /*  //Campos que saque, para  ver si mejora la carga tarda mucho  
@@ -115,7 +115,7 @@ exports.getActoCheckSemanal = async (req, res = reponse) => {
 }
 
 //Eliminar Acto
-exports.deleteActo = async (req, res = reponse) => {
+exports.deleteActo = async (req = request, res = reponse) => {
     //Extraer informacion del proyecto 
     try {
         //Extraer proyecto y comprobar si existe
@@ -139,7 +139,7 @@ exports.deleteActo = async (req, res = reponse) => {
 }
 
 //Udadate Acto
-exports.updateActo = async (req, res = reponse) => {
+exports.updateActo = async (req = request, res = reponse) => {
 
     //Extraer informacion para validacion 
     try {
@@ -170,7 +170,7 @@ exports.updateActo = async (req, res = reponse) => {
 }
 
 //Obtener Acto fechas Inicio y fin  
-exports.getActoBetweenFecha = async (req, res = reponse) => {
+exports.getActoBetweenFecha = async (req= request, res = reponse) => {
 
     try {
         //Distroccion 
@@ -202,7 +202,7 @@ exports.getActoBetweenFecha = async (req, res = reponse) => {
 }
 
 //Obtener Acto fechas Inicio y fin  
-exports.actoCheckSemana = async (req, res = reponse) => {
+exports.actoCheckSemana = async (req= request, res = reponse) => {
 
     try {
         //Distroccion 
@@ -237,7 +237,7 @@ exports.actoCheckSemana = async (req, res = reponse) => {
 }
 
 //Obtener Acto por semanas 
-exports.getActoSemana = async (req, res = reponse) => {
+exports.getActoSemana = async (req= request, res = reponse) => {
 
     try {
         //Distroccion 
@@ -276,7 +276,7 @@ const getActoSemanaDia = async (autor, acto, dia, semana) => {
 
 
 //Obtener Acto - Estadistico 
-exports.getActoEstadisticos = async (req, res = reponse) => {
+exports.getActoEstadisticos = async (req= request, res = reponse) => {
 
     try {
         const { cateBarra } = req.body;
@@ -285,15 +285,17 @@ exports.getActoEstadisticos = async (req, res = reponse) => {
         let datoPie = null; 
         let datoLinealAnio = null; 
         let datoBarraByCate = null; 
+        let datoBitacora = null; 
         //Datos para Estadisticos 
             datoBarra = await obtenerDatosBarras( req );
             datoLinealAnio = await obtenerDatosLinealAnios( req );
             datoLinealMes = await obtenerDatosLinealMes( req );
             datoBarraByCate = await obtenerDatosBarrasPorCategoria( req );
+            datoBitacora = await obtenerDatosBitacora( req );
             datoPie   = datoBarra;  
         
-        res.status(200).json({ datoBarra, datoPie, datoLinealAnio, datoLinealMes, datoBarraByCate, success: true });
-        //res.status(200).json({ datoLinealAnio, success: true });
+        res.status(200).json({ datoBarra, datoPie, datoLinealAnio, datoLinealMes, datoBarraByCate, datoBitacora,  success: true });
+        //res.status(200).json({ datoBitacora, success: true });
 
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
@@ -493,6 +495,17 @@ const obtenerDatosBarrasPorCategoria = async(req)=>{
             }//Fin del for de Categorias    
     }
     return dataBarra; 
+}
+
+const obtenerDatosBitacora = async(req)=>{
+    
+    let dataBarra = null
+    let objActoregistro = null; 
+    const query = filtrosQuery(req);
+        //Consulta valor del  Modelo 
+        objActoregistro = await Actoregistro.find(query).populate({ path: 'acto', model: 'Acto', select: 'nomActo categoria' }).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate' });
+            
+    return objActoregistro; 
 }
 
 

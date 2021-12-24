@@ -1,12 +1,12 @@
 //Libreria
-
+const { response,  request } = require('express');
 //Modelo 
 const Recurrente = require('../models/Recurrente');
 //Controlador 
 const logsCotroller = require('../controller/logsController'); 
 
 //Crear recurrente
-exports.newRecurrente = async(req, res)=>{
+exports.newRecurrente = async(req = request, res = response)=>{
    //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
     //console.log(req.body);
     const {nomRecu} = req.body; 
@@ -29,7 +29,7 @@ exports.newRecurrente = async(req, res)=>{
 }
 
 //Obtener Recurrente   
-exports.getRecurrente = async (req, res) =>{
+exports.getRecurrente = async (req = request, res = response) =>{
     try {
         //Distroccion 
         const { nomRecu, activo, tipo } = req.body; //->Asi se usa cuando es un objeto 
@@ -63,7 +63,7 @@ exports.getRecurrente = async (req, res) =>{
 }
 
 //Udadate Recurrente 
-exports.updateRecurrente = async (req, res)=>{
+exports.updateRecurrente = async (req = request, res = response)=>{
  
   //Extraer informacion para validacion 
   try {
@@ -93,7 +93,7 @@ exports.updateRecurrente = async (req, res)=>{
 }
 
 //Delete Recurrente
-exports.deleteRecurrente = async (req, res)=>{
+exports.deleteRecurrente = async (req = request, res = response)=>{
 
     try {
         const {id, nomRecu} = req.body;// Asi es cuando se pasa un objeto  es decir un json tienes param, query, body

@@ -59,6 +59,10 @@ const SideBar = () => {
        //función : Permite redireccionar listado de programación de gastos recurrentes 
        const listarActos = () => {
               router.push('/acto');
+       }       
+       
+       const listarPatrimonios = () => {
+              router.push('/patrimonio');
        }
 
 
@@ -121,7 +125,7 @@ const SideBar = () => {
                                                  <div className="bg-yellow-500 px-1 py-1   mr-2 ">
                                                         <ClipboardIcon className="h-5 w-5 text-white" />
                                                  </div>
-                                                 <div className=" px-1 py-1  text-white mr-2  ">
+                                                 <div className=" px-1 py-1  text-white mr-2 " onClick={ (e)=>{ listarPatrimonios() } }>
                                                         Patrimonio
                                                  </div>
                                           </div>

@@ -1,12 +1,13 @@
 //Librerias 
 const {validationResult} = require('express-validator');
+const { reponse, request } = require('express');
 //Modelos 
 const Actividad = require('../models/Actividad');
 //Controladores 
 const logsCotroller = require('../controller/logsController'); 
 
 //Crear Actividad
-exports.newActividad = async(req, res)=>{
+exports.newActividad = async(req = request, res = reponse)=>{
     //Mostrar mensaje de error de express-validator 
     const errores  = validationResult(req); 
 
@@ -40,7 +41,7 @@ exports.newActividad = async(req, res)=>{
 }
 
 //Obtener Actividd  
-exports.getActividad = async (req, res) =>{
+exports.getActividad = async (req = request, res = reponse) =>{
     //Extraer proyecto 
     try {
         //Distroccion 
@@ -66,9 +67,8 @@ exports.getActividad = async (req, res) =>{
     }
 }
 
-
 //Udadate Actividad 
-exports.updateActividad = async (req, res)=>{
+exports.updateActividad = async (req = request, res = reponse)=>{
     
     //Revisar que que cumple con las reglas de validaciòn del routes 
     const errors = validationResult(req);
@@ -105,7 +105,7 @@ exports.updateActividad = async (req, res)=>{
 }
 
 //Delete Actividad
-exports.deleteActividad = async (req, res)=>{
+exports.deleteActividad = async (req = request, res = reponse)=>{
     //Extraer informacion del proyecto 
     try {
         const {id, nomActi} = req.body;// Asi es cuando se pasa un objeto  es decir un json 

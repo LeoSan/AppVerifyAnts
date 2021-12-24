@@ -1,13 +1,14 @@
 //Librerias 
 const {validationResult} = require('express-validator');
 const moment = require('moment');  
+const { response,  request } = require('express');
 //Modelos 
 const Gasto = require('../models/Gasto');
 //Logs - Controlador  
 const logsCotroller = require('../controller/logsController'); 
 
 // Crear gasto 
-exports.newGasto = async(req, res)=>{
+exports.newGasto = async(req = request, res = response)=>{
     //Mostrar mensaje de error de express-validator 
     const errores  = validationResult(req); 
 
@@ -38,7 +39,7 @@ exports.newGasto = async(req, res)=>{
 }
 
 //Obtener Gastos   
-exports.getGastos = async (req, res) =>{
+exports.getGastos = async (req = request, res = response) =>{
     try {
         //Distroccion 
         const { nomGasto, usuario, categoria, activo, tipo } = req.body; //->Asi se usa cuando es un objeto 
@@ -71,7 +72,7 @@ exports.getGastos = async (req, res) =>{
 }
 
 //Obtener Gastos Por fecha  
-exports.getGastosByFecha = async (req, res) =>{
+exports.getGastosByFecha = async (req = request, res = response) =>{
     
     const errores  = validationResult(req); 
 
@@ -111,7 +112,7 @@ exports.getGastosByFecha = async (req, res) =>{
 }
 
 //Obtener Gasto Suma por Fecha    
-exports.getGastoSumaByFecha = async (req, res) =>{
+exports.getGastoSumaByFecha = async (req = request, res = response) =>{
     
     const errores  = validationResult(req); 
 
@@ -155,7 +156,7 @@ exports.getGastoSumaByFecha = async (req, res) =>{
 }
 
 //Obtener Gastos entre fechas de inicio y fin 
-exports.getGastosBetweenFecha = async (req, res) =>{
+exports.getGastosBetweenFecha = async (req = request, res = response) =>{
     
     const errores  = validationResult(req); 
 
@@ -191,10 +192,8 @@ exports.getGastosBetweenFecha = async (req, res) =>{
     }
 }
 
-
-
 //Udadate Gasto 
-exports.updateGasto = async (req, res)=>{
+exports.updateGasto = async (req = request, res = response)=>{
     
     //Revisar que que cumple con las reglas de validaciòn del routes 
     const errors = validationResult(req);
@@ -233,7 +232,7 @@ exports.updateGasto = async (req, res)=>{
 }
 
 //Delete Gasto
-exports.deleteGasto = async (req, res)=>{
+exports.deleteGasto = async (req = request, res = response)=>{
     try {
         const {id, nomGasto} = req.body;// Asi es cuando se pasa un objeto  es decir un json tienes param, query, body
         //Valido Gasto 

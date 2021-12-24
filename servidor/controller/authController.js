@@ -1,6 +1,7 @@
 //Librerias 
 const bcryptjs             = require('bcrypt');
 const jwt                  = require('jsonwebtoken');
+const { response,  request } = require('express');
 //Modelos 
 const Usuario              = require('../models/Usuario');
 //Controladores 
@@ -18,7 +19,7 @@ const { validarCaptcha }       = require('../middleware/helpers');
 
 
 //Permite autenticar el usuario 
-exports.autenticarUsuario = async (req, res, next) => {
+exports.autenticarUsuario = async (req = request, res = response, next) => {
     //Extraer en  email  y password 
     const { emailUsu, password } = req.body; 
 
@@ -81,7 +82,7 @@ exports.autenticarUsuario = async (req, res, next) => {
 }
 
 //Permite obtener que usuario esta autenticado 
-exports.usuarioAutenticado = async (req, res)=>{
+exports.usuarioAutenticado = async (req = request, res= response)=>{
     
     try {
         const usuario = await Usuario.findOne(req.emailUsu).select('-password');
@@ -95,7 +96,7 @@ exports.usuarioAutenticado = async (req, res)=>{
 }
 
 //Permite autenticar el usuario con Token 
-exports.autenticarUsuarioToken = async (req, res) => {
+exports.autenticarUsuarioToken = async (req = request, res= response) => {
 
     //Extraer en  email  y password 
     const { emailUsu, password, captcha } = req.body; 
@@ -159,7 +160,7 @@ exports.autenticarUsuarioToken = async (req, res) => {
 }
 
 //Permite obtener que usuario esta autenticado 
-exports.olvidoClave = async (req, res)=>{
+exports.olvidoClave = async (req = request, res= response)=>{
     try {
 
         //Extraer en  email  y password 

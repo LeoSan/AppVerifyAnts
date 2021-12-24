@@ -1,18 +1,20 @@
 //Libreria
 const {validationResult} = require('express-validator');
+const { response,  request } = require('express');
 const moment = require('moment');  
+
 //Modelo
 const Patrimonio = require('../models/Patrimonio');
 //Controlador 
 const logsCotroller = require('../controller/logsController'); 
 
 //Crea Patrimonio 
-exports.newPatrimonio = async(req, res)=>{
+exports.newPatrimonio = async(req = request, res = response )=>{
     //Mostrar mensaje de error de express-validator 
     const errores  = validationResult(req); 
 
     if (!errores.isEmpty()){
-        return res.status(406).json({errores: errores.array()});
+        return res.status(201).json({errores: errores.array()});
     }
     
     //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
@@ -22,22 +24,22 @@ exports.newPatrimonio = async(req, res)=>{
         try {
             // Anexo  Vaidación 
             let  patrimonio = await Patrimonio.findOne({nomPatrimonio}); 
-
-            if ( patrimonio ) return  res.status(406).json({msg: `El patrimonio No la puedes repetir, ${nomPatrimonio}`});
+            if ( patrimonio ) return  res.status(201).json({msg: `El patrimonio No la puedes repetir, ${nomPatrimonio}`,  success: false });
 
         //Creamos patrimonio si no esta duplicado 
         patrimonio = new Patrimonio(req.body);
             await patrimonio.save();
-            res.status(201).json({msg: 'Creado Exitosamente!!'});
+            res.status(201).json({ msg: `Tu Patrimonio con nombre ${nomPatrimonio},  fue creado Exitosamente!!`, success: true });
 
         } catch (error) {
             logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-            res.status(500).json({msg: `Hubo un error en la comunicación !!  `});
+            res.status(201).json({msg: `Hubo un error en la comunicación !!  `, success: false });
         }
+    
 }
 
 //Obtener Patrimonio   
-exports.getPatrimonio = async (req, res) =>{
+exports.getPatrimonio = async ( req = request, res = response ) =>{
     try {
         //Distroccion 
         const { nomPatrimonio, usuario, categoria, activo, tipo } = req.body; //->Asi se usa cuando es un objeto 
@@ -69,9 +71,8 @@ exports.getPatrimonio = async (req, res) =>{
     }
 }
 
-
 //Obtener Patrimonio por Fecha    
-exports.getPatrimonioByFecha = async (req, res) =>{
+exports.getPatrimonioByFecha = async (req = request, res = response ) =>{
     
     const errores  = validationResult(req); 
 
@@ -109,10 +110,8 @@ exports.getPatrimonioByFecha = async (req, res) =>{
     }
 }
 
-
-
 //Obtener Patrimonio por Fecha    
-exports.getPatrimonioSumaByFecha = async (req, res) =>{
+exports.getPatrimonioSumaByFecha = async (req = request, res = response ) =>{
     
     const errores  = validationResult(req); 
 
@@ -156,7 +155,7 @@ exports.getPatrimonioSumaByFecha = async (req, res) =>{
 }
 
 //Obtener Patrimonio entre fechas Inicio y fin  
-exports.getPatrimonioBetweenFecha = async (req, res) =>{
+exports.getPatrimonioBetweenFecha = async (req = request, res = response ) =>{
     
     const errores  = validationResult(req); 
 
@@ -194,7 +193,7 @@ exports.getPatrimonioBetweenFecha = async (req, res) =>{
 }
 
 //Udadate Patrimonio 
-exports.updatePatrimonio = async (req, res)=>{
+exports.updatePatrimonio = async (req = request, res = response )=>{
     
     //Revisar que que cumple con las reglas de validaciòn del routes 
     const errors = validationResult(req);
@@ -232,7 +231,7 @@ exports.updatePatrimonio = async (req, res)=>{
 }
 
 //Delete Patrimonio
-exports.deletePatrimonio = async (req, res)=>{
+exports.deletePatrimonio = async (req = request, res = response )=>{
     try {
         const {id, nomPatrimonio} = req.body;// Asi es cuando se pasa un objeto  es decir un json tienes param, query, body
         //Valido Patrimonio 

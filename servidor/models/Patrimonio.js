@@ -37,6 +37,10 @@ const patrimonioSchema = new Schema({
 	registro:{
 		type:Date, 
 		default:Date.now()
+	},	
+	tipoActivo:{
+		type:String,
+		required:true,
 	}
 	
 });

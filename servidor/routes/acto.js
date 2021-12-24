@@ -40,7 +40,7 @@ router.post('/get-acto',
 
 //End-Point - Consultar Acto Semanal con Check de Registro de Acto  
 router.post('/get-acto-check-semanal',
-      //auth,
+      auth,
       [
             check('autor', 'El Autor es obligatorio.').not().isEmpty(),
             check('tipo', 'El tipo de consulta es obligatario.').not().isEmpty(),
@@ -101,7 +101,7 @@ router.post('/get-semana',
 
 //End-Point - Consultar Acto  por fecha 
 router.post('/get-act-statistics',
-      //auth,  
+      auth,  
       [
             check('nickID',      'Id Usuario.').not().isEmpty(), //Valida vacio
             check('cateBarra',   'Filtro categoria.').not().isEmpty(), //Valida vacio

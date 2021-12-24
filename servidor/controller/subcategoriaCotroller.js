@@ -1,12 +1,13 @@
 //Librerias
-const { validationResult } = require('express-validator');
+const { response,  request } = require('express');
+
 //Modelos 
 const Subcategoria = require('../models/Subcategoria');
 //Controladores 
 const logsCotroller = require('./logsController');
 
 //Crear SubCategoria  
-exports.createSubcategoria = async (req, res) => {
+exports.createSubcategoria = async (req = request, res = response) => {
 
     //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
     // console.log(req.body);
@@ -30,7 +31,7 @@ exports.createSubcategoria = async (req, res) => {
 }
 
 //Obtener SubCategoria  
-exports.getSubcategoria = async (req, res) => {
+exports.getSubcategoria = async (req = request, res = response) => {
 
     //Extraer proyecto 
     try {
@@ -77,7 +78,7 @@ exports.getSubcategoria = async (req, res) => {
 }
 
 //Delete Categoria
-exports.deleteSubCategoria = async (req, res) => {
+exports.deleteSubCategoria = async (req = request, res = response) => {
 
     //Extraer informacion del proyecto 
     try {
@@ -98,7 +99,7 @@ exports.deleteSubCategoria = async (req, res) => {
 }
 
 //Udadate Subcategoria 
-exports.updateSubCategoria = async (req, res) => {
+exports.updateSubCategoria = async (req = request, res = response) => {
 
     //Extraer informacion para validacion 
     try {

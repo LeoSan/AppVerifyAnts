@@ -9,6 +9,7 @@ import CategoriaState from '../context/categoria/categoriaState';
 import SubcategoriaState from '../context/subcategoria/subcategoriaState';
 import RecurrenteState from '../context/recurrente/recurrenteState';
 import ActoState from '../context/acto/actoState';
+import PatrimonioState from '../context/patrimonio/patrimonioState';
 
 //import 'tailwindcss/tailwind.css'
 import '../public/assets/main.css';
@@ -24,7 +25,9 @@ const MyApp = ({ Component, pageProps }) => {
                     <SubcategoriaState>
                         <RecurrenteState>
                             <ActoState>
-                                <Component {...pageProps} />
+                                <PatrimonioState>
+                                    <Component {...pageProps} />
+                                </PatrimonioState>    
                             </ActoState>
                         </RecurrenteState>
                     </SubcategoriaState>

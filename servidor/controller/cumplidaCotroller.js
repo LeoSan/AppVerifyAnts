@@ -1,6 +1,7 @@
 //Librerias 
 const {validationResult} = require('express-validator');
 const moment             = require('moment');  
+const { response,  request } = require('express');
 //Modelos 
 const Cumplida           = require('../models/Cumplida');
 //Controladores 
@@ -9,7 +10,7 @@ const logsCotroller       = require('./logsController');
 require('dotenv').config({ path :'./config/variables.env'});
 
 //Crear  Cumplida 
-exports.newCumplida = async(req, res)=>{
+exports.newCumplida = async(req = response, res = request)=>{
     //Mostrar mensaje de error de express-validator 
     const errores  = validationResult(req); 
 
@@ -36,7 +37,7 @@ exports.newCumplida = async(req, res)=>{
 }
 
 //Obtener Cumplida  
-exports.getCumplida = async (req, res) =>{
+exports.getCumplida = async (req = response, res = request) =>{
     //Extraer proyecto 
     try {
         //Distroccion 
@@ -61,9 +62,8 @@ exports.getCumplida = async (req, res) =>{
     }
 }
 
-
 //Eliminar Cumplida
-exports.deleteCumplida = async (req, res)=>{
+exports.deleteCumplida = async (req = response, res = request)=>{
     //Extraer informacion del proyecto 
     try {
           //Extraer proyecto y comprobar si existe

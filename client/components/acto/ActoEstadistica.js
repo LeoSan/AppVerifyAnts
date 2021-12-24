@@ -29,11 +29,12 @@ const ActoEstadistica = ({ view }) => {
 
     //Acceder el stateContext de ActoContext 
     const valorActoContext = useContext(ActoContext);
-    const { loadActo, listMeses, listSemana, Meses, Semana, estadistica } = valorActoContext;
+    const { loadActo, loadClass, listMeses, listSemana, Meses, Semana, estadistica } = valorActoContext;
 
     //Declaración de variables 
     let fechaAtual = moment().format('MMMM Do YYYY');
     let semanaActual = moment().week();
+    let sumTBitacora = 0;
 
     //Declaro UseEffect   
     useEffect(() => {
@@ -128,27 +129,27 @@ const ActoEstadistica = ({ view }) => {
                                 <svg className="h-5 w-14" fill="none">
                                     <DocumentReportIcon className="w-6" />
                                 </svg>
-                                Grafica de barra filtrado por Habitos 
-                                
+                                Grafica de barra filtrado por Habitos
+
                             </div>
                         </div>
 
                         {estadistica != null ? (
                             <div class=" flex items-center justify-center">
 
-                            <Chart
-                            chartType="BarChart"
-                            width={'900px'}
-                            height={'400px'}
-                            data={estadistica.datoBarraByCate}
-                            loader={<div>Loading Chart</div>}
-                            options={optionBarra}
-                            />
+                                <Chart
+                                    chartType="BarChart"
+                                    width={'900px'}
+                                    height={'400px'}
+                                    data={estadistica.datoBarraByCate}
+                                    loader={<div>Loading Chart</div>}
+                                    options={optionBarra}
+                                />
                             </div>
 
                         ) : null}
                     </div>
-                </div>     
+                </div>
 
                 <div class="rounded-xl overflow-hidden bg-gradient-to-r from-yellow-200 to-yellow-300 p-4 my-5">
                     <div class="flex flex-col space-y-4">
@@ -159,7 +160,7 @@ const ActoEstadistica = ({ view }) => {
                                     <DocumentReportIcon className="w-6" />
                                 </svg>
                                 Gráfica de pastel, midiendo en porcentaje el desempeño de tus habitos
-                                
+
                             </div>
                         </div>
 
@@ -185,45 +186,45 @@ const ActoEstadistica = ({ view }) => {
 
                 <div class="rounded-xl overflow-hidden bg-gradient-to-r from-yellow-200 to-yellow-300 p-4 my-5">
                     <div class="flex flex-col space-y-4">
-                    <div className="flex space-x-4">
+                        <div className="flex space-x-4">
 
-                    <div className="flex-grow h-10 rounded-md bg-green-500 text-white font-extrabold flex items-center justify-center">
-                        <svg className="h-5 w-14" fill="none">
-                            <DocumentReportIcon className="w-6" />
-                        </svg>
-                        Gráfica Lineales : Midiendo en año y meses. 
-                        
-                    </div>
-                </div>                    
+                            <div className="flex-grow h-10 rounded-md bg-green-500 text-white font-extrabold flex items-center justify-center">
+                                <svg className="h-5 w-14" fill="none">
+                                    <DocumentReportIcon className="w-6" />
+                                </svg>
+                                Gráfica Lineales : Midiendo en año y meses.
+
+                            </div>
+                        </div>
 
 
-                {estadistica != null ? (
-                    <div class=" flex items-center justify-center">
+                        {estadistica != null ? (
+                            <div class=" flex items-center justify-center">
 
-                        <Chart
-                            width={'700px'}
-                            height={'400px'}
-                            chartType="LineChart"
-                            loader={<div>Caragando Grafica</div>}
-                            data={estadistica.datoLinealMes}
-                            options={{
-                                title: 'Medición Mensuales',
-                                hAxis: {
-                                    title: 'Tiempo',
-                                },
-                                vAxis: {
-                                    title: 'Categorías',
-                                },
-                                series: {
-                                    1: { curveType: 'function' },
-                                },
-                            }}
-                            rootProps={{ 'data-testid': '2' }}
-                        />
+                                <Chart
+                                    width={'700px'}
+                                    height={'400px'}
+                                    chartType="LineChart"
+                                    loader={<div>Caragando Grafica</div>}
+                                    data={estadistica.datoLinealMes}
+                                    options={{
+                                        title: 'Medición Mensuales',
+                                        hAxis: {
+                                            title: 'Tiempo',
+                                        },
+                                        vAxis: {
+                                            title: 'Categorías',
+                                        },
+                                        series: {
+                                            1: { curveType: 'function' },
+                                        },
+                                    }}
+                                    rootProps={{ 'data-testid': '2' }}
+                                />
 
-                    </div>
+                            </div>
 
-                ) : null}
+                        ) : null}
 
                         {estadistica != null ? (
                             <div class=" flex items-center justify-center">
@@ -253,6 +254,98 @@ const ActoEstadistica = ({ view }) => {
 
                     </div>
                 </div>
+
+                {estadistica != null ? (    
+                
+                <div class="rounded-xl overflow-hidden bg-gradient-to-r from-yellow-200 to-yellow-300 p-4 my-5">
+                    <div class="flex flex-col space-y-4">
+                        <div className="flex space-x-4">
+
+                            <div className="flex-grow h-10 rounded-md bg-green-500 text-white font-extrabold flex items-center justify-center">
+                                <svg className="h-5 w-14" fill="none">
+                                    <DocumentReportIcon className="w-6" />
+                                </svg>
+                                Bitácora
+                            </div>
+                        </div>
+
+
+                        <table className="min-w-full divide-y divide-gray-200 " >
+                            <thead className="bg-gray-50">
+                                <tr>
+                                    <th
+                                        scope="col"
+                                        className="pr-2 bg-green-500 text-center text-xs  text-white font-bold uppercase tracking-wider"
+                                    >
+                                        Habito
+                                    </th>
+                                    <th
+                                        scope="col"
+                                        className="pr-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                    >
+                                        Fecha
+                                    </th>
+
+                                    <th
+                                        scope="col"
+                                        className="pr-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                    >
+                                        Semana 
+                                    </th>
+                                    <th
+                                        scope="col"
+                                        className="pr-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                    >
+                                        Duración
+                                    </th>
+                                    <th
+                                        scope="col"
+                                        className="pr-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                    >
+                                        Nota
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody className="bg-white divide-y divide-gray-200">
+                            {
+                                
+                                Object.keys(estadistica.datoBitacora).map((key) => (                                
+                            
+                                    <tr className="text-left hover:bg-yellow-100">
+                                        <td className="pr-2 whitespace-nowrap capitalize text-sm" >
+                                            <span className="text-xs bg-yellow-200 font-bold rounded-md px-2">   {estadistica.datoBitacora[key].categoria.nomCate}  </span>
+                                            &nbsp;&nbsp;
+                                            {estadistica.datoBitacora[key].acto.nomActo}
+                                        </td>
+
+                                        <td className="pr-2 text-xs text-center">
+                                            { moment(estadistica.datoBitacora[key].registro).format("MMM Do YY")}
+                                        </td>
+                                        <td className="pr-2 text-xs text-center">
+                                            {estadistica.datoBitacora[key].semana}
+                                        </td>                                    
+                                        <td className="pr-2 text-xs text-center">
+                                            {
+                                                estadistica.datoBitacora[key].duracion 
+                                            } - Min.
+                                        </td>
+                                        <td className="pr-2 font-semibold text-xs text-justify ">
+                                            
+                                                {estadistica.datoBitacora[key].nota}       
+                                            
+                                        </td>
+
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                ) : null}
+
+
             </div>
         </div>
     );
