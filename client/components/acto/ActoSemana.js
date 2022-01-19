@@ -52,11 +52,10 @@ const ActoSemana = ({ view }) => {
     const dialogCheck = async (acto, dia, checkedId, auxSemana, categoriaid) => {
         cambioLoad();
 
-
-
         let formValues = undefined;
         let checked = false;
         let duracion = null;
+        let registro = null;
         let nota = null;
         let valCancel = true; // Evaluo si dio clic en el boton cancelar
 
@@ -77,12 +76,13 @@ const ActoSemana = ({ view }) => {
 
         //Capturo valores desde el Modal 
         if (formValues != undefined) {
-            duracion = formValues[0];
-            nota = formValues[1];
+            duracion = (formValues[0] == '' || formValues[0].length == 0 )? 5 : formValues[0];
+            nota = (formValues[1] == '' || formValues[1].length == 0 )? "sin nota mental": formValues[1];
+            registro = (formValues[2] == '' || formValues[2].length == 0 )? new Date() : new Date(formValues[2]);
         }
 
         if (valCancel != true) {//Solo entra si no le dio al boton cancelar 
-            const data = { autor: nickID, acto: acto, duracion: duracion, nota: nota, dia: dia, semana: auxSemana, checked: checked, categoria: categoriaid }
+            const data = { autor: nickID, acto: acto, duracion: duracion, registro:registro,  nota: nota, dia: dia, semana: auxSemana, checked: checked, categoria: categoriaid }
 
             //Guardo Datos
             crearActoRegistroSemanal(data);

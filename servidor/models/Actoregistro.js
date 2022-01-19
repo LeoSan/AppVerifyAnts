@@ -31,7 +31,7 @@ const ActoregistroSchema = new Schema({
 	},
 	registro:{
 		type:Date, 
-		default:Date.now()
+		required:true,
 	},
 	dia:{
 		type:String,

@@ -2,7 +2,9 @@
 import React, { useContext, useEffect } from 'react';
 import PropTypes from "prop-types";
 const Swal = require('sweetalert2'); 
-
+//Librerias datepicker
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 class Alert {
 
@@ -48,7 +50,8 @@ class Alert {
       const { value: formValues } = await  Swal.fire({
         title: '<label class="text-2xl font-bold text-yellow-500 " >Tu Bitácora </label>',
         html:
-          '<div class="mb-4"><label class="label-form">Duración Actividad:</label><input id="swal-input1" class="input-form" type="number" placeholder="Ingrese el total de minutos que duro esta actividad"/></div>' +
+          '<div class="mb-4"><label class="label-form">Duración habito:</label><input id="swal-input1" class="input-form" type="number" placeholder="Ingrese el total de minutos que duro esta actividad"/></div>' +
+          '<div class="mb-4"><label class="label-form">Fecha habito:</label><input id="swal-input3" class="input-form" type="date" placeholder="Anexa tu fecha" /></div>'+
           '<div class="mb-4"><label class="label-form">Incluye una Nota:</label><textarea id="swal-input2" class="input-form" placeholder="Describe tu experiencia para reflexionar" > </textarea></div>'
         ,
         focusConfirm: false,
@@ -58,7 +61,8 @@ class Alert {
         preConfirm: () => {
           return [
             document.getElementById('swal-input1').value,
-            document.getElementById('swal-input2').value
+            document.getElementById('swal-input2').value,
+            document.getElementById('swal-input3').value
           ]
         }
       });

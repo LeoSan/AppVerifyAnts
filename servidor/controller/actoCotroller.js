@@ -260,9 +260,22 @@ exports.getActoSemana = async (req= request, res = reponse) => {
 //Obtener Acto por semanas 
 const getActoSemanaDia = async (autor, acto, dia, semana) => {
 
+    let  query = {
+        'autor': autor,
+        'dia': dia,
+        'semana': semana,
+        'acto': acto,
+        "$expr": {
+            "$and": [
+              { $eq: [{ $year: "$registro" }, { $year: new Date('2022-01-01') }]},
+           ]
+          }        
+      }   
+
     try {
         //Nota debo filtrar por año 
-        let objActoregistro = await Actoregistro.find({ 'autor': autor, acto: acto, 'dia': dia, 'semana': semana, 'dia': dia, 'semana': semana });
+        //let objActoregistro = await Actoregistro.find({ 'autor': autor, 'acto': acto, 'dia': dia, 'semana': semana, 'dia': dia, 'semana': semana });
+        let objActoregistro = await Actoregistro.find(query);
         if (objActoregistro.length > 0) {
             return true;
         } else {

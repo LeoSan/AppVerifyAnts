@@ -12650,50 +12650,6 @@
   "__v": 0
 },{
   "_id": {
-    "$oid": "61a9b07afe2df412aca448c4"
-  },
-  "duracion": 5,
-  "activo": 1,
-  "registro": {
-    "$date": "2021-01-26T05:25:18.703Z"
-  },
-  "autor": {
-    "$oid": "60ff5131e31f320ebc54b1bf"
-  },
-  "acto": {
-    "$oid": "613327a799dc9627f8a6f44b"
-  },
-  "nota": "seguimos con las historias",
-  "dia": "martes",
-  "semana": 4,
-  "categoria": {
-    "$oid": "60ae92f13cb1ca2e14baeb8c"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "61a9b081fe2df412aca448c5"
-  },
-  "duracion": 5,
-  "activo": 1,
-  "registro": {
-    "$date": "2021-01-27T05:25:18.703Z"
-  },
-  "autor": {
-    "$oid": "60ff5131e31f320ebc54b1bf"
-  },
-  "acto": {
-    "$oid": "613327a799dc9627f8a6f44b"
-  },
-  "nota": "seguimos con las historias",
-  "dia": "miercoles",
-  "semana": 4,
-  "categoria": {
-    "$oid": "60ae92f13cb1ca2e14baeb8c"
-  },
-  "__v": 0
-},{
-  "_id": {
     "$oid": "61a9b088fe2df412aca448c6"
   },
   "duracion": 5,
@@ -12775,50 +12731,6 @@
   },
   "nota": "seguimos con las clases platzi",
   "dia": "lunes",
-  "semana": 4,
-  "categoria": {
-    "$oid": "60ae92f13cb1ca2e14baeb8c"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "61a9b0aafe2df412aca448ca"
-  },
-  "duracion": 15,
-  "activo": 1,
-  "registro": {
-    "$date": "2021-01-26T05:25:18.703Z"
-  },
-  "autor": {
-    "$oid": "60ff5131e31f320ebc54b1bf"
-  },
-  "acto": {
-    "$oid": "615ce4453735a650a8818a73"
-  },
-  "nota": "seguimos con las clases platzi",
-  "dia": "martes",
-  "semana": 4,
-  "categoria": {
-    "$oid": "60ae92f13cb1ca2e14baeb8c"
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "61a9b0b0fe2df412aca448cb"
-  },
-  "duracion": 20,
-  "activo": 1,
-  "registro": {
-    "$date": "2021-01-27T05:25:18.703Z"
-  },
-  "autor": {
-    "$oid": "60ff5131e31f320ebc54b1bf"
-  },
-  "acto": {
-    "$oid": "615ce4453735a650a8818a73"
-  },
-  "nota": "seguimos con las clases platzi",
-  "dia": "miercoles",
   "semana": 4,
   "categoria": {
     "$oid": "60ae92f13cb1ca2e14baeb8c"
@@ -13526,6 +13438,2382 @@
   "semana": 50,
   "categoria": {
     "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b022d6a46db224248697b6"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-08T03:11:01.279Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5b23735a650a8818a78"
+  },
+  "nota": "fundamentos de práctico de frontend developer",
+  "dia": "martes",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b022f4a46db224248697b7"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-08T03:11:01.279Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "nota": "estamos volviendo validar el curso que pusieron nuevo contenido",
+  "dia": "martes",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b0231fa46db224248697b8"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-08T03:11:01.279Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "nota": "pusieron nuevo contenido del curso de react, nodejs 14/42",
+  "dia": "lunes",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b02378a46db224248697b9"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-08T03:11:01.279Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "se logro llegar a 2884slp",
+  "dia": "martes",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b02387a46db224248697ba"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-08T03:11:01.279Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "se logro llegar a los 11k le",
+  "dia": "martes",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b023a5a46db224248697bb"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-08T03:11:01.279Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "se sigue tomando 2 litros de agua pero regularmente tengo mucha sed",
+  "dia": "martes",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b023c2a46db224248697bc"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-08T03:11:01.279Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "se esta tomando te negro + papelo + ajenjo",
+  "dia": "martes",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b023e3a46db224248697bd"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-08T03:11:01.279Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "nota": "ajuste en base de datos semana 5 - 2021",
+  "dia": "martes",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b02409a46db224248697be"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-02-08T03:11:01.279Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "avanzando historias de duolingo",
+  "dia": "lunes",
+  "semana": 6,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b0241aa46db224248697bf"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-02-09T03:11:01.279Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "avanzando historias de duolingo",
+  "dia": "martes",
+  "semana": 6,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b02422a46db224248697c0"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-02-10T03:11:01.279Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "avanzando historias de duolingo",
+  "dia": "miercoles",
+  "semana": 6,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b02428a46db224248697c1"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-02-11T03:11:01.279Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "avanzando historias de duolingo",
+  "dia": "jueves",
+  "semana": 6,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b02430a46db224248697c2"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-02-12T03:11:01.279Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "avanzando historias de duolingo",
+  "dia": "viernes",
+  "semana": 6,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b0244aa46db224248697c3"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-02-08T03:11:01.279Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "clases de platzi tomando con animo esta meta",
+  "dia": "lunes",
+  "semana": 6,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b02451a46db224248697c4"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-02-09T03:11:01.279Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "clases de platzi tomando con animo esta meta",
+  "dia": "martes",
+  "semana": 6,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b02458a46db224248697c5"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-02-10T03:11:01.279Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "clases de platzi tomando con animo esta meta",
+  "dia": "miercoles",
+  "semana": 6,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b0245fa46db224248697c6"
+  },
+  "duracion": 25,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-02-11T03:11:01.279Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "clases de platzi tomando con animo esta meta",
+  "dia": "jueves",
+  "semana": 6,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b02466a46db224248697c7"
+  },
+  "duracion": 30,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-02-12T03:11:01.279Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "clases de platzi tomando con animo esta meta",
+  "dia": "viernes",
+  "semana": 6,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15c23e4b1cd32582c8a9d"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61a9afe6fe2df412aca448c2"
+  },
+  "nota": "generar el proyecto servidor-cv",
+  "dia": "miercoles",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15c39e4b1cd32582c8a9e"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "sigo avanzando 2 litros de agua",
+  "dia": "miercoles",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15c50e4b1cd32582c8a9f"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "te negro  + menta  + papelon + ajenjo",
+  "dia": "miercoles",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15c6be4b1cd32582c8aa0"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "se saco los 25 slp se llego a 2984",
+  "dia": "miercoles",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15c77e4b1cd32582c8aa1"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "llegamos a los 12k le",
+  "dia": "miercoles",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15cdfe4b1cd32582c8aa2"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "nota": "sigo con las clases nuevas de react node",
+  "dia": "miercoles",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15cfde4b1cd32582c8aa3"
+  },
+  "duracion": 30,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5b23735a650a8818a78"
+  },
+  "nota": "termine el curso de fundamento de html platzi pase el examen a la primera",
+  "dia": "miercoles",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15d19e4b1cd32582c8aa4"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "nota": "alimentar semana 7 febrero",
+  "dia": "miercoles",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15d33e4b1cd32582c8aa5"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "avanzando en el modo historia",
+  "dia": "lunes",
+  "semana": 51,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15d40e4b1cd32582c8aa6"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "aprendiendo mas palabras",
+  "dia": "lunes",
+  "semana": 51,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15d4be4b1cd32582c8aa7"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "aprendiendo mas palabras",
+  "dia": "martes",
+  "semana": 51,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15d52e4b1cd32582c8aa8"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "aprendiendo mas palabras",
+  "dia": "miercoles",
+  "semana": 51,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15d58e4b1cd32582c8aa9"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "aprendiendo mas palabras",
+  "dia": "jueves",
+  "semana": 51,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15d5fe4b1cd32582c8aaa"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "nota": "aprendiendo mas palabras",
+  "dia": "viernes",
+  "semana": 51,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15d6be4b1cd32582c8aab"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "avanzando en el modo historia",
+  "dia": "martes",
+  "semana": 51,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15d72e4b1cd32582c8aac"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "avanzando en el modo historia",
+  "dia": "miercoles",
+  "semana": 51,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15d78e4b1cd32582c8aad"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "avanzando en el modo historia",
+  "dia": "jueves",
+  "semana": 51,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15d7ee4b1cd32582c8aae"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "avanzando en el modo historia",
+  "dia": "viernes",
+  "semana": 51,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15d8de4b1cd32582c8aaf"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "seguimos con las clases de platzi",
+  "dia": "lunes",
+  "semana": 51,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15d93e4b1cd32582c8ab0"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "seguimos con las clases de platzi",
+  "dia": "martes",
+  "semana": 51,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15d99e4b1cd32582c8ab1"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "seguimos con las clases de platzi",
+  "dia": "miercoles",
+  "semana": 51,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15da1e4b1cd32582c8ab2"
+  },
+  "duracion": 25,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "seguimos con las clases de platzi",
+  "dia": "jueves",
+  "semana": 51,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b15da8e4b1cd32582c8ab3"
+  },
+  "duracion": 25,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "seguimos con las clases de platzi",
+  "dia": "viernes",
+  "semana": 51,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b2a204e4b1cd32582c8ab4"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "seguimos con los dos litros diarios",
+  "dia": "jueves",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b2a215e4b1cd32582c8ab5"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "seguimos con te negro + ajenjo + papelon",
+  "dia": "jueves",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b2a22de4b1cd32582c8ab6"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "nota": "llegamos a los 3104 slp",
+  "dia": "jueves",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b2a23de4b1cd32582c8ab7"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "llegamos a los 13k le",
+  "dia": "jueves",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b2a250e4b1cd32582c8ab8"
+  },
+  "duracion": 30,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "nota": "nuevas clases de juan en udemy",
+  "dia": "jueves",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b2a28ce4b1cd32582c8ab9"
+  },
+  "duracion": 30,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5b23735a650a8818a78"
+  },
+  "nota": "nuevas clases de maquetación están geniales !! clase 4 seguimos avanzando con lo básico de la escuela de javascript",
+  "dia": "jueves",
+  "semana": 50,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b2a2b0e4b1cd32582c8aba"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de056070ead39d4bda9b8"
+  },
+  "nota": "espero correr",
+  "dia": "jueves",
+  "semana": 50,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b2a2bce4b1cd32582c8abb"
+  },
+  "duracion": 30,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de067070ead39d4bda9b9"
+  },
+  "nota": "pecho",
+  "dia": "jueves",
+  "semana": 50,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b2a2c7e4b1cd32582c8abc"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-09T01:12:44.034Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61774515c588ee46dca774a9"
+  },
+  "nota": "abdiminales",
+  "dia": "jueves",
+  "semana": 50,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bb6e49969bd2194478cd4e"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-16T16:47:26.744Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "enferme del estomago fue fuerte y molesto",
+  "dia": "lunes",
+  "semana": 51,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bb6e53969bd2194478cd4f"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-16T16:47:26.744Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "enferme del estomago fue fuerte y molesto",
+  "dia": "lunes",
+  "semana": 51,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bb6e59969bd2194478cd50"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-16T16:47:26.744Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "enferme del estomago fue fuerte y molesto",
+  "dia": "martes",
+  "semana": 51,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bb6e60969bd2194478cd51"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-16T16:47:26.744Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "enferme del estomago fue fuerte y molesto",
+  "dia": "martes",
+  "semana": 51,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bb6e6c969bd2194478cd52"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-16T16:47:26.744Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "enferme del estomago fue fuerte y molesto",
+  "dia": "miercoles",
+  "semana": 51,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bb6e72969bd2194478cd53"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-16T16:47:26.744Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "enferme del estomago fue fuerte y molesto",
+  "dia": "miercoles",
+  "semana": 51,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bb6e8e969bd2194478cd54"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-16T16:47:26.744Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "ya mucho mejor de la infección estomacal",
+  "dia": "jueves",
+  "semana": 51,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bb6e93969bd2194478cd55"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-16T16:47:26.744Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "ya mucho mejor de la infección estomacal",
+  "dia": "jueves",
+  "semana": 51,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bb6eb4969bd2194478cd56"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-16T16:47:26.744Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "seguimos con la rutina",
+  "dia": "viernes",
+  "semana": 51,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bb6ebc969bd2194478cd57"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-16T16:47:26.744Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "seguimos con la rutina",
+  "dia": "viernes",
+  "semana": 51,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61dd1fe2dc29513c48182d06"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-11T06:10:55.570Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "curso de inglés básico a1: presente simple y vocabulario común - clase 30 - falle en examen 17/20",
+  "dia": "lunes",
+  "semana": 3,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61dd2062dc29513c48182d08"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-11T06:10:55.570Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61dd202ddc29513c48182d07"
+  },
+  "nota": "todos los días en my daily decirlo en ingles.",
+  "dia": "lunes",
+  "semana": 3,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61dd208edc29513c48182d09"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-11T06:10:55.570Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "nota": "se mejoro el filtro de hábitos estaba fallando ya que no estaba filtrando por año actual, debo desarrollar un filtro por año",
+  "dia": "lunes",
+  "semana": 3,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61dd209edc29513c48182d0a"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-11T06:10:55.570Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "se logro la meta",
+  "dia": "lunes",
+  "semana": 3,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61dd20b1dc29513c48182d0b"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-11T06:10:55.570Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "te  + menta  + ajenjo",
+  "dia": "lunes",
+  "semana": 3,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61dd20cedc29513c48182d0c"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-11T06:10:55.570Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "nota": "volver a tomar el hábito de lectura",
+  "dia": "lunes",
+  "semana": 3,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61dd20fddc29513c48182d0d"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-11T06:10:55.570Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5b23735a650a8818a78"
+  },
+  "nota": "curso práctico de javascript - avance 42%",
+  "dia": "lunes",
+  "semana": 3,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61dd214bdc29513c48182d0e"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-11T06:10:55.570Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "nota": "terminamos las bases de js en udemy iniciando mini proyecto, sección 6: proyecto: administrador de pacientes en vite, tailwind css y localstorage - clase 46",
+  "dia": "lunes",
+  "semana": 3,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61dd2169dc29513c48182d0f"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-11T06:10:55.570Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de067070ead39d4bda9b9"
+  },
+  "nota": "Rutina de Pecho.",
+  "dia": "lunes",
+  "semana": 3,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e67372b13afc3470d235cb"
+  },
+  "duracion": 25,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-17T07:56:34.157Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "nota": "curso de inglés básico a2: pregunta... clase 6",
+  "dia": "lunes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e6739ab13afc3470d235cc"
+  },
+  "duracion": 25,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-17T07:56:34.157Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6149f98ec1aa3f304ca1a59c"
+  },
+  "nota": "platzi y duolingo podcast",
+  "dia": "lunes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e67479b13afc3470d235cd"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-17T07:56:34.157Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "nota": "modulo de historia",
+  "dia": "lunes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e6748fb13afc3470d235ce"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-17T07:56:34.157Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de056070ead39d4bda9b8"
+  },
+  "nota": "corri en la cinta",
+  "dia": "lunes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e6749eb13afc3470d235cf"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-17T07:56:34.157Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de04d070ead39d4bda9b7"
+  },
+  "nota": "realice ejercicio de piernas",
+  "dia": "lunes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e674c2b13afc3470d235d0"
+  },
+  "duracion": 30,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-17T07:56:34.157Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5b23735a650a8818a78"
+  },
+  "nota": "curso práctico de javascript - clase 21",
+  "dia": "lunes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e674d9b13afc3470d235d1"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-17T07:56:34.157Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "nota": "nuevo proyecto react - veterinario",
+  "dia": "lunes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e67514b13afc3470d235d2"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-17T07:56:34.157Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "nota": "curso de gestión de criptoactivos - clase 13",
+  "dia": "lunes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e6752fb13afc3470d235d3"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-17T07:56:34.157Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9514f026f215495e9e4"
+  },
+  "nota": "se lleva 3k le",
+  "dia": "lunes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e6753fb13afc3470d235d4"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-17T07:56:34.157Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "nota": "3kle",
+  "dia": "lunes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e67552b13afc3470d235d5"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-17T07:56:34.157Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "nota": "se logro la meta 4 litros",
+  "dia": "lunes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e67568b13afc3470d235d6"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-17T07:56:34.157Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "nota": "se esta tomando te negro +  te verde + menta + jamaica",
+  "dia": "lunes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e675cfb13afc3470d235d7"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-17T07:56:34.157Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "nota": "libro juego de la vida - capitulo intuición - espíritu infinito, hazme saber si hay alguna cosa que ya deba saber",
+  "dia": "lunes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e675e4b13afc3470d235d8"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-17T07:56:34.157Z"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "nota": "solo cargar habitos",
+  "dia": "lunes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e8487e15e8ad63ac4bd1cc"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "registro": {
+    "$date": "2022-01-18T00:00:00Z"
+  },
+  "nota": "se implemento el ajuste para fijar fechas cuando se marca el habito con su calendario",
+  "dia": "martes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e848cc15e8ad63ac4bd1cd"
+  },
+  "duracion": 2,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327a799dc9627f8a6f44b"
+  },
+  "registro": {
+    "$date": "2022-01-18T00:00:00Z"
+  },
+  "nota": "nueva historia",
+  "dia": "martes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e8490215e8ad63ac4bd1ce"
+  },
+  "duracion": 25,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "registro": {
+    "$date": "2022-01-18T00:00:00Z"
+  },
+  "nota": "clase 12-14 - curso de inglés básico a2: preguntas y respuestas",
+  "dia": "martes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e8492015e8ad63ac4bd1cf"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61dd202ddc29513c48182d07"
+  },
+  "registro": {
+    "$date": "2022-01-18T00:00:00Z"
+  },
+  "nota": "se explica la actividad de trabajo en ingles",
+  "dia": "martes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e849a415e8ad63ac4bd1d0"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "registro": {
+    "$date": "2022-01-18T00:00:00Z"
+  },
+  "nota": "i am writing the work activity in english to improve.",
+  "dia": "martes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e849d415e8ad63ac4bd1d1"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de056070ead39d4bda9b8"
+  },
+  "registro": {
+    "$date": "2022-01-18T00:00:00Z"
+  },
+  "nota": "avanzado en la noche se realizó el ejercicio",
+  "dia": "martes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e84a0015e8ad63ac4bd1d2"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de067070ead39d4bda9b9"
+  },
+  "registro": {
+    "$date": "2022-01-18T00:00:00Z"
+  },
+  "nota": "pecho con buen peso. 25k",
+  "dia": "martes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e84a3215e8ad63ac4bd1d3"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61774515c588ee46dca774a9"
+  },
+  "registro": {
+    "$date": "2022-01-18T00:00:00Z"
+  },
+  "nota": "seguimos con el abdomen",
+  "dia": "martes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e84a9c15e8ad63ac4bd1d4"
+  },
+  "duracion": 25,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "registro": {
+    "$date": "2022-01-18T00:00:00Z"
+  },
+  "nota": "seguimos con el nuevo proyecto aprendiendo integración de vite",
+  "dia": "martes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e84aff15e8ad63ac4bd1d5"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5b23735a650a8818a78"
+  },
+  "registro": {
+    "$date": "2022-01-18T00:00:00Z"
+  },
+  "nota": "falle en el examen en el primer intento para culminar el curso práctico de javascript",
+  "dia": "martes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e84b3d15e8ad63ac4bd1d6"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "registro": {
+    "$date": "2022-01-18T00:00:00Z"
+  },
+  "nota": "avanzando curso de gestión de criptoactivos",
+  "dia": "martes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e84b6015e8ad63ac4bd1d7"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "registro": {
+    "$date": "2022-01-18T00:00:00Z"
+  },
+  "nota": "llevamos 8k  slp",
+  "dia": "martes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e851ca15e8ad63ac4bd1d8"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "registro": {
+    "$date": "2022-01-18T00:00:00Z"
+  },
+  "nota": "2800 le",
+  "dia": "martes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e851df15e8ad63ac4bd1d9"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "registro": {
+    "$date": "2022-01-18T00:00:00Z"
+  },
+  "nota": "2 litros de agua",
+  "dia": "martes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e851ed15e8ad63ac4bd1da"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "registro": {
+    "$date": "2022-01-18T00:00:00Z"
+  },
+  "nota": "el juego de la vida",
+  "dia": "martes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e8520e15e8ad63ac4bd1db"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": "2022-01-18T00:00:00Z"
+  },
+  "nota": "te verde + te negro + menta + flor jamaica",
+  "dia": "martes",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e85f5f15e8ad63ac4bd1dc"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "registro": {
+    "$date": "2022-01-19T00:00:00Z"
+  },
+  "nota": "se realizó pruebas del ajuste de calendario en el modal dialog de habitos semanales",
+  "dia": "miercoles",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e8611b15e8ad63ac4bd1dd"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "registro": {
+    "$date": "2022-01-19T00:00:00Z"
+  },
+  "nota": "2 litros",
+  "dia": "miercoles",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e8613715e8ad63ac4bd1de"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": "2022-01-19T00:00:00Z"
+  },
+  "nota": "te verde + te negro + jamaica+ menta+ papelon",
+  "dia": "miercoles",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e8615115e8ad63ac4bd1df"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "registro": {
+    "$date": "2022-01-19T00:00:00Z"
+  },
+  "nota": "libro del juego de la vida",
+  "dia": "miercoles",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e8618015e8ad63ac4bd1e0"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "registro": {
+    "$date": "2022-01-19T00:00:00Z"
+  },
+  "nota": "curso gestion criptoactivos clase 16 -17",
+  "dia": "miercoles",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e861bc15e8ad63ac4bd1e1"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "registro": {
+    "$date": "2022-01-19T00:00:00Z"
+  },
+  "nota": "9000 slp reunidos hasta ahora",
+  "dia": "miercoles",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e861cf15e8ad63ac4bd1e2"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "registro": {
+    "$date": "2022-01-19T00:00:00Z"
+  },
+  "nota": "2800 le",
+  "dia": "miercoles",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e861fa15e8ad63ac4bd1e3"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "registro": {
+    "$date": "2022-01-19T00:00:00Z"
+  },
+  "nota": "seguimos avanzando clase para crear una app de veterinaria",
+  "dia": "miercoles",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e8629215e8ad63ac4bd1e4"
+  },
+  "duracion": 30,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5b23735a650a8818a78"
+  },
+  "registro": {
+    "$date": "2022-01-19T00:00:00Z"
+  },
+  "nota": "inicio de curso de ecmascript 6+ clase 1 - 3",
+  "dia": "miercoles",
+  "semana": 4,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
   },
   "__v": 0
 }]
