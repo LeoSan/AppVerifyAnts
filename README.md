@@ -20,6 +20,13 @@ Mi primera app usando MERN, es un proyecto personal, donde deseo plasmar y contr
 - `npm i --save-dev nodemon`
 - `npm install mongoose --save`
 - `npm install dotenv`
+- `npm i cors` -> para evitar los cross
+- `npm install bcrypt` -> Paquete para generar contraseña
+- `npm i jsonwebtoken` -> Paquete para generar los token
+- `npm i log4js` ->  Paquete para manejar los logs
+- `npm i express-validator` -> Para validar los router
+- `npm i nodemailer` -> Paquete para enviar correos
+- `npm i colors`-> Paquete para colocar color a los texto en el servidor
 - `npm run dev` -> Iniciador 
 
 #### Desarrollo Front  Desktop
@@ -68,12 +75,48 @@ import './public/assets/main.css';
   
 - `npm i react-google-recaptcha`-> Ejecutalo dentro de tu proyecto
 - `npm install @heroicons/react` -> para usar iconos ->https://heroicons.dev/  -> Ejecutalo dentro de tu proyecto
+- `npm i formik` -> Para instalar un validador de formularios
+- `npm i yup` -> Para manejar esquemas de validaciones 
+- `npm i react-router-dom` -> Para los redireccionamientos a paginas usando -> useNavigate
+- `npm i axios` -> esto nos permitira consumir los ends point que desarrollamos en el servidor back 
+
+>Nota: En esta Etapa creamos nuestro archivo ./config/ y definimos nuestros axios.js y auth.js 
+
+>Nota 2: Iniciamos en crear nuestra estrcutura ./context/nombreContext.js , nombreReducer.js , nombreState.js y nuestros ./type/index.js en raiz
+
+>Nota 3: Recuerda que si vas ausar reducer y context debes tambien hacer el ajuste en el archivo raiz iniciador para Next es _app.js, importas tu cantidad de state y lo incoporas como un componente en el return.  Ejemplo 
+```javascript
+import AuthState from '../context/auth/authState';
+
+ <AuthState>
+           
+                <Component { ...pageProps }  />
+           
+        </AuthState>
+```
 - `npm list --depth=0`
 - `npm run dev` -> inicamos el front!!  
-
+- `npm i react-google-charts` -> https://react-google-charts.com/ 
 
 #### Desarrollo Front  Mobil
+- Proximamente 
+- Seguimosen Modo Escritorio
 
+# Recordatorios Importantes 
+
+## **Next** - Cliente
+- [x] Recordario 001: Recuerda que si deseas usar archivos en tu codigo fuente debes crear en public una carptea `static` ya que asi internamente lo renoce para referenciar Ejemplo-> 
+```
+//Para este ejemplo es para reproducir un audio 
+//Audio 
+var audio = new Audio('/static/audio/new-ticket.mp3');
+audio.play();
+```
+
+
+
+
+   
 ### Es mi forma de Practicar lo Nuevo de React 
 
 ### Perspectiva
