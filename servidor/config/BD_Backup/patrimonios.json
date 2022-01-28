@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "61c5451e3aa307518853acac"
+  },
+  "montoPatrimonio": 3500,
+  "usuario": [
+    {
+      "$oid": "60ff5131e31f320ebc54b1bf"
+    }
+  ],
+  "categoria": [
+    {
+      "$oid": "61c4e8c34aea5c3a3cd5d96f"
+    }
+  ],
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-24T03:56:14.541Z"
+  },
+  "nomPatrimonio": "cama matrimonial",
+  "desPatrimonio": "cama matrimonial",
+  "tipoActivo": "liquido",
+  "fechaCompra": {
+    "$date": "2021-12-23T06:00:00Z"
+  },
+  "__v": 0
+}]

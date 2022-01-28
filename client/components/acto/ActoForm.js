@@ -64,7 +64,8 @@ const Actoform = ({ view }) => {
       nomActo: '',
       desActo: '',
       categoria: '',
-      autor: nickID
+      autor: nickID,
+      color: ''
     },
     validationSchema: Yup.object({
       nomActo: Yup.string()
@@ -74,7 +75,11 @@ const Actoform = ({ view }) => {
         .min(10, "Descripción debe tener al menos 10 caracteres.")
         .required('El campo descripción es obligatorio.'),
       categoria: Yup.string()
-        .required('El campo tipo categoria es obligatorio.'),
+        .required('El campo tipo categoria es obligatorio.'),      
+      color: Yup.string()
+        .min(7, "El formato delcolor debe ser hexadecimal. Ejemplo.#FFFFFF ")  
+        .required('El campo color es obligatorio. Ejemplo #FF66FF'),
+        
     }),
 
     onSubmit: formData => {
@@ -219,6 +224,26 @@ const Actoform = ({ view }) => {
       {formik.touched.desActo && formik.errors.desActo ? (
         <Error mensaje={formik.errors.desActo} ></Error>
       ) : null}
+
+      <div className="mb-4">
+        <label
+          className="label-form" htmlFor="color">Asigna color</label>
+        <input
+          id="color"
+          name="color"
+          type="text"
+          placeholder={formval.color}
+          value={formik.color}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+
+          className="input-form"
+        />
+      </div>
+
+      {formik.touched.color && formik.errors.color ? (
+        <Error mensaje={formik.errors.color} ></Error>
+      ) : null}      
 
       <input
         type="submit"

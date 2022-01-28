@@ -299,3 +299,11 @@ Use mongoose.model(name, schema)
 [2022-01-19T11:57:15.667] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
 [2022-01-19T12:08:05.111] [ERROR] crud - No hay token, permiso no valido !!
 [2022-01-19T12:08:05.117] [ERROR] crud - No hay token, permiso no valido !!
+[2022-01-28T12:48:37.773] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-01-28T12:48:37.781] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-01-28T12:48:41.189] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-01-28T12:48:43.854] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-01-28T12:48:43.865] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-01-28T12:48:50.508] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-01-28T12:48:52.989] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-01-28T12:48:52.994] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 

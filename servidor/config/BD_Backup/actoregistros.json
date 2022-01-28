@@ -14795,7 +14795,7 @@
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
   "acto": {
-    "$oid": "61dd202ddc29513c48182d07"
+    "$oid": "61f42d8ef4713d4310182425"
   },
   "nota": "todos los días en my daily decirlo en ingles.",
   "dia": "lunes",
@@ -15342,7 +15342,7 @@
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
   "acto": {
-    "$oid": "61dd202ddc29513c48182d07"
+    "$oid": "61f42d8ef4713d4310182425"
   },
   "registro": {
     "$date": "2022-01-18T00:00:00Z"
@@ -15814,6 +15814,1128 @@
   "semana": 4,
   "categoria": {
     "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0baa72df7bc1df861f3b6"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61f42d8ef4713d4310182425"
+  },
+  "registro": {
+    "$date": "2022-01-24T00:00:00Z"
+  },
+  "nota": "daily",
+  "dia": "lunes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0babb2df7bc1df861f3b7"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61f42d8ef4713d4310182425"
+  },
+  "registro": {
+    "$date": "2022-01-25T00:00:00Z"
+  },
+  "nota": "daily",
+  "dia": "martes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0bad22df7bc1df861f3b8"
+  },
+  "duracion": 25,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "registro": {
+    "$date": "2022-01-24T00:00:00Z"
+  },
+  "nota": "curso de inglés básico a2: preguntas y respuestas",
+  "dia": "lunes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0bade2df7bc1df861f3b9"
+  },
+  "duracion": 25,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "registro": {
+    "$date": "2022-01-25T00:00:00Z"
+  },
+  "nota": "curso de inglés básico a2: preguntas y respuestas",
+  "dia": "martes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0baff2df7bc1df861f3ba"
+  },
+  "duracion": 25,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6149f98ec1aa3f304ca1a59c"
+  },
+  "registro": {
+    "$date": "2022-01-25T00:00:00Z"
+  },
+  "nota": "podcats",
+  "dia": "martes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0bb242df7bc1df861f3bc"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de056070ead39d4bda9b8"
+  },
+  "registro": {
+    "$date": "2022-01-25T00:00:00Z"
+  },
+  "nota": "correr es parte de la vida",
+  "dia": "martes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0bb3c2df7bc1df861f3bd"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de04d070ead39d4bda9b7"
+  },
+  "registro": {
+    "$date": "2022-01-25T00:00:00Z"
+  },
+  "nota": "correr es parte de la vida",
+  "dia": "martes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0bb612df7bc1df861f3be"
+  },
+  "duracion": 25,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5b23735a650a8818a78"
+  },
+  "registro": {
+    "$date": "2022-01-24T00:00:00Z"
+  },
+  "nota": "clase de javascript",
+  "dia": "lunes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0bb832df7bc1df861f3bf"
+  },
+  "duracion": 25,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "registro": {
+    "$date": "2022-01-24T00:00:00Z"
+  },
+  "nota": "clases 59-63",
+  "dia": "lunes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0d1592df7bc1df861f3c0"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "registro": {
+    "$date": "2022-01-25T00:00:00Z"
+  },
+  "nota": "cursobitsoexchangecriptomonedas clase 1 y clase 2",
+  "dia": "martes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0d1c62df7bc1df861f3c3"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "registro": {
+    "$date": "2022-01-24T00:00:00Z"
+  },
+  "nota": "2.7k slp",
+  "dia": "lunes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0d1d32df7bc1df861f3c4"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "registro": {
+    "$date": "2022-01-25T00:00:00Z"
+  },
+  "nota": "3k slp",
+  "dia": "martes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0d1ee2df7bc1df861f3c5"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "registro": {
+    "$date": "2022-01-24T00:00:00Z"
+  },
+  "nota": "4k le",
+  "dia": "lunes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0d2102df7bc1df861f3c6"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "registro": {
+    "$date": "2022-01-25T00:00:00Z"
+  },
+  "nota": "4.6k le",
+  "dia": "martes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0d24f2df7bc1df861f3c8"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "registro": {
+    "$date": "2022-01-25T00:00:00Z"
+  },
+  "nota": "seguimos mejorando",
+  "dia": "martes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0d25d2df7bc1df861f3c9"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "registro": {
+    "$date": "2022-01-24T00:00:00Z"
+  },
+  "nota": "seguimos mejorando",
+  "dia": "lunes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0d29a2df7bc1df861f3ca"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "registro": {
+    "$date": "2022-01-24T00:00:00Z"
+  },
+  "nota": "libro juego de la vida",
+  "dia": "lunes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0d2ab2df7bc1df861f3cb"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "registro": {
+    "$date": "2022-01-25T00:00:00Z"
+  },
+  "nota": "el libro juego de la vida",
+  "dia": "martes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0d2c62df7bc1df861f3cc"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "registro": {
+    "$date": "2022-01-25T00:00:00Z"
+  },
+  "nota": "lleno datos para ver las estadificas a modo de prueba",
+  "dia": "lunes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f0d3e42df7bc1df861f3cd"
+  },
+  "duracion": 13,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "registro": {
+    "$date": "2022-01-25T00:00:00Z"
+  },
+  "nota": "clase nueva react proyecto pacientes clase 63 -64",
+  "dia": "martes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f262ff72cb620c3c20f88f"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6149f98ec1aa3f304ca1a59c"
+  },
+  "registro": {
+    "$date": "2022-01-26T00:00:00Z"
+  },
+  "nota": "podcats de platzi y ingles desde cero clase 27",
+  "dia": "miercoles",
+  "semana": 5,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f2632572cb620c3c20f890"
+  },
+  "duracion": 25,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "registro": {
+    "$date": "2022-01-26T00:00:00Z"
+  },
+  "nota": "curso de inglés básico a2: horas ->  listening exercise: weather conditions 7 -8",
+  "dia": "miercoles",
+  "semana": 5,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f2634072cb620c3c20f891"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61f42d8ef4713d4310182425"
+  },
+  "registro": {
+    "$date": "2022-01-26T00:00:00Z"
+  },
+  "nota": "daily desarrollo",
+  "dia": "miercoles",
+  "semana": 5,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f2635c72cb620c3c20f892"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de056070ead39d4bda9b8"
+  },
+  "registro": {
+    "$date": "2022-01-26T00:00:00Z"
+  },
+  "nota": "corri en la cinta",
+  "dia": "miercoles",
+  "semana": 5,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f2637772cb620c3c20f893"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de067070ead39d4bda9b9"
+  },
+  "registro": {
+    "$date": "2022-01-26T00:00:00Z"
+  },
+  "nota": "rutina pecho levante 30kilos 4 series de 6",
+  "dia": "miercoles",
+  "semana": 5,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f2639372cb620c3c20f894"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "registro": {
+    "$date": "2022-01-26T00:00:00Z"
+  },
+  "nota": "react-de-principiante-a-experto-creando-mas-de-10-aplicaciones -> clase 65 - 66",
+  "dia": "miercoles",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f263a372cb620c3c20f895"
+  },
+  "duracion": 25,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5b23735a650a8818a78"
+  },
+  "registro": {
+    "$date": "2022-01-26T00:00:00Z"
+  },
+  "nota": "curso de ecmascript 6+ -> arrow functions, promesas y parámetros en objetos- clase 13 -> 25",
+  "dia": "miercoles",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f263c972cb620c3c20f896"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "registro": {
+    "$date": "2022-01-26T00:00:00Z"
+  },
+  "nota": "curso de bitso - clase 4-5",
+  "dia": "miercoles",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f2640772cb620c3c20f897"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "registro": {
+    "$date": "2022-01-26T00:00:00Z"
+  },
+  "nota": "llevamos  3288 slp",
+  "dia": "miercoles",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f2642a72cb620c3c20f898"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "registro": {
+    "$date": "2022-01-26T00:00:00Z"
+  },
+  "nota": "sacamos 5170 le",
+  "dia": "miercoles",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f2644f72cb620c3c20f899"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "registro": {
+    "$date": "2022-01-26T00:00:00Z"
+  },
+  "nota": "seguimos con los 2 litros diarios",
+  "dia": "miercoles",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f2646972cb620c3c20f89a"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": "2022-01-24T00:00:00Z"
+  },
+  "nota": "te verde + jamaica + menta",
+  "dia": "lunes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f2647372cb620c3c20f89b"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": "2022-01-25T00:00:00Z"
+  },
+  "nota": "te verde + jamaica + menta",
+  "dia": "martes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f2648f72cb620c3c20f89d"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": "2022-01-26T00:00:00Z"
+  },
+  "nota": "te verde + jamaica + menta",
+  "dia": "miercoles",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f2649972cb620c3c20f89e"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": "2022-01-27T00:00:00Z"
+  },
+  "nota": "te verde + jamaica + menta",
+  "dia": "jueves",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f264ad72cb620c3c20f89f"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "registro": {
+    "$date": "2022-01-25T00:00:00Z"
+  },
+  "nota": "carga de data",
+  "dia": "martes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f264b872cb620c3c20f8a0"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "registro": {
+    "$date": "2022-01-26T00:00:00Z"
+  },
+  "nota": "carga de data",
+  "dia": "miercoles",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f4316c188cb84ec8b5ade7"
+  },
+  "duracion": 120,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de092070ead39d4bda9ba"
+  },
+  "registro": {
+    "$date": "2022-01-27T00:00:00Z"
+  },
+  "nota": "entrenamos en el gym del angel de la independencia esta bien pero el que vamos esta mejor.",
+  "dia": "jueves",
+  "semana": 5,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f435cf491e920924bd0a07"
+  },
+  "duracion": 30,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6149f98ec1aa3f304ca1a59c"
+  },
+  "registro": {
+    "$date": "2022-01-27T00:00:00Z"
+  },
+  "nota": "escuchar podcats platzi e ingles desde cero en el gym",
+  "dia": "jueves",
+  "semana": 5,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f43606491e920924bd0a08"
+  },
+  "duracion": 25,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "registro": {
+    "$date": "2022-01-27T00:00:00Z"
+  },
+  "nota": "curso de inglés básico a2: horas ->  listening exercise: weather conditions 9, 10, 11, 12, 13 -8",
+  "dia": "jueves",
+  "semana": 5,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f43663491e920924bd0a09"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61f42d8ef4713d4310182425"
+  },
+  "registro": {
+    "$date": "2022-01-28T00:00:00Z"
+  },
+  "nota": "speech of activity the work as developer",
+  "dia": "viernes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f43817491e920924bd0a0a"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de056070ead39d4bda9b8"
+  },
+  "registro": {
+    "$date": "2022-01-27T00:00:00Z"
+  },
+  "nota": "seguimos con la meta de mejorar nuestra resistencia, pero seguimos pesando los 72 kilos ya no si correr sea buena idea para bajar el peso",
+  "dia": "jueves",
+  "semana": 5,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f4384b491e920924bd0a0b"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce56f3735a650a8818a76"
+  },
+  "registro": {
+    "$date": "2022-01-27T00:00:00Z"
+  },
+  "nota": "apoyo kaco en su proyecto para entrevista, trasnocho",
+  "dia": "jueves",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f43873491e920924bd0a0c"
+  },
+  "duracion": 25,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "registro": {
+    "$date": "2022-01-27T00:00:00Z"
+  },
+  "nota": "curso de bitso: exchange de criptomonedas -> clase 7 -8 -9 - estamos presentando el examen",
+  "dia": "jueves",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f4389d491e920924bd0a0d"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9424f026f215495e9e3"
+  },
+  "registro": {
+    "$date": "2022-01-27T00:00:00Z"
+  },
+  "nota": "llevamos 3542 slp",
+  "dia": "jueves",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f438b3491e920924bd0a0e"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "registro": {
+    "$date": "2022-01-27T00:00:00Z"
+  },
+  "nota": "llevamos 5653",
+  "dia": "jueves",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f438ce491e920924bd0a0f"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "registro": {
+    "$date": "2022-01-27T00:00:00Z"
+  },
+  "nota": "logramos 2 litros.",
+  "dia": "jueves",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f438ea491e920924bd0a10"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": "2022-01-27T00:00:00Z"
+  },
+  "nota": "te verde + menta + piloncillo",
+  "dia": "viernes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f43908491e920924bd0a11"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "registro": {
+    "$date": "2022-01-28T00:00:00Z"
+  },
+  "nota": "seguimos con el libro de el juego de la vida",
+  "dia": "viernes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f4391b491e920924bd0a12"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "registro": {
+    "$date": "2022-01-28T00:00:00Z"
+  },
+  "nota": "seguimos con este habito",
+  "dia": "viernes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61f4396f491e920924bd0a13"
+  },
+  "duracion": 40,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "registro": {
+    "$date": "2022-01-28T00:00:00Z"
+  },
+  "nota": "arreglar error, modulo estadístico cuando muestra fecha en bitácora y en las graficas ya muestra la barra la falla era porque no se estaba seteando el color en la base.",
+  "dia": "viernes",
+  "semana": 5,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
   },
   "__v": 0
 }]

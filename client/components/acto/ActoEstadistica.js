@@ -320,7 +320,10 @@ const ActoEstadistica = ({ view }) => {
                                         </td>
 
                                         <td className="pr-2 text-xs text-center">
-                                            { moment(estadistica.datoBitacora[key].registro).format("MMM Do YY")}
+                                            { 
+                                                moment(estadistica.datoBitacora[key].registro.replace(/-/g, '\/').replace(/T.+/, '')).format('MMM Do YYYY')
+                                                
+                                            }
                                         </td>
                                         <td className="pr-2 text-xs text-center">
                                             {estadistica.datoBitacora[key].semana}
