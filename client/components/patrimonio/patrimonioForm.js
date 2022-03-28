@@ -20,8 +20,7 @@ import PatrimonioContext from '../../context/patrimonio/PatrimonioContext';
 import Error from '../ui/Error';
 import Success from '../ui/Success';
 
-const PatrimonioForm = () => {
-
+const PatrimonioForm = ({ view }) => {
 
     //Declaro UseContext 
     //Acceder el state de auth 
@@ -34,15 +33,18 @@ const PatrimonioForm = () => {
     
     //Acceder el state de Patrimonio 
     const valorPatrimonioContext = useContext(PatrimonioContext);
-    const {  listarPatrimonio, crearPatrimonio, msgCrear, crearPatri } = valorPatrimonioContext;
+    const {  listarPatrimonio, crearPatrimonio, editarPatrimonio, msgCrear, crearPatri } = valorPatrimonioContext;
 
 
     //Declaración Variables
     const datos = { nickID, nickEmail }
+    const datosConsulta = {nomPatrimonio:'', usuario:nickID, categoria:0, activo:1, tipo:"1-M" }
+    
 
     //Declaro UseEffect    
     useEffect(() => {
         listarCategoria(datos);
+        listarPatrimonio(datosConsulta);
     }, []);
     
 
@@ -78,12 +80,20 @@ const PatrimonioForm = () => {
             
             let fechaC = document.querySelector("#fechaCompra").value;
             const data = {...formData, fechaCompra:fechaC }
-            
-            crearPatrimonio(data);
+            if( document.getElementById("id_editar").value == 0 ){
 
+                crearPatrimonio(data);
+                listarPatrimonio(datosConsulta);
+    
+            }else{
+                console.log("editar");
+                editarPatrimonio(data);
+                listarPatrimonio(datosConsulta);
+            }
         }
     });
 
+    if (view.viewFormPatri == false) { return null }
 
     return (
 
@@ -91,9 +101,10 @@ const PatrimonioForm = () => {
         <label
            className="text-2xl font-bold text-yellow-500 "> Lista tus Activos </label>
 
-        <div class="grid grid-cols-7 gap-4 ">
-           <div class="p-2">
+        <div className="grid grid-cols-7 gap-4 ">
+           <div className="p-2">
                 <label className="label-form" htmlFor="categoria">Categoria</label>
+                <input id="id_editar" type="hidden" value="0"/> 
                 <select
                     id="categoria"
                     name="categoria"
@@ -113,7 +124,7 @@ const PatrimonioForm = () => {
                 </select>
            
            </div>
-           <div class="p-2 ">
+           <div className="p-2 ">
 
                 <label
                     className="label-form" htmlFor="nomCate">Patrimimonio</label>
@@ -129,7 +140,7 @@ const PatrimonioForm = () => {
                 />
            
            </div>
-           <div class="p-2 ">
+           <div className="p-2 ">
            
                 <label
                     className="label-form" htmlFor="desPatrimonio">Descripción</label>
@@ -145,7 +156,7 @@ const PatrimonioForm = () => {
                 />           
            
            </div>
-           <div class="p-2 ">
+           <div className="p-2 ">
                 <label
                     className="label-form" htmlFor="montoPatrimonio">Monto: </label>
                 <input
@@ -159,7 +170,7 @@ const PatrimonioForm = () => {
 
                 />           
            </div>           
-           <div class="p-2 ">
+           <div className="p-2 ">
                 <label
                     className="label-form" htmlFor="fechaCompra">Fecha: </label>
                     <DatePicker
@@ -190,7 +201,7 @@ const PatrimonioForm = () => {
                 </select>
             </div>           
 
-           <div class="p-2 ">
+           <div className="p-2 ">
                 
             <button type="submit" title="Registro Patrimonio" className="btn-yellow-circle  mt-6">
               <PlusCircleIcon className="w-9" /> 
@@ -199,8 +210,6 @@ const PatrimonioForm = () => {
            </div>
 
         </div>
-        
-
 
         {formik.touched.categoria && formik.errors.categoria ? (
            <Error mensaje={formik.errors.categoria} ></Error>
@@ -226,11 +235,11 @@ const PatrimonioForm = () => {
            <Error mensaje={formik.errors.montoPatrimonio} ></Error>
         ) : null}        
         
-        {msgCrear != null && crearPatri == false ? (
+        { crearPatri == false ? (
            <Error mensaje={msgCrear} ></Error>
         ) : null}
 
-        { msgCrear != null  && crearPatri != false  ? (
+        {  crearPatri == true  ? (
             <Success mensaje={msgCrear} ></Success>
          ) : null}
 

@@ -307,3 +307,11 @@ Use mongoose.model(name, schema)
 [2022-01-28T12:48:50.508] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
 [2022-01-28T12:48:52.989] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
 [2022-01-28T12:48:52.994] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-02-22T18:59:17.203] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-02-22T18:59:17.191] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-02-25T16:29:26.748] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read properties of undefined (reading 'nomCate') 
+[2022-02-25T16:48:18.455] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read properties of undefined (reading 'nomCate') 
+[2022-02-25T16:48:27.206] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read properties of undefined (reading 'nomCate') 
+[2022-02-25T16:50:09.068] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read properties of undefined (reading 'nomCate') 
+[2022-02-25T16:50:15.118] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read properties of undefined (reading 'nomCate') 
+[2022-02-25T16:52:02.369] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read properties of undefined (reading 'nomCate') 

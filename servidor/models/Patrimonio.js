@@ -29,7 +29,11 @@ const patrimonioSchema = new Schema({
 		required:false,
 	},
 	usuario: [{ type: Schema.Types.ObjectId, ref: 'Usuario', required:true }],    	
-	categoria: [{ type: Schema.Types.ObjectId, ref: 'Categoria', required:true }],     
+    categoria:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Categoria',
+        required:true,
+    },	    
 	activo:{
 	   type: Number,
 	   default:	1

@@ -1,5 +1,5 @@
 //Importar Librerias React 
-import React, {Fragment, useContext} from 'react';
+import React, {Fragment} from 'react';
 import Head from 'next/head'; //-> Indispensable para poder usar link style o cualquier plugin
 
 //Importo Componentes 

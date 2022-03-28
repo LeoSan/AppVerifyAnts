@@ -115,8 +115,7 @@ const categoriaform = () => {
          formik.initialValues.desCate = result.desCate;
 
          return  result;    
-         //Recordar Leonard no funciono tu idea primaria 
-         //formik.actividad = result.actividad._id;
+
       }
    }
 

@@ -5,6 +5,8 @@ const moment = require('moment');
 
 //Modelo
 const Patrimonio = require('../models/Patrimonio');
+const Categoria = require('../models/Categoria');
+
 //Controlador 
 const logsCotroller = require('../controller/logsController'); 
 
@@ -18,13 +20,12 @@ exports.newPatrimonio = async(req = request, res = response )=>{
     }
     
     //Es una forma de validar si esta llegando bien el json -> Externo generado por postman
-    console.log(req.body);
     const { nomPatrimonio } = req.body; 
 
         try {
             // Anexo  Vaidación 
             let  patrimonio = await Patrimonio.findOne({nomPatrimonio}); 
-            if ( patrimonio ) return  res.status(201).json({msg: `El patrimonio No la puedes repetir, ${nomPatrimonio}`,  success: false });
+            if ( patrimonio ) return  res.status(201).json({msg: `El patrimonio con nombre: ${nomPatrimonio}, Ya existe.`,  success: false });
 
         //Creamos patrimonio si no esta duplicado 
         patrimonio = new Patrimonio(req.body);
@@ -52,8 +53,8 @@ exports.getPatrimonio = async ( req = request, res = response ) =>{
             
              //Ejemplo Multiple de modelos 
             //const patrimonio = await Patrimonio.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).populate({ path: 'usuario', model: 'Usuario', select: 'nomUsu'}).exec();
-            const patrimonio = await Patrimonio.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
-            res.status(200).json({ patrimonio });
+            const patrimonio = await Patrimonio.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).sort({ categoria: -1 });
+            res.status(200).json({ patrimonio, success: true });
            
         }else{
             //Obtener 1.1
@@ -62,8 +63,25 @@ exports.getPatrimonio = async ( req = request, res = response ) =>{
             if(!existeVAl) return res.status(406).json({msg:`Tu Patrimonio con nombre ${ nomPatrimonio }, No existe en la base de datos.`});
             
             const patrimonio = await Patrimonio.find( { nomPatrimonio } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
-            res.status(200).json({ patrimonio });
+            res.status(200).json({ patrimonio, success: true });
         }   
+
+    } catch (error) {
+        logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
+        res.status(500).json({msg: `Hubo un error en la comunicación !!  `, success: false });
+    }
+}
+//Obtener getPatrimonioCard   
+exports.getPatrimonioCard = async ( req = request, res = response ) =>{
+    try {
+        //Distroccion 
+        const {  nickID } = req.body; //->Asi se usa cuando es un objeto 
+        
+        //Primero Listo las categorias 
+
+        //En la tabla patrimonio extraigo aquellos patrimonios que si tengan la categoria
+
+        //Organizo el Arreglo aun no se como organizar el arreglo 
 
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
@@ -206,9 +224,9 @@ exports.updatePatrimonio = async (req = request, res = response )=>{
         //Distroccion de Json que se envia 
         const { id, nomPatrimonio, desPatrimonio, montoPatrimonio,  idCategoria, activo } = req.body; //->Asi se usa cuando es un objeto 
         //Valido Categoria 
-          let valExiste = await Patrimonio.findById( id ); 
+        let valExiste = await Patrimonio.findById( id ); 
   
-        if (!valExiste) return res.status(406).json({msg:`Tu Patrimonio con nombre ${nomPatrimonio}, No existe en la base de datos.`});
+        if (!valExiste) return res.status(406).json({msg:`Tu Patrimonio con nombre ${nomPatrimonio}, No existe en la base de datos.`, success: false});
         
         //crear un objeto con la nueva informaciòn 
         const newObj        = {}
@@ -222,11 +240,10 @@ exports.updatePatrimonio = async (req = request, res = response )=>{
         
         //Guadar Edicción 
         valExiste = await Patrimonio.findByIdAndUpdate({ _id: id }, newObj, {new:true});
-        res.status(205).json({msg:`Tu Patrimonio con nombre ${nomOld}, fue editado.`});
-     
+        res.status(205).json({msg:`Tu Patrimonio con nombre ${nomOld}, fue editado.`, success: true});
   } catch (error) {
       logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-      res.status(500).json({msg: `Hubo un error en la comunicación !!  `});
+      res.status(500).json({msg: `Hubo un error en la comunicación !!  `, success: false});
   }
 }
 
@@ -237,14 +254,14 @@ exports.deletePatrimonio = async (req = request, res = response )=>{
         //Valido Patrimonio 
         let valExiste = await Patrimonio.findById(id); 
   
-        if (!valExiste) return res.status(406).json({msg:`Tu Patrimonio con nombre ${nomPatrimonio}, No existe en la base de datos.`});
+        if (!valExiste) return res.status(406).json({msg:`Tu Patrimonio con nombre ${nomPatrimonio}, No existe en la base de datos.`, success: false});
 
         //Eliminar Patrimonio 
         await Patrimonio.findByIdAndRemove( { _id:id } )
-        res.status(205).json({msg:`Tu Patrimonio con nombre ${nomPatrimonio}, fue eliminado.`});
+        res.status(200).json({msg:`Tu Patrimonio con nombre ${nomPatrimonio}, fue eliminado.`, success: true});
        
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);
-        res.status(500).json({msg: `Hubo un error en la comunicación !!  `});
+        res.status(500).json({msg: `Hubo un error en la comunicación !!  `, success: false});
     }
 }
