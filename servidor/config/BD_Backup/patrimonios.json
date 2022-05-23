@@ -1,6 +1,118 @@
 [{
   "_id": {
-    "$oid": "61c5451e3aa307518853acac"
+    "$oid": "62198c199c798a0ad87ee367"
+  },
+  "montoPatrimonio": 5000,
+  "usuario": [
+    {
+      "$oid": "60ff5131e31f320ebc54b1bf"
+    }
+  ],
+  "activo": 1,
+  "registro": {
+    "$date": {
+      "$numberLong": "1645840906678"
+    }
+  },
+  "nomPatrimonio": "laptop",
+  "desPatrimonio": "prueba prueba",
+  "categoria": {
+    "$oid": "61c4e7544aea5c3a3cd5d96e"
+  },
+  "tipoActivo": "liquido",
+  "fechaCompra": {
+    "$date": {
+      "$numberLong": "1645768800000"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62401741e698233ff4eb6a1f"
+  },
+  "montoPatrimonio": 5000,
+  "usuario": [
+    {
+      "$oid": "60ff5131e31f320ebc54b1bf"
+    }
+  ],
+  "activo": 1,
+  "registro": {
+    "$date": {
+      "$numberLong": "1648367330294"
+    }
+  },
+  "nomPatrimonio": "maquina",
+  "desPatrimonio": "maquina de escribit",
+  "categoria": {
+    "$oid": "61c4e7544aea5c3a3cd5d96e"
+  },
+  "tipoActivo": "no_liquido",
+  "fechaCompra": {
+    "$date": {
+      "$numberLong": "1648360800000"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6240195de698233ff4eb6a22"
+  },
+  "montoPatrimonio": 5000,
+  "usuario": [
+    {
+      "$oid": "60ff5131e31f320ebc54b1bf"
+    }
+  ],
+  "activo": 1,
+  "registro": {
+    "$date": {
+      "$numberLong": "1648367330294"
+    }
+  },
+  "nomPatrimonio": "cama con box",
+  "desPatrimonio": "camas comodas",
+  "categoria": {
+    "$oid": "61c4e8c34aea5c3a3cd5d96f"
+  },
+  "tipoActivo": "no_liquido",
+  "fechaCompra": {
+    "$date": {
+      "$numberLong": "1647324000000"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "624131df6c782b52f4687ab4"
+  },
+  "montoPatrimonio": 7000,
+  "usuario": [
+    {
+      "$oid": "60ff5131e31f320ebc54b1bf"
+    }
+  ],
+  "activo": 1,
+  "registro": {
+    "$date": {
+      "$numberLong": "1648438503778"
+    }
+  },
+  "nomPatrimonio": "nevera",
+  "desPatrimonio": "nevera con mas de 3 años",
+  "categoria": {
+    "$oid": "61c4e8c34aea5c3a3cd5d96f"
+  },
+  "tipoActivo": "no_liquido",
+  "fechaCompra": {
+    "$date": {
+      "$numberLong": "1647928800000"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ad978a10dd13bd8c8c0a6"
   },
   "montoPatrimonio": 3500,
   "usuario": [
@@ -8,20 +120,134 @@
       "$oid": "60ff5131e31f320ebc54b1bf"
     }
   ],
-  "categoria": [
+  "activo": 1,
+  "registro": {
+    "$date": {
+      "$numberLong": "1653265511157"
+    }
+  },
+  "nomPatrimonio": "closet",
+  "desPatrimonio": "close de dos puertas y tresgabetas",
+  "categoria": {
+    "$oid": "61c4e8c34aea5c3a3cd5d96f"
+  },
+  "tipoActivo": "no_liquido",
+  "fechaCompra": {
+    "$date": {
+      "$numberLong": "1546322400000"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ada12a10dd13bd8c8c0a7"
+  },
+  "montoPatrimonio": 2600,
+  "usuario": [
     {
-      "$oid": "61c4e8c34aea5c3a3cd5d96f"
+      "$oid": "60ff5131e31f320ebc54b1bf"
     }
   ],
   "activo": 1,
   "registro": {
-    "$date": "2021-12-24T03:56:14.541Z"
+    "$date": {
+      "$numberLong": "1653265511157"
+    }
   },
-  "nomPatrimonio": "cama matrimonial",
-  "desPatrimonio": "cama matrimonial",
-  "tipoActivo": "liquido",
+  "nomPatrimonio": "escritorio",
+  "desPatrimonio": "escritorio indivividual con silla",
+  "categoria": {
+    "$oid": "61c4e8c34aea5c3a3cd5d96f"
+  },
+  "tipoActivo": "no_liquido",
   "fechaCompra": {
-    "$date": "2021-12-23T06:00:00Z"
+    "$date": {
+      "$numberLong": "1609480800000"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628adadea10dd13bd8c8c0a8"
+  },
+  "montoPatrimonio": 1000,
+  "usuario": [
+    {
+      "$oid": "60ff5131e31f320ebc54b1bf"
+    }
+  ],
+  "activo": 1,
+  "registro": {
+    "$date": {
+      "$numberLong": "1653265511157"
+    }
+  },
+  "nomPatrimonio": "estante tv",
+  "desPatrimonio": "estante para televisor pantalla plana",
+  "categoria": {
+    "$oid": "61c4e8c34aea5c3a3cd5d96f"
+  },
+  "tipoActivo": "no_liquido",
+  "fechaCompra": {
+    "$date": {
+      "$numberLong": "1483250400000"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628adfb0a10dd13bd8c8c0a9"
+  },
+  "montoPatrimonio": 3000,
+  "usuario": [
+    {
+      "$oid": "60ff5131e31f320ebc54b1bf"
+    }
+  ],
+  "activo": 1,
+  "registro": {
+    "$date": {
+      "$numberLong": "1653265511157"
+    }
+  },
+  "nomPatrimonio": "mueble",
+  "desPatrimonio": "mueble sofa cama",
+  "categoria": {
+    "$oid": "61c4e8c34aea5c3a3cd5d96f"
+  },
+  "tipoActivo": "no_liquido",
+  "fechaCompra": {
+    "$date": {
+      "$numberLong": "1653195600000"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ae109a10dd13bd8c8c0aa"
+  },
+  "montoPatrimonio": 5000,
+  "usuario": [
+    {
+      "$oid": "60ff5131e31f320ebc54b1bf"
+    }
+  ],
+  "activo": 1,
+  "registro": {
+    "$date": {
+      "$numberLong": "1653265511157"
+    }
+  },
+  "nomPatrimonio": "monitor slim",
+  "desPatrimonio": "monitos portable marcaasus",
+  "categoria": {
+    "$oid": "61c4e7544aea5c3a3cd5d96e"
+  },
+  "tipoActivo": "no_liquido",
+  "fechaCompra": {
+    "$date": {
+      "$numberLong": "1653195600000"
+    }
   },
   "__v": 0
 }]

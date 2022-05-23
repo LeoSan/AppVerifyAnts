@@ -4,9 +4,11 @@
   },
   "activo": 1,
   "registro": {
-    "$date": "2021-05-07T18:06:08.404Z"
+    "$date": {
+      "$numberLong": "1620410768404"
+    }
   },
-  "nomActi": "AntVerify",
+  "nomActi": "AntVerifyBills",
   "desActi": "Tipo de Actividad para medir los gastos.",
   "__v": 0
 },{
@@ -15,9 +17,24 @@
   },
   "activo": 1,
   "registro": {
-    "$date": "2021-05-26T18:20:41.395Z"
+    "$date": {
+      "$numberLong": "1622053241395"
+    }
   },
   "nomActi": "ActivityVerify",
   "desActi": "Tipo de Actividad para medir metas.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628abb624bc1ab718f2fd46b"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": {
+      "$numberLong": "1622053241395"
+    }
+  },
+  "nomActi": "ActivityVerifyPatrimony",
+  "desActi": "Tipo de Actividad para medir tus patrimonios.",
   "__v": 0
 }]
