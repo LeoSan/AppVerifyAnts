@@ -161,6 +161,7 @@ const ActoState = ({ children }) => {
                 desActo: datos.desActo,
                 categoria: datos.categoria,
                 autor: datos.autor,
+                color: datos.color,
             }
 
             const respuesta = await clienteAxios.post('/api/acto/create-acto', data)

@@ -14,7 +14,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#CAD47D"
 },{
   "_id": {
     "$oid": "613327d999dc9627f8a6f44c"
@@ -31,7 +32,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#3A7A29"
 },{
   "_id": {
     "$oid": "6149f98ec1aa3f304ca1a59c"
@@ -48,7 +50,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#C1DF9F"
 },{
   "_id": {
     "$oid": "615ce3e83735a650a8818a72"
@@ -65,7 +68,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#9CD3DE"
 },{
   "_id": {
     "$oid": "615ce4453735a650a8818a73"
@@ -82,7 +86,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#CFDA90"
 },{
   "_id": {
     "$oid": "615ce5523735a650a8818a75"
@@ -99,7 +104,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#CDEED8"
 },{
   "_id": {
     "$oid": "615ce56f3735a650a8818a76"
@@ -116,7 +122,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#E7E0F5"
 },{
   "_id": {
     "$oid": "615ce5893735a650a8818a77"
@@ -133,7 +140,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#E9F6E4"
 },{
   "_id": {
     "$oid": "615ce5b23735a650a8818a78"
@@ -142,7 +150,7 @@
   "registro": {
     "$date": "2021-10-05T23:35:38.676Z"
   },
-  "nomActo": "estudiar fundamentos programación",
+  "nomActo": "estudiar fundamentos",
   "desActo": "mejorar mi habilidad lógica con nuevos lenguajes",
   "categoria": {
     "$oid": "615ce4e73735a650a8818a74"
@@ -150,7 +158,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#D5A181"
 },{
   "_id": {
     "$oid": "615ce9174f026f215495e9e1"
@@ -167,7 +176,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#3A7A29"
 },{
   "_id": {
     "$oid": "615ce9274f026f215495e9e2"
@@ -176,7 +186,7 @@
   "registro": {
     "$date": "2021-10-06T00:04:47.807Z"
   },
-  "nomActo": "leer articulos de criptocositas",
+  "nomActo": "leer articulos",
   "desActo": "leer articulos de criptocositas",
   "categoria": {
     "$oid": "615ce7763735a650a8818a79"
@@ -184,7 +194,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#C1DF9F"
 },{
   "_id": {
     "$oid": "615ce9424f026f215495e9e3"
@@ -201,7 +212,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#9CD3DE"
 },{
   "_id": {
     "$oid": "615ce9514f026f215495e9e4"
@@ -218,7 +230,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#CFDA90"
 },{
   "_id": {
     "$oid": "615ddfed070ead39d4bda9b3"
@@ -227,7 +240,7 @@
   "registro": {
     "$date": "2021-10-06T17:29:34.865Z"
   },
-  "nomActo": "tomar 2 litros de agua",
+  "nomActo": "2 lts water",
   "desActo": "como parte de salud tomar mucha agua",
   "categoria": {
     "$oid": "615ce7b13735a650a8818a7a"
@@ -235,7 +248,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#CDEED8"
 },{
   "_id": {
     "$oid": "615de013070ead39d4bda9b5"
@@ -252,7 +266,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#E7E0F5"
 },{
   "_id": {
     "$oid": "615de029070ead39d4bda9b6"
@@ -261,7 +276,7 @@
   "registro": {
     "$date": "2021-10-06T17:29:34.865Z"
   },
-  "nomActo": "tomar té verde/negro",
+  "nomActo": "té verde/negro",
   "desActo": "como parte de salud tomar te",
   "categoria": {
     "$oid": "615ce7b13735a650a8818a7a"
@@ -269,7 +284,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#E9F6E4"
 },{
   "_id": {
     "$oid": "615de04d070ead39d4bda9b7"
@@ -286,7 +302,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#D5A181"
 },{
   "_id": {
     "$oid": "615de056070ead39d4bda9b8"
@@ -295,7 +312,7 @@
   "registro": {
     "$date": "2021-10-06T17:29:34.865Z"
   },
-  "nomActo": "corren 10 min",
+  "nomActo": "correr 10 min",
   "desActo": "como  mejora física",
   "categoria": {
     "$oid": "613d9812996ca94798f36672"
@@ -303,7 +320,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#85D6B3"
 },{
   "_id": {
     "$oid": "615de067070ead39d4bda9b9"
@@ -312,7 +330,7 @@
   "registro": {
     "$date": "2021-10-06T17:29:34.865Z"
   },
-  "nomActo": "entrenar pecho y espalda",
+  "nomActo": "pecho y espalda",
   "desActo": "como  mejora física",
   "categoria": {
     "$oid": "613d9812996ca94798f36672"
@@ -320,7 +338,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#CFDA90"
 },{
   "_id": {
     "$oid": "615de092070ead39d4bda9ba"
@@ -337,7 +356,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#9CD3DE"
 },{
   "_id": {
     "$oid": "615de483070ead39d4bda9c8"
@@ -346,7 +366,7 @@
   "registro": {
     "$date": "2021-10-06T17:29:34.865Z"
   },
-  "nomActo": "play-to-earn plantvsundead",
+  "nomActo": "play-to-earn pvu",
   "desActo": "medir cuanto tiempo invierto en esto",
   "categoria": {
     "$oid": "615ce7763735a650a8818a79"
@@ -354,7 +374,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#85D6B3"
 },{
   "_id": {
     "$oid": "6168723b69102b288c9044d4"
@@ -371,7 +392,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#9CD3DE"
 },{
   "_id": {
     "$oid": "616872cf69102b288c9044d7"
@@ -388,7 +410,8 @@
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
-  "__v": 0
+  "__v": 0,
+  "color": "#D5A181"
 },{
   "_id": {
     "$oid": "61774515c588ee46dca774a9"
@@ -401,6 +424,44 @@
   "desActo": "separo este ejercicio para medirlo mas especificamente",
   "categoria": {
     "$oid": "613d9812996ca94798f36672"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0,
+  "color": "#C1DF9F"
+},{
+  "_id": {
+    "$oid": "61a9afe6fe2df412aca448c2"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2021-12-03T05:25:18.632Z"
+  },
+  "color": "#D5A181",
+  "nomActo": "project cv kacoman",
+  "desActo": "es un proyecto en conjunto de @kacoman para generar un gestor de administración de cv en varios idiomas iniciamos 4 de dic 2021",
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "__v": 0,
+  "Color": "#D5A181"
+},{
+  "_id": {
+    "$oid": "61f42d8ef4713d4310182425"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": "2022-01-28T17:47:52.263Z"
+  },
+  "color": "#61BAFF",
+  "nomActo": "speech & writing",
+  "desActo": "es una actividad que hacemos en el trabajo de practicar buestro speech y nuestra escritura cada mañana decir que hicimos ayer en tiempo pasado y que vamos hacer hoy.",
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
   },
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"

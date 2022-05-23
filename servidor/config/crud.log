@@ -299,3 +299,25 @@ Use mongoose.model(name, schema)
 [2022-01-19T11:57:15.667] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
 [2022-01-19T12:08:05.111] [ERROR] crud - No hay token, permiso no valido !!
 [2022-01-19T12:08:05.117] [ERROR] crud - No hay token, permiso no valido !!
+[2022-01-28T12:48:37.773] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-01-28T12:48:37.781] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-01-28T12:48:41.189] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-01-28T12:48:43.854] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-01-28T12:48:43.865] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-01-28T12:48:50.508] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-01-28T12:48:52.989] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-01-28T12:48:52.994] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-02-22T18:59:17.203] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-02-22T18:59:17.191] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-02-25T16:29:26.748] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read properties of undefined (reading 'nomCate') 
+[2022-02-25T16:48:18.455] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read properties of undefined (reading 'nomCate') 
+[2022-02-25T16:48:27.206] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read properties of undefined (reading 'nomCate') 
+[2022-02-25T16:50:09.068] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read properties of undefined (reading 'nomCate') 
+[2022-02-25T16:50:15.118] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read properties of undefined (reading 'nomCate') 
+[2022-02-25T16:52:02.369] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read properties of undefined (reading 'nomCate') 
+[2022-05-04T19:07:53.016] [ERROR] crud - Hubo un error en la comunicación !! -> MongoNetworkError: connection 8 to 54.90.178.30:27017 closed 
+[2022-05-22T17:31:35.072] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: activo is not defined 
+[2022-05-22T17:31:49.946] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: activo is not defined 
+[2022-05-22T17:59:31.336] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: strLetterUper is not defined 
+[2022-05-22T18:00:40.451] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: element is not defined 
+[2022-05-22T18:00:51.481] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: element is not defined 

@@ -60,8 +60,6 @@ const Categoria = () => {
     //Función : Permite pdesplegar un dialog (Swal) para validar si desea  eliminar  
     const getDialog = (id, nombre)=>{
 
-      //  const alerta    = new Alerta('Alerta', '¿ Seguro que deseas eliminar este registro ?', 'warning');
-        
         Swal.fire({
             title: 'Alerta',
             text: '¿ Seguro que deseas eliminar este registro ?',

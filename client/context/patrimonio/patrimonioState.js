@@ -9,7 +9,8 @@ import patrimonioReducer from './patrimonioReducer';
 import {
     LISTAR_PATRIMONIO,
     MUTAR_PATRIMONIO_ERROR,
-    MUTAR_PATRIMONIO_EXITO
+    MUTAR_PATRIMONIO_EXITO,
+    LISTAR_PATRIMONIO_CARD
 } from '../../types';
 
 //Importo nuetsra libreria axios para conectar con el servidor 
@@ -25,11 +26,13 @@ const PatrimonioState = ({ children }) => {
     // Crear state inicial
     const inicialState = {
         patrimonio: null,
+        patrimonio_card: null,
         crearPatri: false,
         elimiPatri: false,
         msgCrear: null,
         msgDelet: null,
         msgList: null,
+        
     }
 
     // Definimos Reducer 
@@ -81,9 +84,100 @@ const PatrimonioState = ({ children }) => {
             });
         }
 
+    }      
+    //Metodo:  Eliminar Patrimonio
+    const deletePatrimonio = async (datos) => {
+
+        try {
+
+            const token = localStorage.getItem('token');
+
+            if (token) {
+                //funcion para enviar el token por header 
+                tokenAuth(token);
+            }
+            const respuesta = await clienteAxios.post('/api/patrimonio/delete-patrimonio', datos)
+                .then((response) => {
+
+                    
+                   if (response.data.success == true) {
+                        dispatch({
+                            type: MUTAR_PATRIMONIO_EXITO, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        });
+
+                    } else {
+
+                        dispatch({
+                            type: MUTAR_PATRIMONIO_ERROR, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        });
+
+                    }
+
+                }).catch((response) => {
+                        dispatch({
+                            type: MUTAR_PATRIMONIO_ERROR, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        });
+                        
+                });
+
+        } catch (error) {
+            dispatch({
+                type: MUTAR_PATRIMONIO_ERROR, //Es la accion a ejecutar
+                payload: "Hubo un problema con el servidor"  //Son los datos que modifica el state 
+            });
+        }
+
     }    
-    
-    //Metodo:  Registra un usuario 
+    //Metodo:  Editar patrimonio
+    const editarPatrimonio = async (datos) => {
+
+        try {
+
+            const token = localStorage.getItem('token');
+
+            if (token) {
+                //funcion para enviar el token por header 
+                tokenAuth(token);
+            }
+
+            const respuesta = await clienteAxios.post('/api/patrimonio/edit-patrimonio', datos)
+                .then((response) => {
+
+                   if (response.data.success == true) {
+                        dispatch({
+                            type: MUTAR_PATRIMONIO_EXITO, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        });
+
+                    } else {
+
+                        dispatch({
+                            type: MUTAR_PATRIMONIO_ERROR, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        });
+
+                    }
+
+                }).catch((response) => {
+                        dispatch({
+                            type: MUTAR_PATRIMONIO_ERROR, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        });
+                        
+                });
+
+        } catch (error) {
+            dispatch({
+                type: MUTAR_PATRIMONIO_ERROR, //Es la accion a ejecutar
+                payload: "Hubo un problema con el servidor"  //Son los datos que modifica el state 
+            });
+        }
+
+    }      
+    //Metodo:  Listar Patrimonio
     const listarPatrimonio = async (datos) => {
 
         try {
@@ -97,16 +191,13 @@ const PatrimonioState = ({ children }) => {
 
             // nomCate, autor, activo, tipo
 
-            const respuesta = await clienteAxios.post('/api/patrimonio/create-patrimonio', datos)
+            const respuesta = await clienteAxios.post('/api/patrimonio/consulta-patrimonio', datos)
                 .then((response) => {
 
-                    console.log(response.data);
-
-
-                /*    if (response.data.success == true) {
+                    if (response.data.success == true) {
                         dispatch({
                             type: LISTAR_PATRIMONIO, //Es la accion a ejecutar
-                            payload: response.data.recurrente  //Son los datos que modifica el state 
+                            payload: response.data.patrimonio  //Son los datos que modifica el state 
                         });
 
                     } else {
@@ -117,21 +208,68 @@ const PatrimonioState = ({ children }) => {
                         });
 
                     }
-                */            
 
                 }).catch((response) => {
-                  /*  dispatch({
+                    dispatch({
                         type: MUTAR_PATRIMONIO_ERROR, //Es la accion a ejecutar
                         payload: response.data.msg  //Son los datos que modifica el state 
                     });
-                    */
+                    
                 });
 
         } catch (error) {
-           /* dispatch({
+            dispatch({
                 type: MUTAR_PATRIMONIO_ERROR, //Es la accion a ejecutar
                 payload: "Hubo un problema con el servidor"  //Son los datos que modifica el state 
-            });*/
+            });
+        }
+
+    }
+    //Metodo:  Litsra General Card
+    const listarGeneralCard = async (datos) => {
+
+        try {
+
+            const token = localStorage.getItem('token');
+
+            if (token) {
+                //funcion para enviar el token por header 
+                tokenAuth(token);
+            }
+
+            // nomCate, autor, activo, tipo
+
+            const respuesta = await clienteAxios.post('/api/patrimonio/consulta-general-card', datos)
+                .then((response) => {
+
+                    if (response.data.success == true) {
+                        dispatch({
+                            type: LISTAR_PATRIMONIO_CARD, //Es la accion a ejecutar
+                            payload: response.data.cardPatrimonioTotal  //Son los datos que modifica el state 
+                        });
+
+                    } else {
+
+                        dispatch({
+                            type: MUTAR_PATRIMONIO_ERROR, //Es la accion a ejecutar
+                            payload: response.data.msg  //Son los datos que modifica el state 
+                        });
+
+                    }
+
+                }).catch((response) => {
+                    dispatch({
+                        type: MUTAR_PATRIMONIO_ERROR, //Es la accion a ejecutar
+                        payload: response.data.msg  //Son los datos que modifica el state 
+                    });
+                    
+                });
+
+        } catch (error) {
+            dispatch({
+                type: MUTAR_PATRIMONIO_ERROR, //Es la accion a ejecutar
+                payload: "Hubo un problema con el servidor"  //Son los datos que modifica el state 
+            });
         }
 
     }
@@ -143,13 +281,17 @@ const PatrimonioState = ({ children }) => {
         <PatrimonioContext.Provider
             value={{
                 patrimonio: state.patrimonio,
+                patrimonio_card: state.patrimonio_card,
                 crearPatri: state.crearPatri,
                 elimiPatri: state.elimiPatri,
                 msgCrear: state.msgCrear,
                 msgDelet: state.msgDelet,
                 msgList: state.msgList,
                 listarPatrimonio,
-                crearPatrimonio
+                crearPatrimonio,
+                deletePatrimonio,
+                editarPatrimonio, 
+                listarGeneralCard
             }}
         >
             {children}

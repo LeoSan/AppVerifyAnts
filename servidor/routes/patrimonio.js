@@ -26,9 +26,15 @@ router.post('/create-patrimonio',
 );
 
 //End-Point - Consultar Patrimonio 
-router.get('/',
+router.post('/consulta-patrimonio',
       auth,  
       patrimonioCotroller.getPatrimonio
+);
+
+//End-Point - Consultar Patrimonio 
+router.post('/consulta-general-card',
+     // auth,  
+      patrimonioCotroller.getPatrimonioCard
 );
 
 //End-Point - Consultar Patrimonio  por fecha 
@@ -68,7 +74,7 @@ router.get('/p-between-fecha',
 );
 
 //End-Point - Editar Patrimonio
-router.put('/', 
+router.post('/edit-patrimonio', 
       auth,
     [
         check('nomPatrimonio',   'El nombre del patrimonio es obligatorio.').not().isEmpty(), //Valida vacio
@@ -80,7 +86,7 @@ router.put('/',
 );
 
 //End-Point - Eliminar Patrimonio
-router.delete('/', 
+router.post('/delete-patrimonio', 
       auth,
       patrimonioCotroller.deletePatrimonio
 );

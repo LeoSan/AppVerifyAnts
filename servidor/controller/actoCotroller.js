@@ -201,7 +201,7 @@ exports.getActoBetweenFecha = async (req= request, res = reponse) => {
     }
 }
 
-//Obtener Acto fechas Inicio y fin  
+//Registrar Habito Cehck 
 exports.actoCheckSemana = async (req= request, res = reponse) => {
 
     try {

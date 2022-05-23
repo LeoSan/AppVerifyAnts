@@ -115,8 +115,7 @@ const categoriaform = () => {
          formik.initialValues.desCate = result.desCate;
 
          return  result;    
-         //Recordar Leonard no funciono tu idea primaria 
-         //formik.actividad = result.actividad._id;
+
       }
    }
 
@@ -169,6 +168,7 @@ const categoriaform = () => {
                               <option value="0" selected> Seleccione </option>
                               <option value="6095819506be383f7cf49ce6" > AntVerify  </option>
                               <option value="60ae92dc3cb1ca2e14baeb8b" > ActivityVerify </option>
+                              <option value="628abb624bc1ab718f2fd46b" > ActivityPatrimony </option>
                            </select>
                         </div>
 

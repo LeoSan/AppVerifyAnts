@@ -39,6 +39,7 @@ const CategoriaState = ({children}) => {
         categoria:null,
         categoriaActos:null,
         categoriaGastos:null,
+        categoriaPatrimonio:null,
         editaCat:false,
         crearCat:false,
         elimiCat:false
@@ -277,6 +278,7 @@ const CategoriaState = ({children}) => {
                 categoria:state.categoria,
                 categoriaActos:state.categoriaActos,
                 categoriaGastos:state.categoriaGastos,
+                categoriaPatrimonio:state.categoriaPatrimonio,
                 editaCat:state.editado,
                 crearCat:state.crearCat,
                 elimiCat:state.elimiCat,

@@ -36,6 +36,11 @@ const categoriaReducer = (state, action) => {
                     return(
                       producto.actividad._id.includes('6095819506be383f7cf49ce6')
                     )
+                  }),                 
+                categoriaPatrimonio: action.payload.filter(producto =>{
+                    return(
+                      producto.actividad._id.includes('628abb624bc1ab718f2fd46b')
+                    )
                   }),                  
 
             }       

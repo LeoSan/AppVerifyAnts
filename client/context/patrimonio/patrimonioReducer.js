@@ -4,7 +4,8 @@
 import {
     LISTAR_PATRIMONIO,
     MUTAR_PATRIMONIO_ERROR,
-    MUTAR_PATRIMONIO_EXITO
+    MUTAR_PATRIMONIO_EXITO,
+    LISTAR_PATRIMONIO_CARD
 } from '../../types';
 
 //Debe hacerce asi ya que se volvio obsoleto hacer por default 
@@ -17,11 +18,11 @@ const patrimonioReducer = (state, action) => {
             return {
                 ...state,
                 patrimonio: action.payload,
-                crearPatri: false,
-                elimiPatri: false,
-                msgCrear: null,
-                msgDelet: null,
-                msgList: null,
+            }        
+        case LISTAR_PATRIMONIO_CARD:
+            return {
+                ...state,
+                patrimonio_card: action.payload,
             }
         case MUTAR_PATRIMONIO_ERROR:
             return {

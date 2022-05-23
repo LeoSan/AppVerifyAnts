@@ -31,7 +31,7 @@ const Actoform = () => {
 
     //Declaro Hook    
     //Redireccionar   
-    const router = useRouter()
+    const router = useRouter();
 
     //Forma de recibir parametros por get 
     let ListActo = [];

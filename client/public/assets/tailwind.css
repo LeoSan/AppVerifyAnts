@@ -32,7 +32,7 @@
 }
 
 .btn-yellow-circle{
-    @apply bg-green-500 rounded-full  text-white font-bold uppercase focus:shadow-md cursor-pointer;
+    @apply bg-yellow-500 rounded-full  text-white font-bold uppercase focus:shadow-md cursor-pointer;
 }
 
 

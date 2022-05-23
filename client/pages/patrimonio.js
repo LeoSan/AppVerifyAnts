@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const Swal = require('sweetalert2');
 
 //importar icon 
-import { PlusCircleIcon, ViewListIcon, CheckCircleIcon } from '@heroicons/react/solid'
+import { PlusCircleIcon, ViewListIcon, CheckCircleIcon, ChipIcon } from '@heroicons/react/solid'
 
 //Importamos nuestros  useContext (Hooks)
 import AuthContext from '../context/auth/AuthContext';
@@ -16,16 +16,16 @@ import Layout from '../components/layout/Layout';
 //componentes UI
 import SideBar from '../components/ui/SideBar';
 
-//componentes Patrimonio
-import ActoSemana from '../components/acto/ActoSemana';
+//Componentes patrimonio
+import PatrimonioGeneralCard from '../components/patrimonio/patrimonioGeneralCard';
 import Formulario from '../components/patrimonio/patrimonioForm';
 import PatriminioList from '../components/patrimonio/patriminioList';
-
+import PatrimonioEstadisticas from '../components/patrimonio/patrimonioEstadisticas';
 
 const Patrimonio = () => {
 
     //Declaration General Values  
-    const contView = { viewTablePatri: false, viewFormPatri: false, viewListPatri:true }
+    const contView = { viewTablePatri: false, viewFormPatri: true, viewGeneralCard:false }
 
     //Declaration UseState
     const [view, setView] = useState({});
@@ -39,27 +39,27 @@ const Patrimonio = () => {
 
 
     //Declaration General Function  
-    //Method Description: 
-
-    const clickViewTablePatri = (contView) => {
-        contView.viewTablePatri = true;
-        contView.viewFormPatri = false;
-        setView(contView);
-
-    }
 
     //Method Description: 
-
-    const clickViewFormPatri = (contView) => {
+    const viewListFormPatri = (contView) => {
         contView.viewTablePatri = false;
         contView.viewFormPatri = true;
         setView(contView);
-
     }
-    //Method Description: 
 
-    const viewListPatri = (contView) => {
-        contView.viewListPatri = true;
+
+    //Method Description: 
+    const viewGeneralCard = (contView) => {
+        contView.viewGeneralCard = true;
+        contView.viewFormPatri = false;
+        setView(contView);
+    }
+
+    
+    //Method Description: 
+    const viewTableroEstadistico = (contView) => {
+        contView.viewTablePatri = true;
+        contView.viewFormPatri = false;
         setView(contView);
     }
 
@@ -77,14 +77,15 @@ const Patrimonio = () => {
                         <div className="w-full  pl-3 pr-3 rounded-lg pt-3 bg-white mb-5 overflow-hidden shadow-lg">
 
                             <div className="flex flex-row justify-around">
-                                <button title="Ver Listado de Actos" className="btn-yellow cursor-pointer w-full  text-center font-extrabold flex  rounded-full" onClick={() => { viewListPatri(contView) }}>
+                                
+                                <button title="Ver listado y formulario " className="btn-yellow cursor-pointer w-full  text-center font-extrabold flex  rounded-full" onClick={() => { viewListFormPatri(contView) }}>
                                     <ViewListIcon className="w-6 " /> Listado
                                 </button>
-                                <button title="Ver talero de semana Actual" className="btn-yellow cursor-pointer  w-full  text-center font-extrabold flex  rounded-full" onClick={() => { clickViewFormPatri(contView) }}>
-                                    <PlusCircleIcon className="w-6 " /> Genera
+                                <button title="Ver detalle general" className="btn-yellow cursor-pointer  w-full  text-center font-extrabold flex  rounded-full" onClick={() => { viewGeneralCard(contView) }}>
+                                    <ChipIcon className="w-6 " /> Detalle General
                                 </button>
-                                <button title="Ver talero de semana Actual" className="btn-yellow cursor-pointer  w-full  text-center font-extrabold flex  rounded-full" onClick={() => { clickViewTablePatri(contView) }}>
-                                    <CheckCircleIcon className="w-6" /> Tablero
+                                <button title="Ver tablero estadisticos" className="btn-yellow cursor-pointer  w-full  text-center font-extrabold flex  rounded-full" onClick={() => { viewTableroEstadistico(contView) }}>
+                                    <CheckCircleIcon className="w-6" /> Estadisticos
                                 </button>
 
                             </div>
@@ -94,10 +95,13 @@ const Patrimonio = () => {
                                     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                                         <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
 
-                                        <Formulario/>
+                                            <Formulario view={view}/>
 
-                                        <PatriminioList/>
-
+                                            <PatriminioList view={view}/>
+                                        
+                                            <PatrimonioGeneralCard view={view}/>
+                                            
+                                            <PatrimonioEstadisticas view={view}/>
 
                                         </div>
                                     </div>
