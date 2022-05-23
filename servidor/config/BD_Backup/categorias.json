@@ -4,10 +4,12 @@
   },
   "activo": 1,
   "registro": {
-    "$date": "2021-05-07T23:54:00.981Z"
+    "$date": {
+      "$numberLong": "1620431640981"
+    }
   },
-  "nomCate": "ahorro",
-  "desCate": "representa todos los ingresos tipo ahorro 001",
+  "nomCate": "activo ahorro",
+  "desCate": "representa tus ahorros líquidos que tienes ahorrado en el banco",
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
   },
@@ -22,7 +24,9 @@
   },
   "activo": 1,
   "registro": {
-    "$date": "2021-05-25T17:00:57.196Z"
+    "$date": {
+      "$numberLong": "1621962057196"
+    }
   },
   "nomCate": "gastos en citas",
   "desCate": "son los gastos realizados en citas",
@@ -39,7 +43,9 @@
   },
   "activo": 1,
   "registro": {
-    "$date": "2021-05-26T18:20:41.537Z"
+    "$date": {
+      "$numberLong": "1622053241537"
+    }
   },
   "nomCate": "estudiar ingles",
   "desCate": "son esas actividades relacionada con el estudio del ingles",
@@ -57,7 +63,9 @@
   },
   "activo": 1,
   "registro": {
-    "$date": "2021-08-09T17:36:47.836Z"
+    "$date": {
+      "$numberLong": "1628530607836"
+    }
   },
   "nomCate": "gastos supermercado",
   "desCate": "representa todos los ingresos tipo ahorro 001",
@@ -74,7 +82,9 @@
   },
   "activo": 1,
   "registro": {
-    "$date": "2021-09-12T05:48:34.476Z"
+    "$date": {
+      "$numberLong": "1631425714476"
+    }
   },
   "nomCate": "training fit",
   "desCate": "actos para mejorar el físico estilo fit",
@@ -92,7 +102,9 @@
   },
   "activo": 1,
   "registro": {
-    "$date": "2021-10-05T23:35:42.769Z"
+    "$date": {
+      "$numberLong": "1633476942769"
+    }
   },
   "nomCate": "profesional",
   "desCate": "actividades que permite mejorar el crecimiento profesional",
@@ -110,9 +122,11 @@
   },
   "activo": 1,
   "registro": {
-    "$date": "2021-10-05T23:35:42.769Z"
+    "$date": {
+      "$numberLong": "1633476942769"
+    }
   },
-  "nomCate": "criptomonedas/blockchain",
+  "nomCate": "criptocoin/blockchain",
   "desCate": "actos para mejorar en el tema de bitcoin",
   "autor": {
     "$oid": "60ff5131e31f320ebc54b1bf"
@@ -128,7 +142,9 @@
   },
   "activo": 1,
   "registro": {
-    "$date": "2021-10-05T23:35:42.769Z"
+    "$date": {
+      "$numberLong": "1633476942769"
+    }
   },
   "nomCate": "alma + mente",
   "desCate": "actos para mejorar estado espiritual y mente",
@@ -146,7 +162,9 @@
   },
   "activo": 1,
   "registro": {
-    "$date": "2021-10-06T00:04:48.521Z"
+    "$date": {
+      "$numberLong": "1633478688521"
+    }
   },
   "nomCate": "proyectos",
   "desCate": "actos para medir que tiempo invierto en proyectos personales",
@@ -158,4 +176,44 @@
   },
   "__v": 0,
   "color": "#F37121"
+},{
+  "_id": {
+    "$oid": "61c4e7544aea5c3a3cd5d96e"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": {
+      "$numberLong": "1640292710844"
+    }
+  },
+  "color": "1",
+  "nomCate": "activo electrónicos",
+  "desCate": "son todos tus activos electrónicos que pudieras tener con un gran valor monetario",
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "actividad": {
+    "$oid": "628abb624bc1ab718f2fd46b"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61c4e8c34aea5c3a3cd5d96f"
+  },
+  "activo": 1,
+  "registro": {
+    "$date": {
+      "$numberLong": "1640292710844"
+    }
+  },
+  "color": "1",
+  "nomCate": "activo  enseres",
+  "desCate": "son todos tus activos tipo artefactos o accesorios que puede generar dinero si se vende, ejemplo la cama, closet, escritorio, sillas, comedor, muebles etc",
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "actividad": {
+    "$oid": "628abb624bc1ab718f2fd46b"
+  },
+  "__v": 0
 }]

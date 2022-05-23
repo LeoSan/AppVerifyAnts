@@ -27094,4 +27094,3436 @@
     "$oid": "615ce7b13735a650a8818a7a"
   },
   "__v": 0
+},{
+  "_id": {
+    "$oid": "627312cefe3ef44d50773324"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651449600000"
+    }
+  },
+  "nota": "seguimos incrementando el vocabulrario",
+  "dia": "lunes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "627312e1fe3ef44d50773325"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651536000000"
+    }
+  },
+  "nota": "seguimos incrementando el vocabulario",
+  "dia": "martes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62731302fe3ef44d50773326"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651622400000"
+    }
+  },
+  "nota": "seguimos incrementando el vocabulario",
+  "dia": "miercoles",
+  "semana": 19,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6273133efe3ef44d50773327"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6149f98ec1aa3f304ca1a59c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651622400000"
+    }
+  },
+  "nota": "platzi, audio curso de inglés con historias: misterios sin resolver",
+  "dia": "miercoles",
+  "semana": 19,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62731359fe3ef44d50773328"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61f42d8ef4713d4310182425"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651449600000"
+    }
+  },
+  "nota": "seguimos perdiendo miedo, admito que no lo digo bien.",
+  "dia": "lunes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6273136bfe3ef44d50773329"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61f42d8ef4713d4310182425"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651536000000"
+    }
+  },
+  "nota": "seguimos perdiendo miedo, admito que no lo digo bien.",
+  "dia": "martes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6273137ffe3ef44d5077332a"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61f42d8ef4713d4310182425"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651622400000"
+    }
+  },
+  "nota": "seguimos perdiendo miedo, admito que no lo digo bien.",
+  "dia": "miercoles",
+  "semana": 19,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62731391fe3ef44d5077332b"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61f42d8ef4713d4310182425"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651708800000"
+    }
+  },
+  "nota": "seguimos perdiendo miedo, admito que no lo digo bien.",
+  "dia": "jueves",
+  "semana": 19,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6273142dfe3ef44d5077332c"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce56f3735a650a8818a76"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651536000000"
+    }
+  },
+  "nota": "me quede en la clase 35, me chute el ciclo básico",
+  "dia": "martes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62731493fe3ef44d5077332d"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61fd55c78dedfe6c943fd708"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651449600000"
+    }
+  },
+  "nota": "forma de nutrir y aprender escuchando, esta semana hablaron del dinero como ahorrar, es para perdedores, como poner a tu dinero, a trabajar, con trader.",
+  "dia": "lunes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "627314a1fe3ef44d5077332e"
+  },
+  "duracion": 11,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61fd55c78dedfe6c943fd708"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651536000000"
+    }
+  },
+  "nota": "forma de nutrir y aprender escuchando, esta semana hablaron del dinero como ahorrar, es para perdedores, como poner a tu dinero, a trabajar, con trader.",
+  "dia": "martes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "627314adfe3ef44d5077332f"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61fd55c78dedfe6c943fd708"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651622400000"
+    }
+  },
+  "nota": "forma de nutrir y aprender escuchando, esta semana hablaron del dinero como ahorrar, es para perdedores, como poner a tu dinero, a trabajar, con trader.",
+  "dia": "miercoles",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62731501fe3ef44d50773330"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651449600000"
+    }
+  },
+  "nota": "curso de introducción al análisis técnico.",
+  "dia": "lunes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6273150cfe3ef44d50773331"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651536000000"
+    }
+  },
+  "nota": "curso de introducción al análisis técnico.",
+  "dia": "martes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62731516fe3ef44d50773332"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651622400000"
+    }
+  },
+  "nota": "curso de introducción al análisis técnico.",
+  "dia": "miercoles",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6273153afe3ef44d50773333"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651449600000"
+    }
+  },
+  "nota": "seguimos buscando el poder del chiv",
+  "dia": "lunes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62760780ce67dd39b4f01b40"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651708800000"
+    }
+  },
+  "nota": "audiocurso de inglés con historias: misterios sin resolver",
+  "dia": "jueves",
+  "semana": 19,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6276078fce67dd39b4f01b41"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651795200000"
+    }
+  },
+  "nota": "audiocurso de inglés con historias: misterios sin resolver",
+  "dia": "viernes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "627607a8ce67dd39b4f01b42"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651708800000"
+    }
+  },
+  "nota": "mejorando vocabulario",
+  "dia": "jueves",
+  "semana": 19,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "627607c6ce67dd39b4f01b43"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de056070ead39d4bda9b8"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651622400000"
+    }
+  },
+  "nota": "correr un poco",
+  "dia": "miercoles",
+  "semana": 19,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "627607e6ce67dd39b4f01b44"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de04d070ead39d4bda9b7"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651622400000"
+    }
+  },
+  "nota": "rutina en piernas si me costo",
+  "dia": "miercoles",
+  "semana": 19,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "627607ffce67dd39b4f01b45"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de067070ead39d4bda9b9"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651881600000"
+    }
+  },
+  "nota": "rutina de pecho y espalda",
+  "dia": "sabado",
+  "semana": 19,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6276080dce67dd39b4f01b46"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de04d070ead39d4bda9b7"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651881600000"
+    }
+  },
+  "nota": "correr",
+  "dia": "sabado",
+  "semana": 19,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62760821ce67dd39b4f01b47"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce56f3735a650a8818a76"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651708800000"
+    }
+  },
+  "nota": "clase 35",
+  "dia": "jueves",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6276084ece67dd39b4f01b48"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651708800000"
+    }
+  },
+  "nota": "clase de analisis financiero",
+  "dia": "jueves",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62760860ce67dd39b4f01b49"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9174f026f215495e9e1"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651795200000"
+    }
+  },
+  "nota": "clase de análisis financiero  y aprobar examen",
+  "dia": "viernes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62760877ce67dd39b4f01b4a"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce9514f026f215495e9e4"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651536000000"
+    }
+  },
+  "nota": "compre un nft chiv",
+  "dia": "martes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62760895ce67dd39b4f01b4b"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651449600000"
+    }
+  },
+  "nota": "te negro con jamaica",
+  "dia": "lunes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6276089dce67dd39b4f01b4c"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651536000000"
+    }
+  },
+  "nota": "te negro con jamaica",
+  "dia": "martes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "627608a6ce67dd39b4f01b4d"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651622400000"
+    }
+  },
+  "nota": "te negro con jamaica",
+  "dia": "miercoles",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "627608b1ce67dd39b4f01b4e"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651708800000"
+    }
+  },
+  "nota": "te negro con jamaica",
+  "dia": "jueves",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "627608b9ce67dd39b4f01b4f"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651795200000"
+    }
+  },
+  "nota": "te negro con jamaica",
+  "dia": "viernes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "627608c9ce67dd39b4f01b50"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651449600000"
+    }
+  },
+  "nota": "seguimos con la toma de agua.",
+  "dia": "lunes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "627608d3ce67dd39b4f01b51"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651536000000"
+    }
+  },
+  "nota": "seguimos con la toma de agua.",
+  "dia": "martes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "627608dcce67dd39b4f01b52"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651622400000"
+    }
+  },
+  "nota": "seguimos con la toma de agua.",
+  "dia": "miercoles",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "627608e5ce67dd39b4f01b53"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651708800000"
+    }
+  },
+  "nota": "seguimos con la toma de agua.",
+  "dia": "jueves",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "627608edce67dd39b4f01b54"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ddfed070ead39d4bda9b3"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651795200000"
+    }
+  },
+  "nota": "seguimos con la toma de agua.",
+  "dia": "viernes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62760907ce67dd39b4f01b55"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651449600000"
+    }
+  },
+  "nota": "leer 20 minutos",
+  "dia": "lunes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6276092cce67dd39b4f01b56"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6226e8f46662663bc440e63e"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651449600000"
+    }
+  },
+  "nota": "cuidar, darle de comer, darle agua, limpiar su arenero, jugar con ella",
+  "dia": "lunes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62760934ce67dd39b4f01b57"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6226e8f46662663bc440e63e"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651536000000"
+    }
+  },
+  "nota": "cuidar, darle de comer, darle agua, limpiar su arenero, jugar con ella",
+  "dia": "martes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6276093fce67dd39b4f01b58"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6226e8f46662663bc440e63e"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651622400000"
+    }
+  },
+  "nota": "cuidar, darle de comer, darle agua, limpiar su arenero, jugar con ella",
+  "dia": "miercoles",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6276094fce67dd39b4f01b59"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6226e8f46662663bc440e63e"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651708800000"
+    }
+  },
+  "nota": "cuidar, darle de comer, darle agua, limpiar su arenero, jugar con ella",
+  "dia": "jueves",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62760958ce67dd39b4f01b5a"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6226e8f46662663bc440e63e"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651795200000"
+    }
+  },
+  "nota": "cuidar, darle de comer, darle agua, limpiar su arenero, jugar con ella",
+  "dia": "viernes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62760971ce67dd39b4f01b5b"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1651795200000"
+    }
+  },
+  "nota": "los 7 habitos",
+  "dia": "viernes",
+  "semana": 19,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628280fa5bd0fe09e0866f06"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652054400000"
+    }
+  },
+  "nota": "seguimos avanzando",
+  "dia": "lunes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6282810c5bd0fe09e0866f07"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6149f98ec1aa3f304ca1a59c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652054400000"
+    }
+  },
+  "nota": "escuchando las noticias",
+  "dia": "lunes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6282812b5bd0fe09e0866f08"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652054400000"
+    }
+  },
+  "nota": "terminando el audio historia de egipto",
+  "dia": "lunes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628281515bd0fe09e0866f09"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61f42d8ef4713d4310182425"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652054400000"
+    }
+  },
+  "nota": "escribiendo y pronunciando las actividades de las daily",
+  "dia": "lunes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6282824c5bd0fe09e0866f0a"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61f42d8ef4713d4310182425"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652227200000"
+    }
+  },
+  "nota": "escribiendo y pronunciando las actividades de las daily",
+  "dia": "miercoles",
+  "semana": 20,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628282585bd0fe09e0866f0b"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61f42d8ef4713d4310182425"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652313600000"
+    }
+  },
+  "nota": "escribiendo y pronunciando las actividades de las daily",
+  "dia": "jueves",
+  "semana": 20,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628282715bd0fe09e0866f0c"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652227200000"
+    }
+  },
+  "nota": "continuamos con las clases de ingles",
+  "dia": "miercoles",
+  "semana": 20,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628282945bd0fe09e0866f0d"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652313600000"
+    }
+  },
+  "nota": "continuamos con la historia de egipto en inglés",
+  "dia": "jueves",
+  "semana": 20,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628282cb5bd0fe09e0866f0e"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6149f98ec1aa3f304ca1a59c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652140800000"
+    }
+  },
+  "nota": "escuchar las noticias",
+  "dia": "martes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628282d65bd0fe09e0866f0f"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6149f98ec1aa3f304ca1a59c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652227200000"
+    }
+  },
+  "nota": "escuchar las noticias",
+  "dia": "miercoles",
+  "semana": 20,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628282e95bd0fe09e0866f10"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6149f98ec1aa3f304ca1a59c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652313600000"
+    }
+  },
+  "nota": "escuchar las noticias",
+  "dia": "jueves",
+  "semana": 20,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628283035bd0fe09e0866f11"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6149f98ec1aa3f304ca1a59c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652400000000"
+    }
+  },
+  "nota": "escuchar las noticias",
+  "dia": "viernes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628283335bd0fe09e0866f12"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652227200000"
+    }
+  },
+  "nota": "seguimos avanzando en aprender mas palabras",
+  "dia": "miercoles",
+  "semana": 20,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628283625bd0fe09e0866f13"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652313600000"
+    }
+  },
+  "nota": "seguimos avanzando aprendiendo mas palabras",
+  "dia": "jueves",
+  "semana": 20,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6282836f5bd0fe09e0866f14"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652400000000"
+    }
+  },
+  "nota": "seguimos avanzando aprendiendo mas palabras",
+  "dia": "viernes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628283aa5bd0fe09e0866f15"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de04d070ead39d4bda9b7"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652227200000"
+    }
+  },
+  "nota": "practicando con el amor dándole a más peso en las piernas, aquí inicio y marco",
+  "dia": "miercoles",
+  "semana": 20,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628283be5bd0fe09e0866f16"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de056070ead39d4bda9b8"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652227200000"
+    }
+  },
+  "nota": "seguimos corriendo.",
+  "dia": "miercoles",
+  "semana": 20,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628283d45bd0fe09e0866f17"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de056070ead39d4bda9b8"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652227200000"
+    }
+  },
+  "nota": "seguimos corriendo.",
+  "dia": "jueves",
+  "semana": 20,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628283e25bd0fe09e0866f18"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de056070ead39d4bda9b8"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652400000000"
+    }
+  },
+  "nota": "seguimos corriendo.",
+  "dia": "viernes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628283ee5bd0fe09e0866f19"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de056070ead39d4bda9b8"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652486400000"
+    }
+  },
+  "nota": "seguimos corriendo.",
+  "dia": "sabado",
+  "semana": 20,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628284125bd0fe09e0866f1a"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de067070ead39d4bda9b9"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652313600000"
+    }
+  },
+  "nota": "seguimos entrenando, pero no logramos llegar a los 30 kilos en cada lado",
+  "dia": "jueves",
+  "semana": 20,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628284375bd0fe09e0866f1b"
+  },
+  "duracion": 60,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de067070ead39d4bda9b9"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652486400000"
+    }
+  },
+  "nota": "levantando buen peso para bic y trip",
+  "dia": "sabado",
+  "semana": 20,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6282845e5bd0fe09e0866f1c"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61774515c588ee46dca774a9"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652227200000"
+    }
+  },
+  "nota": "tenemos un resultado decente.  hay que ser mas disciplinado",
+  "dia": "miercoles",
+  "semana": 20,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628284695bd0fe09e0866f1d"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61774515c588ee46dca774a9"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652486400000"
+    }
+  },
+  "nota": "tenemos un resultado decente.  hay que ser mas disciplinado",
+  "dia": "sabado",
+  "semana": 20,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628286765bd0fe09e0866f1f"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61fd55c78dedfe6c943fd708"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652054400000"
+    }
+  },
+  "nota": "tema de mochilas de habilidades, martha emerson",
+  "dia": "lunes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628286945bd0fe09e0866f20"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61fd55c78dedfe6c943fd708"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652140800000"
+    }
+  },
+  "nota": "tema autoconocimiento, martha emerson",
+  "dia": "martes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628286a75bd0fe09e0866f21"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61fd55c78dedfe6c943fd708"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652227200000"
+    }
+  },
+  "nota": "tema liderazgo, martha emerson",
+  "dia": "miercoles",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628286bc5bd0fe09e0866f22"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61fd55c78dedfe6c943fd708"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652313600000"
+    }
+  },
+  "nota": "tema gestion del tiempo, martha emerson",
+  "dia": "jueves",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628286d95bd0fe09e0866f23"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61fd55c78dedfe6c943fd708"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652400000000"
+    }
+  },
+  "nota": "tema aprender a aprender, martha emerson",
+  "dia": "viernes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628287045bd0fe09e0866f24"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce56f3735a650a8818a76"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652054400000"
+    }
+  },
+  "nota": "sección 5,  gestion de eventos clase 46",
+  "dia": "lunes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6282871a5bd0fe09e0866f25"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce56f3735a650a8818a76"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652313600000"
+    }
+  },
+  "nota": "sección 5,  gestión de eventos clase 47",
+  "dia": "jueves",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6282873c5bd0fe09e0866f26"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652054400000"
+    }
+  },
+  "nota": "clase de react básico, iniciamos proyecto de diseño atomico",
+  "dia": "lunes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628287495bd0fe09e0866f27"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652313600000"
+    }
+  },
+  "nota": "clase de react básico, iniciamos proyecto de diseño atomico",
+  "dia": "jueves",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628287855bd0fe09e0866f28"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652054400000"
+    }
+  },
+  "nota": "seguimos aprendiendo y jugando, aún no obtenemos alguna ganancia, estamos acumulando.",
+  "dia": "lunes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628287905bd0fe09e0866f29"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652140800000"
+    }
+  },
+  "nota": "seguimos aprendiendo y jugando, aún no obtenemos alguna ganancia, estamos acumulando.",
+  "dia": "martes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6282879b5bd0fe09e0866f2a"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652227200000"
+    }
+  },
+  "nota": "seguimos aprendiendo y jugando, aún no obtenemos alguna ganancia, estamos acumulando.",
+  "dia": "miercoles",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628287a65bd0fe09e0866f2b"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652313600000"
+    }
+  },
+  "nota": "seguimos aprendiendo y jugando, aún no obtenemos alguna ganancia, estamos acumulando.",
+  "dia": "jueves",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628287bb5bd0fe09e0866f2c"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de483070ead39d4bda9c8"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1653004800000"
+    }
+  },
+  "nota": "seguimos aprendiendo y jugando, aún no obtenemos alguna ganancia, estamos acumulando.",
+  "dia": "viernes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7763735a650a8818a79"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628287ed5bd0fe09e0866f2d"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6226e8f46662663bc440e63e"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652054400000"
+    }
+  },
+  "nota": "dar alimentos + agua+limpiar arena+ jugar con ella.",
+  "dia": "lunes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628287fa5bd0fe09e0866f2e"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6226e8f46662663bc440e63e"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652140800000"
+    }
+  },
+  "nota": "dar alimentos + agua+limpiar arena+ jugar con ella.",
+  "dia": "martes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628288065bd0fe09e0866f2f"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6226e8f46662663bc440e63e"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652227200000"
+    }
+  },
+  "nota": "dar alimentos + agua+limpiar arena+ jugar con ella.",
+  "dia": "miercoles",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628288105bd0fe09e0866f30"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6226e8f46662663bc440e63e"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652313600000"
+    }
+  },
+  "nota": "dar alimentos + agua+limpiar arena+ jugar con ella.",
+  "dia": "jueves",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6282881d5bd0fe09e0866f31"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6226e8f46662663bc440e63e"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652400000000"
+    }
+  },
+  "nota": "dar alimentos + agua+limpiar arena+ jugar con ella.",
+  "dia": "viernes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628288285bd0fe09e0866f32"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6226e8f46662663bc440e63e"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652486400000"
+    }
+  },
+  "nota": "dar alimentos + agua+limpiar arena+ jugar con ella.",
+  "dia": "sabado",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6282886d5bd0fe09e0866f33"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652054400000"
+    }
+  },
+  "nota": "iniciamos la lectura de harry potter y el legado maldito.",
+  "dia": "lunes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628288755bd0fe09e0866f34"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652140800000"
+    }
+  },
+  "nota": "iniciamos la lectura de harry potter y el legado maldito.",
+  "dia": "martes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628288815bd0fe09e0866f35"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652227200000"
+    }
+  },
+  "nota": "iniciamos la lectura de harry potter y el legado maldito.",
+  "dia": "miercoles",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6282888f5bd0fe09e0866f36"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652313600000"
+    }
+  },
+  "nota": "iniciamos la lectura de harry potter y el legado maldito.",
+  "dia": "jueves",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628288ab5bd0fe09e0866f37"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1653004800000"
+    }
+  },
+  "nota": "iniciamos la lectura de harry potter y el legado maldito.",
+  "dia": "viernes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628288cd5bd0fe09e0866f38"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652486400000"
+    }
+  },
+  "nota": "iniciamos la lectura de harry potter y el legado maldito. termine la historia es buena historia pero hp siegue siendo una bestia en la magia.",
+  "dia": "sabado",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628289135bd0fe09e0866f39"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652054400000"
+    }
+  },
+  "nota": "te negro + piloncillo + ajenjo",
+  "dia": "lunes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6282891c5bd0fe09e0866f3a"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652140800000"
+    }
+  },
+  "nota": "te negro + piloncillo + ajenjo",
+  "dia": "martes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628289285bd0fe09e0866f3b"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652227200000"
+    }
+  },
+  "nota": "te negro + piloncillo + ajenjo",
+  "dia": "miercoles",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628289315bd0fe09e0866f3c"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652313600000"
+    }
+  },
+  "nota": "te negro + piloncillo + ajenjo",
+  "dia": "jueves",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6282893c5bd0fe09e0866f3d"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652400000000"
+    }
+  },
+  "nota": "te negro + piloncillo + ajenjo",
+  "dia": "viernes",
+  "semana": 20,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62828a675bd0fe09e0866f3e"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652659200000"
+    }
+  },
+  "nota": "seguimos aprendiendo mas palabras",
+  "dia": "lunes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62828aa55bd0fe09e0866f3f"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652659200000"
+    }
+  },
+  "nota": "inicio nueva clase: curso de inglés básico: vocabulario y expresiones",
+  "dia": "lunes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62828aba5bd0fe09e0866f40"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6149f98ec1aa3f304ca1a59c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652054400000"
+    }
+  },
+  "nota": "escuchar noticias en english",
+  "dia": "lunes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628aaffb1ca3e643a0cc23b6"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652745600000"
+    }
+  },
+  "nota": "seguimos progresando",
+  "dia": "martes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab00a1ca3e643a0cc23b7"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652832000000"
+    }
+  },
+  "nota": "seguimos progresando",
+  "dia": "miercoles",
+  "semana": 21,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab0141ca3e643a0cc23b8"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652918400000"
+    }
+  },
+  "nota": "seguimos progresando",
+  "dia": "jueves",
+  "semana": 21,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab0221ca3e643a0cc23b9"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "613327d999dc9627f8a6f44c"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1653004800000"
+    }
+  },
+  "nota": "seguimos progresando",
+  "dia": "viernes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab0641ca3e643a0cc23ba"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652745600000"
+    }
+  },
+  "nota": "curso de inglés básico: vocabulario y expresiones",
+  "dia": "martes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab0761ca3e643a0cc23bb"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652832000000"
+    }
+  },
+  "nota": "curso de inglés básico: vocabulario y expresiones",
+  "dia": "miercoles",
+  "semana": 21,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab0841ca3e643a0cc23bc"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652918400000"
+    }
+  },
+  "nota": "curso de inglés básico: vocabulario y expresiones",
+  "dia": "jueves",
+  "semana": 21,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab0901ca3e643a0cc23bd"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce4453735a650a8818a73"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1653004800000"
+    }
+  },
+  "nota": "curso de inglés básico: vocabulario y expresiones",
+  "dia": "viernes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab0d11ca3e643a0cc23be"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61f42d8ef4713d4310182425"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652745600000"
+    }
+  },
+  "nota": "daily write and speech.",
+  "dia": "lunes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab0de1ca3e643a0cc23bf"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61f42d8ef4713d4310182425"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652745600000"
+    }
+  },
+  "nota": "daily write and speech.",
+  "dia": "martes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab0e81ca3e643a0cc23c0"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61f42d8ef4713d4310182425"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652832000000"
+    }
+  },
+  "nota": "daily write and speech.",
+  "dia": "miercoles",
+  "semana": 21,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab0f91ca3e643a0cc23c1"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61f42d8ef4713d4310182425"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652918400000"
+    }
+  },
+  "nota": "daily write and speech.",
+  "dia": "jueves",
+  "semana": 21,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab1051ca3e643a0cc23c2"
+  },
+  "duracion": 5,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61f42d8ef4713d4310182425"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1653004800000"
+    }
+  },
+  "nota": "daily write and speech.",
+  "dia": "viernes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "60ae92f13cb1ca2e14baeb8c"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab1391ca3e643a0cc23c3"
+  },
+  "duracion": 15,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de056070ead39d4bda9b8"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1653091200000"
+    }
+  },
+  "nota": "rutina nueva de correr al terminar ejercicio me pongo 10 minutos en velocidad 9",
+  "dia": "sabado",
+  "semana": 21,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab1481ca3e643a0cc23c4"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61774515c588ee46dca774a9"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1653091200000"
+    }
+  },
+  "nota": "triserie en maquinas.",
+  "dia": "sabado",
+  "semana": 21,
+  "categoria": {
+    "$oid": "613d9812996ca94798f36672"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab1901ca3e643a0cc23c5"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652659200000"
+    }
+  },
+  "nota": "llevamos 40% curso práctico de react",
+  "dia": "lunes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab1a01ca3e643a0cc23c6"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652745600000"
+    }
+  },
+  "nota": "llevamos 50% curso práctico de react",
+  "dia": "martes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab1ad1ca3e643a0cc23c7"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652832000000"
+    }
+  },
+  "nota": "llevamos 60% curso práctico de react",
+  "dia": "miercoles",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab1c01ca3e643a0cc23c8"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce5523735a650a8818a75"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652918400000"
+    }
+  },
+  "nota": "llevamos 74% curso práctico de react",
+  "dia": "jueves",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab24c1ca3e643a0cc23c9"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61fd55c78dedfe6c943fd708"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652659200000"
+    }
+  },
+  "nota": "escuchamos al mentor jan bohnensteffem - crear contenidos virals en redes",
+  "dia": "lunes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab2581ca3e643a0cc23ca"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61fd55c78dedfe6c943fd708"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652745600000"
+    }
+  },
+  "nota": "escuchamos al mentor jan bohnensteffem - crear contenidos virals en redes",
+  "dia": "martes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab2621ca3e643a0cc23cb"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61fd55c78dedfe6c943fd708"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652832000000"
+    }
+  },
+  "nota": "escuchamos al mentor jan bohnensteffem - crear contenidos virals en redes",
+  "dia": "miercoles",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab26d1ca3e643a0cc23cc"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61fd55c78dedfe6c943fd708"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652832000000"
+    }
+  },
+  "nota": "escuchamos al mentor jan bohnensteffem - crear contenidos virals en redes",
+  "dia": "jueves",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab27b1ca3e643a0cc23cd"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "61fd55c78dedfe6c943fd708"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1653004800000"
+    }
+  },
+  "nota": "escuchamos al mentor jan bohnensteffem - crear contenidos virals en redes",
+  "dia": "viernes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab2901ca3e643a0cc23ce"
+  },
+  "duracion": 30,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615ce56f3735a650a8818a76"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652832000000"
+    }
+  },
+  "nota": "clase 50 - fetch sync",
+  "dia": "miercoles",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce4e73735a650a8818a74"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab2cf1ca3e643a0cc23cf"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6226e8f46662663bc440e63e"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652659200000"
+    }
+  },
+  "nota": "cuidar a kari, estar pendiente de su agua + comida + acaricia + peinar para reducir pelos en la casa",
+  "dia": "lunes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab2d91ca3e643a0cc23d0"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6226e8f46662663bc440e63e"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652745600000"
+    }
+  },
+  "nota": "cuidar a kari, estar pendiente de su agua + comida + acaricia + peinar para reducir pelos en la casa",
+  "dia": "martes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab2e61ca3e643a0cc23d1"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6226e8f46662663bc440e63e"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652832000000"
+    }
+  },
+  "nota": "cuidar a kari, estar pendiente de su agua + comida + acaricia + peinar para reducir pelos en la casa",
+  "dia": "miercoles",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab2f11ca3e643a0cc23d2"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6226e8f46662663bc440e63e"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652918400000"
+    }
+  },
+  "nota": "cuidar a kari, estar pendiente de su agua + comida + acaricia + peinar para reducir pelos en la casa",
+  "dia": "jueves",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab2fd1ca3e643a0cc23d3"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6226e8f46662663bc440e63e"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1653004800000"
+    }
+  },
+  "nota": "cuidar a kari, estar pendiente de su agua + comida + acaricia + peinar para reducir pelos en la casa",
+  "dia": "viernes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab31b1ca3e643a0cc23d4"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652659200000"
+    }
+  },
+  "nota": "té + jamaica + papelon",
+  "dia": "lunes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab3261ca3e643a0cc23d5"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652745600000"
+    }
+  },
+  "nota": "té + jamaica + papelon",
+  "dia": "martes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab3301ca3e643a0cc23d6"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652832000000"
+    }
+  },
+  "nota": "té + jamaica + papelon",
+  "dia": "miercoles",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab3391ca3e643a0cc23d7"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652832000000"
+    }
+  },
+  "nota": "té + jamaica + papelon",
+  "dia": "jueves",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab3441ca3e643a0cc23d8"
+  },
+  "duracion": 10,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "615de029070ead39d4bda9b6"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1653004800000"
+    }
+  },
+  "nota": "té + jamaica + papelon",
+  "dia": "viernes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab36f1ca3e643a0cc23d9"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652659200000"
+    }
+  },
+  "nota": "libro de los 7 hábitos efectivos.",
+  "dia": "lunes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab37a1ca3e643a0cc23da"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652745600000"
+    }
+  },
+  "nota": "libro de los 7 hábitos efectivos.",
+  "dia": "martes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab3881ca3e643a0cc23db"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652832000000"
+    }
+  },
+  "nota": "libro de los 7 hábitos efectivos.",
+  "dia": "miercoles",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab3931ca3e643a0cc23dc"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1652918400000"
+    }
+  },
+  "nota": "libro de los 7 hábitos efectivos.",
+  "dia": "jueves",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ab39d1ca3e643a0cc23dd"
+  },
+  "duracion": 20,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "616872cf69102b288c9044d7"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1653004800000"
+    }
+  },
+  "nota": "libro de los 7 hábitos efectivos.",
+  "dia": "viernes",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce7b13735a650a8818a7a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "628ae8f1a10dd13bd8c8c0b0"
+  },
+  "duracion": 140,
+  "activo": 1,
+  "autor": {
+    "$oid": "60ff5131e31f320ebc54b1bf"
+  },
+  "acto": {
+    "$oid": "6168723b69102b288c9044d4"
+  },
+  "registro": {
+    "$date": {
+      "$numberLong": "1653091200000"
+    }
+  },
+  "nota": "se terminó de generar el módulo de detalle de patrimonio, existe un error donde si agrego no se actualiza el módulo.",
+  "dia": "sabado",
+  "semana": 21,
+  "categoria": {
+    "$oid": "615ce8f04f026f215495e9e0"
+  },
+  "__v": 0
 }]
