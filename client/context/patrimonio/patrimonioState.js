@@ -26,11 +26,13 @@ const PatrimonioState = ({ children }) => {
     // Crear state inicial
     const inicialState = {
         patrimonio: null,
+        patrimonio_card: null,
         crearPatri: false,
         elimiPatri: false,
         msgCrear: null,
         msgDelet: null,
         msgList: null,
+        
     }
 
     // Definimos Reducer 
@@ -243,7 +245,7 @@ const PatrimonioState = ({ children }) => {
                     if (response.data.success == true) {
                         dispatch({
                             type: LISTAR_PATRIMONIO_CARD, //Es la accion a ejecutar
-                            payload: response.data.patrimonio  //Son los datos que modifica el state 
+                            payload: response.data.cardPatrimonioTotal  //Son los datos que modifica el state 
                         });
 
                     } else {
@@ -279,6 +281,7 @@ const PatrimonioState = ({ children }) => {
         <PatrimonioContext.Provider
             value={{
                 patrimonio: state.patrimonio,
+                patrimonio_card: state.patrimonio_card,
                 crearPatri: state.crearPatri,
                 elimiPatri: state.elimiPatri,
                 msgCrear: state.msgCrear,

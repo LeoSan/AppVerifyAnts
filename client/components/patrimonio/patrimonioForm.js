@@ -29,25 +29,23 @@ const PatrimonioForm = ({ view }) => {
 
     //Acceder el state de Categoria 
     const valorContext = useContext(CategoriaContext);
-    const {  listarCategoria, categoriaGastos } = valorContext;
+    const {  listarCategoria, categoriaPatrimonio } = valorContext;
     
     //Acceder el state de Patrimonio 
     const valorPatrimonioContext = useContext(PatrimonioContext);
-    const {  listarPatrimonio, crearPatrimonio, editarPatrimonio, msgCrear, crearPatri } = valorPatrimonioContext;
-
+    const {  listarPatrimonio, listarGeneralCard,  crearPatrimonio, editarPatrimonio, msgCrear, crearPatri } = valorPatrimonioContext;
 
     //Declaración Variables
     const datos = { nickID, nickEmail }
     const datosConsulta = {nomPatrimonio:'', usuario:nickID, categoria:0, activo:1, tipo:"1-M" }
     
-
     //Declaro UseEffect    
     useEffect(() => {
         listarCategoria(datos);
         listarPatrimonio(datosConsulta);
+        listarGeneralCard(datos);
     }, []);
     
-
     const [startDate, setStartDate] = useState(new Date());
 
     //Objeto : Plugin Formik para gestionar las validaciones de formulario 
@@ -93,6 +91,7 @@ const PatrimonioForm = ({ view }) => {
         }
     });
 
+
     if (view.viewFormPatri == false) { return null }
 
     return (
@@ -116,7 +115,7 @@ const PatrimonioForm = ({ view }) => {
 
                 {
       
-                  !categoriaGastos ? null : categoriaGastos.map((list) => (
+                  !categoriaPatrimonio ? null : categoriaPatrimonio.map((list) => (
                     <option key={list._id} value={list._id} > {list.nomCate} </option>
                   ))
       
@@ -235,11 +234,11 @@ const PatrimonioForm = ({ view }) => {
            <Error mensaje={formik.errors.montoPatrimonio} ></Error>
         ) : null}        
         
-        { crearPatri == false ? (
+        { crearPatri == false && msgCrear != null ? (
            <Error mensaje={msgCrear} ></Error>
         ) : null}
 
-        {  crearPatri == true  ? (
+        {  crearPatri == true  && msgCrear != null ? (
             <Success mensaje={msgCrear} ></Success>
          ) : null}
 

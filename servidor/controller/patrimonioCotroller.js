@@ -10,6 +10,10 @@ const Categoria = require('../models/Categoria');
 //Controlador 
 const logsCotroller = require('../controller/logsController'); 
 
+//importamos helper 
+const {  strLetterUper } = require('../middleware/helpers');
+
+
 //Crea Patrimonio 
 exports.newPatrimonio = async(req = request, res = response )=>{
     //Mostrar mensaje de error de express-validator 
@@ -49,7 +53,7 @@ exports.getPatrimonio = async ( req = request, res = response ) =>{
             //Obtener 1-M
             let existeVAl = await Patrimonio.findOne({ usuario }); 
 
-            if(!existeVAl) return res.status(406).json({msg:`No Existe algun tipo de Patrimonio para este usuario.`});
+            if(!existeVAl) return res.status(200).json({msg:`No Existe algun tipo de Patrimonio para este usuario.`, success:false});
             
              //Ejemplo Multiple de modelos 
             //const patrimonio = await Patrimonio.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).populate({ path: 'usuario', model: 'Usuario', select: 'nomUsu'}).exec();
@@ -60,7 +64,7 @@ exports.getPatrimonio = async ( req = request, res = response ) =>{
             //Obtener 1.1
             let existeVAl = await Patrimonio.findOne({ nomPatrimonio }); 
 
-            if(!existeVAl) return res.status(406).json({msg:`Tu Patrimonio con nombre ${ nomPatrimonio }, No existe en la base de datos.`});
+            if(!existeVAl) return res.status(200).json({msg:`Tu Patrimonio con nombre ${ nomPatrimonio }, No existe en la base de datos.`, success:false});
             
             const patrimonio = await Patrimonio.find( { nomPatrimonio } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).exec();
             res.status(200).json({ patrimonio, success: true });
@@ -77,11 +81,43 @@ exports.getPatrimonioCard = async ( req = request, res = response ) =>{
         //Distroccion 
         const {  nickID } = req.body; //->Asi se usa cuando es un objeto 
         
-        //Primero Listo las categorias 
+        //Valido si el autor tiene categorias asignadas 
+        let autor = nickID;
+        let existeVAl = await Categoria.findOne({ autor }); 
+        if(!existeVAl) return res.status(200).json({msg:`No Existe categorias para este usuario.`, success:false});
+        
+        //Primero:  Listo las categorias 
+        const categoria = await Categoria.find( { $and: [{autor:nickID}, {activo: 1 }, {actividad:'628abb624bc1ab718f2fd46b'}] } ).populate({ path: 'actividad', model: 'Actividad', select: 'nomActi'}).sort({nomActi:1});
+        if (!categoria) return res.status(200).json({msg:`No Existe categorias tipo patrimonio para este usuario. Por favor proceda a crear catgorias.`, success:false});
 
-        //En la tabla patrimonio extraigo aquellos patrimonios que si tengan la categoria
+        //Seguno: En la tabla patrimonio extraigo todas los patrimonios del usuario. 
+        let usuario = nickID;
+        let existePatri = await Patrimonio.findOne({ usuario }); 
+        if(!existePatri) return res.status(406).json({msg:`No Existe algun tipo de Patrimonio para este usuario.`, success:false});
+        
+         //Ejemplo Multiple de modelos 
+        //const patrimonio = await Patrimonio.find( { $and: [{usuario:usuario}, {activo: activo }] } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).populate({ path: 'usuario', model: 'Usuario', select: 'nomUsu'}).exec();
+        const  objPatrimonio = await Patrimonio.find( { $and: [{usuario:usuario}, {activo: 1 }] } ).populate({ path: 'categoria', model: 'Categoria', select: 'nomCate'}).sort({ categoria: -1 });
 
-        //Organizo el Arreglo aun no se como organizar el arreglo 
+        //Agrupar y sumar 
+        let cardPatrimonioTotal = [];
+        
+        
+            //Itero por categoria para validar 
+            for (const filas of categoria) {
+                let sumTotal = 0; 
+                objPatrimonio.forEach(element => {
+                    //console.log(element.categoria._id.toString() +" ====  "+ filas._id.toString());
+                    if ( element.categoria._id.toString() == filas._id.toString() ){
+                        sumTotal = sumTotal  +  element.montoPatrimonio; 
+                        cardPatrimonioTotal.push( [ strLetterUper(filas.nomCate), filas._id, element.nomPatrimonio, element.montoPatrimonio, 'p-3 rounded-lg flex items-start bg-yellow-300'] );                    
+                    }
+                    
+                });
+                cardPatrimonioTotal.push( [ strLetterUper(filas.nomCate), filas._id, 'Total', sumTotal, 'p-3 rounded-lg flex items-start  bg-gray-200 text-gray-700'] );
+            }//Fin del for de Categorias 
+
+            res.status(200).json({ cardPatrimonioTotal, success: true });
 
     } catch (error) {
         logsCotroller.logsCRUD(`Hubo un error en la comunicación !! -> ${error} `);

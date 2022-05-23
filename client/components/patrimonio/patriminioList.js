@@ -1,8 +1,8 @@
 //Importar Librerias React 
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import moment from 'moment';
 
-import { PencilIcon, TrashIcon, PlusCircleIcon } from '@heroicons/react/solid';
+import { PencilIcon, TrashIcon } from '@heroicons/react/solid';
 
 //Importamos nuestros  useContext (Hooks)
 import AuthContext from '../../context/auth/AuthContext';
@@ -13,7 +13,7 @@ const Swal = require('sweetalert2');
 
 const PatriminioList = ( {view} ) => {
 
-        //Declaro UseContext 
+    //Declaro UseContext 
     //Acceder el state de auth 
     const valorAuthContext = useContext(AuthContext);
     const { nickEmail, nickID } = valorAuthContext;
@@ -21,12 +21,12 @@ const PatriminioList = ( {view} ) => {
     //Acceder el state de Patrimonio 
     const valorPatrimonioContext = useContext(PatrimonioContext);
     const {  patrimonio, deletePatrimonio, listarPatrimonio } = valorPatrimonioContext;
-    
 
     //Declaración Variables
     let datos = { nickID, nickEmail }
     const datosConsulta = {nomPatrimonio:'', usuario:nickID, categoria:0, activo:1, tipo:"1-M" }
     
+
     //Metodos: Interacción con el usuario
     const getDialog = (id, nombre)=>{
 

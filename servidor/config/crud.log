@@ -315,3 +315,9 @@ Use mongoose.model(name, schema)
 [2022-02-25T16:50:09.068] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read properties of undefined (reading 'nomCate') 
 [2022-02-25T16:50:15.118] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read properties of undefined (reading 'nomCate') 
 [2022-02-25T16:52:02.369] [ERROR] crud - Hubo un error en la comunicación !! -> TypeError: Cannot read properties of undefined (reading 'nomCate') 
+[2022-05-04T19:07:53.016] [ERROR] crud - Hubo un error en la comunicación !! -> MongoNetworkError: connection 8 to 54.90.178.30:27017 closed 
+[2022-05-22T17:31:35.072] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: activo is not defined 
+[2022-05-22T17:31:49.946] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: activo is not defined 
+[2022-05-22T17:59:31.336] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: strLetterUper is not defined 
+[2022-05-22T18:00:40.451] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: element is not defined 
+[2022-05-22T18:00:51.481] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: element is not defined 
