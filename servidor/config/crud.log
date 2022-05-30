@@ -321,3 +321,5 @@ Use mongoose.model(name, schema)
 [2022-05-22T17:59:31.336] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: strLetterUper is not defined 
 [2022-05-22T18:00:40.451] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: element is not defined 
 [2022-05-22T18:00:51.481] [ERROR] crud - Hubo un error en la comunicación !! -> ReferenceError: element is not defined 
+[2022-05-29T21:43:11.649] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 
+[2022-05-29T21:43:21.872] [ERROR] crud - Resultado captcha !! -> TokenExpiredError: jwt expired 

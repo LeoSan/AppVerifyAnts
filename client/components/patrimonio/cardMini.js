@@ -16,7 +16,7 @@ const cardMini = ({categoria_id, listaPatrimonios}) => {
         <>
 
             {temporal.map((list, index) => (
-            <div key={index} className={list[4]}>
+            <div key={index} className={`capitalize  ${list[4]}` } >
                 <div className='mr-5'>{list[2]} </div>
                 <div className="">{list[3]} </div>
             </div>                        

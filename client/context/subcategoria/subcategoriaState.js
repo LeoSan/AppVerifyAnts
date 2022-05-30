@@ -54,17 +54,8 @@ const SubcategoriaState = ({ children }) => {
                 tokenAuth(token);
             }
 
-            // nomCate, autor, activo, tipo
-            const data = {
-                nomCate: datos.nickEmail,
-                autor: datos.nickID,
-                activo: 1,
-                tipo: "1-M-A"
-            }
 
-            //console.log("Desde cliente ->", data);
-
-            const respuesta = await clienteAxios.post('/api/subcategoria/get-subcat', data)
+            const respuesta = await clienteAxios.post('/api/subcategoria/get-subcat', datos)
                 .then((response) => {
 
                     if (response.data.success == true) {

@@ -26,6 +26,7 @@ const gastoSchema = new Schema({
     },	
     usuario: [{ type: Schema.Types.ObjectId, ref: 'Usuario', required:true }],    
 	categoria: [{ type: Schema.Types.ObjectId, ref: 'Categoria', required:true }],    
+	subcategoria: [{ type: Schema.Types.ObjectId, ref: 'Subcategoria', required:true }],    
 	recurrente:[{ type: Schema.Types.ObjectId, ref: 'Recurrente' }],    	
 	activo:{
 	   type: Number,

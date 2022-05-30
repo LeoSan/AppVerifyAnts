@@ -55,7 +55,7 @@ exports.getSubcategoria = async (req = request, res = response) => {
 
             if (!existeVAl) return res.status(200).json({ msg: `No Existe categorias para este usuario.`, success: false });
 
-            const subcategoria = await Subcategoria.find({ $and: [{ autor: autor }, { activo: activo }] }).populate({ path: 'actividad', model: 'Actividad', select: 'nomActi' }).sort({ nomCate: -1 });
+            const subcategoria = await Subcategoria.find({ $and: [{ autor: autor }, { activo: activo }, {categoria, categoria}] }).populate({ path: 'actividad', model: 'Actividad', select: 'nomActi' }).sort({ nomCate: -1 });
             res.status(200).json({ subcategoria, success: true });
 
         }

@@ -65,6 +65,10 @@ const SideBar = () => {
               router.push('/patrimonio');
        }
 
+       const listarGastos = () => {
+              router.push('/gastos');
+       }
+
 
        return (
               <Fragment>
@@ -142,7 +146,7 @@ const SideBar = () => {
                                                  <div className="bg-yellow-500 px-1 py-1   mr-2 ">
                                                         <CreditCardIcon className="h-5 w-5 text-white" />
                                                  </div>
-                                                 <div className=" px-1 py-1  text-white mr-2 ">
+                                                 <div className=" px-1 py-1  text-white mr-2 " onClick={ (e)=>{ listarGastos() } }>
                                                         Gasto
                                                  </div>
                                           </div>

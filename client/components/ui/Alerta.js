@@ -52,7 +52,7 @@ class Alert {
         html:
           '<div class="mb-4"><label class="label-form">Duración habito:</label><input id="swal-input1" class="input-form" type="number" placeholder="Ingrese el total de minutos que duro esta actividad"/></div>' +
           '<div class="mb-4"><label class="label-form">Fecha habito:</label><input id="swal-input3" class="input-form" type="date" placeholder="Anexa tu fecha" /></div>'+
-          '<div class="mb-4"><label class="label-form">Incluye una Nota:</label><textarea id="swal-input2" class="input-form" placeholder="Describe tu experiencia para reflexionar" > </textarea></div>'
+          '<div class="mb-4"><label class="label-form">Incluye una Nota:</label><textarea id="swal-input2" class="input-form" placeholder="Describe tu experiencia para reflexionar" ></textarea></div>'
         ,
         focusConfirm: false,
         showCancelButton: true,
